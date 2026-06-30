@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enrich Community — Project HPF</title>
+  <meta name="description" content="Post a need, accept a need, pledge what you can. A community-powered mutual aid system.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Forum&family=Fahkwang:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=17">
+  <link rel="icon" href="images/5f7ee9_eef98a3952f34f5fb211625143e3e8ea_mv2.png">
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
+  <style>
+    .ec-hero { text-align:center; padding: 80px 24px 20px; }
+    .ec-hero h1 { font-family: var(--font-accent); font-size: 2.6rem; color: var(--blue-dark); text-transform: uppercase; text-shadow: 2px 3px 5px rgba(0,0,0,0.2); margin-bottom: 12px; }
+    .ec-hero p { font-family: var(--font-body); font-size: 1.05rem; color: var(--gray-dark); max-width: 680px; margin: 0 auto 10px; line-height: 1.65; }
+
+    .ec-how { max-width: 1100px; margin: 20px auto; padding: 0 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+    .ec-how-card { background:#fff; padding:20px; border-radius:12px; box-shadow:0 2px 10px rgba(0,0,0,0.08); }
+    .ec-how-card h3 { font-family: var(--font-body); font-weight:700; color:#0489C7; margin:0 0 8px; font-size:1.1rem; }
+    .ec-how-card p { font-family: var(--font-body); font-size:0.95rem; color:#555; line-height:1.55; margin:0; }
+
+    .ec-split { max-width: 1100px; margin: 40px auto; padding: 0 24px; display:grid; grid-template-columns: 1.1fr 0.9fr; gap: 30px; align-items: start; }
+    @media (max-width: 820px) { .ec-split { grid-template-columns: 1fr; } }
+
+    .ec-card { background:#fff; border-radius:14px; padding:28px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .ec-card h2 { font-family: var(--font-body); font-weight:700; color:#0489C7; margin:0 0 18px; font-size:1.5rem; }
+
+    .ec-form label { display:block; font-family: var(--font-body); font-size:0.9rem; font-weight:600; color:#333; margin-top:14px; }
+    .ec-form input[type=text], .ec-form input[type=email], .ec-form input[type=tel], .ec-form input[type=number], .ec-form select, .ec-form textarea {
+      width:100%; padding:10px 12px; margin-top:4px; border:1.5px solid #d0d7dc; border-radius:8px; font-family: var(--font-body); font-size:0.95rem; background:#fafcfd;
+    }
+    .ec-form input:focus, .ec-form select:focus, .ec-form textarea:focus { outline:none; border-color:#0489C7; background:#fff; }
+    .ec-form textarea { min-height: 110px; resize: vertical; }
+    .ec-form .row { display:grid; gap:10px; }
+    .ec-form .row-4 { grid-template-columns: 80px 1fr 1fr 100px; }
+    @media (max-width: 600px){ .ec-form .row-4 { grid-template-columns: 1fr 1fr; } }
+    .ec-form .checkbox-row { display:flex; gap:10px; align-items:flex-start; margin-top:12px; font-weight:500; font-size:0.9rem; color:#444; }
+    .ec-form .checkbox-row input { margin-top:3px; }
+    .ec-form button { margin-top:18px; background:#0489C7; color:#fff; border:none; padding:12px 28px; border-radius:24px; font-family: var(--font-body); font-weight:600; font-size:0.95rem; cursor:pointer; letter-spacing:0.5px; }
+    .ec-form button:hover { background:#036ea0; }
+    .ec-form button:disabled { background:#aaa; cursor:not-allowed; }
+
+    .ec-feed { max-width: 1100px; margin: 40px auto; padding: 0 24px; }
+    .ec-feed h2 { font-family: var(--font-body); font-weight:700; color: var(--blue-dark); font-size:1.5rem; margin-bottom: 14px; text-align:center; }
+    .ec-needs-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap:18px; }
+    .ec-need { background:#fff; border-radius:12px; padding:18px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .ec-need-cat { font-size:0.72rem; font-weight:700; color:#0489C7; text-transform:uppercase; letter-spacing:1px; }
+    .ec-need h3 { margin:6px 0; font-family: var(--font-body); font-size:1.05rem; color:#1a1a2e; }
+    .ec-need p { font-family: var(--font-body); font-size:0.9rem; color:#555; line-height:1.5; margin:6px 0; }
+    .ec-need-meta { display:flex; justify-content:space-between; font-size:0.78rem; color:#888; margin-top:8px; }
+
+    .ec-rankings { max-width: 900px; margin: 10px auto 40px; padding: 0 24px; }
+    .ec-rankings table { width:100%; background:#fff; border-collapse:collapse; border-radius:12px; overflow:hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
+    .ec-rankings th { background:#0489C7; color:#fff; padding:10px; text-align:left; font-family: var(--font-body); font-size:0.85rem; }
+    .ec-rankings td { padding:10px; border-bottom:1px solid #eee; font-family: var(--font-body); font-size:0.92rem; }
+
+    .ec-success { padding:14px 18px; background:#e6f7ec; border-left:4px solid #0a7a2e; border-radius:8px; margin:14px 0; color:#0a5a20; font-family: var(--font-body); }
+    .ec-error { padding:14px 18px; background:#fdebeb; border-left:4px solid #c0392b; border-radius:8px; margin:14px 0; color:#7a1d1d; font-family: var(--font-body); }
+
+    @media (max-width: 768px) { .ec-hero h1 { font-size: 1.9rem; } }
+  </style>
+</head>
+<body>
+  <div class="bg-shapes">
+    <span class="shape1"></span><span class="shape2"></span><span class="shape3"></span>
+    <span class="shape4"></span><span class="shape5"></span><span class="shape6"></span>
+    <span class="shape7"></span><span class="shape8"></span><span class="shape9"></span>
+    <span class="shape10"></span><span class="shape11"></span><span class="shape12"></span>
+  </div>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index" class="nav-logo"><img src="images/phpf-logo-icon-hd.png" alt="Project HPF"></a>
+      <button class="nav-toggle">&#9776;</button>
+      <div class="nav-links">
+        <div class="dropdown"><a href="themission">THE MISSION</a><div class="dropdown-menu"><a href="themission#healing">Healing</a><a href="themission#prosperity">Prosperity</a><a href="themission#freedom">Freedom</a></div></div>
+        <div class="dropdown"><a href="participate">PARTICIPATE</a><div class="dropdown-menu"><a href="liberatedemocracy">Liberate Democracy</a><a href="buylocal">Buy Local</a><a href="enrich-community">Enrich Community</a></div></div>
+        <a href="didyouknow">DID YOU KNOW</a>
+        <div class="dropdown"><a href="resources">RESOURCES</a><div class="dropdown-menu"><a href="resources#documentaries">Enlightening Documentaries</a><a href="resources#books">Good Reads</a><a href="resources#discover">Podcast</a><a href="resources#news-orgs">News</a><a href="resources#foundations">Other Organizations</a><a href="https://www.liberationofeducation.org" target="_blank">Liberation of Education</a></div></div>
+        <a href="events">EVENTS</a>
+        <div class="dropdown"><a href="donate">DONATE</a><div class="dropdown-menu"><a href="sponsor">Be A Sponsor</a></div></div>
+        <a href="shop">SHOP</a>
+        <a href="blog">BLOG</a>
+      </div>
+      <div class="nav-right">
+        <a href="https://members.projecthpf.org/auth/login" class="btn-member">MEMBERS</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="ec-hero">
+    <h1 class="reveal">Enrich Community</h1>
+    <p class="reveal">Post a need. Accept a need. Pledge what you can. A rapport-driven mutual aid system where neighbors help neighbors — and every act of giving is recognized.</p>
+    <p class="reveal"><em>You don't need an account to ask for help. Members accept and pledge.</em></p>
+  </section>
+
+  <section class="ec-how reveal">
+    <div class="ec-how-card">
+      <h3>1. Post a Need</h3>
+      <p>Share what you need — food, home repair, transportation, childcare, anything. Your contact stays private and is only shared with the member who accepts or pledges.</p>
+    </div>
+    <div class="ec-how-card">
+      <h3>2. Community Responds</h3>
+      <p>A Project HPF member can <strong>accept</strong> your whole request or <strong>pledge</strong> partial help. You'll get contact info for anyone who steps up.</p>
+    </div>
+    <div class="ec-how-card">
+      <h3>3. Confirm & Earn Rapport</h3>
+      <p>Once the need is met, the requester confirms it. Members earn points and tier up (Seedling → Luminary). Businesses verified here appear on Buy Local.</p>
+    </div>
+  </section>
+
+  <div class="ec-split">
+    <!-- POST A NEED FORM -->
+    <div class="ec-card reveal">
+      <h2>Post a Need</h2>
+      <div id="formStatus"></div>
+      <form class="ec-form" id="needForm">
+        <label>Category *
+          <select name="category" required>
+            <option value="">— select —</option>
+            <option>Food</option><option>Home Maintenance</option><option>Transportation</option>
+            <option>Healthcare</option><option>Childcare</option><option>Education</option>
+            <option>Employment</option><option>Housing</option><option>Other</option>
+          </select>
+        </label>
+        <label id="catOtherWrap" style="display:none;">Please specify
+          <input type="text" name="category_other" maxlength="80">
+        </label>
+
+        <label>Title * <input type="text" name="title" required maxlength="120" placeholder="e.g. Help fixing leaky pipe"></label>
+        <label>Description * <textarea name="description" required placeholder="Tell us what you need..."></textarea></label>
+        <label>Amount you can contribute (USD — 0 is fine)
+          <input type="number" name="amount_able" min="0" step="0.01" value="0">
+        </label>
+
+        <label>How do you identify? *
+          <select name="self_label" required>
+            <option value="">— select —</option>
+            <option value="elderly">Elderly</option>
+            <option value="disabled">Disabled</option>
+            <option value="single_parent">Single Parent</option>
+            <option value="homeless">Homeless</option>
+            <option value="veteran">Veteran</option>
+            <option value="other">Other</option>
+          </select>
+        </label>
+        <label id="slOtherWrap" style="display:none;">Please specify
+          <input type="text" name="self_label_other" maxlength="80">
+        </label>
+
+        <fieldset style="border:1px solid #e3e8ec; padding:12px; border-radius:8px; margin-top:14px;">
+          <legend style="padding:0 6px; font-size:0.85rem; color:#666;">Location</legend>
+          <div class="row row-4">
+            <input type="text" name="state" placeholder="State" maxlength="2">
+            <input type="text" name="county" placeholder="County">
+            <input type="text" name="city" placeholder="City">
+            <input type="text" name="zip" placeholder="ZIP">
+          </div>
+        </fieldset>
+
+        <fieldset style="border:1px solid #e3e8ec; padding:12px; border-radius:8px; margin-top:14px;">
+          <legend style="padding:0 6px; font-size:0.85rem; color:#666;">Your Contact (private)</legend>
+          <label>Full name * <input type="text" name="full_name" required></label>
+          <label>Email * <input type="email" name="email" required></label>
+          <label>Phone <input type="tel" name="phone"></label>
+          <label>Social handles (IG/FB/X) <input type="text" name="socials"></label>
+          <label>Address (optional) <input type="text" name="address_line"></label>
+        </fieldset>
+
+        <div class="checkbox-row">
+          <input type="checkbox" name="consent_shared" id="cs" required>
+          <label for="cs" style="margin:0;">I consent to sharing my contact info with the member who accepts or pledges. *</label>
+        </div>
+        <div class="checkbox-row">
+          <input type="checkbox" name="consent_marketing" id="cm">
+          <label for="cm" style="margin:0;">(Optional) I'd like occasional updates from Project HPF.</label>
+        </div>
+
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAAC-EBwCLAJ_ts0FW" style="margin-top:16px;"></div>
+
+        <button type="submit" id="submitBtn">Submit Need</button>
+      </form>
+    </div>
+
+    <!-- HOW IT WORKS / CTA -->
+    <div class="ec-card reveal" style="background: linear-gradient(135deg, #0489C7 0%, #06b6d4 100%); color:#fff;">
+      <h2 style="color:#fff;">Accept or Pledge</h2>
+      <p style="font-family:var(--font-body); line-height:1.7; font-size:0.98rem;">
+        To accept a whole need or pledge partial help, you'll need to be a Project HPF member. Membership is how we build verified community rapport.
+      </p>
+      <p style="font-family:var(--font-body); line-height:1.7; font-size:0.98rem;">
+        Members earn points with every fulfilled need and confirmed pledge, climbing through six tiers:
+      </p>
+      <div style="display:flex; flex-wrap:wrap; gap:10px; margin:16px 0;">
+        <span style="background:rgba(255,255,255,0.2); padding:6px 12px; border-radius:20px; font-size:0.85rem;">🌱 Seedling</span>
+        <span style="background:rgba(255,255,255,0.2); padding:6px 12px; border-radius:20px; font-size:0.85rem;">🌿 Sprout</span>
+        <span style="background:rgba(255,255,255,0.2); padding:6px 12px; border-radius:20px; font-size:0.85rem;">🌾 Grower</span>
+        <span style="background:rgba(255,255,255,0.2); padding:6px 12px; border-radius:20px; font-size:0.85rem;">🌳 Cultivator</span>
+        <span style="background:rgba(255,255,255,0.2); padding:6px 12px; border-radius:20px; font-size:0.85rem;">🏛️ Steward</span>
+        <span style="background:rgba(255,255,255,0.2); padding:6px 12px; border-radius:20px; font-size:0.85rem;">✨ Luminary</span>
+      </div>
+      <a href="https://members.projecthpf.org/auth/signup" style="display:inline-block; background:#fff; color:#0489C7; padding:12px 28px; border-radius:24px; text-decoration:none; font-weight:700; margin-top:10px;">Become a Member</a>
+      <a href="https://members.projecthpf.org/enrich" style="display:inline-block; color:#fff; padding:12px 28px; text-decoration:underline; margin-top:10px;">Already a member? View all needs →</a>
+    </div>
+  </div>
+
+  <!-- OPEN NEEDS FEED -->
+  <section class="ec-feed reveal">
+    <h2>Open Needs</h2>
+    <div id="needsGrid" class="ec-needs-grid">
+      <p style="grid-column:1/-1; text-align:center; color:#888;">Loading…</p>
+    </div>
+  </section>
+
+  <!-- RANKINGS -->
+  <section class="ec-rankings reveal">
+    <h2 style="text-align:center; font-family: var(--font-body); font-weight:700; color: var(--blue-dark); font-size:1.5rem; margin-bottom:14px;">Top Community Builders</h2>
+    <div id="rankingsTable">
+      <p style="text-align:center; color:#888;">Loading…</p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p class="footer-disclaimer">Disclaimer: Project Healing Prosperity &amp; Freedom, Inc is pleased to provide diverse ideas from across the world that we hope will spark listeners' curiosity and broaden their worldview. Project Healing Prosperity &amp; Freedom, Inc does not endorse all of the perspectives, ideas and information put forward in any of the external content presented and invites listeners to have an open mind but question everything as they draw their own conclusions.</p>
+    <p class="footer-org">Project Healing<br>Prosperity &amp; Freedom, Inc</p>
+    <a href="mailto:info@projecthpf.org" class="footer-email">info@projecthpf.org</a>
+    <div class="footer-social">
+      <a href="https://twitter.com/ProjectHPF" title="Twitter"><img src="images/11062b_07090bba1daa42c880682389a46508db_mv2.png" alt="Twitter" style="width:24px;height:24px;"></a>
+      <a href="https://www.instagram.com/projecthpf" title="Instagram"><img src="images/11062b_55e4be1e75564866b6c28290f9a9d271_mv2.png" alt="Instagram" style="width:24px;height:24px;"></a>
+      <a href="https://www.facebook.com/ProjectHPF21" title="Facebook"><img src="images/11062b_a84995cc8b024f4ea398f5744a56bc27_mv2.png" alt="Facebook" style="width:24px;height:24px;"></a>
+      <a href="https://www.tiktok.com/@projecthpf" title="TikTok"><img src="images/11062b_8e8bb1bfaeb54186ace77d5ab14933ff_mv2.png" alt="TikTok" style="width:24px;height:24px;"></a>
+    </div>
+    <div class="footer-links">
+      <a href="privacy">Privacy Policy</a>
+      <a href="terms">Terms and Conditions</a>
+    </div>
+  </footer>
+
+  <script>
+    const MEMBERS_API = 'https://members.projecthpf.org/enrich/api';
+
+    function timeAgo(ts) {
+      const s = Math.floor((Date.now() - new Date(ts)) / 1000);
+      if (s < 60) return 'just now';
+      const m = Math.floor(s/60); if (m < 60) return m + 'm ago';
+      const h = Math.floor(m/60); if (h < 24) return h + 'h ago';
+      const d = Math.floor(h/24); if (d < 30) return d + 'd ago';
+      const mo = Math.floor(d/30); if (mo < 12) return mo + 'mo ago';
+      return Math.floor(mo/12) + 'y ago';
+    }
+    function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+    // Conditional "Other" fields
+    document.querySelector('[name=category]').addEventListener('change', e => {
+      document.getElementById('catOtherWrap').style.display = e.target.value === 'Other' ? 'block' : 'none';
+    });
+    document.querySelector('[name=self_label]').addEventListener('change', e => {
+      document.getElementById('slOtherWrap').style.display = e.target.value === 'other' ? 'block' : 'none';
+    });
+
+    // Form submission
+    document.getElementById('needForm').addEventListener('submit', async function(ev) {
+      ev.preventDefault();
+      const btn = document.getElementById('submitBtn');
+      const status = document.getElementById('formStatus');
+      btn.disabled = true; btn.textContent = 'Submitting…';
+      status.innerHTML = '';
+
+      const fd = new FormData(this);
+      const payload = {};
+      for (const [k,v] of fd.entries()) payload[k] = v;
+      payload.consent_shared = fd.get('consent_shared') ? true : false;
+      payload.consent_marketing = fd.get('consent_marketing') ? true : false;
+      payload.turnstile_token = fd.get('cf-turnstile-response') || '';
+
+      try {
+        const r = await fetch(MEMBERS_API + '/public-need', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const j = await r.json();
+        if (!r.ok) throw new Error(j.error || 'Submission failed');
+        status.innerHTML = '<div class="ec-success">' + esc(j.message || 'Submitted! Check your email to verify.') + '</div>';
+        this.reset();
+        if (window.turnstile) window.turnstile.reset();
+      } catch (err) {
+        status.innerHTML = '<div class="ec-error">' + esc(err.message) + '</div>';
+      } finally {
+        btn.disabled = false; btn.textContent = 'Submit Need';
+      }
+    });
+
+    // Feed
+    fetch(MEMBERS_API + '/public-feed').then(r => r.json()).then(data => {
+      const grid = document.getElementById('needsGrid');
+      if (!data.needs || data.needs.length === 0) {
+        grid.innerHTML = '<p style="grid-column:1/-1; text-align:center; color:#888;">No open needs right now. Be the first to post one above.</p>';
+        return;
+      }
+      grid.innerHTML = data.needs.map(n => `
+        <div class="ec-need">
+          <div class="ec-need-cat">${esc(n.category)}</div>
+          <h3>${esc(n.title)}</h3>
+          <p>${esc((n.description || '').substring(0,140))}${n.description && n.description.length > 140 ? '…' : ''}</p>
+          <div class="ec-need-meta">
+            <span>${esc([n.city, n.state].filter(Boolean).join(', ') || 'Location withheld')}</span>
+            <span>${timeAgo(n.created_at)}</span>
+          </div>
+          ${n.amount_able > 0 ? `<div style="margin-top:6px;font-size:0.8rem;color:#0a7a2e;">Requester can contribute $${n.amount_able}</div>` : ''}
+        </div>
+      `).join('');
+    }).catch(() => {
+      document.getElementById('needsGrid').innerHTML = '<p style="grid-column:1/-1; text-align:center; color:#888;">Unable to load needs right now.</p>';
+    });
+
+    // Rankings
+    fetch(MEMBERS_API + '/public-rankings').then(r => r.json()).then(data => {
+      const box = document.getElementById('rankingsTable');
+      if (!data.leaders || data.leaders.length === 0) {
+        box.innerHTML = '<p style="text-align:center; color:#888;">No rankings yet — be the first to fulfill a need.</p>';
+        return;
+      }
+      box.innerHTML = `
+        <table>
+          <thead><tr><th>#</th><th>Name</th><th>Tier</th><th style="text-align:center;">Points</th><th style="text-align:center;">Fulfilled</th></tr></thead>
+          <tbody>
+            ${data.leaders.map((l,i) => `
+              <tr>
+                <td>${i+1}</td>
+                <td>${esc(l.name || '—')}</td>
+                <td>${esc(l.tier)}</td>
+                <td style="text-align:center;"><strong>${l.total_points}</strong></td>
+                <td style="text-align:center;">${l.fulfillments}</td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      `;
+    }).catch(() => {
+      document.getElementById('rankingsTable').innerHTML = '<p style="text-align:center; color:#888;">Unable to load rankings right now.</p>';
+    });
+  </script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

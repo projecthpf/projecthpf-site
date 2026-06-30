@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Governance — Project HPF</title>
+  <meta name="description" content="Governance — understanding how groups and organizations are managed, the history of government, and a new radical idea for governance." />
+  <link rel="icon" type="image/png" href="images/5f7ee9_eef98a3952f34f5fb211625143e3e8ea_mv2.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Forum&family=Fahkwang:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Boogaloo&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=17">
+  <style>
+    /* ── Page Title ── */
+    .gov-page-title {
+      text-align: center;
+      padding: 100px 24px 40px;
+      background: transparent;
+    }
+    .gov-page-title h1 {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 3.5rem;
+      color: #0489C7;
+      margin-bottom: 14px;
+      text-shadow: 2px 3px 5px rgba(0,0,0,0.25);
+    }
+    .gov-page-title .tagline {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 1.05rem;
+      color: var(--gray-dark);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    /* ── Hero Section: Blue Box + Video ── */
+    .gov-hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 60px;
+      display: flex;
+      gap: 40px;
+      align-items: stretch;
+    }
+    .gov-text-box {
+      flex: 0 1 620px;
+      background: #8faec5;
+      border-radius: 12px;
+      padding: 28px 32px;
+      color: #1a1a2e;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.22), 0 2px 8px rgba(0,0,0,0.12);
+    }
+    .gov-text-box h2 {
+      font-family: var(--font-head);
+      font-size: 2.4rem;
+      color: #fff;
+      margin-bottom: 4px;
+      text-align: center;
+      line-height: 1.2;
+    }
+    .gov-text-box .dotted-divider {
+      text-align: center;
+      color: #fff;
+      letter-spacing: 4px;
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+    .gov-text-box p {
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: #2a2a3e;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .gov-text-box ol {
+      list-style: decimal;
+      padding-left: 24px;
+      margin-bottom: 16px;
+    }
+    .gov-text-box ol li {
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: #2a2a3e;
+      line-height: 1.7;
+      margin-bottom: 10px;
+    }
+    .gov-text-box ul {
+      list-style: disc;
+      padding-left: 24px;
+      margin-bottom: 16px;
+    }
+    .gov-text-box ul li {
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: #2a2a3e;
+      line-height: 1.7;
+      margin-bottom: 8px;
+    }
+    .gov-video-col {
+      width: 400px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      align-items: center;
+      align-self: flex-start;
+      margin-top: 215px;
+    }
+    .gov-video-label-img {
+      width: 500px;
+      height: auto;
+      display: block;
+      margin: 0 auto 8px;
+    }
+    .gov-video-col iframe {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 10px;
+      border: none;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+
+    /* ── Brief History of Government ── */
+    .gov-history {
+      max-width: 1100px;
+      margin: 0 auto 60px;
+      padding: 0 24px;
+    }
+    .gov-history-icon {
+      text-align: center;
+      margin-top: -300px;
+      margin-bottom: -160px;
+      position: relative;
+      z-index: 2;
+      padding-left: 635px;
+    }
+    .gov-history-icon svg {
+      width: 450px;
+      height: 450px;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15));
+    }
+    .history-box {
+      background: #8fa8a0;
+      border-radius: 12px;
+      padding: 60px 48px 40px;
+      color: #1a1a2e;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.22), 0 2px 8px rgba(0,0,0,0.12);
+    }
+    .history-box h2 {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 2.2rem;
+      color: #1a1a2e;
+      margin-bottom: 24px;
+      line-height: 1.3;
+      text-decoration: underline;
+      text-underline-offset: 6px;
+    }
+    .history-box p {
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: #2a2a3e;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .history-box ul {
+      list-style: disc;
+      padding-left: 24px;
+      margin-bottom: 16px;
+    }
+    .history-box ul li {
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: #2a2a3e;
+      line-height: 1.7;
+      margin-bottom: 10px;
+    }
+
+    /* ── The Matrix Section ── */
+    .gov-matrix {
+      max-width: 1100px;
+      margin: 0 auto 60px;
+      padding: 0 24px;
+    }
+    .matrix-top {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+      margin-bottom: 40px;
+      background: #f5f0ea;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.08);
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+    .matrix-globe {
+      flex-shrink: 0;
+      width: 340px;
+      position: relative;
+    }
+    .matrix-globe img {
+      width: 100%;
+      border-radius: 50%;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.2));
+    }
+    .matrix-content {
+      flex: 1;
+    }
+    .matrix-content h2 {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 2.4rem;
+      color: #5a3e2b;
+      margin-bottom: 0;
+    }
+    .matrix-content p {
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: #5a3e2b;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .matrix-manipulation {
+      background: #f5f0ea;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.08);
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+    .matrix-manipulation h3 {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: #5a3e2b;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .matrix-manipulation ul {
+      list-style: disc;
+      padding-left: 24px;
+      margin-bottom: 16px;
+    }
+    .matrix-manipulation ul li {
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: #5a3e2b;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+    .matrix-manipulation > p {
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: #5a3e2b;
+      line-height: 1.7;
+      font-style: italic;
+      margin-top: 16px;
+    }
+
+    /* ── A New Radical Idea ── */
+    .gov-radical {
+      max-width: 1100px;
+      margin: 0 auto 60px;
+      padding: 0 24px;
+    }
+    .radical-box {
+      background: linear-gradient(135deg, #4a5a7a 0%, #6a7fa0 50%, #8a9ab0 100%);
+      border-radius: 12px;
+      padding: 40px 48px;
+      color: #fff;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.22), 0 2px 8px rgba(0,0,0,0.12);
+    }
+    .radical-box h2 {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 2.2rem;
+      color: #fff;
+      margin-bottom: 24px;
+      line-height: 1.3;
+      text-shadow: 2px 3px 5px rgba(0,0,0,0.2);
+    }
+    .radical-box p {
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: #fff;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .radical-box ol {
+      list-style: decimal;
+      padding-left: 24px;
+      margin-bottom: 24px;
+    }
+    .radical-box ol li {
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: #fff;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    /* Community & Membership Unified Section */
+    .home-community { background: transparent; padding: 100px 24px 20px; display: flex; justify-content: center; width: 100%; }
+    .community-bg { background: url('images/nsplsh_335036453279326c797573_mv2_d_5760_3840_s_4_2.jpg') center/cover no-repeat; border-radius: 16px; padding: 50px 48px; position: relative; min-height: 520px; display: flex; align-items: center; justify-content: center; }
+    .community-inner { display: grid; grid-template-columns: 1fr auto; gap: 30px; align-items: center; }
+    .community-text { text-align: left; background: rgba(80, 20, 120, 0.55); padding: 24px; border-radius: 12px; align-self: stretch; display: flex; flex-direction: column; justify-content: center; }
+    .community-right-col { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; }
+    .community-earth { width: 240px; height: auto; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3)); }
+    .community-text h2 { font-family: var(--font-body); font-weight: 700; font-size: 1.5rem; color: var(--white); margin-bottom: 10px; text-shadow: 1px 2px 4px rgba(0,0,0,0.4); max-width: 260px; }
+    .community-text p { font-family: var(--font-body); font-size: 0.84rem; color: var(--white); line-height: 1.7; margin-bottom: 14px; text-shadow: 1px 1px 3px rgba(0,0,0,0.3); max-width: 230px; }
+    .community-text p.community-note { font-size: 0.78rem; opacity: 0.9; margin-bottom: 0; white-space: nowrap; }
+    .member-cta-btn { display: inline-block; padding: 12px 36px; background: var(--white); color: var(--green-primary); border: 2px solid var(--white); border-radius: 4px; font-family: var(--font-body); font-weight: 700; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; transition: background 0.3s, color 0.3s; text-decoration: none; margin-bottom: 8px; }
+    .member-cta-btn:hover { background: transparent; color: var(--white); text-decoration: none; }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .gov-page-title h1 { font-size: 2.4rem; }
+      .gov-hero { flex-direction: column; }
+      .gov-video-col { width: 100%; }
+      .history-box { padding: 60px 24px 30px; }
+      .matrix-top { flex-direction: column; padding: 24px; }
+      .matrix-globe { width: 100%; max-width: 280px; margin: 0 auto; }
+      .matrix-manipulation { padding: 24px; }
+      .radical-box { padding: 30px 24px; }
+      .community-bg { padding: 28px 20px; margin: 0 12px; max-width: 100%; }
+      .community-inner { grid-template-columns: 1fr; text-align: center; }
+      .community-text { text-align: center; }
+      .community-right-col { align-items: center; }
+      .community-earth { width: 180px; }
+    }
+      /* ── Per-Section Narration Players ── */
+    .val-section-head { display:flex; align-items:center; gap:14px; margin-bottom:24px; }
+    .val-section-head h2 { flex:1; margin-bottom:0; }
+    .val-play-icon { width:42px;height:42px;flex-shrink:0;background:rgba(255,255,255,0.22);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;color:#fff;cursor:pointer;transition:background 0.2s,transform 0.15s;user-select:none; }
+    .val-play-icon:hover { background:rgba(255,255,255,0.4);transform:scale(1.1); }
+    .matrix-content .val-play-icon { background:rgba(90,62,43,0.13);border:2px solid rgba(90,62,43,0.28);color:#5a3e2b; }
+    .matrix-content .val-play-icon:hover { background:rgba(90,62,43,0.24); }
+    .val-narration-player { display:flex;align-items:center;gap:10px;max-height:0;opacity:0;overflow:hidden;transition:max-height 0.35s ease,opacity 0.35s ease;margin-bottom:0; }
+    .val-narration-player.playing { max-height:36px;opacity:1;margin-bottom:16px; }
+    .val-narration-bar { flex:1;height:6px;background:rgba(0,0,0,0.12);border-radius:3px;cursor:pointer;position:relative;overflow:hidden;min-width:120px; }
+    .val-narration-bar:hover { background:rgba(0,0,0,0.22); }
+    .val-narration-bar-fill { height:100%;background:rgba(255,255,255,0.7);border-radius:3px;width:0%;pointer-events:none; }
+    .matrix-content .val-narration-bar-fill { background:rgba(90,62,43,0.55); }
+    .val-narration-time { font-size:0.7rem;font-family:var(--font-body,sans-serif);color:rgba(255,255,255,0.75);min-width:72px;text-align:right;white-space:nowrap; }
+    .matrix-content .val-narration-time { color:rgba(90,62,43,0.7); }
+    .val-speed { display:flex;align-items:center;gap:3px;flex-shrink:0; }
+    .val-speed .speed-btn { background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);border-radius:4px;color:rgba(255,255,255,0.8);font-size:0.65rem;font-weight:600;padding:2px 6px;cursor:pointer;transition:background 0.15s;line-height:1.4;font-family:inherit; }
+    .val-speed .speed-btn:hover { background:rgba(255,255,255,0.28); }
+    .val-speed .speed-btn.active { background:rgba(255,255,255,0.88);color:#1a1a2e;border-color:transparent; }
+    .matrix-content .val-speed .speed-btn { background:rgba(90,62,43,0.1);border-color:rgba(90,62,43,0.25);color:rgba(90,62,43,0.7); }
+    .matrix-content .val-speed .speed-btn:hover { background:rgba(90,62,43,0.2); }
+    .matrix-content .val-speed .speed-btn.active { background:rgba(90,62,43,0.75);color:#fff;border-color:transparent; }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index" class="nav-logo nav-logo--wide">
+        <img src="images/phpf-logo-wide-hd.png" alt="ProjectHPF.org">
+      </a>
+      <button class="nav-toggle">&#9776;</button>
+      <div class="nav-links">
+        <div class="dropdown"><a href="themission">THE MISSION</a><div class="dropdown-menu"><a href="themission#healing">Healing</a><a href="themission#prosperity">Prosperity</a><a href="themission#freedom">Freedom</a></div></div>
+        <div class="dropdown"><a href="participate">PARTICIPATE</a><div class="dropdown-menu"><a href="liberatedemocracy">Liberate Democracy</a><a href="buylocal">Buy Local</a><a href="enrich-community">Enrich Community</a></div></div>
+        <a href="didyouknow">DID YOU KNOW</a>
+        <div class="dropdown"><a href="resources">RESOURCES</a><div class="dropdown-menu"><a href="resources#documentaries">Enlightening Documentaries</a><a href="resources#books">Good Reads</a><a href="resources#discover">Podcast</a><a href="resources#news-orgs">News</a><a href="resources#foundations">Other Organizations</a><a href="https://www.liberationofeducation.org" target="_blank">Liberation of Education</a></div></div>
+        <a href="events">EVENTS</a>
+        <div class="dropdown"><a href="donate">DONATE</a><div class="dropdown-menu"><a href="sponsor">Be A Sponsor</a></div></div>
+        <a href="shop">SHOP</a>
+        <a href="blog">BLOG</a>
+      </div>
+      <div class="nav-right">
+        <a href="https://members.projecthpf.org/auth/login" class="btn-member">MEMBERS</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══════════ PAGE TITLE ══════════ -->
+  <section class="gov-page-title reveal">
+    <h1>GOVERNANCE</h1>
+    <p class="tagline">Understanding how groups and organizations are managed, the history of government, and envisioning a better way forward.</p>
+  </section>
+
+  <!-- ══════════ 1. GOVERNANCE INTRO: Blue Box + Video ══════════ -->
+  <section class="gov-hero reveal">
+    <div class="gov-text-box">
+      <div style="display:flex;justify-content:flex-end;margin-bottom:12px;">
+        <span class="val-play-icon" id="play-gov-intro" title="Listen to narration">&#9654;</span>
+      </div>
+      <div class="val-narration-player" id="player-gov-intro">
+        <div class="val-narration-bar" id="bar-gov-intro"><div class="val-narration-bar-fill" id="fill-gov-intro"></div></div>
+        <span class="val-narration-time" id="time-gov-intro">0:00</span>
+        <div class="val-speed">
+          <button class="speed-btn" data-speed="0.75">0.75×</button>
+          <button class="speed-btn active" data-speed="1">1×</button>
+          <button class="speed-btn" data-speed="1.25">1.25×</button>
+          <button class="speed-btn" data-speed="1.5">1.5×</button>
+          <button class="speed-btn" data-speed="2">2×</button>
+        </div>
+      </div>
+      <audio id="audio-gov-intro" src="audio/governance-intro.mp3" preload="none"></audio>
+      <p>Governance refers to the processes, structures, and mechanisms by which a group or organization, (such as a government, company, or institution), is managed and directed. It encompasses a wide range of activities and principles aimed at ensuring that an entity functions effectively, transparently, and in accordance with its goals and objectives.</p>
+
+      <p>Governance can apply to various levels and types of organizations, including:</p>
+
+      <ol>
+        <li><strong>Government Governance:</strong> In the context of a government, governance refers to the way a country or region is administered and how decisions are made and implemented. It involves the functioning of political institutions, the rule of law, public policies, and the relationship between the government and its citizens.</li>
+        <li><strong>Corporate Governance:</strong> In the business world, corporate governance pertains to the framework of rules, practices, and processes by which a company is directed and controlled. It includes the roles and responsibilities of the board of directors, management, shareholders, and other stakeholders.</li>
+        <li><strong>Nonprofit Governance:</strong> Nonprofit organizations, including charities and NGOs, have their own governance structures. Nonprofit governance involves the management of resources, adherence to regulatory requirements, and the pursuit of their missions while being accountable to donors and the public.</li>
+        <li><strong>International Governance:</strong> This refers to the management and regulation of global issues that transcend national boundaries, such as international diplomacy, trade agreements, and efforts to address global challenges like climate change or pandemics.</li>
+      </ol>
+
+      <p>Key principles of good governance often include:</p>
+
+      <ul>
+        <li><strong>Transparency:</strong> Openness and clarity in decision-making processes, making information accessible to stakeholders.</li>
+        <li><strong>Accountability:</strong> Holding individuals and organizations responsible for their actions and decisions, often involving mechanisms for oversight and consequences for wrongdoing.</li>
+        <li><strong>Responsiveness:</strong> Being responsive to the needs and concerns of stakeholders, whether they are citizens, shareholders, or members of a community.</li>
+        <li><strong>Participation:</strong> Involving stakeholders in the decision-making process, ensuring that diverse perspectives are considered.</li>
+        <li><strong>Rule of Law:</strong> Upholding the principles of justice and fairness, where laws and regulations are applied consistently and impartially.</li>
+        <li><strong>Efficiency and Effectiveness:</strong> Ensuring that resources are used efficiently to achieve desired outcomes and goals.</li>
+      </ul>
+
+      <p>Good governance is essential for the stability and success of organizations and societies. It should help prevent corruption, promote trust and confidence, and ensure that decisions are made in the best interests of all individuals regardless of any negative circumstances.</p>
+    </div>
+
+    <div class="gov-video-col">
+      <img src="images/animation/mother-earth-v2-clean.png" alt="Mother Earth" class="gov-video-label-img">
+      <iframe src="https://www.youtube.com/embed/E6hWPDUUQ1w" title="What is good governance? | Ben Warner | TEDxJacksonville" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- ══════════ 2. A BRIEF HISTORY OF GOVERNMENT ══════════ -->
+  <section class="gov-history reveal">
+    <div class="gov-history-icon">
+      <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+        <!-- Globe -->
+        <circle cx="80" cy="70" r="60" fill="#4db8c7"/>
+        <circle cx="80" cy="70" r="60" fill="url(#globeGrad)" opacity="0.6"/>
+        <!-- Continents simplified -->
+        <ellipse cx="65" cy="50" rx="18" ry="22" fill="#7bc47a" opacity="0.8"/>
+        <ellipse cx="95" cy="65" rx="14" ry="18" fill="#7bc47a" opacity="0.8"/>
+        <ellipse cx="55" cy="85" rx="12" ry="10" fill="#7bc47a" opacity="0.8"/>
+        <!-- Government building -->
+        <rect x="57" y="90" width="46" height="30" rx="2" fill="#f5f0ea"/>
+        <rect x="62" y="85" width="36" height="8" rx="1" fill="#e8e0d4"/>
+        <polygon points="80,72 56,88 104,88" fill="#e74c3c" opacity="0.7"/>
+        <!-- Flag -->
+        <rect x="78" y="58" width="2" height="16" fill="#555"/>
+        <polygon points="80,58 80,68 90,63" fill="#e74c3c"/>
+        <!-- Columns -->
+        <rect x="65" y="95" width="4" height="22" fill="#d4ccc0"/>
+        <rect x="75" y="95" width="4" height="22" fill="#d4ccc0"/>
+        <rect x="85" y="95" width="4" height="22" fill="#d4ccc0"/>
+        <!-- Base -->
+        <rect x="55" y="118" width="50" height="5" rx="1" fill="#4db8c7"/>
+        <defs>
+          <radialGradient id="globeGrad" cx="40%" cy="35%">
+            <stop offset="0%" stop-color="#fff" stop-opacity="0.3"/>
+            <stop offset="100%" stop-color="#2a8a9a" stop-opacity="0.2"/>
+          </radialGradient>
+        </defs>
+      </svg>
+    </div>
+    <div class="history-box">
+      <div class="val-section-head">
+        <h2>A Brief History of Government</h2>
+        <span class="val-play-icon" id="play-gov-history" title="Listen to narration">&#9654;</span>
+      </div>
+      <div class="val-narration-player" id="player-gov-history">
+        <div class="val-narration-bar" id="bar-gov-history"><div class="val-narration-bar-fill" id="fill-gov-history"></div></div>
+        <span class="val-narration-time" id="time-gov-history">0:00</span>
+        <div class="val-speed">
+          <button class="speed-btn" data-speed="0.75">0.75×</button>
+          <button class="speed-btn active" data-speed="1">1×</button>
+          <button class="speed-btn" data-speed="1.25">1.25×</button>
+          <button class="speed-btn" data-speed="1.5">1.5×</button>
+          <button class="speed-btn" data-speed="2">2×</button>
+        </div>
+      </div>
+      <audio id="audio-gov-history" src="audio/governance-history.mp3" preload="none"></audio>
+
+      <p>The history of government is a vast and complex topic that spans millennia and varies greatly across different cultures and regions. Government has evolved significantly throughout history, with various forms and systems emerging in response to the needs and circumstances of societies. Here is a broad overview of the history of government:</p>
+
+      <ul>
+        <li><strong>Early Forms of Governance:</strong> The earliest human societies organized themselves with some form of leadership or governance structure, often based on tribal or kinship ties. These early forms of governance were typically small-scale and decentralized.</li>
+        <li><strong>Ancient Civilizations:</strong> The development of complex civilizations, such as those in Mesopotamia, Egypt, the Indus Valley, and China, gave rise to more centralized and bureaucratic forms of government. These governments often included monarchies, city-states, and empires with rulers who held significant power.</li>
+        <li><strong>Ancient Greece and Democracy:</strong> Ancient Greece is often credited with the development of democratic governance. In Athens, for example, the concept of democracy emerged in the 5th century BCE, where citizens had a direct role in decision-making through an assembly.</li>
+        <li><strong>Roman Republic and Empire:</strong> The Roman Republic, established in the 6th century BCE, featured a system of elected officials and checks and balances. It later transitioned into the Roman Empire, characterized by a centralized autocracy.</li>
+        <li><strong>Feudalism:</strong> In medieval Europe, feudalism became a dominant form of governance. Feudal societies were hierarchical, with kings and nobility holding land in exchange for military service and loyalty.</li>
+        <li><strong>Monarchies and Absolute Rule:</strong> Many European countries during the Middle Ages and Renaissance were ruled by absolute monarchs, where the king or queen held significant power. Examples include Louis XIV of France and the Tudor monarchs of England.</li>
+        <li><strong>Enlightenment and Constitutionalism:</strong> The Enlightenment in the 17th and 18th centuries contributed to the development of constitutional governments and the idea of individual rights. The English Civil War, Glorious Revolution, and the writings of philosophers like John Locke influenced the shift toward constitutional monarchy and democracy.</li>
+        <li><strong>American Revolution and Democracy:</strong> The American Revolution (1775-1783) led to the establishment of the United States and its Constitution, which introduced the concept of a federal system with a separation of powers and a Bill of Rights. It served as a model for many other nations.</li>
+        <li><strong>French Revolution and European Changes:</strong> The French Revolution (1789-1799) sparked significant political upheaval in Europe and the spread of democratic ideals.</li>
+        <li><strong>19th and 20th Century Transformations:</strong> The 19th and 20th centuries witnessed the spread of democracy, decolonization, the rise of totalitarian regimes like fascism and communism, and the development of international organizations like the United Nations.</li>
+        <li><strong>Contemporary Government:</strong> Today, governments come in various forms, including democracies, authoritarian regimes, monarchies, and more. Many nations have adopted constitutions and systems of governance that reflect a balance between central authority and individual rights.</li>
+      </ul>
+
+      <p>The history of government is marked by a continual evolution of governance structures, ideologies, and forms, shaped by cultural, social, economic, and political factors. The diversity of government systems across the world highlights the complexity and richness of humanities history.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ 3. THE MATRIX ══════════ -->
+  <section class="gov-matrix reveal">
+    <div class="matrix-top">
+      <div class="matrix-globe">
+        <img src="images/the-matrix.png" alt="The Matrix - Large Corporations, Government, and Media">
+      </div>
+
+      <div class="matrix-content">
+        <div class="val-section-head">
+          <h2>The Matrix</h2>
+          <span class="val-play-icon" id="play-gov-matrix" title="Listen to narration">&#9654;</span>
+        </div>
+        <div class="val-narration-player" id="player-gov-matrix">
+          <div class="val-narration-bar" id="bar-gov-matrix"><div class="val-narration-bar-fill" id="fill-gov-matrix"></div></div>
+          <span class="val-narration-time" id="time-gov-matrix">0:00</span>
+          <div class="val-speed">
+            <button class="speed-btn" data-speed="0.75">0.75×</button>
+            <button class="speed-btn active" data-speed="1">1×</button>
+            <button class="speed-btn" data-speed="1.25">1.25×</button>
+            <button class="speed-btn" data-speed="1.5">1.5×</button>
+            <button class="speed-btn" data-speed="2">2×</button>
+          </div>
+        </div>
+        <audio id="audio-gov-matrix" src="audio/governance-matrix.mp3" preload="none"></audio>
+
+        <p>"They", the establishment, (big corporations, the government, and the media) are educating or indoctrinating "us", society, to work for or otherwise serve "them", government and big business. For a very long time "they" have controlled everything, from what we know, what we learn, and how we learn, to how we spend our money, what we spend our money on, and how we can earn it. The matrix that is the establishment, is primarily money driven. It is important to acknowledge and discuss the influence powerful entities, including governments, corporations, and media have on society's education, consumption patterns, perspective's, decision-making, and ability to think for ourselves.</p>
+      </div>
+    </div>
+
+    <div class="matrix-manipulation">
+      <h3>Some ways the establishment manipulates societies perspectives and interests:</h3>
+
+      <ul>
+        <li><strong>Power and Influence:</strong> Powerful entities, such as governments and large corporations, exert significant influence over various aspects of society, including education, media, and consumer behavior. The extent and nature of this influence can be a subject of debate; but the fact that it is happening is certain.</li>
+        <li><strong>Education:</strong> Governments have and do play an impactful role in shaping and controlling societies perspectives through education curricula, funding, and laws. Concerns about education systems being used to promote certain ideologies or interests are not new but recently they have led to <a href="https://www.liberationofeducation.org" target="_blank" style="color: #5a3e2b;">a growing revolution</a> in the education world.</li>
+        <li><strong>Media Influence:</strong> Many media outlets are owned by large corporations that have a direct interest in influencing the perspectives and consumption. Many media outlets also get the majority of their "facts" from government sources. Concerns about media bias or concentration of media ownership have been and are currently being raised in societies all around the world. Media literacy and critical thinking skills are important for individuals to evaluate information from diverse sources.</li>
+        <li><strong>Consumerism:</strong> Big corporations and governments are deliberately developing a consumer culture. The impact of advertising and marketing on consumer behavior is a subject of study in sociology and economics, but it should be a part of every individuals learning journey.</li>
+        <li><strong>Economic Interests:</strong> Government's both need money to operate and print and control the flow of money.</li>
+      </ul>
+
+      <p>It's crucial for individuals to engage in critical thinking and seek well-researched and balanced sources of information when exploring these topics. It is important to question the influence of powerful entities on society but it is also essential to avoid falling into conspiratorial thinking.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ 4. A NEW, RADICAL IDEA FOR GOVERNMENT ══════════ -->
+  <section class="gov-radical reveal">
+    <div class="radical-box">
+      <div class="val-section-head">
+        <h2>A New, Radical Idea For Government</h2>
+        <span class="val-play-icon" id="play-gov-radical" title="Listen to narration">&#9654;</span>
+      </div>
+      <div class="val-narration-player" id="player-gov-radical">
+        <div class="val-narration-bar" id="bar-gov-radical"><div class="val-narration-bar-fill" id="fill-gov-radical"></div></div>
+        <span class="val-narration-time" id="time-gov-radical">0:00</span>
+        <div class="val-speed">
+          <button class="speed-btn" data-speed="0.75">0.75×</button>
+          <button class="speed-btn active" data-speed="1">1×</button>
+          <button class="speed-btn" data-speed="1.25">1.25×</button>
+          <button class="speed-btn" data-speed="1.5">1.5×</button>
+          <button class="speed-btn" data-speed="2">2×</button>
+        </div>
+      </div>
+      <audio id="audio-gov-radical" src="audio/governance-radical.mp3" preload="none"></audio>
+
+      <p>Give the land back to indigenous cultures that it was stolen from so they can teach us all how to live. Just kidding! Unfortunately we'll never get everyone to agree to that but we do have to come up with a better way to do things.</p>
+
+      <p>We absolutely need governing systems but we absolutely can not continue to sustain big government. Creating a new approach to government that addresses the need for governance while mitigating the challenges of sustaining big government is a significant and complex endeavor, but it can be done.</p>
+
+      <p>One radical approach is the decentralization of government power, with a focus on local and community-driven decision-making. This approach envisions a system where smaller, more nimble governing bodies handle most day-to-day governance issues, while a limited central authority deals with broader national or international matters. Here are some elements of such a system:</p>
+
+      <ol>
+        <li><strong>Subsidiarity:</strong> The principle of subsidiarity would be a guiding force. This means that matters should be handled at the most local level possible.</li>
+        <li><strong>Local Empowerment:</strong> Communities and local governments would have a high degree of autonomy to make decisions on matters that directly affect their residents.</li>
+        <li><strong>Streamlined Central Authority:</strong> The central government would have a more focused role, dealing primarily with issues that require a nationwide or international approach.</li>
+        <li><strong>Elimination of Redundancy:</strong> Streamlining the system would help reduce redundancy and bureaucracy. Functions performed more efficiently at the local level would not be duplicated at the national level.</li>
+        <li><strong>Transparency and Accountability:</strong> Decentralized government allows for more transparency and accountability mechanisms to ensure that local governments make decisions in the best interests of their communities.</li>
+        <li><strong>Balanced Funding:</strong> Funding and taxation would need to be restructured to support this decentralized system but would allow for local governments to collect and better use taxes for local needs, while deciding what portion would be allocated for overarching national interests.</li>
+      </ol>
+
+      <p>This approach would aim to reduce the size and scope of a centralized government while ensuring that essential functions are still addressed. It would promote local responsiveness, reduce bureaucracy, and empower communities to have a more direct say in their governance. Implementing such a radical idea would likely face considerable challenges, including the need for constitutional changes, political opposition, and the potential for disparities among regions. It would require a carefully planned transition and ongoing evaluation to ensure its effectiveness and fairness. Nonetheless, it represents a novel approach to addressing the tension between the need for governance and the desire to limit the size of government.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ COMMUNITY & MEMBERSHIP ══════════ -->
+  <section class="home-community reveal">
+    <div class="community-bg">
+      <div class="community-inner">
+        <div class="community-text">
+          <h2>Join Our Revolutionist Community</h2>
+          <p>Communicate, collaborate, and connect with citizens committed to healing, prosperity &amp; freedom. Become a PHPF member for just $1/month and gain exclusive access to our member directory, content library, and Liberate Democracy voting.</p>
+          <p class="community-note">Membership unlocks the full PHPF experience.</p>
+        </div>
+        <div class="community-right-col">
+          <img src="images/animation/mother-earth-v2-clean.png" alt="Mother Earth" class="community-earth">
+          <a href="https://members.projecthpf.org/auth/register" class="member-cta-btn">Join Now — $1/mo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p class="footer-disclaimer">Disclaimer: Project Healing Prosperity &amp; Freedom, Inc is pleased to provide diverse ideas from across the world that we hope will spark listeners' curiosity and broaden their worldview. Project Healing Prosperity &amp; Freedom, Inc does not endorse all of the perspectives, ideas and information put forward in any of the external content presented and invites listeners to have an open mind but question everything as they draw their own conclusions.</p>
+    <p class="footer-org">Project Healing<br>Prosperity &amp; Freedom, Inc</p>
+    <a href="mailto:info@projecthpf.org" class="footer-email">info@projecthpf.org</a>
+    <div class="footer-social">
+      <a href="https://twitter.com/ProjectHPF" title="Twitter"><img src="images/11062b_07090bba1daa42c880682389a46508db_mv2.png" alt="Twitter" style="width:24px;height:24px;"></a>
+      <a href="https://www.instagram.com/projecthpf" title="Instagram"><img src="images/11062b_55e4be1e75564866b6c28290f9a9d271_mv2.png" alt="Instagram" style="width:24px;height:24px;"></a>
+      <a href="https://www.facebook.com/ProjectHPF21" title="Facebook"><img src="images/11062b_a84995cc8b024f4ea398f5744a56bc27_mv2.png" alt="Facebook" style="width:24px;height:24px;"></a>
+      <a href="https://www.tiktok.com/@projecthpf" title="TikTok"><img src="images/11062b_8e8bb1bfaeb54186ace77d5ab14933ff_mv2.png" alt="TikTok" style="width:24px;height:24px;"></a>
+    </div>
+    <div class="footer-links">
+      <a href="privacy">Privacy Policy</a>
+      <a href="terms">Terms and Conditions</a>
+    </div>
+    <p style="font-size:0.78rem; color:var(--gray-light);">&copy; 2024 Project Healing Prosperity &amp; Freedom, Inc. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+  (function(){
+    function fmt(t){var m=Math.floor(t/60),s=Math.floor(t%60);return m+":"+(s<10?"0":"")+s;}
+    var tracks=[
+      {play:'play-gov-intro',   audio:'audio-gov-intro',   player:'player-gov-intro',   bar:'bar-gov-intro',   fill:'fill-gov-intro',   time:'time-gov-intro'},
+      {play:'play-gov-history', audio:'audio-gov-history', player:'player-gov-history', bar:'bar-gov-history', fill:'fill-gov-history', time:'time-gov-history'},
+      {play:'play-gov-matrix',  audio:'audio-gov-matrix',  player:'player-gov-matrix',  bar:'bar-gov-matrix',  fill:'fill-gov-matrix',  time:'time-gov-matrix'},
+      {play:'play-gov-radical', audio:'audio-gov-radical', player:'player-gov-radical', bar:'bar-gov-radical', fill:'fill-gov-radical', time:'time-gov-radical'}
+    ];
+    tracks.forEach(function(t){
+      var playBtn=document.getElementById(t.play);
+      var audio=document.getElementById(t.audio);
+      var player=document.getElementById(t.player);
+      var bar=document.getElementById(t.bar);
+      var fill=document.getElementById(t.fill);
+      var timeEl=document.getElementById(t.time);
+      if(!playBtn||!audio) return;
+      playBtn.addEventListener('click',function(){
+        if(audio.paused){
+          tracks.forEach(function(o){
+            var a=document.getElementById(o.audio);
+            var b=document.getElementById(o.play);
+            var p=document.getElementById(o.player);
+            if(a&&!a.paused){a.pause();if(b)b.textContent='\u25BA';if(p)p.classList.remove('playing');}
+          });
+          audio.play();playBtn.textContent='\u23F8';player.classList.add('playing');
+        } else {
+          audio.pause();playBtn.textContent='\u25BA';
+        }
+      });
+      audio.addEventListener('timeupdate',function(){
+        if(!audio.duration) return;
+        fill.style.width=(audio.currentTime/audio.duration*100)+'%';
+        timeEl.textContent=fmt(audio.currentTime)+' / '+fmt(audio.duration);
+      });
+      bar.addEventListener('click',function(e){
+        var rect=bar.getBoundingClientRect();
+        var pct=Math.max(0,Math.min(1,(e.clientX-rect.left)/rect.width));
+        if(audio.duration) audio.currentTime=pct*audio.duration;
+      });
+      audio.addEventListener('ended',function(){
+        playBtn.textContent='\u25BA';player.classList.remove('playing');
+        fill.style.width='0%';timeEl.textContent='0:00';audio.currentTime=0;
+      });
+      var speedEl=player.querySelector('.val-speed');
+      if(speedEl){
+        speedEl.querySelectorAll('.speed-btn').forEach(function(btn){
+          btn.addEventListener('click',function(){
+            audio.playbackRate=parseFloat(btn.getAttribute('data-speed'));
+            speedEl.querySelectorAll('.speed-btn').forEach(function(b){b.classList.remove('active');});
+            btn.classList.add('active');
+          });
+        });
+      }
+    });
+  })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Market Registration — Project HPF</title>
+  <meta name="description" content="Register your farmers market with Project HPF. Claim your free listing and help build a stronger local food economy." />
+  <link rel="icon" href="images/5f7ee9_eef98a3952f34f5fb211625143e3e8ea_mv2.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Forum&family=Fahkwang:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=17">
+  <style>
+    .mr-page {
+      min-height: 100vh;
+      padding: 80px 24px 100px;
+      background: linear-gradient(180deg, #e3f2fd 0%, #fff 60%);
+    }
+    .mr-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+      padding: 48px 52px 52px;
+    }
+    .mr-header {
+      text-align: center;
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 2px solid #e3f2fd;
+    }
+    .mr-header h1 {
+      font-family: var(--font-accent);
+      font-size: 2.2rem;
+      color: #0489C7;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 0 0 12px;
+    }
+    .mr-header p {
+      font-family: var(--font-body);
+      font-size: 0.98rem;
+      color: #555;
+      margin: 0;
+      line-height: 1.6;
+    }
+    .mr-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .mr-form label {
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: #004d60;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .mr-form label .hint {
+      font-weight: 400;
+      font-size: 0.8rem;
+      color: #888;
+    }
+    .mr-form input[type="text"],
+    .mr-form input[type="email"],
+    .mr-form input[type="url"],
+    .mr-form textarea,
+    .mr-form select {
+      padding: 12px 16px;
+      border: 2px solid #b2dfdb;
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-size: 0.98rem;
+      background: #fff;
+      transition: border-color 0.3s;
+    }
+    .mr-form input:focus,
+    .mr-form textarea:focus,
+    .mr-form select:focus {
+      outline: none;
+      border-color: #0489C7;
+    }
+    .mr-form textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+    .mr-form .conditional {
+      margin-top: 8px;
+      padding: 14px 16px;
+      background: #f0f9ff;
+      border-left: 3px solid #0489C7;
+      border-radius: 0 8px 8px 0;
+      display: none;
+    }
+    .mr-form .conditional.show {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .mr-form .radio-row {
+      display: flex;
+      gap: 20px;
+      padding-top: 6px;
+      flex-wrap: wrap;
+    }
+    .mr-form .radio-row label {
+      flex-direction: row;
+      align-items: center;
+      gap: 8px;
+      font-weight: 400;
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
+    .mr-form .section-title {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: #0489C7;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-top: 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #e3f2fd;
+    }
+    .mr-form .btn-submit {
+      margin-top: 16px;
+      padding: 16px 36px;
+      background: #0489C7;
+      color: #fff;
+      border: 2px solid #0489C7;
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+    }
+    .mr-form .btn-submit:hover {
+      background: transparent;
+      color: #0489C7;
+    }
+    .mr-back {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #0489C7;
+      text-decoration: none;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    .mr-back:hover { text-decoration: underline; }
+
+    @media (max-width: 700px) {
+      .mr-inner { padding: 32px 24px 36px; }
+      .mr-header h1 { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+<section class="mr-page">
+  <div class="mr-inner">
+    <a href="buylocal" class="mr-back">&larr; Back to Buy Local</a>
+
+    <div class="mr-header">
+      <h1>Claim Your Free Market Page</h1>
+      <p>Register your farmers market with Project HPF and help build a stronger local food economy. There's no cost — just fill out the details below and we'll create your free listing.</p>
+    </div>
+
+    <form class="mr-form" action="#" method="post" id="marketForm">
+      <div class="section-title">Organizer Information</div>
+
+      <label>Organizer's Full Name *
+        <input type="text" name="organizer_name" placeholder="Your full name" required>
+      </label>
+
+      <label>Email Address *
+        <input type="email" name="email" placeholder="you@example.com" required>
+      </label>
+
+      <div class="section-title">Market Details</div>
+
+      <label>Market Name *
+        <input type="text" name="market_name" placeholder="e.g. Downtown Saturday Market" required>
+      </label>
+
+      <label>Market Type *
+        <select name="market_type" id="marketType" required>
+          <option value="">Select market type...</option>
+          <option value="fixed">Fixed Location</option>
+          <option value="mobile">Mobile / Traveling</option>
+        </select>
+      </label>
+
+      <div class="conditional" id="addressConditional">
+        <label>Market Address *
+          <input type="text" name="market_address" placeholder="Street address, city, state, zip">
+          <span class="hint">Where does your fixed market take place?</span>
+        </label>
+      </div>
+
+      <label>Operating Hours Type *
+        <select name="hours_type" id="hoursType" required>
+          <option value="">Select hours type...</option>
+          <option value="fixed">Fixed Schedule</option>
+          <option value="variable">Variable Schedule</option>
+        </select>
+      </label>
+
+      <div class="conditional" id="hoursConditional">
+        <label>Market Dates &amp; Hours *
+          <textarea name="market_hours" placeholder="e.g. Every Saturday 8am – 1pm, Wednesdays 3pm – 7pm"></textarea>
+          <span class="hint">List your recurring dates and hours.</span>
+        </label>
+      </div>
+
+      <div class="section-title">Online Presence</div>
+
+      <label>Website
+        <input type="url" name="website" placeholder="https://yourmarket.com">
+      </label>
+
+      <label>Social Media
+        <textarea name="social_media" placeholder="Instagram, Facebook, TikTok, etc. — one per line"></textarea>
+      </label>
+
+      <label>Do you list your market schedule on Facebook Events? *
+        <div class="radio-row">
+          <label><input type="radio" name="facebook_events" value="yes" required> Yes</label>
+          <label><input type="radio" name="facebook_events" value="no"> No</label>
+          <label><input type="radio" name="facebook_events" value="sometimes"> Sometimes</label>
+        </div>
+      </label>
+
+      <button type="submit" class="btn-submit">Submit Registration</button>
+    </form>
+  </div>
+</section>
+
+<script>
+  // Conditional field display logic
+  (function() {
+    var marketType = document.getElementById('marketType');
+    var addressConditional = document.getElementById('addressConditional');
+    var hoursType = document.getElementById('hoursType');
+    var hoursConditional = document.getElementById('hoursConditional');
+    var addressInput = addressConditional.querySelector('input');
+    var hoursInput = hoursConditional.querySelector('textarea');
+
+    function toggleAddress() {
+      if (marketType.value === 'fixed') {
+        addressConditional.classList.add('show');
+        addressInput.setAttribute('required', '');
+      } else {
+        addressConditional.classList.remove('show');
+        addressInput.removeAttribute('required');
+      }
+    }
+    function toggleHours() {
+      if (hoursType.value === 'fixed') {
+        hoursConditional.classList.add('show');
+        hoursInput.setAttribute('required', '');
+      } else {
+        hoursConditional.classList.remove('show');
+        hoursInput.removeAttribute('required');
+      }
+    }
+    marketType.addEventListener('change', toggleAddress);
+    hoursType.addEventListener('change', toggleHours);
+  })();
+</script>
+
+</body>
+</html>

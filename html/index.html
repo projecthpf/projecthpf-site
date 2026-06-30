@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Healing Prosperity and Freedom | Community</title>
+  <meta name="description" content="Project Healing Prosperity & Freedom is a non-profit organization that focuses on uniting citizens and organizations who are fighting to build a better society.">
+  <link rel="icon" href="images/5f7ee9_eef98a3952f34f5fb211625143e3e8ea_mv2.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Forum&family=Fahkwang:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=17">
+  <style>
+    /* ── Home Page Specific ── */
+
+    /* Hero Video Section */
+    .home-video {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 30px 24px 0;
+    }
+    .home-video .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 6px 30px rgba(0,0,0,0.2);
+    }
+    .home-video .video-wrapper iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+
+    /* Logo + Title Hero */
+    .home-hero {
+      padding: 12px 24px 30px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .hero-brand {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 16px;
+      margin-bottom: 16px;
+      padding: 20px 0;
+    }
+    .home-hero .logo-large {
+      width: 220px;
+      height: auto;
+      flex-shrink: 0;
+    }
+    .hero-brand-text h1 {
+      font-family: 'Fahkwang', sans-serif;
+      font-size: 3.4rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      line-height: 1.05;
+      margin: 0;
+      letter-spacing: 1px;
+      text-shadow: 2px 3px 4px rgba(0,0,0,0.15);
+      white-space: nowrap;
+    }
+    .hero-details {
+      text-align: center;
+      padding: 0 40px;
+      margin-top: -56px;
+    }
+    .home-hero .org-subtitle {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--blue-dark);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .home-hero .org-tagline {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--blue-dark);
+      font-weight: 600;
+    }
+    .home-hero .hero-disclaimer {
+      max-width: 1100px;
+      margin: 10px auto 0;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      color: var(--black);
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    /* Mission Section */
+    .home-mission {
+      padding: 50px 24px 40px;
+      background: url('images/nsplsh_335036453279326c797573_mv2_d_5760_3840_s_4_2.jpg') center/cover no-repeat;
+      position: relative;
+    }
+    .mission-header {
+      display: flex;
+      align-items: baseline;
+      gap: 24px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+    .mission-header {
+      max-width: 1100px;
+      margin: 0 auto 30px;
+    }
+    .mission-header h2 {
+      font-family: var(--font-body);
+      font-size: 3rem;
+      color: var(--white);
+      margin: 0;
+      text-shadow: 1px 2px 4px rgba(0,0,0,0.3);
+    }
+    .mission-tabs {
+      display: flex;
+      gap: 16px;
+    }
+    .mission-tabs span {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 4px 0;
+      border-bottom: 3px solid transparent;
+      cursor: pointer;
+    }
+    .mission-tabs .tab-healing { color: var(--green-primary); border-color: var(--green-primary); }
+    .mission-tabs .tab-prosperity { color: var(--green-primary); border-color: var(--green-primary); }
+    .mission-tabs .tab-freedom { color: var(--green-primary); border-color: var(--green-primary); }
+
+    .mission-photos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 30px;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .mission-photos .photo-card {
+      text-align: center;
+    }
+    .mission-photos .photo-card .label {
+      font-family: var(--font-head);
+      font-size: 1.7rem;
+      color: #0b9e42;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .mission-photos .photo-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 3px solid #ffffff;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+    }
+    .mission-text {
+      text-align: center;
+      margin-bottom: 20px;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .mission-text h3 {
+      font-family: var(--font-head);
+      font-size: 2rem;
+      color: var(--white);
+      margin-bottom: 16px;
+      text-shadow: 1px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    /* Participate Section */
+    .home-participate {
+      padding: 80px 24px;
+      position: relative;
+    }
+    .participate-img {
+      display: block;
+      width: 160%;
+      max-width: none;
+      height: auto;
+      margin-top: -125px;
+      margin-left: -30px;
+      margin-bottom: -40px;
+    }
+    .participate-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 0;
+      align-items: start;
+      background: #e5dccc;
+      border: 6px solid var(--green-primary);
+      border-radius: 4px;
+      padding: 40px 40px 0 40px;
+    }
+    .participate-text {
+      align-self: start;
+    }
+    .participate-text h2 {
+      font-family: var(--font-body);
+      font-size: 2.8rem;
+      color: var(--green-primary);
+      line-height: 1.15;
+      margin: 0;
+      text-align: left;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.25);
+    }
+    .participate-visual {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+    .participate-visual .circle-bg {
+      display: flex;
+      justify-content: center;
+    }
+    /* Participate — Mother Earth static image */
+    .participate-anim {
+      position: relative;
+      width: 100%;
+      max-width: 440px;
+      display: flex;
+      justify-content: center;
+    }
+    .me-static {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .me-layer {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+    /* Eye blink — uses scaleY on the eyes layer */
+    .me-eyes {
+      transform-origin: 50% 27%;
+      animation: me-blink 4s infinite;
+    }
+    @keyframes me-blink {
+      0%, 92%, 96%, 100% { transform: scaleY(1); }
+      94% { transform: scaleY(0.1); }
+    }
+    /* Right arm: rotate forward/up to grip bottom of phone */
+    .me-arm-right {
+      transform-origin: 58% 55%; /* near shoulder */
+      transform: rotate(-55deg) translate(-12%, -8%);
+    }
+    /* Peace arm: rotate down + across to swipe on the phone */
+    .me-arm-peace {
+      transform-origin: 22% 40%; /* near shoulder */
+      transform: rotate(70deg) translate(18%, -5%);
+      animation: me-swipe 2.2s ease-in-out infinite;
+    }
+    @keyframes me-swipe {
+      0%   { transform: rotate(70deg) translate(18%, -5%); }
+      35%  { transform: rotate(92deg) translate(18%, -5%); }
+      65%  { transform: rotate(50deg) translate(18%, -5%); }
+      100% { transform: rotate(70deg) translate(18%, -5%); }
+    }
+    /* Phone overlay */
+    .me-phone {
+      position: absolute;
+      left: 28%;
+      top: 42%;
+      width: 44%;
+      z-index: 5;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+    }
+    .me-phone svg { width: 100%; height: auto; display: block; }
+    /* Person cards slide across screen */
+    .person-card {
+      animation: person-slide 2.2s ease-in-out infinite;
+    }
+    .person-card.p1 { animation-delay: 0s; }
+    .person-card.p2 { animation-delay: 1.1s; }
+    @keyframes person-slide {
+      0%   { transform: translateX(130px); opacity: 0; }
+      15%  { opacity: 1; }
+      50%  { transform: translateX(0); opacity: 1; }
+      85%  { transform: translateX(-130px); opacity: 0; }
+      100% { transform: translateX(-130px); opacity: 0; }
+    }
+    @keyframes anim-float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    /* Layer ordering */
+    .me-body     { z-index: 1; }
+    .me-legs     { z-index: 0; }
+    .me-lips     { z-index: 2; }
+    .me-eyes     { z-index: 3; }
+    .me-arm-right { z-index: 6; }
+    .me-arm-peace { z-index: 7; }
+
+    /* Did You Know Section */
+    .home-didyouknow {
+      padding: 60px 24px;
+      background: var(--cream-light);
+    }
+    .home-didyouknow .dyk-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .dyk-inner {
+      display: grid;
+      grid-template-columns: auto auto 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .dyk-left h2 {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 3.2rem;
+      color: #0489C7;
+      line-height: 1.1;
+      text-shadow: 2px 3px 5px rgba(0,0,0,0.3);
+      margin: 0;
+    }
+    .dyk-art {
+      flex-shrink: 0;
+      position: relative;
+    }
+    .dyk-art img,
+    .dyk-art video {
+      max-width: 280px;
+      height: auto;
+      display: block;
+    }
+    .dyk-silhouette {
+      position: relative;
+      width: 480px;
+      height: 480px;
+      margin-left: 40px;
+      overflow: hidden;
+      -webkit-mask-image: url('images/animation/container-box-1.png?v=3');
+              mask-image: url('images/animation/container-box-1.png?v=3');
+      -webkit-mask-size: 85% 85%;
+              mask-size: 85% 85%;
+      -webkit-mask-repeat: no-repeat;
+              mask-repeat: no-repeat;
+      -webkit-mask-position: -60px center;
+              mask-position: -60px center;
+    }
+    .dyk-silhouette video,
+    .dyk-silhouette img.dyk-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+    .dyk-quote {
+      max-width: 600px;
+      margin-left: -120px;
+    }
+    .dyk-quote p {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 1.85rem;
+      line-height: 1.4;
+      color: #0489C7;
+      margin: 0 0 14px 0;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.25);
+    }
+    .dyk-quote .author {
+      font-weight: 400;
+      font-size: 0.8rem;
+      color: #0489C7;
+      display: inline;
+    }
+    .dyk-quote a.btn {
+      display: inline-block;
+      margin-top: 24px;
+    }
+    .dyk-quote a.btn-outline-green {
+      border-color: #0489C7;
+      color: #0489C7;
+    }
+    .dyk-quote a.btn-outline-green:hover {
+      background: #0489C7;
+      color: var(--white);
+    }
+
+    /* Community & Membership Unified Section */
+    .home-community {
+      background: transparent;
+      padding: 100px 24px 20px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+    .community-bg {
+      background: url('images/nsplsh_335036453279326c797573_mv2_d_5760_3840_s_4_2.jpg') center/cover no-repeat;
+      border-radius: 16px;
+      padding: 50px 48px;
+      position: relative;
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .community-inner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 30px;
+      align-items: center;
+      width: 100%;
+    }
+    .community-text {
+      text-align: left;
+      background: rgba(80, 20, 120, 0.55);
+      padding: 24px;
+      border-radius: 12px;
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .community-right-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+    }
+    .community-earth {
+      width: 240px;
+      height: auto;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+    }
+    .community-text h2 {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--white);
+      margin-bottom: 10px;
+      text-shadow: 1px 2px 4px rgba(0,0,0,0.4);
+      max-width: 260px;
+    }
+    .community-text p {
+      font-family: var(--font-body);
+      font-size: 0.84rem;
+      color: var(--white);
+      line-height: 1.7;
+      margin-bottom: 14px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+      max-width: 230px;
+    }
+    .community-text p.community-note {
+      font-size: 0.78rem;
+      opacity: 0.9;
+      margin-bottom: 0;
+      white-space: nowrap;
+    }
+    .member-cta-btn {
+      display: inline-block;
+      padding: 12px 36px;
+      background: var(--white);
+      color: var(--green-primary);
+      border: 2px solid var(--white);
+      border-radius: 4px;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+      text-decoration: none;
+      margin-bottom: 8px;
+    }
+    .member-cta-btn:hover {
+      background: transparent;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .btn-outline-green {
+      display: inline-block;
+      padding: 12px 36px;
+      border: 2px solid var(--green-primary);
+      color: var(--green-primary);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background 0.3s, color 0.3s;
+    }
+    .btn-outline-green:hover {
+      background: var(--green-primary);
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    @media (max-width: 900px) {
+      .participate-inner { grid-template-columns: 1fr; text-align: center; }
+      .participate-visual .circle-bg { width: 260px; height: 260px; margin: 0 auto; }
+      .dyk-inner { grid-template-columns: 1fr; text-align: center; }
+      .dyk-right { flex-direction: column; }
+      .community-bg { padding: 28px 20px; margin: 0 12px; max-width: 100%; }
+      .community-inner { grid-template-columns: 1fr; text-align: center; }
+      .community-text { text-align: center; }
+      .community-right-col { align-items: center; }
+      .community-earth { width: 180px; }
+      .mission-photos { grid-template-columns: 1fr; }
+      .hero-brand { flex-direction: column; text-align: center; justify-content: center; }
+      .hero-brand-text h1 { font-size: 2rem; }
+      .home-hero .logo-large { width: 160px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Background Shapes -->
+  <div class="bg-shapes">
+    <span class="shape1"></span>
+    <span class="shape2"></span>
+    <span class="shape3"></span>
+    <span class="shape4"></span>
+    <span class="shape5"></span>
+    <span class="shape6"></span>
+    <span class="shape7"></span>
+    <span class="shape8"></span>
+    <span class="shape9"></span>
+    <span class="shape10"></span>
+    <span class="shape11"></span>
+    <span class="shape12"></span>
+  </div>
+
+  <!-- ══════════ NAVIGATION ══════════ -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index" class="nav-logo nav-logo--wide">
+        <img src="images/phpf-logo-wide-hd.png" alt="ProjectHPF.org">
+      </a>
+      <button class="nav-toggle">&#9776;</button>
+      <div class="nav-links">
+        <div class="dropdown">
+          <a href="themission">THE MISSION</a>
+          <div class="dropdown-menu">
+            <a href="themission#healing">Healing</a>
+            <a href="themission#prosperity">Prosperity</a>
+            <a href="themission#freedom">Freedom</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="participate">PARTICIPATE</a>
+          <div class="dropdown-menu">
+            <a href="liberatedemocracy">Liberate Democracy</a>
+            <a href="buylocal">Buy Local</a><a href="enrich-community">Enrich Community</a>
+          </div>
+        </div>
+        <a href="didyouknow">DID YOU KNOW</a>
+        <div class="dropdown">
+          <a href="resources">RESOURCES</a>
+          <div class="dropdown-menu">
+            <a href="resources#documentaries">Enlightening Documentaries</a>
+            <a href="resources#books">Good Reads</a>
+            <a href="resources#discover">Podcast</a>
+            <a href="resources#news-orgs">News</a>
+            <a href="resources#foundations">Other Organizations</a>
+            <a href="https://www.liberationofeducation.org" target="_blank">Liberation of Education</a>
+          </div>
+        </div>
+        <a href="events">EVENTS</a>
+        <div class="dropdown">
+          <a href="donate">DONATE</a>
+          <div class="dropdown-menu">
+            <a href="sponsor">Be A Sponsor</a>
+          </div>
+        </div>
+        <a href="shop">SHOP</a>
+        <a href="blog">BLOG</a>
+      </div>
+      <div class="nav-right">
+        <a href="https://members.projecthpf.org/auth/login" class="btn-member">MEMBERS</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══════════ HERO VIDEO ══════════ -->
+  <section class="home-video">
+    <div class="video-wrapper">
+      <iframe id="hero-video" src="https://www.youtube.com/embed/GsYt43zQoPY?autoplay=0&mute=0&start=0&loop=1&playlist=GsYt43zQoPY&rel=0&enablejsapi=1" title="Project HPF" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- ══════════ LOGO + TITLE ══════════ -->
+  <section class="home-hero">
+    <div class="hero-brand">
+      <img src="images/5f7ee9_eef98a3952f34f5fb211625143e3e8ea_mv2.png" alt="Project HPF Logo" class="logo-large">
+      <div class="hero-brand-text">
+        <h1>PROJECT HEALING<br>PROSPERITY &amp;&nbsp;FREEDOM</h1>
+      </div>
+    </div>
+    <div class="hero-details">
+      <p class="org-subtitle">A Non-Profit Organization</p>
+      <p class="org-tagline">Please take some time to contemplate the ideas on each page.</p>
+      <p class="hero-disclaimer">Disclaimer: Project Healing Prosperity &amp; Freedom, Inc is pleased to provide diverse ideas from across the world that we hope will spark listeners' curiosity and broaden their worldview. Project Healing Prosperity &amp; Freedom, Inc does not endorse all of the perspectives, ideas and information put forward in any of the external content presented and invites listeners to have an open mind but question everything as they draw their own conclusions.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ THE MISSION ══════════ -->
+  <section class="home-mission">
+    <div class="mission-header">
+      <h2><span style="text-decoration:underline;text-decoration-color:var(--white);text-underline-offset:6px">The&nbsp;</span><span style="color:var(--green-primary);text-decoration:underline;text-decoration-color:var(--green-primary);text-underline-offset:6px">Mission</span></h2>
+    </div>
+    <div class="mission-photos">
+      <div class="photo-card">
+        <div class="label">Healing</div>
+        <img src="images/Group_20of_20diverse_20hands_20holding_20each_20othe.jpg" alt="Healing - Diverse hands holding together">
+      </div>
+      <div class="photo-card">
+        <div class="label">Prosperity</div>
+        <img src="images/Happy_20Sparklers.jpg" alt="Prosperity - People celebrating with sparklers">
+      </div>
+      <div class="photo-card">
+        <div class="label">Freedom</div>
+        <img src="images/Image_20by_20Jason_20Hogan.jpg" alt="Freedom - Person with arms open on mountain">
+      </div>
+    </div>
+    <div class="mission-text">
+      <h3>Through Investing in Individuals</h3>
+      <a href="themission" class="btn btn-green">Learn More</a>
+    </div>
+  </section>
+
+  <!-- ══════════ EVERYONE CAN PARTICIPATE ══════════ -->
+  <section class="home-participate">
+    <div class="participate-inner">
+      <div class="participate-text">
+        <h2>Everyone<br>Can<br>Participate!</h2>
+        <img src="images/everyone-participate.png" alt="Everyone Can Participate" class="participate-img">
+      </div>
+      <div class="participate-visual">
+        <div class="participate-anim">
+          <img src="images/animation/mother-earth-v2-clean.png" alt="Mother Earth" class="me-static">
+          <div class="me-phone" style="display:none">
+            <svg viewBox="0 0 160 200" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="3" width="154" height="194" rx="14" fill="#2e2e2e"/>
+              <rect x="7" y="7" width="146" height="186" rx="11" fill="#1a1a1a"/>
+              <rect x="10" y="10" width="140" height="180" rx="8" fill="#f0e9d8"/>
+              <rect x="10" y="10" width="140" height="14" rx="0" fill="#0b9e42"/>
+              <text x="15" y="20" font-family="Arial, sans-serif" font-size="8" fill="#fff" font-weight="bold">HPF</text>
+              <circle cx="143" cy="17" r="1.8" fill="#fff"/>
+              <circle cx="137" cy="17" r="1.8" fill="#fff"/>
+              <circle cx="131" cy="17" r="1.8" fill="#fff"/>
+              <clipPath id="phoneScreenClip3">
+                <rect x="10" y="24" width="140" height="166" rx="0"/>
+              </clipPath>
+              <g clip-path="url(#phoneScreenClip3)">
+                <g class="person-card p1">
+                  <rect x="18" y="38" width="124" height="142" rx="8" fill="#fff" stroke="#d4c8a8" stroke-width="1.5"/>
+                  <circle cx="80" cy="78" r="28" fill="#8b5a3c"/>
+                  <path d="M 52 78 Q 52 50 80 50 Q 108 50 108 78 Z" fill="#2a1a10"/>
+                  <circle cx="71" cy="76" r="3" fill="#1a1a1a"/>
+                  <circle cx="89" cy="76" r="3" fill="#1a1a1a"/>
+                  <path d="M 71 88 Q 80 94 89 88" stroke="#1a1a1a" stroke-width="2" fill="none" stroke-linecap="round"/>
+                  <rect x="34" y="118" width="92" height="7" rx="3.5" fill="#0b9e42"/>
+                  <rect x="40" y="132" width="80" height="5" rx="2.5" fill="#c4b5a5"/>
+                  <rect x="46" y="143" width="68" height="5" rx="2.5" fill="#c4b5a5"/>
+                  <circle cx="80" cy="164" r="8" fill="#df3131"/>
+                  <path d="M 76 164 L 80 168 L 84 160" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/>
+                </g>
+                <g class="person-card p2">
+                  <rect x="18" y="38" width="124" height="142" rx="8" fill="#fff" stroke="#d4c8a8" stroke-width="1.5"/>
+                  <circle cx="80" cy="78" r="28" fill="#f4d0b0"/>
+                  <path d="M 50 74 Q 48 48 80 48 Q 112 48 110 74 Q 106 60 80 60 Q 54 60 50 74 Z" fill="#c44e1a"/>
+                  <circle cx="71" cy="76" r="3" fill="#1a1a1a"/>
+                  <circle cx="89" cy="76" r="3" fill="#1a1a1a"/>
+                  <path d="M 71 88 Q 80 94 89 88" stroke="#1a1a1a" stroke-width="2" fill="none" stroke-linecap="round"/>
+                  <rect x="34" y="118" width="92" height="7" rx="3.5" fill="#2c7dc2"/>
+                  <rect x="40" y="132" width="80" height="5" rx="2.5" fill="#c4b5a5"/>
+                  <rect x="46" y="143" width="68" height="5" rx="2.5" fill="#c4b5a5"/>
+                  <circle cx="80" cy="164" r="8" fill="#0b9e42"/>
+                  <path d="M 76 164 L 80 168 L 84 160" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/>
+                </g>
+              </g>
+            </svg>
+          </div>
+
+        </div>
+        <a href="participate" class="btn btn-outline-green">Learn How</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ DID YOU KNOW ══════════ -->
+  <section class="home-didyouknow">
+    <div class="dyk-inner">
+      <div class="dyk-left">
+        <h2>Did<br>You<br>Know?</h2>
+      </div>
+      <div class="dyk-art">
+        <div class="dyk-silhouette">
+          <video class="dyk-fill" autoplay loop muted playsinline>
+            <source src="images/animation/container-box-video-2.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="dyk-quote">
+        <p>The mind is a powerful place and what you feed it can affect you in a powerful way. <span class="author">Nathan Feuerstein</span></p>
+        <a href="didyouknow" class="btn btn-outline-green">Learn Useful Information</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ COMMUNITY & MEMBERSHIP ══════════ -->
+  <section class="home-community">
+    <div class="community-bg">
+      <div class="community-inner">
+        <div class="community-text">
+          <h2>Join Our Revolutionist Community</h2>
+          <p>Communicate, collaborate, and connect with citizens committed to healing, prosperity &amp; freedom. Become a PHPF member for just $1/month and gain exclusive access to our member directory, content library, and Liberate Democracy voting.</p>
+          <p class="community-note">Membership unlocks the full PHPF experience.</p>
+        </div>
+        <div class="community-right-col">
+          <img src="images/animation/mother-earth-v2-clean.png" alt="Mother Earth" class="community-earth">
+          <a href="https://members.projecthpf.org/auth/register" class="member-cta-btn">Join Now — $1/mo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ FOOTER ══════════ -->
+  <footer class="site-footer">
+    <p class="footer-disclaimer">Disclaimer: Project Healing Prosperity &amp; Freedom, Inc is pleased to provide diverse ideas from across the world that we hope will spark listeners' curiosity and broaden their worldview. Project Healing Prosperity &amp; Freedom, Inc does not endorse all of the perspectives, ideas and information put forward in any of the external content presented and invites listeners to have an open mind but question everything as they draw their own conclusions.</p>
+    <p class="footer-org">Project Healing<br>Prosperity &amp; Freedom, Inc</p>
+    <a href="mailto:info@projecthpf.org" class="footer-email">info@projecthpf.org</a>
+    <div class="footer-social">
+      <a href="https://twitter.com/ProjectHPF" title="Twitter"><img src="images/11062b_07090bba1daa42c880682389a46508db_mv2.png" alt="Twitter" style="width:24px;height:24px;"></a>
+      <a href="https://www.instagram.com/projecthpf" title="Instagram"><img src="images/11062b_55e4be1e75564866b6c28290f9a9d271_mv2.png" alt="Instagram" style="width:24px;height:24px;"></a>
+      <a href="https://www.facebook.com/ProjectHPF21" title="Facebook"><img src="images/11062b_a84995cc8b024f4ea398f5744a56bc27_mv2.png" alt="Facebook" style="width:24px;height:24px;"></a>
+      <a href="https://www.tiktok.com/@projecthpf" title="TikTok"><img src="images/11062b_8e8bb1bfaeb54186ace77d5ab14933ff_mv2.png" alt="TikTok" style="width:24px;height:24px;"></a>
+    </div>
+    <div class="footer-links">
+      <a href="privacy">Privacy Policy</a>
+      <a href="terms">Terms and Conditions</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var hero = document.getElementById('hero-video');
+        if (hero) {
+          hero.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+        }
+      }, 3000);
+    });
+  </script>
+  <script>
+    setTimeout(() => {
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('revealed'));
+    }, 300);
+  </script>
+</body>
+</html>

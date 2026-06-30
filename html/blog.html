@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Project HPF</title>
+  <meta name="description" content="Writings from Project Healing Prosperity & Freedom on justice, liberty, and the path forward.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Forum&family=Fahkwang:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=17">
+  <link rel="icon" href="images/5f7ee9_eef98a3952f34f5fb211625143e3e8ea_mv2.png">
+  <style>
+    .blog-hero {
+      text-align: center;
+      padding: 80px 24px 30px;
+    }
+    .blog-hero h1 {
+      font-family: var(--font-accent);
+      font-size: 2.6rem;
+      color: var(--blue-dark);
+      text-transform: uppercase;
+      text-shadow: 2px 3px 5px rgba(0,0,0,0.2);
+      margin-bottom: 12px;
+    }
+    .blog-hero .tagline {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 1.05rem;
+      color: var(--gray-dark);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .blog-filters {
+      max-width: 1100px;
+      margin: 20px auto 10px;
+      padding: 14px 24px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .blog-chip {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 2px solid #e0e0e0;
+      background: #fff;
+      color: #444;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .blog-chip:hover { border-color: #0489C7; color: #0489C7; }
+    .blog-chip.active { background: #0489C7; color: #fff; border-color: #0489C7; }
+    .blog-search input {
+      padding: 8px 14px;
+      border: 2px solid #e0e0e0;
+      border-radius: 20px;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      min-width: 220px;
+    }
+
+    .blog-list {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 28px;
+    }
+    .blog-card {
+      background: #fff;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      transition: transform 0.25s, box-shadow 0.25s;
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+    }
+    .blog-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+      text-decoration: none;
+    }
+    .blog-card.hidden { display: none; }
+    .blog-card-img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: linear-gradient(135deg, #0489C7 0%, #06b6d4 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-family: 'Boogaloo', cursive;
+      font-size: 2.2rem;
+      text-align: center;
+      padding: 20px;
+    }
+    .blog-card-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .blog-card-category {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #0489C7;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+    .blog-card-title {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #1a1a2e;
+      margin-bottom: 8px;
+    }
+    .blog-card-excerpt {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 14px;
+      flex: 1;
+    }
+    .blog-card-meta {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      color: #888;
+      display: flex;
+      gap: 10px;
+    }
+    .blog-empty {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--gray-dark);
+      font-family: var(--font-body);
+      font-size: 1.1rem;
+      grid-column: 1 / -1;
+    }
+
+    @media (max-width: 768px) {
+      .blog-hero h1 { font-size: 1.8rem; }
+      .blog-filters { flex-direction: column; align-items: stretch; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-shapes">
+    <span class="shape1"></span><span class="shape2"></span><span class="shape3"></span>
+    <span class="shape4"></span><span class="shape5"></span><span class="shape6"></span>
+    <span class="shape7"></span><span class="shape8"></span><span class="shape9"></span>
+    <span class="shape10"></span><span class="shape11"></span><span class="shape12"></span>
+  </div>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index" class="nav-logo"><img src="images/phpf-logo-icon-hd.png" alt="Project HPF"></a>
+      <button class="nav-toggle">&#9776;</button>
+      <div class="nav-links">
+        <div class="dropdown"><a href="themission">THE MISSION</a><div class="dropdown-menu"><a href="themission#healing">Healing</a><a href="themission#prosperity">Prosperity</a><a href="themission#freedom">Freedom</a></div></div>
+        <div class="dropdown"><a href="participate">PARTICIPATE</a><div class="dropdown-menu"><a href="liberatedemocracy">Liberate Democracy</a><a href="buylocal">Buy Local</a><a href="enrich-community">Enrich Community</a></div></div>
+        <a href="didyouknow">DID YOU KNOW</a>
+        <div class="dropdown"><a href="resources">RESOURCES</a><div class="dropdown-menu"><a href="resources#documentaries">Enlightening Documentaries</a><a href="resources#books">Good Reads</a><a href="resources#discover">Podcast</a><a href="resources#news-orgs">News</a><a href="resources#foundations">Other Organizations</a><a href="https://www.liberationofeducation.org" target="_blank">Liberation of Education</a></div></div>
+        <a href="events">EVENTS</a>
+        <div class="dropdown"><a href="donate">DONATE</a><div class="dropdown-menu"><a href="sponsor">Be A Sponsor</a></div></div>
+        <a href="shop">SHOP</a>
+        <a href="blog">BLOG</a>
+      </div>
+      <div class="nav-right">
+        <a href="https://members.projecthpf.org/auth/login" class="btn-member">MEMBERS</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="blog-hero">
+    <h1 class="reveal">The Blog</h1>
+    <p class="tagline reveal">Long-form writings on justice, liberty, and the path forward. From the founders, members, and friends of Project HPF.</p>
+  </section>
+
+  <div class="blog-filters reveal">
+    <div style="display:flex; flex-wrap:wrap; gap:8px; align-items:center;">
+      <button class="blog-chip active" data-filter="all">All</button>
+      <button class="blog-chip" data-filter="letters">Letters</button>
+      <button class="blog-chip" data-filter="essays">Essays</button>
+      <button class="blog-chip" data-filter="reform">Reform</button>
+      <button class="blog-chip" data-filter="freedom">Freedom</button>
+    </div>
+    <div class="blog-search">
+      <input type="text" id="blogSearch" placeholder="Search posts…">
+    </div>
+  </div>
+
+  <div class="blog-list" id="blogList">
+
+    <a href="blog-letter-to-all-americans" class="blog-card" data-category="letters reform freedom" data-title="A Letter to All Americans">
+      <div class="blog-card-img">A Letter to All Americans</div>
+      <div class="blog-card-body">
+        <div class="blog-card-category">Letter · Reform</div>
+        <div class="blog-card-title">A Letter to All Americans</div>
+        <div class="blog-card-excerpt">Dear American — the environment in our country is tense. I want to prove to you that it's actually the way we use the rule of law that creates social injustice, and show you a path forward rooted in compassion.</div>
+        <div class="blog-card-meta">
+          <span>Lacey Price</span>
+          <span>·</span>
+          <span>Jul 6, 2021</span>
+          <span>·</span>
+          <span>9 min read</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="blog-redefining-wealth" class="blog-card" data-category="essays reform" data-title="Redefining Wealth LifeCoin UBI">
+      <div class="blog-card-img">Redefining Wealth</div>
+      <div class="blog-card-body">
+        <div class="blog-card-category">Essay · Reform</div>
+        <div class="blog-card-title">Redefining Wealth: How LifeCoin, UBI, and Partnerships Could Solve World Hunger</div>
+        <div class="blog-card-excerpt">Food scarcity isn't an inherent problem — it's a priorities problem. A LifeCoin economy tied to food production, paired with UBI, could feed the world.</div>
+        <div class="blog-card-meta">
+          <span>Lacey Price</span>
+          <span>·</span>
+          <span>Dec 22, 2024</span>
+          <span>·</span>
+          <span>4 min read</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="blog-abraham-founding-father" class="blog-card" data-category="essays freedom" data-title="Abraham Founding Father Three World Religions">
+      <div class="blog-card-img">Abraham: Founding Father</div>
+      <div class="blog-card-body">
+        <div class="blog-card-category">Essay · Freedom</div>
+        <div class="blog-card-title">Abraham: The Founding Father of Three Major World Religions and The Beginning of a Long Running Family Feud</div>
+        <div class="blog-card-excerpt">Why do Jews, Christians, and Muslims all claim the same land? The answer begins with one patriarch — Abraham — and a family divided.</div>
+        <div class="blog-card-meta">
+          <span>Eden Terra</span>
+          <span>·</span>
+          <span>Aug 13, 2024</span>
+          <span>·</span>
+          <span>10 min read</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="blog-palestinian-israeli-conflict" class="blog-card" data-category="essays freedom" data-title="Palestinian Israeli Conflict Conscious Awakening">
+      <div class="blog-card-img">Unveiling the Truth</div>
+      <div class="blog-card-body">
+        <div class="blog-card-category">Essay · Freedom</div>
+        <div class="blog-card-title">Unveiling the Truth: The Palestinian-Israeli Conflict and the Fight for a World Wide Conscious Awakening</div>
+        <div class="blog-card-excerpt">A look at the four categories of humanity engaging with this conflict, the shared history of Abraham's descendants, and the paradigm shift required to heal it.</div>
+        <div class="blog-card-meta">
+          <span>Eden Terra</span>
+          <span>·</span>
+          <span>Aug 6, 2024</span>
+          <span>·</span>
+          <span>6 min read</span>
+        </div>
+      </div>
+    </a>
+
+    <div class="blog-empty" id="blogEmpty" style="display:none;">No posts match your filters.</div>
+  </div>
+
+  <script>
+    (function(){
+      var chips = document.querySelectorAll('.blog-chip');
+      var search = document.getElementById('blogSearch');
+      var list = document.getElementById('blogList');
+      var empty = document.getElementById('blogEmpty');
+      var activeFilter = 'all';
+      function apply() {
+        var q = search.value.trim().toLowerCase();
+        var cards = Array.from(list.querySelectorAll('.blog-card'));
+        var visible = 0;
+        cards.forEach(function(c){
+          var cats = c.dataset.category.split(/\s+/);
+          var title = c.dataset.title.toLowerCase();
+          var matchCat = activeFilter === 'all' || cats.indexOf(activeFilter) !== -1;
+          var matchQ = !q || title.indexOf(q) !== -1;
+          if (matchCat && matchQ) { c.classList.remove('hidden'); visible++; }
+          else c.classList.add('hidden');
+        });
+        empty.style.display = visible === 0 ? 'block' : 'none';
+      }
+      chips.forEach(function(chip){
+        chip.addEventListener('click', function(){
+          chips.forEach(function(c){ c.classList.remove('active'); });
+          chip.classList.add('active');
+          activeFilter = chip.dataset.filter;
+          apply();
+        });
+      });
+      search.addEventListener('input', apply);
+    })();
+  </script>
+
+  <footer class="site-footer">
+    <p class="footer-disclaimer">Disclaimer: Project Healing Prosperity &amp; Freedom, Inc is pleased to provide diverse ideas from across the world that we hope will spark listeners' curiosity and broaden their worldview. Project Healing Prosperity &amp; Freedom, Inc does not endorse all of the perspectives, ideas and information put forward in any of the external content presented and invites listeners to have an open mind but question everything as they draw their own conclusions.</p>
+    <p class="footer-org">Project Healing<br>Prosperity &amp; Freedom, Inc</p>
+    <a href="mailto:info@projecthpf.org" class="footer-email">info@projecthpf.org</a>
+    <div class="footer-social">
+      <a href="https://twitter.com/ProjectHPF" title="Twitter"><img src="images/11062b_07090bba1daa42c880682389a46508db_mv2.png" alt="Twitter" style="width:24px;height:24px;"></a>
+      <a href="https://www.instagram.com/projecthpf" title="Instagram"><img src="images/11062b_55e4be1e75564866b6c28290f9a9d271_mv2.png" alt="Instagram" style="width:24px;height:24px;"></a>
+      <a href="https://www.facebook.com/ProjectHPF21" title="Facebook"><img src="images/11062b_a84995cc8b024f4ea398f5744a56bc27_mv2.png" alt="Facebook" style="width:24px;height:24px;"></a>
+      <a href="https://www.tiktok.com/@projecthpf" title="TikTok"><img src="images/11062b_8e8bb1bfaeb54186ace77d5ab14933ff_mv2.png" alt="TikTok" style="width:24px;height:24px;"></a>
+    </div>
+    <div class="footer-links">
+      <a href="privacy">Privacy Policy</a>
+      <a href="terms">Terms and Conditions</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

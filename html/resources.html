@@ -1,0 +1,1606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources &mdash; Project HPF</title>
+  <meta name="description" content="Explore curated YouTube channels, inspiring individuals, and organizations making a positive impact. Arm yourself with knowledge.">
+  <link rel="icon" type="image/png" href="images/5f7ee9_eef98a3952f34f5fb211625143e3e8ea_mv2.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Forum&family=Fahkwang:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=17">
+  <style>
+    /* Hero */
+    .resources-hero {
+      text-align: center;
+      padding: 80px 24px 20px;
+      background: transparent;
+    }
+    .hero-image-wrap {
+      position: relative;
+      max-width: 700px;
+      width: 100%;
+      margin: -30px auto -40px;
+    }
+    .resources-hero .hero-illustration {
+      display: block;
+      width: 100%;
+      border-radius: 12px;
+    }
+    .hero-earth {
+      position: absolute;
+      right: 80px;
+      bottom: 210px;
+      width: 220px;
+      height: auto;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+    }
+    .resources-hero h1 {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 3.5rem;
+      color: #0489C7;
+      margin-bottom: 0;
+      position: relative;
+      top: 40px;
+      text-shadow: 2px 3px 5px rgba(0,0,0,0.25);
+    }
+    .resources-hero h2 {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 1.3rem;
+      color: var(--green-dark);
+      margin-top: -80px;
+      margin-bottom: 8px;
+    }
+    .resources-hero .tagline {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 1.05rem;
+      color: var(--gray-dark);
+      font-style: normal;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    /* Documentaries Carousel */
+    .docs-section {
+      padding: 70px 24px;
+      background: linear-gradient(180deg, #e3f2fd 0%, #ffffff 100%);
+      position: relative;
+    }
+    .docs-section .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .docs-section h2.section-title {
+      font-family: var(--font-body);
+      font-size: 2rem;
+      color: #0489C7;
+      text-align: center;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-shadow: 2px 3px 5px rgba(0,0,0,0.15);
+    }
+    .docs-section .docs-subtitle {
+      text-align: center;
+      font-family: var(--font-body);
+      color: var(--gray-mid);
+      font-size: 1rem;
+      margin-bottom: 32px;
+      font-style: italic;
+    }
+    .docs-carousel-wrap {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .docs-carousel {
+      display: flex;
+      gap: 18px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding: 20px 8px 28px;
+      -ms-overflow-style: none;
+      scrollbar-width: thin;
+      scrollbar-color: #0489C7 #e3f2fd;
+    }
+    .docs-carousel::-webkit-scrollbar { height: 8px; }
+    .docs-carousel::-webkit-scrollbar-track { background: #e3f2fd; border-radius: 4px; }
+    .docs-carousel::-webkit-scrollbar-thumb { background: #0489C7; border-radius: 4px; }
+    .doc-card {
+      flex: 0 0 auto;
+      width: 180px;
+      scroll-snap-align: start;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.10);
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+    .doc-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(4,137,199,0.25);
+      text-decoration: none;
+    }
+    .doc-card .doc-poster {
+      width: 100%;
+      height: 240px;
+      background: #1a1a2e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .doc-card .doc-poster img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .doc-card.landscape {
+      width: 320px;
+    }
+    .doc-card.landscape .doc-poster {
+      height: 240px;
+    }
+    .doc-card .doc-title {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.82rem;
+      color: #004d60;
+      padding: 12px 10px;
+      text-align: center;
+      line-height: 1.35;
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .docs-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #0489C7;
+      color: #fff;
+      border: none;
+      font-size: 1.4rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      z-index: 3;
+      transition: background 0.3s;
+    }
+    .docs-nav-btn:hover { background: #026a9c; }
+    .docs-nav-btn.prev { left: -8px; }
+    .docs-nav-btn.next { right: -8px; }
+    @media (max-width: 700px) {
+      .doc-card { width: 140px; }
+      .docs-nav-btn { width: 36px; height: 36px; font-size: 1.1rem; }
+    }
+
+    /* Must Reads Books */
+    .books-section {
+      padding: 70px 24px;
+      background: var(--cream);
+    }
+    .books-section .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .books-section h2.section-title {
+      font-family: var(--font-body);
+      font-size: 2rem;
+      color: var(--green-dark);
+      text-align: center;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-shadow: 2px 3px 5px rgba(0,0,0,0.15);
+    }
+    .books-section .books-subtitle {
+      text-align: center;
+      font-family: var(--font-body);
+      color: var(--gray-mid);
+      font-size: 1rem;
+      margin-bottom: 32px;
+      font-style: italic;
+    }
+    .books-carousel-wrap {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .books-carousel {
+      display: flex;
+      gap: 18px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding: 20px 8px 28px;
+      -ms-overflow-style: none;
+      scrollbar-width: thin;
+      scrollbar-color: #2e7d32 #e8f5e9;
+    }
+    .books-carousel::-webkit-scrollbar { height: 8px; }
+    .books-carousel::-webkit-scrollbar-track { background: #e8f5e9; border-radius: 4px; }
+    .books-carousel::-webkit-scrollbar-thumb { background: #2e7d32; border-radius: 4px; }
+    .book-card {
+      flex: 0 0 auto;
+      width: 160px;
+      scroll-snap-align: start;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.10);
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+    .book-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(46,125,50,0.25);
+      text-decoration: none;
+    }
+    .book-card .book-cover {
+      width: 100%;
+      aspect-ratio: 2 / 3;
+      background: #e8f5e9;
+      display: block;
+      overflow: hidden;
+    }
+    .book-card .book-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .book-card .book-title {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.78rem;
+      color: #004d60;
+      padding: 10px 8px;
+      text-align: center;
+      line-height: 1.35;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .books-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #2e7d32;
+      color: #fff;
+      border: none;
+      font-size: 1.4rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      z-index: 3;
+      transition: background 0.3s;
+    }
+    .books-nav-btn:hover { background: #1b5e20; }
+    .books-nav-btn.prev { left: -8px; }
+    .books-nav-btn.next { right: -8px; }
+    @media (max-width: 700px) {
+      .book-card { width: 130px; }
+      .books-nav-btn { width: 36px; height: 36px; font-size: 1.1rem; }
+    }
+
+    /* Must Reads for Families (reuse book card styles with different accent color) */
+    .kids-books-section {
+      padding: 70px 24px;
+      background: linear-gradient(180deg, #fff3e0 0%, #ffffff 100%);
+    }
+    .kids-books-section .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .kids-books-section h2.section-title {
+      font-family: var(--font-body);
+      font-size: 2rem;
+      color: #e65100;
+      text-align: center;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-shadow: 2px 3px 5px rgba(0,0,0,0.15);
+    }
+    .kids-books-section .kids-subtitle {
+      text-align: center;
+      font-family: var(--font-body);
+      color: var(--gray-mid);
+      font-size: 1rem;
+      margin-bottom: 32px;
+      font-style: italic;
+    }
+    .kids-carousel {
+      display: flex;
+      gap: 18px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding: 20px 8px 28px;
+      -ms-overflow-style: none;
+      scrollbar-width: thin;
+      scrollbar-color: #e65100 #fff3e0;
+    }
+    .kids-carousel::-webkit-scrollbar { height: 8px; }
+    .kids-carousel::-webkit-scrollbar-track { background: #fff3e0; border-radius: 4px; }
+    .kids-carousel::-webkit-scrollbar-thumb { background: #e65100; border-radius: 4px; }
+    .kids-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #e65100;
+      color: #fff;
+      border: none;
+      font-size: 1.4rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      z-index: 3;
+      transition: background 0.3s;
+    }
+    .kids-nav-btn:hover { background: #bf360c; }
+    .kids-nav-btn.prev { left: -8px; }
+    .kids-nav-btn.next { right: -8px; }
+    .kids-carousel .book-card:hover {
+      box-shadow: 0 8px 24px rgba(230,81,0,0.25);
+    }
+    @media (max-width: 700px) {
+      .kids-nav-btn { width: 36px; height: 36px; font-size: 1.1rem; }
+    }
+
+    /* Interesting People & Podcasts */
+    .discover-section {
+      padding: 70px 24px;
+      background: rgba(255, 255, 255, 0.25);
+    }
+    .discover-section .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .discover-section h2.section-title {
+      font-family: var(--font-body);
+      font-size: 2rem;
+      color: #7b4fbd;
+      text-align: center;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-shadow: 2px 3px 5px rgba(0,0,0,0.15);
+    }
+    .discover-section .discover-subtitle {
+      text-align: center;
+      font-family: var(--font-body);
+      color: var(--gray-mid);
+      font-size: 1rem;
+      margin-bottom: 32px;
+      font-style: italic;
+    }
+    .discover-section h3.sub-title {
+      font-family: var(--font-body);
+      font-size: 1.3rem;
+      color: #7b4fbd;
+      text-align: center;
+      margin: 40px 0 16px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-shadow: 2px 3px 5px rgba(0,0,0,0.15);
+    }
+    .discover-section h3.sub-title:first-of-type { margin-top: 0; }
+    .discover-carousel {
+      display: flex;
+      gap: 18px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding: 20px 8px 28px;
+      -ms-overflow-style: none;
+      scrollbar-width: thin;
+      scrollbar-color: #7b4fbd #ede7f6;
+    }
+    .discover-carousel::-webkit-scrollbar { height: 8px; }
+    .discover-carousel::-webkit-scrollbar-track { background: #ede7f6; border-radius: 4px; }
+    .discover-carousel::-webkit-scrollbar-thumb { background: #7b4fbd; border-radius: 4px; }
+    .discover-card {
+      flex: 0 0 auto;
+      width: 140px;
+      scroll-snap-align: start;
+      text-decoration: none;
+      color: inherit;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .discover-card:hover {
+      transform: translateY(-4px);
+      text-decoration: none;
+    }
+    .discover-card .avatar-wrap {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 10px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+      background: #ede7f6;
+    }
+    .discover-card .avatar-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .discover-card .card-name {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.78rem;
+      color: #004d60;
+      line-height: 1.3;
+    }
+    .discover-carousel-wrap {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .discover-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #7b4fbd;
+      color: #fff;
+      border: none;
+      font-size: 1.3rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      z-index: 3;
+      transition: background 0.3s;
+    }
+    .discover-nav-btn:hover { background: #5e35b1; }
+    .discover-nav-btn.prev { left: -8px; }
+    .discover-nav-btn.next { right: -8px; }
+    @media (max-width: 700px) {
+      .discover-card { width: 110px; }
+      .discover-card .avatar-wrap { width: 85px; height: 85px; }
+      .discover-nav-btn { width: 34px; height: 34px; font-size: 1rem; }
+    }
+
+    /* YouTube Channels */
+    .yt-section {
+      background: var(--white);
+      padding: 60px 24px;
+    }
+    .yt-section .section-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+    .yt-section h2.section-title {
+      font-family: var(--font-body);
+      font-size: 1.6rem;
+      color: var(--blue-dark);
+      text-align: center;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-shadow: 2px 3px 5px rgba(0,0,0,0.15);
+    }
+
+    /* Category block */
+    .category-block {
+      margin-bottom: 30px;
+    }
+    .category-block h3 {
+      font-family: var(--font-body);
+      font-size: 1.1rem;
+      color: var(--green-dark);
+      margin-bottom: 16px;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .channel-row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .channel-item {
+      text-align: center;
+      width: 90px;
+    }
+    .channel-item .avatar {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      margin: 0 auto 6px;
+      overflow: hidden;
+      background: var(--off-white);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .channel-item .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .channel-item p {
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      color: var(--gray-dark);
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    /* News Organizations */
+    .news-section {
+      padding: 60px 24px;
+      background: var(--cream);
+      text-align: center;
+    }
+    .news-section .section-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+    .news-section h2.section-title {
+      font-family: var(--font-body);
+      font-size: 1.6rem;
+      color: var(--blue-dark);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      text-shadow: 2px 3px 5px rgba(0,0,0,0.15);
+    }
+    .news-subtitle {
+      font-size: 0.95rem;
+      color: var(--gray-mid);
+      margin-bottom: 30px;
+    }
+    .news-grid {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .news-card {
+      width: 200px;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.10);
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+    .news-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(4,137,199,0.25);
+      text-decoration: none;
+    }
+    .news-card .news-logo {
+      width: 100%;
+      height: 140px;
+      background: #3a3a3a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 16px;
+    }
+    .news-card .news-logo img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .news-card .news-name {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #004d60;
+      padding: 12px 10px;
+      text-align: center;
+      line-height: 1.35;
+    }
+
+    /* Foundations */
+    .foundations-section {
+      padding: 60px 24px;
+      background: var(--cream);
+      text-align: center;
+    }
+    .foundations-section .section-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+    .foundations-section h2.section-title {
+      font-family: var(--font-body);
+      font-size: 1.6rem;
+      color: var(--blue-dark);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      text-shadow: 2px 3px 5px rgba(0,0,0,0.15);
+    }
+    .foundations-subtitle {
+      font-size: 0.95rem;
+      color: var(--gray-mid);
+      margin-bottom: 30px;
+    }
+    .foundations-grid {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .foundation-card {
+      width: 170px;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.10);
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+    .foundation-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(4,137,199,0.25);
+      text-decoration: none;
+    }
+    .foundation-card .foundation-logo {
+      width: 100%;
+      height: 120px;
+      background: #f5f5f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 12px;
+    }
+    .foundation-card .foundation-logo img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .foundation-card .foundation-name {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.78rem;
+      color: #004d60;
+      padding: 10px 8px;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    /* Interesting People */
+    .people-section {
+      padding: 60px 24px;
+      background: var(--cream);
+      text-align: center;
+    }
+    .people-section .section-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+    .people-section h2 {
+      font-family: var(--font-body);
+      font-size: 1.6rem;
+      color: var(--blue-dark);
+      text-align: center;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .people-grid {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+    .person-card {
+      text-align: center;
+      width: 110px;
+    }
+    .person-card .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: 0 auto 8px;
+      overflow: hidden;
+      background: var(--off-white);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .person-card .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .person-card p {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      color: var(--gray-dark);
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    /* Organizations */
+    .orgs-section {
+      padding: 60px 24px;
+      background: var(--white);
+    }
+    .orgs-section .section-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      text-align: center;
+    }
+    .orgs-section h2 {
+      font-family: var(--font-body);
+      font-size: 1.6rem;
+      color: var(--blue-dark);
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .orgs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .org-card {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      background: var(--white);
+    }
+    .org-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .org-card .overlay {
+      position: relative;
+    }
+    .org-card .play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50px;
+      height: 50px;
+      background: rgba(0,0,0,0.6);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 1.2rem;
+    }
+
+    /* Quotes */
+    .quotes-section {
+      padding: 50px 24px;
+      background: var(--cream);
+      text-align: center;
+    }
+    .quotes-section .quote-text {
+      font-family: var(--font-body);
+      font-size: 1.1rem;
+      color: var(--gray-mid);
+      font-style: italic;
+      max-width: 700px;
+      margin: 0 auto 6px;
+      line-height: 1.6;
+    }
+    .quotes-section .quote-author {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--gray-light);
+      margin-bottom: 30px;
+    }
+
+    /* Community & Membership */
+    .home-community {
+      background: transparent;
+      padding: 100px 24px 20px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+    .community-bg {
+      background: url('images/nsplsh_335036453279326c797573_mv2_d_5760_3840_s_4_2.jpg') center/cover no-repeat;
+      border-radius: 16px;
+      padding: 50px 48px;
+      position: relative;
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .community-inner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 30px;
+      align-items: center;
+    }
+    .community-text {
+      text-align: left;
+      background: rgba(80, 20, 120, 0.55);
+      padding: 24px;
+      border-radius: 12px;
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .community-right-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+    }
+    .community-earth {
+      width: 240px;
+      height: auto;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+    }
+    .community-text h2 {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--white);
+      margin-bottom: 10px;
+      text-shadow: 1px 2px 4px rgba(0,0,0,0.4);
+      max-width: 260px;
+    }
+    .community-text p {
+      font-family: var(--font-body);
+      font-size: 0.84rem;
+      color: var(--white);
+      line-height: 1.7;
+      margin-bottom: 14px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+      max-width: 230px;
+    }
+    .community-text p.community-note {
+      font-size: 0.78rem;
+      opacity: 0.9;
+      margin-bottom: 0;
+      white-space: nowrap;
+    }
+    .member-cta-btn {
+      display: inline-block;
+      padding: 12px 36px;
+      background: var(--white);
+      color: var(--green-primary);
+      border: 2px solid var(--white);
+      border-radius: 4px;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+      text-decoration: none;
+      margin-bottom: 8px;
+    }
+    .member-cta-btn:hover {
+      background: transparent;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    @media (max-width: 900px) {
+      .community-bg { padding: 28px 20px; margin: 0 12px; max-width: 100%; }
+      .community-inner { grid-template-columns: 1fr; text-align: center; }
+      .community-text { text-align: center; }
+      .community-right-col { align-items: center; }
+      .community-earth { width: 180px; }
+    }
+    @media (max-width: 768px) {
+      .resources-hero h1 { font-size: 2.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Background Shapes -->
+<div class="bg-shapes">
+  <span class="shape1"></span>
+  <span class="shape2"></span>
+  <span class="shape3"></span>
+  <span class="shape4"></span>
+  <span class="shape5"></span>
+  <span class="shape6"></span>
+  <span class="shape7"></span>
+  <span class="shape8"></span>
+  <span class="shape9"></span>
+  <span class="shape10"></span>
+  <span class="shape11"></span>
+  <span class="shape12"></span>
+</div>
+
+<!-- Navigation -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index" class="nav-logo">
+      <img src="images/phpf-logo-icon-hd.png" alt="Project HPF">
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+    <div class="nav-links">
+      <div class="dropdown">
+        <a href="themission">THE MISSION</a>
+        <div class="dropdown-menu">
+          <a href="themission">Healing</a>
+          <a href="themission">Prosperity</a>
+          <a href="themission">Freedom</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="participate">PARTICIPATE</a>
+        <div class="dropdown-menu">
+          <a href="liberatedemocracy">Liberate Democracy</a>
+          <a href="buylocal">Buy Local</a><a href="enrich-community">Enrich Community</a>
+        </div>
+      </div>
+      <a href="didyouknow">DID YOU KNOW</a>
+      <div class="dropdown">
+        <a href="resources" class="active">RESOURCES</a>
+        <div class="dropdown-menu">
+          <a href="resources#documentaries">Enlightening Documentaries</a>
+          <a href="resources#books">Good Reads</a>
+          <a href="resources#discover">Podcast</a>
+          <a href="resources#news-orgs">News</a>
+          <a href="resources#foundations">Other Organizations</a>
+          <a href="https://www.liberationofeducation.org" target="_blank">Liberation of Education</a>
+        </div>
+      </div>
+      <a href="events">EVENTS</a>
+      <div class="dropdown">
+        <a href="donate">DONATE</a>
+        <div class="dropdown-menu">
+          <a href="sponsor">Be A Sponsor</a>
+        </div>
+      </div>
+      <a href="shop">SHOP</a>
+      <a href="blog">BLOG</a>
+    </div>
+    <div class="nav-right">
+      <a href="https://members.projecthpf.org/auth/login" class="btn-member">MEMBERS</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="resources-hero reveal">
+  <h1>Media Center</h1>
+  <div class="hero-image-wrap">
+    <img src="images/everyone-participate.png" alt="Everyone Can Participate" class="hero-illustration">
+    <img src="images/animation/mother-earth-v2-clean.png" alt="Mother Earth" class="hero-earth">
+  </div>
+  <h2>Knowledge is power, so arm yourself!</h2>
+  <p class="tagline">Become an independent thinker. The future of humanity depends on it.</p>
+</section>
+
+<!-- Enlightening Documentaries -->
+<section class="docs-section reveal" id="documentaries">
+  <div class="section-inner">
+    <h2 class="section-title">Enlightening Documentaries</h2>
+    <p class="docs-subtitle">Thought-provoking films to expand your perspective</p>
+    <div class="docs-carousel-wrap">
+      <button class="docs-nav-btn prev" id="docsPrev" aria-label="Previous">&#10094;</button>
+      <div class="docs-carousel" id="docsCarousel"></div>
+      <button class="docs-nav-btn next" id="docsNext" aria-label="Next">&#10095;</button>
+    </div>
+  </div>
+</section>
+
+<script>
+  (function() {
+    var DOCS = /*DOCS_DATA_START*/[
+      { "title": "13th", "image": "images/docs/13th.jpg", "link": "https://www.imdb.com/title/tt5895028/" },
+      { "title": "The Family", "image": "images/docs/the-family.png", "link": "https://www.imdb.com/title/tt10715148/" },
+      { "title": "Exhibit A", "image": "images/docs/exhibit-a.jpg", "link": "https://www.imdb.com/title/tt10376904/" },
+      { "title": "Take Your Pills", "image": "images/docs/take-your-pills.jpg", "link": "https://www.imdb.com/title/tt7983844/" },
+      { "title": "Take Your Pills: Xanax", "image": "images/docs/take-your-pills-xanax.jpg", "link": "https://www.imdb.com/title/tt23556804/" },
+      { "title": "Connected: The Hidden Science of Everything", "image": "images/docs/connected.jpg", "link": "https://www.imdb.com/title/tt12753692/" },
+      { "title": "The Social Dilemma", "image": "images/docs/the-social-dilemma.jpg", "link": "https://www.imdb.com/title/tt11464826/" },
+      { "title": "Rotten", "image": "images/docs/rotten.jpg", "link": "https://www.imdb.com/title/tt7763662/" },
+      { "title": "Kiss the Ground", "image": "images/docs/kiss-the-ground.jpg", "link": "https://www.imdb.com/title/tt8618654/" },
+      { "title": "Wild Wild Country", "image": "images/docs/wild-wild-country.jpg", "link": "https://www.imdb.com/title/tt7768848/" },
+
+      { "title": "Superhuman: The Invisible Made Visible", "image": "images/docs/superhuman.jpg", "link": "https://www.imdb.com/title/tt8756802/" },
+      { "title": "The Wonderful Story of Henry Sugar", "image": "images/docs/henry-sugar.jpg", "link": "https://www.imdb.com/title/tt16968450/" },
+      { "title": "Time: The Kalief Browder Story", "image": "images/docs/kalief-browder.jpg", "link": "https://www.imdb.com/title/tt6133034/" },
+      { "title": "Take Care of Maya", "image": "images/docs/take-care-of-maya.jpg", "link": "https://www.imdb.com/title/tt27542448/" },
+      { "title": "Dream/Killer", "image": "images/docs/dream-killer.jpg", "link": "https://www.imdb.com/title/tt4504438/" },
+      { "title": "What the Health", "image": "images/docs/what-the-health.jpg", "link": "https://www.imdb.com/title/tt5541848/" },
+      { "title": "Fantastic Fungi", "image": "images/docs/fantastic-fungi.jpg", "link": "https://www.imdb.com/title/tt8258074/" },
+      { "title": "Unacknowledged", "image": "images/docs/unacknowledged.jpg", "link": "https://www.imdb.com/title/tt6400614/" },
+      { "title": "Born in Gaza", "image": "images/docs/born-in-gaza.png", "link": "https://www.imdb.com/title/tt4205416/" },
+      { "title": "Heal", "image": "images/docs/heal.png", "link": "https://www.imdb.com/title/tt5239942/" },
+      { "title": "How to Change Your Mind", "image": "images/docs/how-to-change-your-mind.jpg", "link": "https://www.imdb.com/title/tt21062540/" },
+      { "title": "Close Encounters of the Fifth Kind", "image": "images/docs/close-encounters-5.webp", "link": "https://www.imdb.com/title/tt12108272/" },
+      { "title": "Live to 100: Secrets of the Blue Zones", "image": "images/docs/live-to-100.jpg", "link": "https://www.imdb.com/title/tt28523129/" },
+      { "title": "Seaspiracy", "image": "images/docs/seaspiracy.png", "link": "https://www.imdb.com/title/tt14152756/" },
+      { "title": "Cowspiracy", "image": "images/docs/cowspiracy.png", "link": "https://www.imdb.com/title/tt3302820/" },
+      { "title": "Breaking Boundaries", "image": "images/docs/breaking-boundaries.png", "link": "https://www.imdb.com/title/tt14539726/" },
+      { "title": "Chasing Coral", "image": "images/docs/chasing-coral.png", "link": "https://www.imdb.com/title/tt6333054/" },
+      { "title": "A Life on Our Planet", "image": "images/docs/life-on-our-planet.png", "link": "https://www.imdb.com/title/tt11989890/" },
+      { "title": "The Mind, Explained", "image": "images/docs/the-mind-explained.png", "link": "https://www.imdb.com/title/tt10810430/" },
+      { "title": "Awake: The Life of Yogananda", "image": "images/docs/yogananda.png", "link": "https://www.imdb.com/title/tt3741860/" },
+      { "title": "Inner Worlds, Outer Worlds", "image": "images/docs/inner-worlds.png", "link": "https://www.imdb.com/title/tt2415372/" },
+      { "title": "Making a Murderer", "image": "images/docs/making-a-murderer.jpg", "link": "https://www.imdb.com/title/tt5189670/" },
+      { "title": "The Pharmacist", "image": "images/docs/the-pharmacist.png", "link": "https://www.imdb.com/title/tt11600174/" },
+      { "title": "Waco: American Apocalypse", "image": "images/docs/waco.jpg", "link": "https://www.imdb.com/title/tt26687196/" },
+      { "title": "HyperNormalisation", "image": "images/docs/hypernormalisation.png", "link": "https://www.imdb.com/title/tt6156350/" },
+      { "title": "The Corporation", "image": "images/docs/the-corporation.png", "link": "https://www.imdb.com/title/tt0379225/" },
+      { "title": "Inside Job", "image": "images/docs/inside-job.png", "link": "https://www.imdb.com/title/tt1645089/" },
+      { "title": "American Conspiracy: The Octopus Murders", "image": "images/docs/octopus-murders.png", "link": "https://www.imdb.com/title/tt31030101/" },
+      { "title": "Wormwood", "image": "images/docs/wormwood.png", "link": "https://www.imdb.com/title/tt7306056/" },
+      { "title": "JFK Revisited", "image": "images/docs/jfk-revisited.png", "link": "https://www.imdb.com/title/tt11173544/" },
+      { "title": "Kill the Messenger", "image": "images/docs/kill-the-messenger.png", "link": "https://www.imdb.com/title/tt1216491/" },
+      { "title": "Citizenfour", "image": "images/docs/citizenfour.png", "link": "https://www.imdb.com/title/tt4044364/" },
+      { "title": "The Dissident", "image": "images/docs/the-dissident.png", "link": "https://www.imdb.com/title/tt11382384/" },
+      { "title": "Cold Case Hammarskjöld", "image": "images/docs/cold-case-hammarskjold.png", "link": "https://www.imdb.com/title/tt9352780/" },
+      { "title": "The Sons of Sam", "image": "images/docs/sons-of-sam.png", "link": "https://www.imdb.com/title/tt13156316/" },
+      { "title": "Mirage Men", "image": "images/docs/mirage-men.png", "link": "https://www.imdb.com/title/tt2254010/" },
+      { "title": "The Last Narc", "image": "images/docs/the-last-narc.png", "link": "https://www.imdb.com/title/tt12163674/" },
+      { "title": "Turning Point: 9/11 and the War on Terror", "image": "images/docs/turning-point-911.jpeg", "link": "https://www.imdb.com/title/tt15260794/" },
+      { "title": "Turning Point: The Bomb and the Cold War", "image": "images/docs/turning-point-cold-war.jpeg", "link": "https://www.imdb.com/title/tt26227818/" },
+      { "title": "Turning Point: The Vietnam War", "image": "images/docs/turning-point-vietnam.png", "link": "https://www.imdb.com/title/tt36242714/" },
+      { "title": "The Martha Mitchell Effect", "image": "images/docs/martha-mitchell.jpeg", "link": "https://www.imdb.com/title/tt18739882/" },
+      { "title": "The Mystery of Marilyn Monroe", "image": "images/docs/marilyn-monroe.jpg", "link": "https://www.imdb.com/title/tt18932032/" }
+    ]/*DOCS_DATA_END*/;
+    var carousel = document.getElementById('docsCarousel');
+    if (!carousel) return;
+    DOCS.forEach(function(doc) {
+      var a = document.createElement('a');
+      a.className = 'doc-card';
+      a.href = doc.link;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      var img = new Image();
+      img.src = doc.image;
+      img.alt = doc.title.replace(/"/g, '&quot;');
+      img.loading = 'lazy';
+      img.onerror = function() { this.src = 'https://via.placeholder.com/300x450/0489C7/ffffff?text=' + encodeURIComponent(doc.title); };
+      img.onload = function() {
+        if (this.naturalWidth > this.naturalHeight) {
+          a.classList.add('landscape');
+        }
+      };
+      var poster = document.createElement('span');
+      poster.className = 'doc-poster';
+      poster.appendChild(img);
+      var title = document.createElement('span');
+      title.className = 'doc-title';
+      title.textContent = doc.title;
+      a.appendChild(poster);
+      a.appendChild(title);
+      carousel.appendChild(a);
+    });
+    var prev = document.getElementById('docsPrev');
+    var next = document.getElementById('docsNext');
+    function scrollByAmount(dir) {
+      var card = carousel.querySelector('.doc-card');
+      var step = card ? (card.offsetWidth + 18) * 3 : 300;
+      carousel.scrollBy({ left: dir * step, behavior: 'smooth' });
+    }
+    prev.addEventListener('click', function() { scrollByAmount(-1); });
+    next.addEventListener('click', function() { scrollByAmount(1); });
+  })();
+</script>
+
+<!-- Must Reads -->
+<section class="books-section reveal" id="books">
+  <div class="section-inner">
+    <h2 class="section-title">Must Reads</h2>
+    <p class="books-subtitle">Books that challenge, inspire, and transform</p>
+    <div class="books-carousel-wrap">
+      <button class="books-nav-btn prev" id="booksPrev" aria-label="Previous">&#10094;</button>
+      <div class="books-carousel" id="booksCarousel"></div>
+      <button class="books-nav-btn next" id="booksNext" aria-label="Next">&#10095;</button>
+    </div>
+  </div>
+</section>
+
+<script>
+  (function() {
+    var BOOKS = [
+      { "title": "The 7 Habits of Highly Effective People", "image": "images/books/7-habits.png", "link": "https://www.amazon.com/s?k=7+habits+of+highly+effective+people" },
+      { "title": "Becoming Supernatural", "image": "images/books/becoming-supernatural.jpg", "link": "https://www.amazon.com/s?k=becoming+supernatural+joe+dispenza" },
+      { "title": "Behave", "image": "images/books/behave.jpg", "link": "https://www.amazon.com/s?k=behave+robert+sapolsky" },
+      { "title": "Beyond Biocentrism", "image": "images/books/beyond-biocentrism.jpg", "link": "https://www.amazon.com/s?k=beyond+biocentrism+robert+lanza" },
+      { "title": "Bhagavad Gita", "image": "images/books/bhagavad-gita.jpg", "link": "https://www.amazon.com/s?k=bhagavad+gita" },
+      { "title": "The Holy Bible", "image": "images/books/bible.jpg", "link": "https://www.amazon.com/s?k=holy+bible" },
+      { "title": "Blink", "image": "images/books/blink.jpg", "link": "https://www.amazon.com/s?k=blink+malcolm+gladwell" },
+      { "title": "Conversations with God", "image": "images/books/conversations-with-god.jpg", "link": "https://www.amazon.com/s?k=conversations+with+god+neale+donald+walsch" },
+      { "title": "Emotional Intelligence", "image": "images/books/emotional-intelligence.png", "link": "https://www.amazon.com/s?k=emotional+intelligence+daniel+goleman" },
+      { "title": "Factfulness", "image": "images/books/factfulness.jpg", "link": "https://www.amazon.com/s?k=factfulness+hans+rosling" },
+      { "title": "Freakonomics", "image": "images/books/freakonomics.jpg", "link": "https://www.amazon.com/s?k=freakonomics+levitt+dubner" },
+      { "title": "How to Win Friends and Influence People", "image": "images/books/how-to-win-friends.png", "link": "https://www.amazon.com/s?k=how+to+win+friends+and+influence+people+dale+carnegie" },
+      { "title": "The I Ching", "image": "images/books/the-i-ching.jpg", "link": "https://www.amazon.com/s?k=the+i+ching" },
+      { "title": "The Power of Habit", "image": "images/books/the-power-of-habit.jpg", "link": "https://www.amazon.com/s?k=the+power+of+habit+charles+duhigg" },
+      { "title": "The Quran", "image": "images/books/quran.jpg", "link": "https://www.amazon.com/s?k=the+quran" },
+      { "title": "Revival of Common Sense", "image": "images/books/revival-of-common-sense.jpg", "link": "https://www.amazon.com/s?k=revival+of+common+sense" },
+      { "title": "The Road Less Traveled", "image": "images/books/the-road-less-traveled.png", "link": "https://www.amazon.com/s?k=the+road+less+traveled+m+scott+peck" },
+      { "title": "The Silva Mind Control Method", "image": "images/books/silva-mind-control.jpg", "link": "https://www.amazon.com/s?k=the+silva+mind+control+method" },
+      { "title": "SuperFreakonomics", "image": "images/books/superfreakonomics.jpeg", "link": "https://www.amazon.com/s?k=superfreakonomics+levitt+dubner" },
+      { "title": "Think Again", "image": "images/books/think-again.jpg", "link": "https://www.amazon.com/s?k=think+again+adam+grant" },
+      { "title": "The Tipping Point", "image": "images/books/the-tipping-point.jpg", "link": "https://www.amazon.com/s?k=the+tipping+point+malcolm+gladwell" },
+      { "title": "You Are the Universe", "image": "images/books/you-are-the-universe.jpg", "link": "https://www.amazon.com/s?k=you+are+the+universe+deepak+chopra" }
+    ];
+    var carousel = document.getElementById('booksCarousel');
+    if (!carousel) return;
+    BOOKS.forEach(function(book) {
+      var a = document.createElement('a');
+      a.className = 'book-card';
+      a.href = book.link;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.innerHTML = '<span class="book-cover"><img src="' + book.image + '" alt="' + book.title.replace(/"/g, '&quot;') + '" loading="lazy"></span><span class="book-title">' + book.title + '</span>';
+      carousel.appendChild(a);
+    });
+    var prev = document.getElementById('booksPrev');
+    var next = document.getElementById('booksNext');
+    function scrollByAmount(dir) {
+      var card = carousel.querySelector('.book-card');
+      var step = card ? (card.offsetWidth + 18) * 3 : 300;
+      carousel.scrollBy({ left: dir * step, behavior: 'smooth' });
+    }
+    prev.addEventListener('click', function() { scrollByAmount(-1); });
+    next.addEventListener('click', function() { scrollByAmount(1); });
+  })();
+</script>
+
+<!-- Must Reads for Families -->
+<section class="kids-books-section reveal" id="kids-books">
+  <div class="section-inner">
+    <h2 class="section-title">Must Reads for Families</h2>
+    <p class="kids-subtitle">Empowering the next generation with knowledge and character</p>
+    <div class="books-carousel-wrap">
+      <button class="kids-nav-btn prev" id="kidsPrev" aria-label="Previous">&#10094;</button>
+      <div class="kids-carousel" id="kidsCarousel"></div>
+      <button class="kids-nav-btn next" id="kidsNext" aria-label="Next">&#10095;</button>
+    </div>
+  </div>
+</section>
+
+<script>
+  (function() {
+    var KIDS = [
+      { "title": "The Creature from Jekyll Island (Bear)", "image": "images/kids-books/bear-jekyll-island.jpg", "link": "https://www.amazon.com/s?k=bear+from+jekyll+island+children" },
+      { "title": "Berenstain Bears: Bad Habit", "image": "images/kids-books/bb-bad-habit.jpg", "link": "https://www.amazon.com/s?k=berenstain+bears+bad+habit" },
+      { "title": "Berenstain Bears: Chores", "image": "images/kids-books/bb-chores.jpg", "link": "https://www.amazon.com/s?k=berenstain+bears+chores" },
+      { "title": "Berenstain Bears: Count Blessings", "image": "images/kids-books/bb-count-blessings.jpg", "link": "https://www.amazon.com/s?k=berenstain+bears+count+blessings" },
+      { "title": "Berenstain Bears: The Truth", "image": "images/kids-books/bb-the-truth.jpg", "link": "https://www.amazon.com/s?k=berenstain+bears+the+truth" },
+      { "title": "Free Speech: Cubs to Bears", "image": "images/kids-books/free-speech-cubs.jpg", "link": "https://www.amazon.com/s?k=free+speech+cubs+to+bears" },
+      { "title": "Good Bear: Tell the Truth", "image": "images/kids-books/good-bear-truth.jpg", "link": "https://www.amazon.com/s?k=good+bear+tell+the+truth" },
+      { "title": "Little Critter: I Was So Mad", "image": "images/kids-books/lc-mad.jpg", "link": "https://www.amazon.com/s?k=little+critter+i+was+so+mad" },
+      { "title": "Little Critter: Manners", "image": "images/kids-books/lc-manners.jpg", "link": "https://www.amazon.com/s?k=little+critter+just+say+please" },
+      { "title": "Little Critter: Numbers", "image": "images/kids-books/lc-numbers.jpg", "link": "https://www.amazon.com/s?k=little+critter+numbers" },
+      { "title": "Little Critter: Piggy Bank", "image": "images/kids-books/lc-piggy-bank.jpg", "link": "https://www.amazon.com/s?k=little+critter+piggy+bank" },
+      { "title": "Magic School Bus: Blast into Space", "image": "images/kids-books/msb-space.jpg", "link": "https://www.amazon.com/s?k=magic+school+bus+blast+into+space" },
+      { "title": "Magic School Bus: Dinosaur Detectives", "image": "images/kids-books/msb-dinosaurs.webp", "link": "https://www.amazon.com/s?k=magic+school+bus+dinosaur+detectives" },
+      { "title": "Magic School Bus: Human Body", "image": "images/kids-books/msb-human-body.jpg", "link": "https://www.amazon.com/s?k=magic+school+bus+human+body" },
+      { "title": "Magic School Bus: Missing Tooth", "image": "images/kids-books/msb-missing-tooth.jpg", "link": "https://www.amazon.com/s?k=magic+school+bus+missing+tooth" },
+      { "title": "Magic School Bus: Truth About Bats", "image": "images/kids-books/msb-bats.jpg", "link": "https://www.amazon.com/s?k=magic+school+bus+truth+about+bats" },
+      { "title": "Magic School Bus: Twister Trouble", "image": "images/kids-books/msb-twister.webp", "link": "https://www.amazon.com/s?k=magic+school+bus+twister+trouble" },
+      { "title": "Sir Cumference: Angleland", "image": "images/kids-books/sir-c-angleland.jpg", "link": "https://www.amazon.com/s?k=sir+cumference+and+the+great+knight+of+angleland" },
+      { "title": "Sir Cumference: Dragon of Pi", "image": "images/kids-books/sir-c-dragon-pi.jpg", "link": "https://www.amazon.com/s?k=sir+cumference+dragon+of+pi" },
+      { "title": "Sir Cumference: Fraction Faire", "image": "images/kids-books/sir-c-fraction.jpg", "link": "https://www.amazon.com/s?k=sir+cumference+fraction+faire" },
+      { "title": "Sir Cumference: King's Tens", "image": "images/kids-books/sir-c-kings-tens.webp", "link": "https://www.amazon.com/s?k=sir+cumference+off+the+charts" },
+      { "title": "The Right to Bear Arms", "image": "images/kids-books/right-to-bear-arms.jpg", "link": "https://www.amazon.com/s?k=right+to+bear+arms+children+book" },
+      { "title": "Tuttle Twins & the Golden Rule", "image": "images/kids-books/tt-golden-rule.jpg", "link": "https://www.amazon.com/s?k=tuttle+twins+golden+rule" },
+      { "title": "Tuttle Twins Learn About the Law", "image": "images/kids-books/tt-learn-law.jpg", "link": "https://www.amazon.com/s?k=tuttle+twins+learn+about+the+law" },
+      { "title": "Tuttle Twins & Education Vacation", "image": "images/kids-books/tt-education-vacation.jpg", "link": "https://www.amazon.com/s?k=tuttle+twins+education+vacation" },
+      { "title": "Tuttle Twins & Messed Up Market", "image": "images/kids-books/tt-messed-up-market.jpg", "link": "https://www.amazon.com/s?k=tuttle+twins+messed+up+market" },
+      { "title": "Tuttle Twins: American History", "image": "images/kids-books/tt-american-history.jpg", "link": "https://www.amazon.com/s?k=tuttle+twins+american+history" },
+      { "title": "What Was the Alamo?", "image": "images/kids-books/what-was-alamo.jpg", "link": "https://www.amazon.com/s?k=what+was+the+alamo+book" },
+      { "title": "What Was the Underground Railroad?", "image": "images/kids-books/what-was-underground-railroad.jpg", "link": "https://www.amazon.com/s?k=what+was+the+underground+railroad+book" },
+      { "title": "Who Was Albert Einstein?", "image": "images/kids-books/who-was-einstein.jpg", "link": "https://www.amazon.com/s?k=who+was+albert+einstein+book" },
+      { "title": "Who Was Annie Oakley?", "image": "images/kids-books/who-was-annie-oakley.jpg", "link": "https://www.amazon.com/s?k=who+was+annie+oakley+book" },
+      { "title": "Who Was Maria Tallchief?", "image": "images/kids-books/who-was-maria-tallchief.jpg", "link": "https://www.amazon.com/s?k=who+was+maria+tallchief+book" },
+      { "title": "You Are What You Eat", "image": "images/kids-books/you-are-what-you-eat.jpg", "link": "https://www.amazon.com/s?k=you+are+what+you+eat+children+book" }
+    ];
+    var carousel = document.getElementById('kidsCarousel');
+    if (!carousel) return;
+    KIDS.forEach(function(book) {
+      var a = document.createElement('a');
+      a.className = 'book-card';
+      a.href = book.link;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.innerHTML = '<span class="book-cover"><img src="' + book.image + '" alt="' + book.title.replace(/"/g, '&quot;') + '" loading="lazy"></span><span class="book-title">' + book.title + '</span>';
+      carousel.appendChild(a);
+    });
+    var prev = document.getElementById('kidsPrev');
+    var next = document.getElementById('kidsNext');
+    function scrollByAmount(dir) {
+      var card = carousel.querySelector('.book-card');
+      var step = card ? (card.offsetWidth + 18) * 3 : 300;
+      carousel.scrollBy({ left: dir * step, behavior: 'smooth' });
+    }
+    prev.addEventListener('click', function() { scrollByAmount(-1); });
+    next.addEventListener('click', function() { scrollByAmount(1); });
+  })();
+</script>
+
+<!-- News Organizations -->
+<section class="news-section reveal" id="news-orgs">
+  <div class="section-inner">
+    <h2 class="section-title">Independent News Organizations</h2>
+    <p class="news-subtitle">Stay informed with independent journalism</p>
+    <div class="news-grid">
+      <a href="https://www.democracynow.org/" target="_blank" rel="noopener" class="news-card">
+        <span class="news-logo"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/01/Democracy_Now%21_logo.svg/250px-Democracy_Now%21_logo.svg.png" alt="Democracy Now!" loading="lazy"></span>
+        <span class="news-name">Democracy Now!</span>
+      </a>
+      <a href="https://tyt.com/" target="_blank" rel="noopener" class="news-card">
+        <span class="news-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/TYT_logo.svg/250px-TYT_logo.svg.png" alt="The Young Turks" loading="lazy"></span>
+        <span class="news-name">The Young Turks</span>
+      </a>
+      <a href="https://breakthroughnews.org/" target="_blank" rel="noopener" class="news-card">
+        <span class="news-logo"><img src="https://upload.wikimedia.org/wikipedia/en/2/2e/BreakThrough_News_Logo_United_States_2025.png" alt="Breakthrough News" loading="lazy"></span>
+        <span class="news-name">Breakthrough News</span>
+      </a>
+      <a href="https://www.statuscoup.com/" target="_blank" rel="noopener" class="news-card">
+        <span class="news-logo"><img src="https://ui-avatars.com/api/?name=Status+Coup&size=200&background=1a1a2e&color=fff&bold=true" alt="Status Coup" loading="lazy"></span>
+        <span class="news-name">Status Coup</span>
+      </a>
+      <a href="https://meidasnews.com/" target="_blank" rel="noopener" class="news-card">
+        <span class="news-logo"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/MediasTouch_logo.jpg/250px-MediasTouch_logo.jpg" alt="MeidasTouch Network" loading="lazy"></span>
+        <span class="news-name">MeidasTouch Network</span>
+      </a>
+      <a href="https://therealnews.com/" target="_blank" rel="noopener" class="news-card">
+        <span class="news-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Lockup-duochrome-dark.png/250px-Lockup-duochrome-dark.png" alt="The Real News Network" loading="lazy"></span>
+        <span class="news-name">The Real News Network</span>
+      </a>
+      <a href="https://means.tv/" target="_blank" rel="noopener" class="news-card">
+        <span class="news-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Means.tv_wordmark.jpg/250px-Means.tv_wordmark.jpg" alt="Means TV" loading="lazy"></span>
+        <span class="news-name">Means TV</span>
+      </a>
+      <a href="https://novaramedia.com/" target="_blank" rel="noopener" class="news-card">
+        <span class="news-logo"><img src="https://upload.wikimedia.org/wikipedia/en/d/d8/Novara_Media_logo.jpg" alt="Novara Media" loading="lazy"></span>
+        <span class="news-name">Novara Media</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Foundations Making a Difference -->
+<section class="foundations-section reveal" id="foundations">
+  <div class="section-inner">
+    <h2 class="section-title">Foundations Making a Difference</h2>
+    <p class="foundations-subtitle">Organizations working toward a better world</p>
+    <div class="foundations-grid">
+      <a href="https://innocenceproject.org/" target="_blank" rel="noopener" class="foundation-card">
+        <span class="foundation-logo"><img src="images/foundations/Innocence Project.png" alt="Innocence Project" loading="lazy"></span>
+        <span class="foundation-name">Innocence Project</span>
+      </a>
+      <a href="https://www.themarshallproject.org/" target="_blank" rel="noopener" class="foundation-card">
+        <span class="foundation-logo"><img src="images/foundations/The Marshall Project.png" alt="The Marshall Project" loading="lazy"></span>
+        <span class="foundation-name">The Marshall Project</span>
+      </a>
+      <a href="https://www.sentencingproject.org/" target="_blank" rel="noopener" class="foundation-card">
+        <span class="foundation-logo"><img src="images/foundations/The Sentencing Project.png" alt="The Sentencing Project" loading="lazy"></span>
+        <span class="foundation-name">The Sentencing Project</span>
+      </a>
+      <a href="https://www.lastprisonerproject.org/" target="_blank" rel="noopener" class="foundation-card">
+        <span class="foundation-logo"><img src="images/foundations/The last prisoner project.png" alt="The Last Prisoner Project" loading="lazy"></span>
+        <span class="foundation-name">The Last Prisoner Project</span>
+      </a>
+      <a href="https://reformalliance.com/" target="_blank" rel="noopener" class="foundation-card">
+        <span class="foundation-logo"><img src="images/foundations/Reform Alliance.png" alt="Reform Alliance" loading="lazy"></span>
+        <span class="foundation-name">Reform Alliance</span>
+      </a>
+      <a href="https://www.vera.org/" target="_blank" rel="noopener" class="foundation-card">
+        <span class="foundation-logo"><img src="images/foundations/VERA.png" alt="Vera Institute of Justice" loading="lazy"></span>
+        <span class="foundation-name">Vera Institute of Justice</span>
+      </a>
+      <a href="https://nicjr.org/" target="_blank" rel="noopener" class="foundation-card">
+        <span class="foundation-logo"><img src="images/foundations/NICJR.png" alt="NICJR" loading="lazy"></span>
+        <span class="foundation-name">National Institute for Criminal Justice Reform</span>
+      </a>
+      <a href="https://www.judicialwatch.org/" target="_blank" rel="noopener" class="foundation-card">
+        <span class="foundation-logo"><img src="images/foundations/Judicial Watch.png" alt="Judicial Watch" loading="lazy"></span>
+        <span class="foundation-name">Judicial Watch</span>
+      </a>
+      <a href="https://www.fairforall.org/" target="_blank" rel="noopener" class="foundation-card">
+        <span class="foundation-logo"><img src="images/foundations/Foundation Against Intolerance & Racism.png" alt="FAIR" loading="lazy"></span>
+        <span class="foundation-name">Foundation Against Intolerance & Racism</span>
+      </a>
+      <a href="https://fee.org/" target="_blank" rel="noopener" class="foundation-card">
+        <span class="foundation-logo"><img src="images/foundations/Foundation for Economic Education.png" alt="FEE" loading="lazy"></span>
+        <span class="foundation-name">Foundation for Economic Education</span>
+      </a>
+      <a href="https://www.fire.org/" target="_blank" rel="noopener" class="foundation-card">
+        <span class="foundation-logo"><img src="images/foundations/fire.png" alt="FIRE" loading="lazy"></span>
+        <span class="foundation-name">Foundation for Individual Rights and Expression</span>
+      </a>
+      <a href="https://www.edchoice.org/" target="_blank" rel="noopener" class="foundation-card">
+        <span class="foundation-logo"><img src="images/foundations/edchoice.png" alt="EdChoice" loading="lazy"></span>
+        <span class="foundation-name">EdChoice</span>
+      </a>
+      <a href="https://yeseverykid.com/" target="_blank" rel="noopener" class="foundation-card">
+        <span class="foundation-logo"><img src="images/foundations/yes. every kid..png" alt="Yes. Every Kid." loading="lazy"></span>
+        <span class="foundation-name">Yes. Every Kid.</span>
+      </a>
+      <a href="https://www.federationforchildren.org/" target="_blank" rel="noopener" class="foundation-card">
+        <span class="foundation-logo"><img src="images/foundations/afc.png" alt="American Federation for Children" loading="lazy"></span>
+        <span class="foundation-name">American Federation for Children</span>
+      </a>
+      <a href="https://parentsusa.org/" target="_blank" rel="noopener" class="foundation-card">
+        <span class="foundation-logo"><img src="images/foundations/Parents USA.png" alt="Parents USA" loading="lazy"></span>
+        <span class="foundation-name">Parents USA</span>
+      </a>
+      <a href="https://www.atlasnetwork.org/" target="_blank" rel="noopener" class="foundation-card">
+        <span class="foundation-logo"><img src="images/foundations/Atlas Network.png" alt="Atlas Network" loading="lazy"></span>
+        <span class="foundation-name">Atlas Network</span>
+      </a>
+      <a href="https://reason.org/" target="_blank" rel="noopener" class="foundation-card">
+        <span class="foundation-logo"><img src="images/foundations/reason.png" alt="Reason Foundation" loading="lazy"></span>
+        <span class="foundation-name">Reason Foundation</span>
+      </a>
+      <a href="https://freethepeople.org/" target="_blank" rel="noopener" class="foundation-card">
+        <span class="foundation-logo"><img src="images/foundations/free the people.png" alt="Free the People" loading="lazy"></span>
+        <span class="foundation-name">Free the People</span>
+      </a>
+      <a href="https://www.theadvocates.org/" target="_blank" rel="noopener" class="foundation-card">
+        <span class="foundation-logo"><img src="images/foundations/Advocates for Self Governmnet .png" alt="Advocates for Self-Government" loading="lazy"></span>
+        <span class="foundation-name">Advocates for Self-Government</span>
+      </a>
+      <a href="https://www.joinyv.org/" target="_blank" rel="noopener" class="foundation-card">
+        <span class="foundation-logo"><img src="images/foundations/Young Voices.png" alt="Young Voices" loading="lazy"></span>
+        <span class="foundation-name">Young Voices</span>
+      </a>
+      <a href="https://www.1517fund.com/" target="_blank" rel="noopener" class="foundation-card">
+        <span class="foundation-logo"><img src="images/foundations/1517 Fund.png" alt="1517 Fund" loading="lazy"></span>
+        <span class="foundation-name">1517 Fund</span>
+      </a>
+      <a href="https://80000hours.org/" target="_blank" rel="noopener" class="foundation-card">
+        <span class="foundation-logo"><img src="images/foundations/80000Hours.png" alt="80,000 Hours" loading="lazy"></span>
+        <span class="foundation-name">80,000 Hours</span>
+      </a>
+      <a href="https://blackgunsmatter.shop/" target="_blank" rel="noopener" class="foundation-card">
+        <span class="foundation-logo"><img src="images/foundations/Black Guns Matter.png" alt="Black Guns Matter" loading="lazy"></span>
+        <span class="foundation-name">Black Guns Matter</span>
+      </a>
+      <a href="https://decriminalizesex.work/" target="_blank" rel="noopener" class="foundation-card">
+        <span class="foundation-logo"><img src="images/foundations/Decriminalize Sex Work.png" alt="Decriminalize Sex Work" loading="lazy"></span>
+        <span class="foundation-name">Decriminalize Sex Work</span>
+      </a>
+      <a href="https://freenowfoundation.org/" target="_blank" rel="noopener" class="foundation-card">
+        <span class="foundation-logo"><img src="images/foundations/Free Now Foundation.png" alt="Free Now Foundation" loading="lazy"></span>
+        <span class="foundation-name">Free Now Foundation</span>
+      </a>
+      <a href="https://ironlightlabs.org/" target="_blank" rel="noopener" class="foundation-card">
+        <span class="foundation-logo"><img src="images/foundations/ironlight.png" alt="Iron Light Labs" loading="lazy"></span>
+        <span class="foundation-name">Iron Light Labs</span>
+      </a>
+      <a href="https://vela.org/" target="_blank" rel="noopener" class="foundation-card">
+        <span class="foundation-logo"><img src="images/foundations/VelaFund.png" alt="Vela Education Fund" loading="lazy"></span>
+        <span class="foundation-name">Vela Education Fund</span>
+      </a>
+      <a href="https://www.youarethepower.net/" target="_blank" rel="noopener" class="foundation-card">
+        <span class="foundation-logo"><img src="images/foundations/You Are The Power.png" alt="You Are The Power" loading="lazy"></span>
+        <span class="foundation-name">You Are The Power</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Interesting People & Podcasts -->
+<section class="discover-section reveal" id="discover">
+  <div class="section-inner">
+    <h2 class="section-title">Interesting People &amp; Podcasts to Learn From</h2>
+    <p class="discover-subtitle">Expand your mind with these creators, thinkers, and storytellers</p>
+
+    <h3 class="sub-title">Podcasts &amp; Shows</h3>
+    <div class="discover-carousel-wrap">
+      <button class="discover-nav-btn prev" id="podPrev" aria-label="Previous">&#10094;</button>
+      <div class="discover-carousel" id="podCarousel"></div>
+      <button class="discover-nav-btn next" id="podNext" aria-label="Next">&#10095;</button>
+    </div>
+
+    <h3 class="sub-title">Interesting People</h3>
+    <div class="discover-carousel-wrap">
+      <button class="discover-nav-btn prev" id="peoplePrev" aria-label="Previous">&#10094;</button>
+      <div class="discover-carousel" id="peopleCarousel"></div>
+      <button class="discover-nav-btn next" id="peopleNext" aria-label="Next">&#10095;</button>
+    </div>
+  </div>
+</section>
+
+<script>
+(function() {
+  var PODS = [
+    { "name": "4biddenknowledge Podcast", "image": "images/podcasts/4biddenknowlege Podcast Network.jpg", "link": "https://www.youtube.com/results?search_query=4biddenknowledge+podcast" },
+    { "name": "Absolute History", "image": "images/podcasts/Absolute History.jpg", "link": "https://www.youtube.com/@AbsoluteHistory" },
+    { "name": "Active Self Protection", "image": "images/podcasts/Active Self Protection.jpg", "link": "https://www.youtube.com/@ActiveSelfProtection" },
+    { "name": "Deeply Well", "image": "images/podcasts/Deeply Well.png", "link": "https://www.youtube.com/results?search_query=deeply+well+podcast" },
+    { "name": "Earn Your Leisure", "image": "images/podcasts/Earn Your Leisure.jpg", "link": "https://www.youtube.com/@EarnYourLeisure" },
+    { "name": "Explore With Us", "image": "images/podcasts/Explore With Us.jpg", "link": "https://www.youtube.com/@ExploreWithUs" },
+    { "name": "Freakonomics Radio", "image": "images/podcasts/freakonomics radio.jpeg", "link": "https://freakonomics.com/podcasts/" },
+    { "name": "Happiness Lab", "image": "images/podcasts/Happiness Lab.png", "link": "https://www.pushkin.fm/podcasts/the-happiness-lab-with-dr-laurie-santos" },
+    { "name": "History Time", "image": "images/podcasts/History Time.jpg", "link": "https://www.youtube.com/@HistoryTime" },
+    { "name": "Huberman Lab", "image": "images/podcasts/Huberman Lab.jpg", "link": "https://www.youtube.com/@hubaboratorylab" },
+    { "name": "Jay Shetty", "image": "images/podcasts/jay shetty.jpg", "link": "https://www.youtube.com/@JayShettyPodcast" },
+    { "name": "Know Thyself", "image": "images/podcasts/know thyself.jpeg", "link": "https://www.youtube.com/results?search_query=know+thyself+podcast" },
+    { "name": "Love Covered Life", "image": "images/podcasts/Love covered life.png", "link": "https://www.youtube.com/results?search_query=love+covered+life+podcast" },
+    { "name": "Mathantics", "image": "images/podcasts/mathantics.jpg", "link": "https://www.youtube.com/@mathantics" },
+    { "name": "Next Level Soul", "image": "images/podcasts/Next Level Soul Podcast.jpg", "link": "https://www.youtube.com/@NextLevelSoul" },
+    { "name": "Pretty Intense", "image": "images/podcasts/Pretty Intense.jpg", "link": "https://www.youtube.com/results?search_query=pretty+intense+podcast" },
+    { "name": "SciShow Kids", "image": "images/podcasts/SciShow Kids Logo.jpg", "link": "https://www.youtube.com/@SciShowKids" },
+    { "name": "That Good News Girl", "image": "images/podcasts/That Good News Girl.jpg", "link": "https://www.youtube.com/results?search_query=that+good+news+girl" },
+    { "name": "The BORING Channel", "image": "images/podcasts/The BORING Channel.jpg", "link": "https://www.youtube.com/results?search_query=the+boring+channel" },
+    { "name": "The Diary of a CEO", "image": "images/podcasts/The Diary of a CEO.jpg", "link": "https://www.youtube.com/@TheDiaryOfACEO" },
+    { "name": "The Doctor's Farmacy", "image": "images/podcasts/the doctors farmacy.jpg", "link": "https://www.youtube.com/results?search_query=the+doctors+farmacy+mark+hyman" },
+    { "name": "The Fitness Marshall", "image": "images/podcasts/The Fitness Marshall.jpg", "link": "https://www.youtube.com/@TheFitnessMarshall" },
+    { "name": "The Gluten Free Blogger", "image": "images/podcasts/The Gluten Free Blogger.jpg", "link": "https://www.youtube.com/results?search_query=the+gluten+free+blogger" },
+    { "name": "The Joe Rogan Experience", "image": "images/podcasts/The Joe Rogan Experience.jpg", "link": "https://www.youtube.com/@joerogan" },
+    { "name": "The Michael Knowles Show", "image": "images/podcasts/The Michael Knowles Show.jpg", "link": "https://www.youtube.com/results?search_query=the+michael+knowles+show" },
+    { "name": "The Model Health Show", "image": "images/podcasts/the model health show.jpeg", "link": "https://www.youtube.com/results?search_query=the+model+health+show" },
+    { "name": "The Naked Gardener", "image": "images/podcasts/The Naked Gardener.jpg", "link": "https://www.youtube.com/results?search_query=the+naked+gardener" },
+    { "name": "The Pasta Queen", "image": "images/podcasts/The Pasta Queen.jpg", "link": "https://www.youtube.com/@ThePastaQueen" },
+    { "name": "The Rich Roll Podcast", "image": "images/podcasts/The Rich Roll Podcast.jpg", "link": "https://www.youtube.com/@RichRoll" },
+    { "name": "The Shawn Ryan Show", "image": "images/podcasts/The Shawn Ryan Show.jpg", "link": "https://www.youtube.com/@ShawnRyanShow" },
+    { "name": "The Slow Mo Guys", "image": "images/podcasts/The Slow Mo Guys.jpg", "link": "https://www.youtube.com/@theslowmoguys" },
+    { "name": "The Thought Emporium", "image": "images/podcasts/The Thought Emporium.jpg", "link": "https://www.youtube.com/@thethoughtemporium" },
+    { "name": "The Why Files", "image": "images/podcasts/The Why Files.jpg", "link": "https://www.youtube.com/@TheWhyFiles" },
+    { "name": "Theo Von", "image": "images/podcasts/This Past Weekend with Theo Von.jpg", "link": "https://www.youtube.com/@TheoVon" },
+    { "name": "Therapy Gecko", "image": "images/podcasts/Therapy Gecko.jpg", "link": "https://www.youtube.com/@TherapyGecko" },
+    { "name": "Yes Theory", "image": "images/podcasts/Yes Theory.jpg", "link": "https://www.youtube.com/@YesTheory" },
+    { "name": "Yoga With Adriene", "image": "images/podcasts/Yoga With Adriene.jpg", "link": "https://www.youtube.com/@yogawithadriene" },
+    { "name": "Yoga With Bird", "image": "images/podcasts/Yoga With Bird.jpg", "link": "https://www.youtube.com/@YogaWithBird" }
+  ];
+
+  function pAvatar(n) { return 'https://ui-avatars.com/api/?name=' + encodeURIComponent(n) + '&size=200&background=7b4fbd&color=fff&bold=true&rounded=true'; }
+  var PEOPLE = [
+    { "name": "Ram Dass", "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Ram_Dass.jpg/400px-Ram_Dass.jpg", "link": "https://www.youtube.com/results?search_query=ram+dass+best+talk" },
+    { "name": "Adyashanti", "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Adyashanti_2013-04.jpg/400px-Adyashanti_2013-04.jpg", "link": "https://www.youtube.com/watch?v=jFoIqlqcLLk" },
+    { "name": "Mooji", "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Mooji_Wikipedia_Photo.jpg/400px-Mooji_Wikipedia_Photo.jpg", "link": "https://www.youtube.com/results?search_query=mooji+guided+meditation" },
+    { "name": "Rupert Spira", "image": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Rupert_Spira.jpg", "link": "https://www.youtube.com/results?search_query=rupert+spira+consciousness" },
+    { "name": "Deepak Chopra", "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Deepak_Chopra_by_Gage_Skidmore.jpg/400px-Deepak_Chopra_by_Gage_Skidmore.jpg", "link": "https://www.youtube.com/results?search_query=deepak+chopra+consciousness+talk" },
+    { "name": "Andrew Huberman", "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Andrew_D._Huberman%2C_Ph.D..jpg/400px-Andrew_D._Huberman%2C_Ph.D..jpg", "link": "https://www.youtube.com/results?search_query=andrew+huberman+optimize+brain" },
+    { "name": "Bruce Lipton", "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Bruce_Lipton.jpg/400px-Bruce_Lipton.jpg", "link": "https://www.youtube.com/results?search_query=bruce+lipton+biology+of+belief" },
+    { "name": "Lisa Feldman Barrett", "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Lisa_Feldman_Barrett_%28cropped%29.jpg/400px-Lisa_Feldman_Barrett_%28cropped%29.jpg", "link": "https://www.youtube.com/results?search_query=lisa+feldman+barrett+emotions+constructed" },
+    { "name": "James Nestor", "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Jamestalking.png/400px-Jamestalking.png", "link": "https://www.youtube.com/results?search_query=james+nestor+breath+talk" },
+    { "name": "Stanislav Grof", "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Stanislav_Grof_by_Anton_Nossik_crop.JPG/400px-Stanislav_Grof_by_Anton_Nossik_crop.JPG", "link": "https://www.youtube.com/results?search_query=stanislav+grof+holotropic+breathwork" },
+    { "name": "Ben Greenfield", "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Ben_Greenfield_speaking_at_the_Health_Optimization_Summit.jpg/400px-Ben_Greenfield_speaking_at_the_Health_Optimization_Summit.jpg", "link": "https://www.youtube.com/results?search_query=ben+greenfield+longevity+talk" },
+    { "name": "Dave Asprey", "image": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Dave_Asprey_Dec_2018.png", "link": "https://www.youtube.com/results?search_query=dave+asprey+biohacking+talk" },
+    { "name": "Tony Robbins", "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Tony_Robbins.jpg/400px-Tony_Robbins.jpg", "link": "https://www.youtube.com/watch?v=Cpc-t-Uwv1I" },
+    { "name": "James Clear", "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/James_Clear_in_2010.jpg/400px-James_Clear_in_2010.jpg", "link": "https://www.youtube.com/results?search_query=james+clear+atomic+habits+talk" },
+    { "name": "Robin Sharma", "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/T1-0257.jpg/400px-T1-0257.jpg", "link": "https://www.youtube.com/results?search_query=robin+sharma+5am+club+talk" },
+    { "name": "Jay Shetty", "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Jay_Shetty_Headshot_2021.jpg/400px-Jay_Shetty_Headshot_2021.jpg", "link": "https://www.youtube.com/results?search_query=jay+shetty+purpose+talk" },
+    { "name": "Rupert Sheldrake", "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Sheldrake_TASC2008.JPG/400px-Sheldrake_TASC2008.JPG", "link": "https://www.youtube.com/watch?v=hO4p3xeTtUA" },
+    { "name": "Wim Hof", "image": "images/people/Wim Hof.jpg", "link": "https://www.youtube.com/watch?v=L9Cgaa8U4eY" },
+    { "name": "Eckhart Tolle", "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Eckhart_Tolle_front.jpg/400px-Eckhart_Tolle_front.jpg", "link": "https://www.youtube.com/results?search_query=eckhart+tolle+power+of+now+talk" },
+    { "name": "Michael A. Singer", "image": pAvatar("Michael Singer"), "link": "https://www.youtube.com/results?search_query=michael+singer+untethered+soul+talk" },
+    { "name": "Byron Katie", "image": pAvatar("Byron Katie"), "link": "https://www.youtube.com/results?search_query=byron+katie+the+work" },
+    { "name": "Gregg Braden", "image": pAvatar("Gregg Braden"), "link": "https://www.youtube.com/watch?v=zy6mVAb-UjU" },
+    { "name": "Joe Vitale", "image": pAvatar("Joe Vitale"), "link": "https://www.youtube.com/watch?v=RwA5tiW_B6o" },
+    { "name": "Dr. Tara Swart", "image": pAvatar("Tara Swart"), "link": "https://www.youtube.com/results?search_query=tara+swart+manifestation+neuroscience" },
+    { "name": "Patrick McKeown", "image": pAvatar("Patrick McKeown"), "link": "https://www.youtube.com/watch?v=mBqGS-vEIs0" },
+    { "name": "Dan Brulé", "image": pAvatar("Dan Brule"), "link": "https://www.youtube.com/results?search_query=dan+brule+breathwork" },
+    { "name": "Brené Brown", "image": pAvatar("Brene Brown"), "link": "https://www.youtube.com/watch?v=iCvmsMzlF7o" },
+    { "name": "Lewis Howes", "image": pAvatar("Lewis Howes"), "link": "https://www.youtube.com/results?search_query=lewis+howes+school+of+greatness" },
+    { "name": "Tom Campbell", "image": pAvatar("Tom Campbell"), "link": "https://www.youtube.com/results?search_query=tom+campbell+my+big+toe+simulation" },
+    { "name": "Dean Radin", "image": pAvatar("Dean Radin"), "link": "https://www.youtube.com/watch?v=BfGYp31fYQk" },
+    { "name": "Nassim Haramein", "image": pAvatar("Nassim Haramein"), "link": "https://www.youtube.com/watch?v=xJsl_klqVh0" },
+    { "name": "Ervin László", "image": pAvatar("Ervin Laszlo"), "link": "https://www.youtube.com/watch?v=6kSMfm0ez8E" },
+    { "name": "Mel Robbins", "image": pAvatar("Mel Robbins"), "link": "https://www.youtube.com/watch?v=Lp7E973zozc" },
+    { "name": "Dr. Joe Dispenza", "image": pAvatar("Joe Dispenza"), "link": "https://www.youtube.com/results?search_query=joe+dispenza+becoming+supernatural+talk" },
+    { "name": "Caroline Cory", "image": pAvatar("Caroline Cory"), "link": "https://www.youtube.com/results?search_query=caroline+cory+superhuman+consciousness" }
+  ];
+
+  function buildCarousel(items, carouselId, prevId, nextId) {
+    var carousel = document.getElementById(carouselId);
+    if (!carousel) return;
+    items.forEach(function(item) {
+      var a = document.createElement('a');
+      a.className = 'discover-card';
+      a.href = item.link;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.innerHTML = '<span class="avatar-wrap"><img src="' + item.image + '" alt="' + item.name.replace(/"/g, '&quot;') + '" loading="lazy"></span><span class="card-name">' + item.name + '</span>';
+      carousel.appendChild(a);
+    });
+    var prev = document.getElementById(prevId);
+    var next = document.getElementById(nextId);
+    function scrollByAmount(dir) {
+      var card = carousel.querySelector('.discover-card');
+      var step = card ? (card.offsetWidth + 18) * 4 : 400;
+      carousel.scrollBy({ left: dir * step, behavior: 'smooth' });
+    }
+    prev.addEventListener('click', function() { scrollByAmount(-1); });
+    next.addEventListener('click', function() { scrollByAmount(1); });
+  }
+
+  buildCarousel(PODS, 'podCarousel', 'podPrev', 'podNext');
+  buildCarousel(PEOPLE, 'peopleCarousel', 'peoplePrev', 'peopleNext');
+})();
+</script>
+
+<!-- ══════════ COMMUNITY & MEMBERSHIP ══════════ -->
+<section class="home-community reveal">
+  <div class="community-bg">
+    <div class="community-inner">
+      <div class="community-text">
+        <h2>Join Our Revolutionist Community</h2>
+        <p>Communicate, collaborate, and connect with citizens committed to healing, prosperity &amp; freedom. Become a PHPF member for just $1/month and gain exclusive access to our member directory, content library, and Liberate Democracy voting.</p>
+        <p class="community-note">Membership unlocks the full PHPF experience.</p>
+      </div>
+      <div class="community-right-col">
+        <img src="images/animation/mother-earth-v2-clean.png" alt="Mother Earth" class="community-earth">
+        <a href="https://members.projecthpf.org/auth/register" class="member-cta-btn">Join Now — $1/mo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <p class="footer-disclaimer">Disclaimer: Project Healing Prosperity &amp; Freedom, Inc is pleased to provide diverse ideas from across the world that we hope will spark listeners' curiosity and broaden their worldview. Project Healing Prosperity &amp; Freedom, Inc does not endorse all of the perspectives, ideas and information put forward in any of the external content presented and invites listeners to have an open mind but question everything as they draw their own conclusions.</p>
+  <p class="footer-org">Project Healing<br>Prosperity &amp; Freedom, Inc</p>
+  <a href="mailto:info@projecthpf.org" class="footer-email">info@projecthpf.org</a>
+  <div class="footer-social">
+    <a href="https://twitter.com/ProjectHPF" title="Twitter"><img src="images/11062b_07090bba1daa42c880682389a46508db_mv2.png" alt="Twitter" style="width:24px;height:24px;"></a>
+    <a href="https://www.instagram.com/projecthpf" title="Instagram"><img src="images/11062b_55e4be1e75564866b6c28290f9a9d271_mv2.png" alt="Instagram" style="width:24px;height:24px;"></a>
+    <a href="https://www.facebook.com/ProjectHPF21" title="Facebook"><img src="images/11062b_a84995cc8b024f4ea398f5744a56bc27_mv2.png" alt="Facebook" style="width:24px;height:24px;"></a>
+    <a href="https://www.tiktok.com/@projecthpf" title="TikTok"><img src="images/11062b_8e8bb1bfaeb54186ace77d5ab14933ff_mv2.png" alt="TikTok" style="width:24px;height:24px;"></a>
+  </div>
+  <div class="footer-links">
+    <a href="privacy">Privacy Policy</a>
+    <a href="terms">Terms and Conditions</a>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

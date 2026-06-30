@@ -1,0 +1,1574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prosperity — Project HPF</title>
+  <meta name="description" content="Building a new economic model rooted in food freedom, financial literacy, and community-driven prosperity that serves every human being." />
+  <link rel="icon" type="image/png" href="images/5f7ee9_eef98a3952f34f5fb211625143e3e8ea_mv2.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Forum&family=Fahkwang:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Boogaloo&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=17">
+  <style>
+
+    /* ── Page Title ── */
+    .pro-page-title {
+      text-align: center;
+      padding: 100px 24px 40px;
+    }
+    .pro-page-title h1 {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 3.5rem;
+      color: #0489C7;
+      margin-bottom: 14px;
+      text-shadow: 2px 3px 5px rgba(0,0,0,0.18);
+    }
+    .pro-page-title .tagline {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 1.05rem;
+      color: var(--gray-dark);
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* ── Hero: Americanism vs Communism ── */
+    .pro-hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 60px;
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+    }
+    .pro-text-box {
+      flex: 0 1 600px;
+      background: #8faec5;
+      border-radius: 12px;
+      padding: 24px 32px;
+      color: #1a1a2e;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.22), 0 2px 8px rgba(0,0,0,0.12);
+    }
+    .pro-text-box h2 {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 1.7rem;
+      color: #fff;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .pro-text-box h2 .play-icon {
+      width: 36px; height: 36px; flex-shrink: 0;
+      background: rgba(255,255,255,0.25);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      margin-left: auto;
+    }
+    .pro-text-box p {
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: #2a2a3e;
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+    .pro-side-col {
+      width: 360px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      align-items: center;
+    }
+    .pro-side-col img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+    .pro-side-col iframe {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 10px;
+      border: none;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+
+    /* ── Economic Model Section ── */
+    .pro-model-wrap {
+      padding: 0 24px 60px;
+    }
+    .pro-model-box {
+      max-width: 1050px;
+      margin: 0 auto;
+      background: linear-gradient(145deg, #3a5a7a 0%, #4a7fa8 40%, #7aab8a 100%);
+      border-radius: 14px;
+      padding: 48px 56px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.25);
+      color: #fff;
+    }
+    .pro-model-box h2 {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 2.1rem;
+      color: #fff;
+      margin-bottom: 10px;
+      line-height: 1.3;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .pro-model-box h2 .play-icon {
+      width: 42px; height: 42px; flex-shrink: 0;
+      background: rgba(255,255,255,0.22);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      margin-left: auto;
+    }
+    .pro-model-box .intro {
+      font-family: var(--font-body);
+      font-size: 0.97rem;
+      color: rgba(255,255,255,0.92);
+      line-height: 1.75;
+      margin-bottom: 28px;
+    }
+    .pro-model-box .if-lead {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .pro-model-box ul {
+      list-style: disc;
+      padding-left: 24px;
+      margin-bottom: 28px;
+    }
+    .pro-model-box ul li {
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.75;
+      margin-bottom: 8px;
+    }
+    .pro-model-box p {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .pro-model-box p:last-child { margin-bottom: 0; }
+
+    /* ── Divider ── */
+    .pro-divider {
+      max-width: 800px;
+      margin: 0 auto 60px;
+      border: none;
+      border-top: 2px solid rgba(200,134,10,0.25);
+    }
+
+    /* ── Food Freedom ── */
+    .pro-food-section {
+      background: linear-gradient(175deg, #c8dfc0 0%, #a8cca0 40%, #8ab890 100%);
+      padding: 60px 24px 70px;
+    }
+    .pro-food-inner { max-width: 1050px; margin: 0 auto; }
+    .pro-food-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+    .pro-food-header h2 {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 2.4rem;
+      color: #1a3a20;
+      line-height: 1.25;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      flex: 1;
+    }
+    .pro-food-header .play-icon {
+      width: 44px; height: 44px; flex-shrink: 0;
+      background: rgba(255,255,255,0.5);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+    }
+    .pro-food-top {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+      margin-bottom: 32px;
+    }
+    .pro-food-intro { flex: 1; }
+    .pro-food-intro p {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: #1e3820;
+      line-height: 1.85;
+      margin-bottom: 14px;
+    }
+    .pro-food-intro p strong { font-weight: 700; color: #152a18; }
+    .pro-food-callout {
+      background: rgba(255,255,255,0.55);
+      border-left: 5px solid #2d6e38;
+      border-radius: 0 10px 10px 0;
+      padding: 18px 22px;
+      margin-top: 16px;
+    }
+    .pro-food-callout p {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 700;
+      color: #152a18;
+      margin: 0;
+      line-height: 2;
+    }
+    .pro-food-video-col {
+      width: 390px;
+      flex-shrink: 0;
+    }
+    .pro-food-video-col iframe {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 10px;
+      border: 4px solid rgba(255,255,255,0.6);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+    /* Numbered cards grid */
+    .pro-food-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      margin-bottom: 32px;
+    }
+    .pro-food-card {
+      background: rgba(255,255,255,0.48);
+      border-radius: 12px;
+      padding: 22px 24px 20px;
+      position: relative;
+      border-top: 3px solid rgba(45,110,56,0.5);
+    }
+    .pro-food-card .card-num {
+      position: absolute;
+      top: -13px; left: 18px;
+      background: #2d6e38;
+      color: #fff;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.78rem;
+      padding: 2px 12px;
+      border-radius: 20px;
+    }
+    .pro-food-card h3 {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.97rem;
+      color: #152a18;
+      margin: 8px 0 10px;
+    }
+    .pro-food-card p {
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      color: #1e3820;
+      line-height: 1.75;
+      margin-bottom: 10px;
+    }
+    .pro-food-card p:last-child { margin-bottom: 0; }
+    .pro-food-card ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+    .pro-food-card ul li {
+      font-family: var(--font-body);
+      font-size: 0.87rem;
+      color: #1e3820;
+      line-height: 1.7;
+      margin-bottom: 5px;
+      padding-left: 18px;
+      position: relative;
+    }
+    .pro-food-card ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: #2d6e38;
+      font-weight: 700;
+    }
+    /* Closing box */
+    .pro-food-closing {
+      background: rgba(255,255,255,0.38);
+      border-radius: 12px;
+      padding: 28px 32px;
+    }
+    .pro-food-closing p {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: #1a3220;
+      line-height: 1.85;
+      margin-bottom: 14px;
+    }
+    .pro-food-closing p:last-child { margin-bottom: 0; }
+    .pro-food-closing p strong { font-weight: 700; color: #122018; }
+    .pro-food-closing ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 16px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 32px;
+    }
+    .pro-food-closing ul li {
+      font-family: var(--font-body);
+      font-size: 0.93rem;
+      color: #1e3820;
+      line-height: 1.75;
+      padding-left: 22px;
+      position: relative;
+    }
+    .pro-food-closing ul li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #2d6e38;
+      font-weight: 700;
+    }
+
+    /* ── Become The Revolution ── */
+    .pro-become {
+      background: #6c3d8e;
+      padding: 60px 24px;
+      text-align: center;
+    }
+    .pro-become h2 {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 2.4rem;
+      color: #fff;
+      text-shadow: 2px 3px 5px rgba(0,0,0,0.25);
+      margin-bottom: 12px;
+    }
+    .pro-become .subtitle {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 40px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .pro-topics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .pro-topic-tile {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      min-height: 180px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .pro-topic-tile:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      text-decoration: none;
+    }
+    .pro-topic-tile.img-tile {
+      padding: 0;
+      background: transparent;
+      border: 3px solid #fff;
+    }
+    .pro-topic-tile.img-tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 9px;
+    }
+    .pro-topic-tile.vid-tile {
+      padding: 0;
+      border: 3px solid #fff;
+    }
+    .pro-topic-tile.vid-tile video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 9px;
+    }
+    .pro-topic-tile.earth-tile {
+      background: #6c3d8e;
+      padding: 12px;
+      border: 3px solid #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .pro-topic-tile.earth-tile img {
+      width: 100%;
+      max-width: 160px;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
+    }
+
+    /* Community section (same across all pages) */
+    .home-community { background: transparent; padding: 100px 24px 20px; position: relative; display: flex; justify-content: center; width: 100%; }
+    .community-bg { background: url('images/nsplsh_335036453279326c797573_mv2_d_5760_3840_s_4_2.jpg') center/cover no-repeat; border-radius: 16px; padding: 50px 48px; position: relative; min-height: 520px; display: flex; align-items: center; justify-content: center; }
+    .community-inner { display: grid; grid-template-columns: 1fr auto; gap: 30px; align-items: center; width: 100%; }
+    .community-text { text-align: left; background: rgba(80,20,120,0.55); padding: 24px; border-radius: 12px; align-self: stretch; display: flex; flex-direction: column; justify-content: center; max-width: 280px; }
+    .community-text { text-align: left; background: rgba(80,20,120,0.55); padding: 24px; border-radius: 12px; align-self: stretch; display: flex; flex-direction: column; justify-content: center; }
+    .community-right-col { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; }
+    .community-earth { width: 240px; height: auto; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3)); }
+    .community-text h2 { font-family: var(--font-body); font-weight: 700; font-size: 1.5rem; color: var(--white); margin-bottom: 10px; text-shadow: 1px 2px 4px rgba(0,0,0,0.4); max-width: 260px; }
+    .community-text p { font-family: var(--font-body); font-size: 0.84rem; color: var(--white); line-height: 1.7; margin-bottom: 14px; text-shadow: 1px 1px 3px rgba(0,0,0,0.3); max-width: 230px; }
+    .community-text p.community-note { font-size: 0.78rem; opacity: 0.9; margin-bottom: 0; white-space: nowrap; }
+    .member-cta-btn { display: inline-block; padding: 12px 36px; background: var(--white); color: var(--green-primary); border: 2px solid var(--white); border-radius: 4px; font-family: var(--font-body); font-weight: 700; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; transition: background 0.3s, color 0.3s; text-decoration: none; margin-bottom: 8px; }
+    .member-cta-btn:hover { background: transparent; color: var(--white); text-decoration: none; }
+
+    /* ── PRIME Act Section ── */
+    .pro-prime-section {
+      background: linear-gradient(170deg, #1c2b1c 0%, #263826 50%, #1e2e28 100%);
+      padding: 70px 24px 80px;
+      color: #e8f0e8;
+    }
+    .pro-prime-inner {
+      max-width: 1050px;
+      margin: 0 auto;
+    }
+    .pro-prime-header .prime-icon {
+      width: 52px; height: 52px; flex-shrink: 0;
+      background: linear-gradient(135deg, #c8860a, #e6a82a);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+      margin-top: 4px;
+      box-shadow: 0 4px 12px rgba(200,134,10,0.4);
+    }
+    .pro-prime-header h2 {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 2.1rem;
+      color: #f0d080;
+      line-height: 1.25;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      flex: 1;
+    }
+    .pro-prime-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      margin-bottom: 10px;
+    }
+    .narration-player.gold .narration-bar-fill { background: #c8860a; }
+    .narration-player.gold .narration-time    { color: #f0d080; }
+    .narration-player.gold .speed-btn         { color: rgba(240,208,128,0.7); border-color: rgba(240,208,128,0.3); }
+    .narration-player.gold .speed-btn.active  { background: #c8860a; color: #fff; border-color: transparent; }
+    .narration-player.gold .narration-bar     { background: rgba(240,208,128,0.2); }
+    .pro-prime-header .play-icon {
+      width: 42px; height: 42px; flex-shrink: 0;
+      background: rgba(255,255,255,0.22);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      color: #fff;
+      margin-top: 4px;
+    }
+    .pro-prime-header .play-icon:hover {
+      background: rgba(255,255,255,0.38);
+    }
+    .pro-prime-intro {
+      background: rgba(255,255,255,0.06);
+      border-left: 4px solid #c8860a;
+      border-radius: 0 10px 10px 0;
+      padding: 20px 26px;
+      margin-bottom: 36px;
+    }
+    .pro-prime-intro p {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: #d0e8d0;
+      line-height: 1.85;
+      margin-bottom: 12px;
+    }
+    .pro-prime-intro p:last-child { margin-bottom: 0; }
+    .pro-prime-intro p strong {
+      color: #f0d080;
+      font-weight: 700;
+    }
+    .pro-prime-what {
+      background: rgba(200,134,10,0.12);
+      border: 1px solid rgba(200,134,10,0.3);
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .pro-prime-what h3 {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: #f0d080;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .pro-prime-what h3::before {
+      content: '§';
+      font-size: 1.4rem;
+      color: #c8860a;
+    }
+    .pro-prime-what p {
+      font-family: var(--font-body);
+      font-size: 0.93rem;
+      color: #c8e0c8;
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+    .pro-prime-what p:last-child { margin-bottom: 0; }
+    .pro-prime-what ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 14px;
+    }
+    .pro-prime-what ul li {
+      font-family: var(--font-body);
+      font-size: 0.93rem;
+      color: #c8e0c8;
+      line-height: 1.75;
+      margin-bottom: 6px;
+      padding-left: 24px;
+      position: relative;
+    }
+    .pro-prime-what ul li::before {
+      content: '✖';
+      position: absolute; left: 0;
+      color: #e05050; font-size: 0.75rem; top: 3px;
+    }
+    .pro-prime-reasons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .pro-prime-reason {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 24px 26px;
+      position: relative;
+    }
+    .pro-prime-reason .reason-num {
+      position: absolute;
+      top: -14px; left: 20px;
+      background: #c8860a;
+      color: #fff;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 2px 12px;
+      border-radius: 20px;
+    }
+    .pro-prime-reason h4 {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 1rem;
+      color: #f0d080;
+      margin-bottom: 10px;
+      margin-top: 6px;
+    }
+    .pro-prime-reason p {
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      color: #b8d0b8;
+      line-height: 1.75;
+      margin-bottom: 8px;
+    }
+    .pro-prime-reason p:last-child { margin-bottom: 0; }
+    .pro-prime-reason ul {
+      list-style: disc;
+      padding-left: 18px;
+      margin-bottom: 8px;
+    }
+    .pro-prime-reason ul li {
+      font-family: var(--font-body);
+      font-size: 0.87rem;
+      color: #b8d0b8;
+      line-height: 1.7;
+      margin-bottom: 4px;
+    }
+    .pro-prime-closing {
+      background: rgba(200,134,10,0.15);
+      border: 1px solid rgba(200,134,10,0.35);
+      border-radius: 12px;
+      padding: 32px 36px;
+    }
+    .pro-prime-closing p {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: #d0e8d0;
+      line-height: 1.85;
+      margin-bottom: 16px;
+    }
+    .pro-prime-closing p:last-child { margin-bottom: 0; }
+    .pro-prime-closing p strong {
+      color: #f0d080;
+      font-weight: 700;
+    }
+    .pro-prime-closing ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 16px;
+    }
+    .pro-prime-closing ul li {
+      font-family: var(--font-body);
+      font-size: 0.93rem;
+      color: #c8e0c8;
+      line-height: 1.75;
+      margin-bottom: 6px;
+      padding-left: 26px;
+      position: relative;
+    }
+    .pro-prime-closing ul li::before {
+      content: '✓';
+      position: absolute; left: 0;
+      color: #6ecf6e;
+      font-weight: 700;
+    }
+
+    /* ── Narration Player ── */
+    .play-icon { cursor: pointer; transition: background 0.2s, transform 0.15s; user-select: none; }
+    .play-icon:hover { transform: scale(1.1); }
+    .narration-player {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, opacity 0.35s ease, margin 0.35s ease;
+      margin-bottom: 0;
+    }
+    .narration-player.playing {
+      max-height: 36px;
+      opacity: 1;
+      margin-bottom: 14px;
+    }
+    .narration-bar {
+      flex: 1;
+      height: 6px;
+      background: rgba(255,255,255,0.28);
+      border-radius: 3px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    .narration-bar:hover { background: rgba(255,255,255,0.4); }
+    .narration-bar-fill {
+      height: 100%;
+      background: rgba(255,255,255,0.88);
+      border-radius: 3px;
+      width: 0%;
+      pointer-events: none;
+    }
+    .narration-time {
+      font-size: 0.7rem;
+      font-family: var(--font-body);
+      color: rgba(255,255,255,0.7);
+      min-width: 72px;
+      text-align: right;
+      white-space: nowrap;
+    }
+    .narration-speed {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      flex-shrink: 0;
+    }
+    .speed-btn {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 4px;
+      color: rgba(255,255,255,0.8);
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      font-weight: 600;
+      padding: 2px 6px;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+      white-space: nowrap;
+      line-height: 1.4;
+    }
+    .speed-btn:hover { background: rgba(255,255,255,0.3); color: #fff; }
+    .speed-btn.active { background: rgba(255,255,255,0.88); color: #1a1a1a; border-color: transparent; }
+    /* Green-tinted player for food section */
+    .narration-player.green .narration-bar { background: rgba(0,0,0,0.15); }
+    .narration-player.green .narration-bar:hover { background: rgba(0,0,0,0.25); }
+    .narration-player.green .narration-bar-fill { background: #2d6e38; }
+    .narration-player.green .narration-time { color: #1a3a20; }
+    .narration-player.green .speed-btn { background: rgba(0,0,0,0.1); border-color: rgba(0,0,0,0.2); color: #1a3a20; }
+    .narration-player.green .speed-btn:hover { background: rgba(0,0,0,0.2); }
+    .narration-player.green .speed-btn.active { background: #2d6e38; color: #fff; border-color: transparent; }
+
+    /* ── Food Revolution Section ── */
+    .pro-revolution-section {
+      background: linear-gradient(170deg, #e8f0f8 0%, #f0f5fd 50%, #e4ecf8 100%);
+      padding: 70px 24px 80px;
+      color: #1a2a4a;
+    }
+    .pro-revolution-inner {
+      max-width: 1050px;
+      margin: 0 auto;
+    }
+    .pro-revolution-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      margin-bottom: 10px;
+    }
+    .pro-revolution-header .rev-icon {
+      width: 52px; height: 52px; flex-shrink: 0;
+      background: linear-gradient(135deg, #2d5a9a, #3a78c8);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+      margin-top: 4px;
+      box-shadow: 0 4px 12px rgba(45,90,154,0.3);
+    }
+    .pro-revolution-header h2 {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 2.1rem;
+      color: #1a2a4a;
+      line-height: 1.25;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      flex: 1;
+    }
+    .pro-revolution-header .play-icon {
+      width: 42px; height: 42px; flex-shrink: 0;
+      background: rgba(255,255,255,0.22);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      color: #1a2a4a;
+      margin-top: 4px;
+    }
+    .pro-revolution-header .play-icon:hover {
+      background: rgba(255,255,255,0.38);
+    }
+    .narration-player.soft-blue .narration-bar-fill { background: #2d5a9a; }
+    .narration-player.soft-blue .narration-time    { color: #1a2a4a; }
+    .narration-player.soft-blue .speed-btn         { color: rgba(26,42,74,0.7); border-color: rgba(26,42,74,0.3); background: rgba(45,90,154,0.08); }
+    .narration-player.soft-blue .speed-btn.active  { background: #2d5a9a; color: #fff; border-color: transparent; }
+    .narration-player.soft-blue .narration-bar     { background: rgba(45,90,154,0.18); }
+    .pro-revolution-intro {
+      background: rgba(45,90,154,0.07);
+      border-left: 4px solid #2d5a9a;
+      border-radius: 0 10px 10px 0;
+      padding: 20px 26px;
+      margin-bottom: 36px;
+    }
+    .pro-revolution-intro p {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: #253550;
+      line-height: 1.85;
+      margin-bottom: 12px;
+    }
+    .pro-revolution-intro p:last-child { margin-bottom: 0; }
+    .pro-revolution-pillars {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    .pro-revolution-pillar {
+      background: rgba(255,255,255,0.7);
+      border: 1px solid rgba(45,90,154,0.2);
+      border-radius: 12px;
+      padding: 26px 28px;
+    }
+    .pro-revolution-pillar h3 {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #1a2a4a;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .pro-revolution-pillar h3 .pillar-num {
+      width: 28px; height: 28px; flex-shrink: 0;
+      background: #2d5a9a;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #fff;
+    }
+    .pro-revolution-pillar p {
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      color: #253550;
+      line-height: 1.8;
+      margin-bottom: 10px;
+    }
+    .pro-revolution-pillar p:last-child { margin-bottom: 0; }
+    .pro-revolution-pillar blockquote {
+      margin: 14px 0 0;
+      padding: 12px 16px;
+      background: rgba(45,90,154,0.07);
+      border-left: 3px solid #2d5a9a;
+      border-radius: 0 6px 6px 0;
+      font-style: italic;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: #2a3a5a;
+      line-height: 1.7;
+    }
+    .pro-revolution-benefits {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    .pro-revolution-benefit-box {
+      background: rgba(255,255,255,0.7);
+      border: 1px solid rgba(45,90,154,0.2);
+      border-radius: 12px;
+      padding: 24px 26px;
+    }
+    .pro-revolution-benefit-box h3 {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #1a2a4a;
+      margin-bottom: 12px;
+    }
+    .pro-revolution-benefit-box ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+    .pro-revolution-benefit-box ul li {
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      color: #253550;
+      line-height: 1.75;
+      padding-left: 20px;
+      position: relative;
+      margin-bottom: 6px;
+    }
+    .pro-revolution-benefit-box ul li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: #2d5a9a;
+      font-size: 0.65rem;
+      top: 4px;
+    }
+    .pro-revolution-benefit-box p {
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      color: #253550;
+      line-height: 1.8;
+      margin-bottom: 0;
+    }
+    .pro-revolution-closing {
+      background: rgba(45,90,154,0.1);
+      border: 1px solid rgba(45,90,154,0.25);
+      border-radius: 12px;
+      padding: 32px 36px;
+    }
+    .pro-revolution-closing p {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: #253550;
+      line-height: 1.85;
+      margin-bottom: 16px;
+    }
+    .pro-revolution-closing p:last-child { margin-bottom: 0; }
+    .pro-revolution-closing p strong { color: #1a2a4a; font-weight: 700; }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .pro-page-title h1 { font-size: 2.4rem; }
+      .pro-hero { flex-direction: column; }
+      .pro-side-col { width: 100%; }
+      .pro-model-box { padding: 30px 22px; }
+      .pro-model-box h2 { font-size: 1.6rem; }
+      .pro-food-top { flex-direction: column; }
+      .pro-food-video-col { width: 100%; }
+      .pro-food-header h2 { font-size: 1.8rem; }
+      .pro-food-cards { grid-template-columns: 1fr; }
+      .pro-food-closing ul { grid-template-columns: 1fr; }
+      .pro-topics-grid { grid-template-columns: repeat(2, 1fr); }
+      .pro-become h2 { font-size: 1.8rem; }
+      .pro-topic-tile { min-height: 130px; }
+      .pro-prime-header h2 { font-size: 1.5rem; }
+      .pro-prime-reasons { grid-template-columns: 1fr; }
+      .pro-prime-what { padding: 20px 18px; }
+      .pro-prime-closing { padding: 24px 20px; }
+      .pro-revolution-header h2 { font-size: 1.5rem; }
+      .pro-revolution-pillars { grid-template-columns: 1fr; }
+      .pro-revolution-benefits { grid-template-columns: 1fr; }
+      .pro-revolution-closing { padding: 24px 20px; }
+      .community-bg { padding: 28px 20px; margin: 0 12px; max-width: 100%; }
+      .community-inner { grid-template-columns: 1fr; text-align: center; }
+      .community-text { text-align: center; }
+      .community-right-col { align-items: center; }
+      .community-earth { width: 180px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index" class="nav-logo nav-logo--wide">
+        <img src="images/phpf-logo-wide-hd.png" alt="ProjectHPF.org">
+      </a>
+      <button class="nav-toggle">&#9776;</button>
+      <div class="nav-links">
+        <div class="dropdown"><a href="themission">THE MISSION</a><div class="dropdown-menu"><a href="themission#healing">Healing</a><a href="prosperity">Prosperity</a><a href="themission#freedom">Freedom</a></div></div>
+        <div class="dropdown"><a href="participate">PARTICIPATE</a><div class="dropdown-menu"><a href="liberatedemocracy">Liberate Democracy</a><a href="buylocal">Buy Local</a><a href="enrich-community">Enrich Community</a></div></div>
+        <a href="didyouknow">DID YOU KNOW</a>
+        <div class="dropdown"><a href="resources">RESOURCES</a><div class="dropdown-menu"><a href="resources#documentaries">Enlightening Documentaries</a><a href="resources#books">Good Reads</a><a href="resources#discover">Podcast</a><a href="resources#news-orgs">News</a><a href="resources#foundations">Other Organizations</a><a href="https://www.liberationofeducation.org" target="_blank">Liberation of Education</a></div></div>
+        <a href="events">EVENTS</a>
+        <div class="dropdown"><a href="donate">DONATE</a><div class="dropdown-menu"><a href="sponsor">Be A Sponsor</a></div></div>
+        <a href="shop">SHOP</a>
+        <a href="blog">BLOG</a>
+      </div>
+      <div class="nav-right">
+        <a href="https://members.projecthpf.org/auth/login" class="btn-member">MEMBERS</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══════════ PAGE TITLE ══════════ -->
+  <section class="pro-page-title reveal">
+    <h1>PROSPERITY</h1>
+    <p class="tagline">What if the next evolution of America wasn't about choosing between capitalism or communism — but about extracting the best ideals from both and weaving them into a model that finally serves everyone?</p>
+  </section>
+
+  <!-- ══════════ 1. HERO: AMERICANISM VS COMMUNISM ══════════ -->
+  <section class="pro-hero reveal">
+    <div class="pro-text-box">
+      <h2>
+        Americanism vs Communism
+        <span class="play-icon" id="play-americanism">&#9654;</span>
+      </h2>
+      <div class="narration-player" id="player-americanism">
+        <div class="narration-bar" id="bar-americanism"><div class="narration-bar-fill" id="fill-americanism"></div></div>
+        <span class="narration-time" id="time-americanism">0:00</span>
+        <div class="narration-speed" data-audio="audio-americanism">
+          <button class="speed-btn" data-speed="0.75">0.75×</button>
+          <button class="speed-btn active" data-speed="1">1×</button>
+          <button class="speed-btn" data-speed="1.25">1.25×</button>
+          <button class="speed-btn" data-speed="1.5">1.5×</button>
+          <button class="speed-btn" data-speed="2">2×</button>
+        </div>
+      </div>
+      <audio id="audio-americanism" class="narration-audio" src="audio/prosperity-americanism.mp3" preload="none"></audio>
+
+      <p>During the Cold War, primarily from the 1950s to the 1980s, both American and Soviet societies were systematically indoctrinated to misunderstand the opposing economic "ism," reducing complex ideologies to simplistic caricatures to serve state power. In the US, "Americanism" was framed as a divine struggle for freedom and capitalism against a godless, tyrannical communism, using schools, media, and civil drills to equate free markets with liberty itself, while obscuring its tendencies toward inequality and crisis. Simultaneously, the USSR taught that state-controlled communism was a scientifically inevitable path to a classless utopia, vilifying capitalism as inherently exploitative, all while masking the system's brutal inefficiency and the rise of a new oppressive party elite. This mutual indoctrination intentionally distorted the full spectrum of economic models — from free markets to mixed economies and socialism — creating a false binary that ignored the nuanced failures and potential syntheses of different systems, ultimately prioritizing nationalist loyalty over a genuine understanding of economic principles that could serve a healthy humanity.</p>
+
+      <p>The systematic indoctrination that reduced complex economic systems to warring caricatures created a profound and lasting societal ill: a financially illiterate populace. This is why it is now crucial for individuals to undertake the task of clearly understanding the why and how — the complete history of money, economics, and the financial system. Such knowledge is the essential antidote to this historical propaganda and the key to righting the compounded wrongs we have inherited. When one traces the evolution from barter to coinage, from the gold standard to fiat currency and complex derivatives, they see that money is not a force of nature but a human-made tool, one whose design and control have always been a source of immense power. Understanding this history reveals that the "isms" of economics — capitalism, communism, socialism — are not immutable truths but competing frameworks for organizing this tool, each with documented flaws and trade-offs that were deliberately hidden during the Cold War. This foundational knowledge empowers people to see through the ideological debris of the past and recognize that our current systems — marked by extreme inequality, boom-bust cycles, and environmental externalities — are not the endpoint of history, but a moment in an ongoing evolution. Armed with this clarity, we can move beyond the false binaries of the 20th century and begin the necessary work of designing new, more humane, and sustainable economic models. We can transition from being passive subjects of economic forces to becoming conscious architects of a system that truly serves humanity, rather than the other way around. In this light, financial and economic literacy is not merely a personal finance skill, but the most fundamental form of civic empowerment, without which genuine and lasting progress is impossible.</p>
+    </div>
+
+    <div class="pro-side-col">
+      <!-- Replace src with actual image path once uploaded -->
+      <img src="images/americanism-vs-communism.png" alt="Americanism vs Communism — Rainbow Tree" onerror="this.style.display='none'">
+      <img src="images/prosperity-definition.png" alt="Prosperity — successful, flourishing condition" onerror="this.style.display='none'">
+      <img src="images/animation/mother-earth-v2-clean.png" alt="Mother Earth" style="width:500px;max-width:100%;height:auto;align-self:center;display:block;border-radius:0;box-shadow:none;background:transparent;">
+      <img src="images/dyk/prosperity.png" alt="Prosperity" style="width:100%;border-radius:10px;box-shadow:0 8px 28px rgba(0,0,0,0.35),0 2px 8px rgba(0,0,0,0.18);">
+      <iframe
+        src="https://www.youtube.com/embed/YR2FcHoQLlU"
+        title="Prosperity — Project HPF"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
+  <!-- ══════════ 2. BUILDING A NEW ECONOMIC MODEL ══════════ -->
+  <section class="pro-model-wrap reveal">
+    <div class="pro-model-box">
+      <h2>
+        <span>Building a New Economic Model:<br>Americanism &amp; Communism</span>
+        <span class="play-icon" id="play-economic">&#9654;</span>
+      </h2>
+      <div class="narration-player" id="player-economic">
+        <div class="narration-bar" id="bar-economic"><div class="narration-bar-fill" id="fill-economic"></div></div>
+        <span class="narration-time" id="time-economic">0:00</span>
+        <div class="narration-speed" data-audio="audio-economic">
+          <button class="speed-btn" data-speed="0.75">0.75×</button>
+          <button class="speed-btn active" data-speed="1">1×</button>
+          <button class="speed-btn" data-speed="1.25">1.25×</button>
+          <button class="speed-btn" data-speed="1.5">1.5×</button>
+          <button class="speed-btn" data-speed="2">2×</button>
+        </div>
+      </div>
+      <audio id="audio-economic" class="narration-audio" src="audio/prosperity-economic-model.mp3" preload="none"></audio>
+
+      <p class="intro">What if the next evolution of America wasn't about choosing between capitalism or communism — but about extracting the best ideals from both and weaving them into a model that finally serves everyone?</p>
+
+      <p class="if-lead">What if we could build a world where:</p>
+      <ul>
+        <li>Every person's basic needs are met, not as a privilege granted by the state, but as a foundational guarantee of human dignity.</li>
+        <li>Individual freedom, creativity, and enterprise are incentivized, allowing people to chase their dreams — whether modest or wildly ambitious.</li>
+        <li>Communities, not bureaucracies, determine what is best for the people who live within them.</li>
+        <li>Economic value is created from contribution, collaboration, resource stewardship, and innovation, not debt, scarcity, or manipulation.</li>
+      </ul>
+
+      <p>This isn't utopian fantasy. It is the natural next step in human governance — and it is well within our reach. As we enter a period of profound transition, we face the undeniable truth: The dollar, large segments of the U.S. government, and many of our industrial systems are approaching collapse. Not because Americans failed, but because the systems we inherited were never designed for the complexity, connectivity, and consciousness of the world we live in now.</p>
+
+      <p>But here is the good news: While old structures are falling apart, new, resilient, community-driven systems are already blooming. Across the country — and the world — people are building:</p>
+      <ul>
+        <li>Micro-economies rooted in cooperation and local empowerment</li>
+        <li>Regenerative food and energy systems</li>
+        <li>Education models centered on human development rather than obedience</li>
+        <li>Decentralized technologies that remove gatekeepers and redistribute power</li>
+        <li>Governance models that put decision-making back in the hands of the people most affected</li>
+      </ul>
+
+      <p>Together, these innovations point toward an emergent economic paradigm — one that harmonizes the security promised by communism with the freedom promised by capitalism, without inheriting the corruption, coercion, or exploitation that plagued either system alone. This is the essence of the new American future we are called to build. A system where freedom and responsibility coexist, where community and individuality reinforce each other, and where prosperity is not concentrated at the top, but generated from the ground up.</p>
+
+      <p>This new model is not about left vs. right. It's not socialism vs. capitalism. It's not Americanism vs. communism. It's about creating something beyond all that — a human-centered system of governance and economics, built for a society that is ready to evolve. The collapse is not the end. It is the clearing. It is the space we need to build what comes next. And what comes next is beautiful.</p>
+    </div>
+  </section>
+
+  <hr class="pro-divider">
+
+  <!-- ══════════ 3. FOOD FREEDOM ══════════ -->
+  <section class="pro-food-section reveal">
+    <div class="pro-food-inner">
+
+      <div class="pro-food-header">
+        <h2>Food Freedom:<br>The Foundation of a New Utopia</h2>
+        <span class="play-icon" id="play-food">&#9654;</span>
+      </div>
+      <div class="narration-player green" id="player-food">
+        <div class="narration-bar" id="bar-food"><div class="narration-bar-fill" id="fill-food"></div></div>
+        <span class="narration-time" id="time-food">0:00</span>
+        <div class="narration-speed" data-audio="audio-food">
+          <button class="speed-btn" data-speed="0.75">0.75×</button>
+          <button class="speed-btn active" data-speed="1">1×</button>
+          <button class="speed-btn" data-speed="1.25">1.25×</button>
+          <button class="speed-btn" data-speed="1.5">1.5×</button>
+          <button class="speed-btn" data-speed="2">2×</button>
+        </div>
+      </div>
+      <audio id="audio-food" class="narration-audio" src="audio/prosperity-food-freedom.mp3" preload="none"></audio>
+
+      <div class="pro-food-top">
+        <div class="pro-food-intro">
+          <p>Every great civilization begins with one simple truth: <strong>Whoever controls the food supply controls the people.</strong></p>
+          <p>If we are serious about building a world where every human being is free to live with dignity, pursue their purpose, and participate in a thriving community-driven economy, then we must start at the root — food production and consumption freedom.</p>
+          <div class="pro-food-callout">
+            <p>Food is not just fuel. Food is autonomy.<br>
+            Food is culture. Food is power.<br>
+            Food is the first layer of sovereignty every human should possess.</p>
+          </div>
+        </div>
+
+        <div class="pro-food-video-col">
+          <iframe
+            src="https://www.youtube.com/embed/nDLirbCGCcw"
+            title="Food Freedom — Project HPF"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+      <!-- 6 numbered cards -->
+      <div class="pro-food-cards">
+        <div class="pro-food-card">
+          <span class="card-num">1</span>
+          <h3>Breaks the Cycle of Dependence</h3>
+          <p>A handful of corporations and regulatory bodies currently determine what we grow, what seeds we access, and what foods are legal to sell or barter — creating dependency by design. When people regain the right to grow and trade freely, they reclaim the most essential form of sovereignty.</p>
+          <ul>
+            <li>What we're allowed to grow &amp; how</li>
+            <li>What seeds we can access</li>
+            <li>What foods are legal to sell, share, or barter</li>
+          </ul>
+        </div>
+
+        <div class="pro-food-card">
+          <span class="card-num">2</span>
+          <h3>Local Systems Create True Resilience</h3>
+          <p>Supply chain fragility, soil depletion, food deserts, contamination recalls — the cracks in the industrial food system are already visible. A society relying entirely on centralized production is one disaster away from collapse. Local systems are the antidote.</p>
+          <ul>
+            <li>Community gardens &amp; clean family farms</li>
+            <li>Regenerative agriculture &amp; micro-farms</li>
+            <li>Neighborhood food co-ops &amp; homesteads</li>
+          </ul>
+        </div>
+
+        <div class="pro-food-card">
+          <span class="card-num">3</span>
+          <h3>Basic Needs Met Without State Dependence</h3>
+          <p>A true utopia requires that people's basic needs are guaranteed — not by authoritarian structure, but by the people themselves. When communities produce their own food, human rights stop being granted by the state and start being lived.</p>
+          <ul>
+            <li>Hunger disappears, health improves</li>
+            <li>Cost of living falls, wealth stays local</li>
+            <li>No coercion through the threat of scarcity</li>
+          </ul>
+        </div>
+
+        <div class="pro-food-card">
+          <span class="card-num">4</span>
+          <h3>Unleashes Creativity &amp; Enterprise</h3>
+          <p>Food freedom isn't just about survival — it's about unleashing human potential. When people can start micro-farms, build small dairies, sell produce, or try aquaponics, they create micro-economies that strengthen the entire region from the ground up.</p>
+          <ul>
+            <li>Entrepreneurship &amp; local innovation</li>
+            <li>Trade networks &amp; cultural revival</li>
+            <li>Bottom-up economic independence</li>
+          </ul>
+        </div>
+
+        <div class="pro-food-card">
+          <span class="card-num">5</span>
+          <h3>Reconnects Humans to the Land</h3>
+          <p>Industrial systems have severed the most ancient relationship we have — between people and the land that sustains them. Food freedom restores stewardship, healthier ecosystems, and the deep sense of belonging that comes from growing your own.</p>
+          <ul>
+            <li>Respect for natural cycles &amp; seasons</li>
+            <li>Healthier bodies and healthier ecosystems</li>
+            <li>Interdependence and community between neighbors</li>
+          </ul>
+        </div>
+
+        <div class="pro-food-card">
+          <span class="card-num">6</span>
+          <h3>The Freedom That Makes All Others Real</h3>
+          <p>You cannot be truly free if the food that keeps you alive is controlled by someone else. Food freedom is the first domino — and once it falls, every other form of freedom becomes possible to build and defend.</p>
+          <ul>
+            <li>Educate children outside failing institutions</li>
+            <li>Build local economies &amp; resist overreach</li>
+            <li>Create parallel systems beyond broken ones</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Closing statement -->
+      <div class="pro-food-closing">
+        <p>Food freedom makes political freedom possible. It makes economic freedom tangible. It makes human freedom non-negotiable.</p>
+        <p><strong>Food Freedom Is the Beginning of the New Utopia.</strong> If we want to build a society where:</p>
+        <ul>
+          <li>Everyone's basic needs are met</li>
+          <li>People are incentivized to dream and create</li>
+          <li>Governance is local and human-centered</li>
+          <li>Economies grow from cooperation instead of coercion</li>
+          <li>Freedom is lived, not promised</li>
+        </ul>
+        <p>— it all begins with the soil beneath our feet. Food freedom is not one piece of the new world. It is the foundation upon which everything else stands. And once the people reclaim their food, no system — political or economic — will ever again have the power to control them.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════ 4. PRIME ACT ══════════ -->
+  <section class="pro-prime-section reveal">
+    <div class="pro-prime-inner">
+
+      <div class="pro-prime-header">
+        <div class="prime-icon">⚖️</div>
+        <h2>Why the PRIME Act Is Imperative<br>to Building Our New Utopia</h2>
+        <span class="play-icon" id="play-prime" title="Play narration">&#9654;</span>
+      </div>
+
+      <div class="narration-player gold" id="player-prime">
+        <div class="narration-bar" id="bar-prime"><div class="narration-bar-fill" id="fill-prime"></div></div>
+        <span class="narration-time" id="time-prime">0:00</span>
+        <div class="narration-speed" data-audio="audio-prime">
+          <button class="speed-btn" data-speed="0.75">0.75×</button>
+          <button class="speed-btn active" data-speed="1">1×</button>
+          <button class="speed-btn" data-speed="1.25">1.25×</button>
+          <button class="speed-btn" data-speed="1.5">1.5×</button>
+          <button class="speed-btn" data-speed="2">2×</button>
+        </div>
+      </div>
+      <audio id="audio-prime" src="audio/prosperity-prime-act.mp3" preload="none"></audio>
+
+      <div class="pro-prime-intro">
+        <p>If food freedom is the foundation of a new utopia, then the <strong>PRIME Act (Processing Revival and Intrastate Meat Exemption Act)</strong> is one of the most important legislative tools we have for making that vision a reality — right now, within the current system.</p>
+        <p>The PRIME Act would allow small farms and ranches to have their animals processed at small, USDA-exempt custom slaughterhouses and sell that meat directly to consumers, restaurants, grocery stores, and institutions — all within their own state — without requiring federal USDA inspection of the slaughter facility.</p>
+        <p>This is not a radical idea. It is a restoration of the kind of local food systems that sustained communities for generations, before industrial consolidation stripped them bare.</p>
+      </div>
+
+      <div class="pro-prime-what">
+        <h3>What the PRIME Act Does</h3>
+        <p>Under current federal law (the Federal Meat Inspection Act), meat sold to consumers must be processed in a USDA-inspected facility. This sounds reasonable — until you understand that there are only about <strong>800 federally inspected beef slaughterhouses left in the entire United States</strong>, and a handful of corporations control most of them.</p>
+        <p>The result? Small farmers who raise ethical, clean, pasture-raised animals are forced to:</p>
+        <ul>
+          <li>Drive hundreds of miles to a USDA facility</li>
+          <li>Wait months for a processing slot (often 12–18 months out)</li>
+          <li>Pay rates designed for industrial scale, not small family farms</li>
+          <li>Lose control over their product quality and handling</li>
+        </ul>
+        <p>The PRIME Act removes this stranglehold. It restores states' rights to allow intrastate meat sales from custom-exempt processors — giving small farmers a viable path to market and giving consumers access to locally raised meat they can trust.</p>
+      </div>
+
+      <!-- 7 numbered reasons -->
+      <div class="pro-prime-reasons">
+
+        <div class="pro-prime-reason">
+          <span class="reason-num">1</span>
+          <h4>Rebuilds Local Economies</h4>
+          <p>When small farms can sell directly within their state, money circulates locally. Every dollar spent at a local farm stays in the community — it pays local workers, funds local suppliers, and builds local wealth instead of being siphoned to distant corporations.</p>
+          <p>The PRIME Act would catalyze:</p>
+          <ul>
+            <li>New small-scale processing facilities</li>
+            <li>Rural jobs and apprenticeships</li>
+            <li>New farm-to-table supply chains</li>
+            <li>Stronger local tax bases</li>
+            <li>Thriving rural communities instead of dying ones</li>
+          </ul>
+        </div>
+
+        <div class="pro-prime-reason">
+          <span class="reason-num">2</span>
+          <h4>Ends Industrial Food Dependence</h4>
+          <p>Today's industrial meat system is deeply fragile. COVID-19 exposed this when just a handful of plant closures caused nationwide meat shortages overnight. The PRIME Act decentralizes meat production — creating hundreds of small, resilient, community-based supply nodes instead of a handful of corporate choke points.</p>
+          <p>A decentralized food system cannot be shut down by one disease outbreak, one corporate decision, or one federal policy failure. It is inherently more resilient — and more just.</p>
+        </div>
+
+        <div class="pro-prime-reason">
+          <span class="reason-num">3</span>
+          <h4>Makes Ethical Regenerative Farming Viable</h4>
+          <p>The small farmers raising cattle on open pasture, pigs in the woods, and chickens on clean land are doing the work of healing the earth. But they cannot compete when the system demands they process through industrial facilities that were built for factory farming scale.</p>
+          <p>The PRIME Act levels the playing field. It makes regenerative agriculture economically viable — giving ethical farmers a real market and giving the planet a chance to heal through the very act of local food production.</p>
+        </div>
+
+        <div class="pro-prime-reason">
+          <span class="reason-num">4</span>
+          <h4>Honors Consumer Choice and Personal Sovereignty</h4>
+          <p>In a free society, adults should have the right to choose where their food comes from. They should be able to walk up to a local farmer, know how the animal was raised, watch it processed if they wish, and bring that meat home — without a federal bureaucracy standing in between.</p>
+          <p>The PRIME Act says: <strong>People have the right to make informed food choices.</strong> It restores the most fundamental marketplace — the direct relationship between a producer and a consumer — which is the backbone of any community economy.</p>
+        </div>
+
+        <div class="pro-prime-reason">
+          <span class="reason-num">5</span>
+          <h4>Reinforces Our New Governance Model</h4>
+          <p>One of the core principles of the new economic paradigm we are building is that governance should be as local as possible. Decisions about food — what is safe, what is allowed, what standards apply — should be made at the state and community level, not handed down by Washington bureaucracies that serve corporate interests.</p>
+          <p>The PRIME Act is a direct expression of this principle. It says: <strong>States know their farmers. Communities know their food. Let them decide.</strong> It is a model of governance that prioritizes the people closest to the issue — exactly what our new system demands.</p>
+        </div>
+
+        <div class="pro-prime-reason">
+          <span class="reason-num">6</span>
+          <h4>Reduces the Cost of Real Food for Everyday People</h4>
+          <p>One of the cruelest ironies of the industrial food system is that the cheapest, most accessible food is often the worst for you — while clean, ethical, local food is priced out of reach for working families.</p>
+          <p>The PRIME Act changes this dynamic. When small processors can legally operate and sell locally:</p>
+          <ul>
+            <li>Transportation costs drop</li>
+            <li>Middlemen are eliminated</li>
+            <li>Competition increases at the local level</li>
+            <li>Prices fall while quality rises</li>
+          </ul>
+          <p>Real food becomes accessible food. That is a cornerstone of genuine prosperity.</p>
+        </div>
+
+        <div class="pro-prime-reason">
+          <span class="reason-num">7</span>
+          <h4>Is the First Domino in Ending Corporate Capture of Food</h4>
+          <p>The industrial food system did not become dominant because it was better. It became dominant because regulatory structures — written largely by lobbyists — made small-scale competition impossible. The PRIME Act begins to dismantle this structure — not by tearing everything down, but by opening a door that has been deliberately locked.</p>
+          <p>Once that door opens, it creates precedent. It proves the model works. It shows communities that local food systems are viable, safe, and superior. And it builds the political and economic infrastructure for deeper change: raw milk freedom, heirloom seed protections, local food labeling rights, and community food sovereignty ordinances that put power back in the hands of people.</p>
+        </div>
+
+      </div>
+
+      <!-- Closing statement -->
+      <div class="pro-prime-closing">
+        <p><strong>The PRIME Act is not just a farm bill. It is a declaration of food sovereignty.</strong></p>
+        <p>It says that in our new model, the local farmer has a right to a market. The conscious consumer has a right to choose. The community has a right to build its own food economy. And no corporation or federal agency has the right to stand in between a person and the food that sustains them.</p>
+        <p>In the world we are building, the PRIME Act is not optional. It is foundational. It is:</p>
+        <ul>
+          <li>A vote for local economies over corporate monopolies</li>
+          <li>A vote for regenerative agriculture over industrial destruction</li>
+          <li>A vote for personal sovereignty over bureaucratic control</li>
+          <li>A vote for community resilience over systemic fragility</li>
+          <li>A vote for real food for all people, not just for those who can afford the premium</li>
+        </ul>
+        <p><strong>Pass the PRIME Act. Feed the people. Build the utopia.</strong></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════ 5. FOOD REVOLUTION ══════════ -->
+  <section class="pro-revolution-section reveal">
+    <div class="pro-revolution-inner">
+
+      <div class="pro-revolution-header">
+        <div class="rev-icon">🌾</div>
+        <h2>Beyond the PRIME Act:<br>The Food Revolution</h2>
+        <span class="play-icon" id="play-revolution" title="Play narration">&#9654;</span>
+      </div>
+
+      <div class="narration-player soft-blue" id="player-revolution">
+        <div class="narration-bar" id="bar-revolution"><div class="narration-bar-fill" id="fill-revolution"></div></div>
+        <span class="narration-time" id="time-revolution">0:00</span>
+        <div class="narration-speed" data-audio="audio-revolution">
+          <button class="speed-btn" data-speed="0.75">0.75×</button>
+          <button class="speed-btn active" data-speed="1">1×</button>
+          <button class="speed-btn" data-speed="1.25">1.25×</button>
+          <button class="speed-btn" data-speed="1.5">1.5×</button>
+          <button class="speed-btn" data-speed="2">2×</button>
+        </div>
+      </div>
+      <audio id="audio-revolution" src="audio/prosperity-revolution.mp3" preload="none"></audio>
+
+      <div class="pro-revolution-intro">
+        <p>For generations, Americans have been told that food freedom must operate within systems designed for industrial agriculture — systems built for centralized production, mass distribution, and corporate control. While reforms like the PRIME Act represent important steps toward restoring local food sovereignty, true prosperity requires going further.</p>
+        <p>Prosperity begins when people reclaim authority over the most fundamental human necessity: food.</p>
+        <p>Across the country, a growing movement of farmers, ranchers, homesteaders, and citizens is advancing what can only be described as The Food Revolution — a peaceful revolution to restore the natural relationship between people, land, and nourishment.</p>
+      </div>
+
+      <div class="pro-revolution-pillars">
+
+        <div class="pro-revolution-pillar">
+          <h3><span class="pillar-num">1</span><a href="https://www.thelunaticfarmer.com/blog/5/15/2025/why-we-need-food-emancipation-proclamation" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; border-bottom:2px solid rgba(45,90,154,0.35);">The Food Emancipation Proclamation</a></h3>
+          <p>Led by regenerative farmer and agricultural pioneer Joel Salatin, the Food Emancipation Proclamation challenges the assumption that centralized regulation should determine how neighbors feed one another.</p>
+          <p>Salatin and countless independent producers argue that food produced responsibly, transparently, and locally should not be treated as a controlled commodity requiring industrial compliance structures. Instead, food should be governed by trust, relationship, and accountability at the community level.</p>
+          <blockquote>If informed adults voluntarily choose to buy food directly from a farmer, government permission should not stand between them.</blockquote>
+          <p style="margin-top:12px; font-size:0.86rem; color:#253550;">This vision reframes agriculture from an industrial supply chain into a human ecosystem — where farmers steward land, communities support producers, and prosperity flows locally rather than upward into distant corporate structures.</p>
+        </div>
+
+        <div class="pro-revolution-pillar">
+          <h3><span class="pillar-num">2</span><a href="https://storage.googleapis.com/msgsndr/zx4MnvHC5mSpCaKzLF85/media/69169bb201e5bcbe3802cf75.pdf" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; border-bottom:2px solid rgba(45,90,154,0.35);">The Food Declaration of Independence</a></h3>
+          <p>Complementing this movement is the Food Declaration of Independence, championed by rancher and food freedom advocate Steve Jarvis.</p>
+          <p>Jarvis calls for Americans to recognize food choice as a natural right rather than a regulated privilege. The declaration asserts that individuals possess the inherent authority to decide:</p>
+          <ul style="list-style:disc; padding-left:18px; margin:10px 0; color:#253550; font-size:0.87rem; line-height:1.75;">
+            <li>What food they eat</li>
+            <li>Who produces it</li>
+            <li>How it is grown or raised</li>
+            <li>And how it is exchanged within voluntary markets</li>
+          </ul>
+          <p>At its core, the declaration restores food to its rightful place — not as an industrial product controlled by distant institutions, but as a cornerstone of human autonomy, health, and economic resilience.</p>
+        </div>
+
+      </div>
+
+      <div class="pro-revolution-benefits">
+
+        <div class="pro-revolution-benefit-box">
+          <h3>Prosperity Through Food Freedom</h3>
+          <p style="margin-bottom:12px;">Project HPF recognizes that prosperity cannot exist without food sovereignty. When communities regain control of food systems:</p>
+          <ul>
+            <li>Local economies strengthen</li>
+            <li>Small farms thrive</li>
+            <li>Health outcomes improve</li>
+            <li>Environmental stewardship becomes profitable</li>
+            <li>Families reconnect with the sources of their sustenance</li>
+          </ul>
+          <p style="margin-top:12px;">Food freedom decentralizes power. It distributes opportunity. It creates resilience against fragile global supply chains and economic instability.</p>
+        </div>
+
+        <div class="pro-revolution-benefit-box">
+          <h3>The Project HPF Vision</h3>
+          <p style="margin-bottom:12px;">Project Healing Prosperity and Freedom supports a future where:</p>
+          <ul>
+            <li>Farmers and consumers engage freely through voluntary exchange</li>
+            <li>Local food networks replace dependency on centralized systems</li>
+            <li>Regulation protects against fraud and harm — not independence and innovation</li>
+            <li>Prosperity grows from the ground up, literally and economically</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pro-revolution-closing">
+        <p>Beyond legislative reform, the Food Revolution represents a cultural shift — one that honors farmers as innovators, consumers as decision-makers, and communities as capable of governing themselves.</p>
+        <p><strong>The Food Revolution is not merely about agriculture.</strong> It is about restoring the human right to nourish ourselves, our families, and our communities without unnecessary interference.</p>
+        <p><strong>Because prosperity begins when people are free to feed one another.</strong></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════ 6. BECOME THE REVOLUTION ══════════ -->
+  <section class="pro-become reveal">
+    <h2>Become The Revolution</h2>
+    <p class="subtitle">Spend time learning about all the topics on our Did You Know Page starting with these...</p>
+
+    <div class="pro-topics-grid">
+      <a href="governance" class="pro-topic-tile img-tile">
+        <img src="images/dyk/governance.png" alt="Governance">
+      </a>
+      <a href="arevolution" class="pro-topic-tile img-tile">
+        <img src="images/dyk/It's a revolution.png" alt="It's a Revolution">
+      </a>
+      <a href="didyouknow" class="pro-topic-tile img-tile">
+        <img src="images/dyk/Americas Foundation.png" alt="Americas Foundation">
+      </a>
+      <a href="didyouknow" class="pro-topic-tile vid-tile">
+        <video autoplay muted loop playsinline><source src="images/dyk/Food and Water LOGO.mp4" type="video/mp4"></video>
+      </a>
+      <a href="didyouknow" class="pro-topic-tile earth-tile">
+        <img src="images/animation/mother-earth-v2-clean.png" alt="Mother Earth">
+      </a>
+      <a href="didyouknow" class="pro-topic-tile vid-tile">
+        <video autoplay muted loop playsinline><source src="images/dyk/Money.mp4" type="video/mp4"></video>
+      </a>
+      <a href="didyouknow" class="pro-topic-tile img-tile">
+        <img src="images/dyk/Economic.png" alt="Economic Freedom">
+      </a>
+      <a href="didyouknow" class="pro-topic-tile vid-tile">
+        <video autoplay muted loop playsinline><source src="images/dyk/UNCONDITIONAL LOVE.mp4" type="video/mp4"></video>
+      </a>
+      <a href="didyouknow" class="pro-topic-tile img-tile">
+        <img src="images/dyk/FREEWIll.png" alt="Free Will">
+      </a>
+    </div>
+  </section>
+
+  <!-- ══════════ COMMUNITY & MEMBERSHIP ══════════ -->
+  <section class="home-community reveal">
+    <div class="community-bg">
+      <div class="community-inner">
+        <div class="community-text">
+          <h2>Join Our Prosperity Community</h2>
+          <p>Communicate, collaborate, and connect with citizens committed to healing, prosperity &amp; freedom. Become a PHPF member for just $1/month and gain exclusive access to our member directory, content library, and Liberate Democracy voting.</p>
+          <p class="community-note">Membership unlocks the full PHPF experience.</p>
+        </div>
+        <div class="community-right-col">
+          <img src="images/animation/mother-earth-v2-clean.png" alt="Mother Earth" class="community-earth">
+          <a href="https://members.projecthpf.org/auth/register" class="member-cta-btn">Join Now — $1/mo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p class="footer-disclaimer">Disclaimer: Project Healing Prosperity &amp; Freedom, Inc is pleased to provide diverse ideas from across the world that we hope will spark listeners' curiosity and broaden their worldview. Project Healing Prosperity &amp; Freedom, Inc does not endorse all of the perspectives, ideas and information put forward in any of the external content presented and invites listeners to have an open mind but question everything as they draw their own conclusions.</p>
+    <p class="footer-org">Project Healing<br>Prosperity &amp; Freedom, Inc</p>
+    <a href="mailto:info@projecthpf.org" class="footer-email">info@projecthpf.org</a>
+    <div class="footer-social">
+      <a href="https://twitter.com/ProjectHPF" title="Twitter"><img src="images/11062b_07090bba1daa42c880682389a46508db_mv2.png" alt="Twitter" style="width:24px;height:24px;"></a>
+      <a href="https://www.instagram.com/projecthpf" title="Instagram"><img src="images/11062b_55e4be1e75564866b6c28290f9a9d271_mv2.png" alt="Instagram" style="width:24px;height:24px;"></a>
+      <a href="https://www.facebook.com/ProjectHPF21" title="Facebook"><img src="images/11062b_a84995cc8b024f4ea398f5744a56bc27_mv2.png" alt="Facebook" style="width:24px;height:24px;"></a>
+      <a href="https://www.tiktok.com/@projecthpf" title="TikTok"><img src="images/11062b_8e8bb1bfaeb54186ace77d5ab14933ff_mv2.png" alt="TikTok" style="width:24px;height:24px;"></a>
+    </div>
+    <div class="footer-links">
+      <a href="privacy">Privacy Policy</a>
+      <a href="terms">Terms and Conditions</a>
+    </div>
+    <p style="font-size:0.78rem; color:var(--gray-light);">&copy; 2024 Project Healing Prosperity &amp; Freedom, Inc. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+  (function () {
+    var tracks = [
+      { play: 'play-americanism', audio: 'audio-americanism', player: 'player-americanism', bar: 'bar-americanism', fill: 'fill-americanism', time: 'time-americanism' },
+      { play: 'play-economic',    audio: 'audio-economic',    player: 'player-economic',    bar: 'bar-economic',    fill: 'fill-economic',    time: 'time-economic'    },
+      { play: 'play-food',        audio: 'audio-food',        player: 'player-food',        bar: 'bar-food',        fill: 'fill-food',        time: 'time-food'        },
+      { play: 'play-prime',       audio: 'audio-prime',       player: 'player-prime',       bar: 'bar-prime',       fill: 'fill-prime',       time: 'time-prime'       },
+      { play: 'play-revolution',  audio: 'audio-revolution',  player: 'player-revolution',  bar: 'bar-revolution',  fill: 'fill-revolution',  time: 'time-revolution'  }
+    ];
+
+    function fmt(t) {
+      var m = Math.floor(t / 60), s = Math.floor(t % 60);
+      return m + ':' + (s < 10 ? '0' : '') + s;
+    }
+
+    function pauseAll(except) {
+      tracks.forEach(function (t) {
+        if (t.audio === except) return;
+        var a = document.getElementById(t.audio);
+        var p = document.getElementById(t.player);
+        var b = document.getElementById(t.play);
+        if (a && !a.paused) {
+          a.pause();
+          if (p) p.classList.remove('playing');
+          if (b) b.textContent = '\u25B6';
+        }
+      });
+    }
+
+    tracks.forEach(function (t) {
+      var playBtn = document.getElementById(t.play);
+      var audio   = document.getElementById(t.audio);
+      var player  = document.getElementById(t.player);
+      var bar     = document.getElementById(t.bar);
+      var fill    = document.getElementById(t.fill);
+      var timeEl  = document.getElementById(t.time);
+      if (!playBtn || !audio) return;
+
+      /* Play / Pause */
+      playBtn.addEventListener('click', function () {
+        if (audio.paused) {
+          pauseAll(t.audio);
+          audio.play();
+          playBtn.textContent = '\u23F8';
+          if (player) player.classList.add('playing');
+        } else {
+          audio.pause();
+          playBtn.textContent = '\u25B6';
+        }
+      });
+
+      /* Progress bar */
+      audio.addEventListener('timeupdate', function () {
+        if (!audio.duration) return;
+        var pct = (audio.currentTime / audio.duration) * 100;
+        if (fill) fill.style.width = pct + '%';
+        if (timeEl) timeEl.textContent = fmt(audio.currentTime) + ' / ' + fmt(audio.duration);
+      });
+
+      /* Seek on click */
+      if (bar) {
+        bar.addEventListener('click', function (e) {
+          var rect = bar.getBoundingClientRect();
+          var pct  = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+          if (audio.duration) audio.currentTime = pct * audio.duration;
+        });
+      }
+
+      /* Ended */
+      audio.addEventListener('ended', function () {
+        playBtn.textContent = '\u25B6';
+        if (player) player.classList.remove('playing');
+        if (fill) fill.style.width = '0%';
+        if (timeEl) timeEl.textContent = '0:00';
+        audio.currentTime = 0;
+      });
+
+      /* Speed buttons */
+      var speedContainer = player ? player.querySelector('.narration-speed') : null;
+      if (speedContainer) {
+        speedContainer.querySelectorAll('.speed-btn').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var speed = parseFloat(btn.getAttribute('data-speed'));
+            audio.playbackRate = speed;
+            speedContainer.querySelectorAll('.speed-btn').forEach(function (b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+          });
+        });
+      }
+    });
+  })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events — Project HPF</title>
+  <meta name="description" content="Upcoming events from Project Healing Prosperity & Freedom, including the Project HPF Music Fest.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Forum&family=Fahkwang:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Boogaloo&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=17">
+  <link rel="icon" href="images/5f7ee9_eef98a3952f34f5fb211625143e3e8ea_mv2.png">
+  <style>
+    /* Hero */
+    .events-hero {
+      text-align: center;
+      padding: 100px 24px 50px;
+      background: transparent;
+    }
+    .events-hero h1 {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 3.5rem;
+      color: #0489C7;
+      margin-bottom: 12px;
+      text-shadow: 2px 3px 5px rgba(0,0,0,0.25);
+    }
+    .events-hero .tagline {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 1.05rem;
+      color: var(--gray-dark);
+      font-style: normal;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    /* Events Flow Layout */
+    .events-flow {
+      background: transparent;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px 40px;
+      position: relative;
+    }
+
+    /* Music Fest Logo */
+    .fest-logo-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: -40px;
+      position: relative;
+      z-index: 2;
+    }
+    .fest-logo {
+      max-width: 340px;
+      width: 100%;
+    }
+
+    /* Green Bubble - "It's More Than Just a Music Festival" */
+    .green-bubble {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 0;
+      margin-left: 120px;
+      margin-top: -200px;
+    }
+    .green-bubble-text {
+      width: 380px;
+      height: 380px;
+      border-radius: 50%;
+      background: rgba(180, 230, 200, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px;
+      flex-shrink: 0;
+    }
+    .green-bubble-text h2 {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 2rem;
+      color: #0489C7;
+      text-transform: uppercase;
+      line-height: 1.2;
+      letter-spacing: 1px;
+    }
+    .revolution-circle {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+      background: #1a1a2e;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      border: 4px solid #fff;
+      margin-left: -60px;
+      margin-top: 140px;
+    }
+    .revolution-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Join the Revolution Bubble */
+    .join-bubble {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 20px 0 10px 140px;
+    }
+    .join-bubble-circle {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: rgba(210, 200, 190, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .join-bubble-circle span {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #e8951e;
+      text-transform: uppercase;
+      text-align: center;
+      line-height: 1.3;
+    }
+    .orange-arrow {
+      font-size: 2.5rem;
+      color: #e8951e;
+      transform: rotate(-30deg);
+    }
+
+    /* Fighting for Humanity */
+    .fighting-section {
+      text-align: center;
+      margin: 20px 0 40px;
+    }
+    .fighting-top {
+      font-family: var(--font-head);
+      font-size: 0.85rem;
+      color: var(--blue-dark);
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 2px;
+      margin-bottom: 0;
+      line-height: 1.5;
+    }
+    .fighting-big {
+      font-family: var(--font-head);
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .word-fighting {
+      font-size: 4rem;
+      letter-spacing: 8px;
+      color: #555;
+      font-weight: 400;
+    }
+    .word-for {
+      font-size: 1rem;
+      letter-spacing: 3px;
+      color: #999;
+      text-transform: uppercase;
+    }
+    .word-humanity {
+      font-size: 4rem;
+      letter-spacing: 8px;
+      color: #4cc0a0;
+      font-weight: 400;
+    }
+
+    /* Survey Section */
+    .survey-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 20px 0 40px;
+    }
+    .sticky-notes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px;
+      width: 130px;
+    }
+    .sticky-note {
+      width: 62px;
+      height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6rem;
+      font-weight: 700;
+      text-align: center;
+      border-radius: 3px;
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+      padding: 4px;
+      font-family: var(--font-head);
+    }
+    .sticky-note:nth-child(1) { background: #ff9ecd; font-style: italic; }
+    .sticky-note:nth-child(2) { background: #7fd4ff; }
+    .sticky-note:nth-child(3) { background: #7fff7f; font-style: italic; }
+    .sticky-note:nth-child(4) { background: #ffff7f; }
+    .survey-cta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .survey-arrow-img {
+      font-size: 2.5rem;
+      color: #e8951e;
+      transform: scaleX(-1) rotate(-30deg);
+    }
+    .survey-label {
+      font-family: var(--font-head);
+      font-size: 1.1rem;
+      color: #e8951e;
+      text-transform: uppercase;
+      font-weight: 700;
+      text-decoration: none;
+      line-height: 1.3;
+    }
+    .survey-label:hover {
+      color: var(--green-primary);
+      text-decoration: none;
+    }
+    .join-bubble {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: -20px 0 10px 80px;
+    }
+    .join-text {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #0489C7;
+      text-transform: uppercase;
+      line-height: 1.3;
+    }
+    .values-img {
+      width: 180px;
+      height: auto;
+      border-radius: 6px;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    }
+    .values-btn {
+      display: inline-block;
+      background: #0489C7;
+      color: #fff;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 14px 32px;
+      border-radius: 30px;
+      text-decoration: none;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .values-btn:hover {
+      background: #e91e8c;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .events-hero h1 { font-size: 2.4rem; }
+      .green-bubble { flex-direction: column; align-items: center; margin-left: 0; }
+      .green-bubble-text { width: 280px; height: 280px; padding: 40px; }
+      .green-bubble-text h2 { font-size: 1.5rem; }
+      .revolution-circle { margin-left: 0; margin-top: -30px; width: 220px; height: 220px; }
+      .join-bubble { margin: -20px auto 10px; justify-content: center; }
+      .join-bubble-circle { width: 150px; height: 150px; }
+      .word-fighting, .word-humanity { font-size: 2.5rem; }
+      .fighting-section { margin: 10px 0 30px; }
+    }
+    /* Community & Membership Unified Section */
+    .home-community { background: transparent; padding: 100px 24px 20px; display: flex; justify-content: center; width: 100%; }
+    .community-bg { background: url('images/nsplsh_335036453279326c797573_mv2_d_5760_3840_s_4_2.jpg') center/cover no-repeat; border-radius: 16px; padding: 50px 48px; position: relative; min-height: 520px; display: flex; align-items: center; justify-content: center; }
+    .community-inner { display: grid; grid-template-columns: 1fr auto; gap: 30px; align-items: center; }
+    .community-text { text-align: left; background: rgba(80, 20, 120, 0.55); padding: 24px; border-radius: 12px; align-self: stretch; display: flex; flex-direction: column; justify-content: center; }
+    .community-right-col { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; }
+    .community-earth { width: 240px; height: auto; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3)); }
+    .community-text h2 { font-family: var(--font-body); font-weight: 700; font-size: 1.5rem; color: var(--white); margin-bottom: 10px; text-shadow: 1px 2px 4px rgba(0,0,0,0.4); max-width: 260px; }
+    .community-text p { font-family: var(--font-body); font-size: 0.84rem; color: var(--white); line-height: 1.7; margin-bottom: 14px; text-shadow: 1px 1px 3px rgba(0,0,0,0.3); max-width: 230px; }
+    .community-text p.community-note { font-size: 0.78rem; opacity: 0.9; margin-bottom: 0; white-space: nowrap; }
+    .member-cta-btn { display: inline-block; padding: 12px 36px; background: var(--white); color: var(--green-primary); border: 2px solid var(--white); border-radius: 4px; font-family: var(--font-body); font-weight: 700; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; transition: background 0.3s, color 0.3s; text-decoration: none; margin-bottom: 8px; }
+    .member-cta-btn:hover { background: transparent; color: var(--white); text-decoration: none; }
+    @media (max-width: 900px) {
+      .community-bg { padding: 28px 20px; margin: 0 12px; max-width: 100%; }
+      .community-inner { grid-template-columns: 1fr; text-align: center; }
+      .community-text { text-align: center; }
+      .community-right-col { align-items: center; }
+      .community-earth { width: 180px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-shapes">
+    <span class="shape1"></span>
+    <span class="shape2"></span>
+    <span class="shape3"></span>
+    <span class="shape4"></span>
+    <span class="shape5"></span>
+    <span class="shape6"></span>
+    <span class="shape7"></span>
+    <span class="shape8"></span>
+    <span class="shape9"></span>
+    <span class="shape10"></span>
+    <span class="shape11"></span>
+    <span class="shape12"></span>
+  </div>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index" class="nav-logo"><img src="images/phpf-logo-icon-hd.png" alt="Project HPF"></a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <div class="nav-links">
+        <div class="dropdown"><a href="themission">THE MISSION</a><div class="dropdown-menu"><a href="themission">Healing</a><a href="themission">Prosperity</a><a href="themission">Freedom</a></div></div>
+        <div class="dropdown"><a href="participate">PARTICIPATE</a><div class="dropdown-menu"><a href="liberatedemocracy">Liberate Democracy</a><a href="buylocal">Buy Local</a><a href="enrich-community">Enrich Community</a></div></div>
+        <a href="didyouknow">DID YOU KNOW</a>
+        <div class="dropdown"><a href="resources">RESOURCES</a><div class="dropdown-menu"><a href="resources#documentaries">Enlightening Documentaries</a><a href="resources#books">Good Reads</a><a href="resources#discover">Podcast</a><a href="resources#news-orgs">News</a><a href="resources#foundations">Other Organizations</a><a href="https://www.liberationofeducation.org" target="_blank">Liberation of Education</a></div></div>
+        <a href="events" class="active">EVENTS</a>
+        <div class="dropdown"><a href="donate">DONATE</a><div class="dropdown-menu"><a href="sponsor">Be A Sponsor</a></div></div>
+        <a href="shop">SHOP</a>
+        <a href="blog">BLOG</a>
+      </div>
+      <div class="nav-right">
+        <a href="https://members.projecthpf.org/auth/login" class="btn-member">MEMBERS</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="events-hero reveal">
+    <h1>UPCOMING EVENTS</h1>
+    <p class="tagline">Join us at events that bring people together for healing, prosperity, and freedom.</p>
+  </section>
+
+  <!-- Events Flow -->
+  <div class="events-flow reveal">
+
+    <!-- Music Fest Logo -->
+    <div class="fest-logo-wrap">
+      <img src="images/phpf-logo-animated.gif" alt="Project HPF Music Fest" class="fest-logo">
+    </div>
+
+    <!-- Green Bubble + Revolution Circle -->
+    <div class="green-bubble">
+      <div class="green-bubble-text">
+        <h2>It's More<br>Than Just a<br>Music<br>Festival</h2>
+      </div>
+      <a href="arevolution" class="revolution-circle">
+        <img src="images/fuck-it-be-brave.png" alt="It's A Revolution">
+      </a>
+    </div>
+
+    <!-- Take the Survey -->
+    <div class="survey-cta" style="display: flex; align-items: center; gap: 12px; justify-content: center; margin: -20px 0 20px 0;">
+      <div style="display: flex; flex-direction: column; align-items: center; position: relative;">
+        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: absolute; top: -90px; left: -60px; transform: rotate(-30deg);">
+          <path d="M10 5 C25 0, 35 15, 30 25 C25 35, 15 30, 20 22 C25 14, 38 14, 45 20 C52 26, 55 40, 50 55" stroke="#6c3d8e" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <path d="M44 50 L50 58 L56 48" stroke="#6c3d8e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+        <a href="survey" class="survey-label" style="font-family: 'Boogaloo', cursive; font-size: 1.9rem; letter-spacing: 2px; border: 3px solid #e8951e; padding: 12px 24px; border-radius: 12px; display: inline-block; text-align: center; position: relative; z-index: 2;">TAKE THE<br>SURVEY!</a>
+      </div>
+    </div>
+
+    <!-- Music Fest Flyer -->
+    <div style="display: flex; justify-content: flex-end; margin: -160px 100px 10px 0;">
+      <img src="images/music-fest-flyer.png" alt="Project Music Fest Flyer" style="max-width: 500px; width: 80%;">
+    </div>
+
+    <!-- Values Image -->
+    <div style="margin-top: -280px; margin-left: 220px;">
+      <a href="values"><img src="images/values-sticky-notes.png" alt="Character, Values, Morals, Principles" class="values-img" style="width: 220px; border: 4px solid #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"></a>
+    </div>
+
+    <!-- Learn More Button -->
+    <div style="margin-top: -95px; margin-left: 470px;">
+      <a href="hpf-values" class="values-btn" style="display: inline-block; text-align: center; line-height: 1.4; white-space: nowrap;">LEARN MORE ABOUT<br>OUR VALUES &nbsp;&#10148;</a>
+    </div>
+
+
+  </div>
+
+<!-- ══════════ STAY TUNED ══════════ -->
+<section style="text-align: center; padding: 60px 24px 40px;">
+  <h2 style="font-family: 'Boogaloo', cursive; font-size: 2.8rem; color: #0489C7; margin-bottom: 12px; text-shadow: 2px 3px 5px rgba(0,0,0,0.15);">Stay Tuned for Upcoming Events!</h2>
+  <p style="font-family: var(--font-body); font-size: 1.1rem; color: var(--gray-mid); max-width: 600px; margin: 0 auto; line-height: 1.6;">We're planning something big. Follow us on social media and become a member to be the first to know.</p>
+</section>
+
+<!-- ══════════ COMMUNITY & MEMBERSHIP ══════════ -->
+<section class="home-community reveal">
+  <div class="community-bg">
+    <div class="community-inner">
+      <div class="community-text">
+        <h2>Join Our Revolutionist Community</h2>
+        <p>Communicate, collaborate, and connect with citizens committed to healing, prosperity &amp; freedom. Become a PHPF member for just $1/month and gain exclusive access to our member directory, content library, and Liberate Democracy voting.</p>
+        <p class="community-note">Membership unlocks the full PHPF experience.</p>
+      </div>
+      <div class="community-right-col">
+        <img src="images/animation/mother-earth-v2-clean.png" alt="Mother Earth" class="community-earth">
+        <a href="https://members.projecthpf.org/auth/register" class="member-cta-btn">Join Now — $1/mo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p class="footer-disclaimer">Disclaimer: Project Healing Prosperity &amp; Freedom, Inc is pleased to provide diverse ideas from across the world that we hope will spark listeners' curiosity and broaden their worldview. Project Healing Prosperity &amp; Freedom, Inc does not endorse all of the perspectives, ideas and information put forward in any of the external content presented and invites listeners to have an open mind but question everything as they draw their own conclusions.</p>
+    <p class="footer-org">Project Healing<br>Prosperity &amp; Freedom, Inc</p>
+    <a href="mailto:info@projecthpf.org" class="footer-email">info@projecthpf.org</a>
+    <div class="footer-social">
+      <a href="https://twitter.com/ProjectHPF" title="Twitter"><img src="images/11062b_07090bba1daa42c880682389a46508db_mv2.png" alt="Twitter" style="width:24px;height:24px;"></a>
+      <a href="https://www.instagram.com/projecthpf" title="Instagram"><img src="images/11062b_55e4be1e75564866b6c28290f9a9d271_mv2.png" alt="Instagram" style="width:24px;height:24px;"></a>
+      <a href="https://www.facebook.com/ProjectHPF21" title="Facebook"><img src="images/11062b_a84995cc8b024f4ea398f5744a56bc27_mv2.png" alt="Facebook" style="width:24px;height:24px;"></a>
+      <a href="https://www.tiktok.com/@projecthpf" title="TikTok"><img src="images/11062b_8e8bb1bfaeb54186ace77d5ab14933ff_mv2.png" alt="TikTok" style="width:24px;height:24px;"></a>
+    </div>
+    <div class="footer-links">
+      <a href="privacy">Privacy Policy</a>
+      <a href="terms">Terms and Conditions</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

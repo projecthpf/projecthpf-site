@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Economic Freedom — Project HPF</title>
+  <meta name="description" content="What is economic freedom, why it matters, and what you can do to protect and expand it." />
+  <link rel="icon" type="image/png" href="images/5f7ee9_eef98a3952f34f5fb211625143e3e8ea_mv2.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Forum&family=Fahkwang:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=17">
+  <style>
+    /* ── Page Title ── */
+    .ef-page-title { text-align:center; padding:100px 24px 40px; }
+    .ef-page-title h1 { font-family:var(--font-body); font-weight:700; font-size:3.5rem; color:#0489C7; margin-bottom:14px; text-shadow:2px 3px 5px rgba(0,0,0,0.25); }
+    .ef-page-title .tagline { font-family:var(--font-body); font-weight:500; font-size:1.05rem; color:var(--gray-dark); max-width:620px; margin:0 auto; line-height:1.5; }
+
+    /* ── Shared section wrapper ── */
+    .ef-section { max-width:1100px; margin:0 auto 60px; padding:0 24px; }
+
+    /* ── Text box ── */
+    .ef-box { border-radius:12px; padding:32px 40px; box-shadow:0 8px 32px rgba(0,0,0,0.22),0 2px 8px rgba(0,0,0,0.12); }
+    .ef-box h2 { font-family:var(--font-body); font-weight:700; font-size:2.2rem; margin-bottom:20px; line-height:1.3; text-decoration:underline; text-underline-offset:6px; }
+    .ef-box p { font-family:var(--font-body); font-size:0.92rem; line-height:1.75; margin-bottom:14px; }
+    .ef-box ol, .ef-box ul { padding-left:24px; margin-bottom:14px; }
+    .ef-box ol { list-style:decimal; }
+    .ef-box ul { list-style:disc; }
+    .ef-box ol li, .ef-box ul li { font-family:var(--font-body); font-size:0.92rem; line-height:1.75; margin-bottom:8px; }
+    .ef-box a { color:inherit; text-decoration:underline; text-underline-offset:3px; }
+
+    /* Blue box */
+    .ef-blue { background:#8faec5; color:#1a2a3e; }
+    .ef-blue h2 { color:#fff; }
+    .ef-blue p, .ef-blue li { color:#1a2a3e; }
+    .ef-blue a { color:#1a2a3e; }
+
+    /* Cream box */
+    .ef-cream { background:#f5f0ea; color:#2a2218; }
+    .ef-cream h2 { color:#2a2218; }
+    .ef-cream p, .ef-cream li { color:#2a2218; }
+
+    /* Sage green box */
+    .ef-sage { background:#8fa8a0; color:#1a2e28; }
+    .ef-sage h2 { color:#fff; }
+    .ef-sage p, .ef-sage li { color:#1a2e28; }
+
+    /* Gradient blue (freedom) */
+    .ef-grad { background:linear-gradient(135deg,#4a5a7a 0%,#6a7fa0 50%,#8a9ab0 100%); }
+    .ef-grad h2 { color:#fff; }
+    .ef-grad p, .ef-grad li { color:#fff; }
+
+    /* ── Video below box ── */
+    .ef-vid-below { max-width:700px; margin:28px auto 0; }
+    .ef-vid-below iframe { width:100%; aspect-ratio:16/9; border-radius:10px; border:none; box-shadow:0 4px 16px rgba(0,0,0,0.15); display:block; }
+
+    /* ── Split layout (text left, image/media right) ── */
+    .ef-split { display:flex; gap:40px; align-items:flex-start; }
+    .ef-split-box { flex:1; }
+    .ef-split-media { width:380px; flex-shrink:0; align-self:flex-start; position:sticky; top:100px; }
+    .ef-split-media img { width:100%; border-radius:10px; box-shadow:0 4px 16px rgba(0,0,0,0.15); display:block; margin-bottom:16px; }
+
+    /* ── Stat callouts ── */
+    .ef-stats { display:flex; gap:24px; margin:24px 0; flex-wrap:wrap; }
+    .ef-stat { flex:1; min-width:160px; background:rgba(255,255,255,0.18); border-radius:10px; padding:18px 20px; text-align:center; }
+    .ef-stat .num { font-family:var(--font-body); font-weight:700; font-size:2.4rem; line-height:1; margin-bottom:6px; }
+    .ef-stat .label { font-family:var(--font-body); font-size:0.8rem; line-height:1.4; opacity:0.85; }
+    .ef-blue .ef-stat .num { color:#fff; }
+    .ef-cream .ef-stat { background:rgba(0,0,0,0.06); }
+    .ef-cream .ef-stat .num { color:#2a5080; }
+    .ef-sage .ef-stat .num { color:#fff; }
+
+    /* ── Narration Players ── */
+    .val-section-head { display:flex; align-items:center; gap:14px; margin-bottom:24px; }
+    .val-section-head h2 { flex:1; margin-bottom:0; text-align:left; }
+    .val-play-icon { width:42px;height:42px;flex-shrink:0;background:rgba(255,255,255,0.22);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;color:#fff;cursor:pointer;transition:background 0.2s,transform 0.15s;user-select:none;border:2px solid rgba(255,255,255,0.35); }
+    .val-play-icon:hover { background:rgba(255,255,255,0.4);transform:scale(1.1); }
+    .val-play-icon.on-cream { background:rgba(42,34,24,0.12);border:2px solid rgba(42,34,24,0.28);color:#2a2218; }
+    .val-play-icon.on-cream:hover { background:rgba(42,34,24,0.22); }
+    .val-play-icon.on-sage { background:rgba(26,46,40,0.15);border:2px solid rgba(26,46,40,0.3);color:#1a2e28; }
+    .val-play-icon.on-sage:hover { background:rgba(26,46,40,0.28); }
+    .val-narration-player { display:flex;align-items:center;gap:10px;max-height:0;opacity:0;overflow:hidden;transition:max-height 0.35s ease,opacity 0.35s ease;margin-bottom:0; }
+    .val-narration-player.playing { max-height:36px;opacity:1;margin-bottom:16px; }
+    .val-narration-bar { flex:1;height:6px;background:rgba(0,0,0,0.12);border-radius:3px;cursor:pointer;position:relative;overflow:hidden;min-width:120px; }
+    .val-narration-bar:hover { background:rgba(0,0,0,0.22); }
+    .val-narration-bar-fill { height:100%;background:rgba(255,255,255,0.7);border-radius:3px;width:0%;pointer-events:none; }
+    .val-narration-bar-fill.on-cream { background:rgba(42,34,24,0.5); }
+    .val-narration-bar-fill.on-sage { background:rgba(26,46,40,0.6); }
+    .val-narration-time { font-size:0.7rem;font-family:var(--font-body,sans-serif);color:rgba(255,255,255,0.75);min-width:72px;text-align:right;white-space:nowrap; }
+    .val-narration-time.on-cream { color:rgba(42,34,24,0.6); }
+    .val-narration-time.on-sage { color:rgba(26,46,40,0.65); }
+    .val-speed { display:flex;align-items:center;gap:3px;flex-shrink:0; }
+    .val-speed .speed-btn { background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);border-radius:4px;color:rgba(255,255,255,0.8);font-size:0.65rem;font-weight:600;padding:2px 6px;cursor:pointer;transition:background 0.15s;line-height:1.4;font-family:inherit; }
+    .val-speed .speed-btn:hover { background:rgba(255,255,255,0.28); }
+    .val-speed .speed-btn.active { background:rgba(255,255,255,0.88);color:#1a1a2e;border-color:transparent; }
+    .val-speed.on-cream .speed-btn { background:rgba(42,34,24,0.08);border-color:rgba(42,34,24,0.22);color:rgba(42,34,24,0.7); }
+    .val-speed.on-cream .speed-btn.active { background:rgba(42,34,24,0.65);color:#fff;border-color:transparent; }
+    .val-speed.on-sage .speed-btn { background:rgba(26,46,40,0.1);border-color:rgba(26,46,40,0.25);color:rgba(26,46,40,0.7); }
+    .val-speed.on-sage .speed-btn.active { background:rgba(26,46,40,0.7);color:#fff;border-color:transparent; }
+
+    /* Community & Membership */
+    .home-community { background:transparent; padding:100px 24px 20px; display:flex; justify-content:center; width:100%; }
+    .community-bg { background:url('images/nsplsh_335036453279326c797573_mv2_d_5760_3840_s_4_2.jpg') center/cover no-repeat; border-radius:16px; padding:50px 48px; position:relative; min-height:520px; display:flex; align-items:center; justify-content:center; }
+    .community-inner { display:grid; grid-template-columns:auto auto; gap:60px; align-items:center; }
+    .community-text { text-align:left; background:rgba(80,20,120,0.55); padding:24px; border-radius:12px; align-self:stretch; display:flex; flex-direction:column; justify-content:center; max-width:340px; }
+    .community-right-col { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; }
+    .community-earth { width:240px; height:auto; filter:drop-shadow(0 4px 12px rgba(0,0,0,0.3)); }
+    .community-text h2 { font-family:var(--font-body); font-weight:700; font-size:1.5rem; color:var(--white); margin-bottom:10px; text-shadow:1px 2px 4px rgba(0,0,0,0.4); max-width:260px; }
+    .community-text p { font-family:var(--font-body); font-size:0.84rem; color:var(--white); line-height:1.7; margin-bottom:14px; text-shadow:1px 1px 3px rgba(0,0,0,0.3); max-width:230px; }
+    .community-text p.community-note { font-size:0.78rem; opacity:0.9; margin-bottom:0; white-space:nowrap; }
+    .member-cta-btn { display:inline-block; padding:12px 36px; background:var(--white); color:var(--green-primary); border:2px solid var(--white); border-radius:4px; font-family:var(--font-body); font-weight:700; font-size:1rem; text-transform:uppercase; letter-spacing:1px; cursor:pointer; transition:background 0.3s,color 0.3s; text-decoration:none; margin-bottom:8px; }
+    .member-cta-btn:hover { background:transparent; color:var(--white); text-decoration:none; }
+
+    /* ── Responsive ── */
+    @media (max-width:768px) {
+      .ef-page-title h1 { font-size:2.4rem; }
+      .ef-split { flex-direction:column; }
+      .ef-split-media { width:100%; position:static; }
+      .ef-box { padding:28px 22px; }
+      .ef-stats { flex-direction:column; }
+      .community-bg { padding:28px 20px; margin:0 12px; }
+      .community-inner { grid-template-columns:1fr; text-align:center; }
+      .community-text { text-align:center; }
+      .community-earth { width:180px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index" class="nav-logo nav-logo--wide"><img src="images/phpf-logo-wide-hd.png" alt="ProjectHPF.org"></a>
+      <button class="nav-toggle">&#9776;</button>
+      <div class="nav-links">
+        <div class="dropdown"><a href="themission">THE MISSION</a><div class="dropdown-menu"><a href="themission#healing">Healing</a><a href="themission#prosperity">Prosperity</a><a href="themission#freedom">Freedom</a></div></div>
+        <div class="dropdown"><a href="participate">PARTICIPATE</a><div class="dropdown-menu"><a href="liberatedemocracy">Liberate Democracy</a><a href="buylocal">Buy Local</a><a href="enrich-community">Enrich Community</a></div></div>
+        <a href="didyouknow">DID YOU KNOW</a>
+        <div class="dropdown"><a href="resources">RESOURCES</a><div class="dropdown-menu"><a href="resources#documentaries">Enlightening Documentaries</a><a href="resources#books">Good Reads</a><a href="resources#discover">Podcast</a><a href="resources#news-orgs">News</a><a href="resources#foundations">Other Organizations</a><a href="https://www.liberationofeducation.org" target="_blank">Liberation of Education</a></div></div>
+        <a href="events">EVENTS</a>
+        <div class="dropdown"><a href="donate">DONATE</a><div class="dropdown-menu"><a href="sponsor">Be A Sponsor</a></div></div>
+        <a href="shop">SHOP</a>
+        <a href="blog">BLOG</a>
+      </div>
+      <div class="nav-right"><a href="https://members.projecthpf.org/auth/login" class="btn-member">MEMBERS</a></div>
+    </div>
+  </nav>
+
+  <!-- ══════════ PAGE TITLE ══════════ -->
+  <section class="ef-page-title reveal">
+    <h1>ECONOMIC FREEDOM</h1>
+    <p class="tagline">The fundamental right to control your own labor, property, and future.</p>
+  </section>
+
+  <!-- ══════════ 1. WHAT IS ECONOMIC FREEDOM ══════════ -->
+  <section class="ef-section reveal">
+    <div class="ef-box ef-blue">
+      <div style="display:flex;justify-content:flex-end;margin-bottom:12px;">
+        <span class="val-play-icon" id="play-ef-intro" title="Listen to narration">&#9654;</span>
+      </div>
+      <div class="val-narration-player" id="player-ef-intro">
+        <div class="val-narration-bar" id="bar-ef-intro"><div class="val-narration-bar-fill" id="fill-ef-intro"></div></div>
+        <span class="val-narration-time" id="time-ef-intro">0:00</span>
+        <div class="val-speed">
+          <button class="speed-btn" data-speed="0.75">0.75×</button>
+          <button class="speed-btn active" data-speed="1">1×</button>
+          <button class="speed-btn" data-speed="1.25">1.25×</button>
+          <button class="speed-btn" data-speed="1.5">1.5×</button>
+          <button class="speed-btn" data-speed="2">2×</button>
+        </div>
+      </div>
+      <audio id="audio-ef-intro" src="audio/ef-intro.mp3" preload="none"></audio>
+
+      <p>What is economic freedom? Wikipedia says it's the ability of people in a society to take economic actions. But that doesn't fully explain it.</p>
+
+      <p><a href="https://www.heritage.org" target="_blank">The Heritage Foundation</a> — a non-profit organization founded to promote public policies that align with free enterprise, limited government, and individual freedom — says economic freedom is the fundamental right of every human to control his or her own labor and property. Still, that doesn't fully explain it.</p>
+
+      <p>Economic freedom is best understood through the work of <a href="https://www.fraserinstitute.org" target="_blank">The Fraser Institute</a>, a Canadian non-profit founded to improve the quality of life by studying and measuring the effects of government policies, entrepreneurship, and choice. Their research shows that economic freedom is inseparable from personal freedom — and that nations with more of it consistently have higher incomes, longer lives, and more opportunity for everyone.</p>
+
+      <p>Every human being deserves the freedom to feed themselves and improve their property by whatever means they know — without first paying the government, or any other organization or person, to do so.</p>
+
+      <div class="ef-stats">
+        <div class="ef-stat">
+          <div class="num">7th</div>
+          <div class="label">U.S. rank — Fraser Institute Economic Freedom Index</div>
+        </div>
+        <div class="ef-stat">
+          <div class="num">25th</div>
+          <div class="label">U.S. rank — Heritage Foundation Index of Economic Freedom (down from 20th in 2021)</div>
+        </div>
+        <div class="ef-stat">
+          <div class="num">↓</div>
+          <div class="label">Worldwide decline in economic freedom — largest drop in average scores ever recorded</div>
+        </div>
+      </div>
+    </div>
+    <div class="ef-vid-below">
+      <iframe src="https://www.youtube.com/embed/3_HnZa2XSrc" title="Fraser Institute: The Benefits of Economic Freedom" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- ══════════ 2. THE FIVE PILLARS ══════════ -->
+  <section class="ef-section reveal">
+    <div class="ef-box ef-cream">
+      <div class="val-section-head">
+        <h2>The Five Pillars of Economic Freedom</h2>
+        <span class="val-play-icon on-cream" id="play-ef-pillars" title="Listen to narration">&#9654;</span>
+      </div>
+      <div class="val-narration-player" id="player-ef-pillars">
+        <div class="val-narration-bar" id="bar-ef-pillars"><div class="val-narration-bar-fill on-cream" id="fill-ef-pillars"></div></div>
+        <span class="val-narration-time on-cream" id="time-ef-pillars">0:00</span>
+        <div class="val-speed on-cream">
+          <button class="speed-btn" data-speed="0.75">0.75×</button>
+          <button class="speed-btn active" data-speed="1">1×</button>
+          <button class="speed-btn" data-speed="1.25">1.25×</button>
+          <button class="speed-btn" data-speed="1.5">1.5×</button>
+          <button class="speed-btn" data-speed="2">2×</button>
+        </div>
+      </div>
+      <audio id="audio-ef-pillars" src="audio/ef-pillars.mp3" preload="none"></audio>
+
+      <p>The Fraser Institute measures economic freedom across five broad areas. Together they form the foundation of a free economy — and their presence or absence predicts almost everything about a nation's prosperity and wellbeing.</p>
+
+      <ol>
+        <li><strong>Size of Government.</strong> Economic freedom requires that individuals — not governments — make most economic decisions. When governments spend, tax, and redistribute at high levels, individuals lose control over their own resources. Countries with smaller, more limited governments consistently rank higher in economic freedom and quality of life.</li>
+        <li><strong>Legal System and Property Rights.</strong> A free economy depends on impartial courts, rule of law, and the protection of property rights. When contracts aren't enforced, property can be seized, and courts favor the powerful over the people, economic freedom collapses. Secure property rights are the bedrock of investment, innovation, and prosperity.</li>
+        <li><strong>Sound Money.</strong> Inflation is a hidden tax. When governments print money recklessly, the purchasing power of every dollar you've earned and saved diminishes. Sound money — stable, predictable, not subject to political manipulation — protects ordinary people from having their wealth silently stolen.</li>
+        <li><strong>Freedom to Trade Internationally.</strong> Voluntary exchange creates wealth. When governments restrict trade through tariffs, quotas, and regulations, they limit the ability of individuals and businesses to access the best products and markets. Open trade raises living standards and keeps prices competitive.</li>
+        <li><strong>Regulation.</strong> Excessive regulation raises the cost of doing business, stifles entrepreneurship, and protects entrenched interests at the expense of newcomers and consumers. Economic freedom requires that regulations be reasonable, transparent, and applied equally — not used as tools of control or cronyism.</li>
+      </ol>
+
+      <p>Countries that score highest across all five pillars — like Switzerland, Singapore, New Zealand, and Canada — have higher average incomes, lower poverty rates, longer life expectancies, and more political freedom than those that score lowest. This is not a coincidence. It is a pattern so consistent that it constitutes one of the most reliable findings in social science.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ 3. WHY IT MATTERS ══════════ -->
+  <section class="ef-section reveal">
+    <div class="ef-box ef-sage">
+      <div class="val-section-head">
+        <h2>Why Economic Freedom Matters</h2>
+        <span class="val-play-icon on-sage" id="play-ef-matters" title="Listen to narration">&#9654;</span>
+      </div>
+      <div class="val-narration-player" id="player-ef-matters">
+        <div class="val-narration-bar" id="bar-ef-matters"><div class="val-narration-bar-fill on-sage" id="fill-ef-matters"></div></div>
+        <span class="val-narration-time on-sage" id="time-ef-matters">0:00</span>
+        <div class="val-speed on-sage">
+          <button class="speed-btn" data-speed="0.75">0.75×</button>
+          <button class="speed-btn active" data-speed="1">1×</button>
+          <button class="speed-btn" data-speed="1.25">1.25×</button>
+          <button class="speed-btn" data-speed="1.5">1.5×</button>
+          <button class="speed-btn" data-speed="2">2×</button>
+        </div>
+      </div>
+      <audio id="audio-ef-matters" src="audio/ef-matters.mp3" preload="none"></audio>
+
+      <p>Economic freedom is one of the most powerful predictors of prosperity, health outcomes, and quality of life. The data is unambiguous: people in economically free nations live longer, earn more, experience less poverty, and have greater access to education and opportunity than those in economically restricted nations.</p>
+
+      <p>But economic freedom is not just about wealth. It is about dignity. When you control the fruits of your labor, you control your life. When government or powerful institutions control the terms of your economic participation, they control your choices, your opportunities, and ultimately your freedom as a human being.</p>
+
+      <p>Here is what the research consistently shows about the most economically free nations:</p>
+
+      <ul>
+        <li>Per capita income is <strong>seven times higher</strong> than in the least free nations</li>
+        <li>The poorest 10% earn <strong>three times more</strong> than the poorest 10% in unfree nations</li>
+        <li>Life expectancy is <strong>nearly a decade longer</strong></li>
+        <li>Civil and political liberties are <strong>significantly stronger</strong></li>
+        <li>Environmental quality and access to clean water are <strong>measurably better</strong></li>
+        <li>Women's economic rights and opportunities are <strong>far more developed</strong></li>
+        <li>Happiness and life satisfaction scores are <strong>consistently higher</strong></li>
+      </ul>
+
+      <p>The argument that restricting economic freedom helps the poor is contradicted by every major dataset. The nations that have lifted the most people out of poverty have done so by expanding economic freedom — not by limiting it. Economic freedom and human flourishing are not in tension. They go hand in hand.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ 4. WHAT YOU CAN DO ══════════ -->
+  <section class="ef-section reveal">
+    <div class="ef-box ef-grad">
+      <div class="val-section-head">
+        <h2>What You Can Do</h2>
+        <span class="val-play-icon" id="play-ef-action" title="Listen to narration">&#9654;</span>
+      </div>
+      <div class="val-narration-player" id="player-ef-action">
+        <div class="val-narration-bar" id="bar-ef-action"><div class="val-narration-bar-fill" id="fill-ef-action"></div></div>
+        <span class="val-narration-time" id="time-ef-action">0:00</span>
+        <div class="val-speed">
+          <button class="speed-btn" data-speed="0.75">0.75×</button>
+          <button class="speed-btn active" data-speed="1">1×</button>
+          <button class="speed-btn" data-speed="1.25">1.25×</button>
+          <button class="speed-btn" data-speed="1.5">1.5×</button>
+          <button class="speed-btn" data-speed="2">2×</button>
+        </div>
+      </div>
+      <audio id="audio-ef-action" src="audio/ef-action.mp3" preload="none"></audio>
+
+      <p>Economic freedom doesn't protect itself. It has to be understood, valued, and actively defended — by individuals, communities, and voters. Here is what you can do right now:</p>
+
+      <ul>
+        <li><strong>Learn how money actually works.</strong> Most people go through life without understanding inflation, compound interest, or how central banks create and destroy purchasing power. This ignorance is costly — and it's no accident that financial literacy is rarely taught in public schools.</li>
+        <li><strong>Spend locally.</strong> Every dollar spent at a locally owned business recirculates in your community far more than dollars spent at national chains. Buying local is one of the most direct forms of economic activism available to every person, every day.</li>
+        <li><strong>Reduce dependency on debt.</strong> Consumer debt is one of the primary mechanisms by which wealth transfers from working people to financial institutions. Live below your means, build an emergency fund, and pay off high-interest debt as aggressively as possible.</li>
+        <li><strong>Invest in real assets.</strong> Savings held in cash lose value to inflation over time. Educate yourself on index funds, real estate, commodities, and other vehicles that historically preserve and grow purchasing power.</li>
+        <li><strong>Build multiple income streams.</strong> A single employer and a single paycheck is a fragile position. Skills, side income, and entrepreneurship are among the most powerful tools for financial resilience and independence.</li>
+        <li><strong>Know your economic freedom score.</strong> Look up your country's ranking on the Fraser Institute's Economic Freedom of the World report and the Heritage Foundation's Index of Economic Freedom. Understand what drives those scores — and vote accordingly.</li>
+        <li><strong>Support policy reform.</strong> Advocate for tax simplification, government spending accountability, Federal Reserve transparency, and policies that genuinely support small businesses and individual economic mobility. Show up for school board meetings, city council meetings, and elections at every level.</li>
+        <li><strong>Talk about it.</strong> Economic freedom is not a partisan issue — it is a human issue. Share what you learn. Have the conversations. The most powerful force for change is an informed and engaged citizenry.</li>
+      </ul>
+
+      <p>The gap between the rich and the poor is not inevitable. It is a policy outcome — and policy outcomes can be changed. The more economically literate and engaged we are as individuals, the more power we collectively have to build a freer and fairer system.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ COMMUNITY & MEMBERSHIP ══════════ -->
+  <section class="home-community reveal">
+    <div class="community-bg">
+      <div class="community-inner">
+        <div class="community-text">
+          <h2>Join Our Revolutionist Community</h2>
+          <p>Communicate, collaborate, and connect with citizens committed to healing, prosperity &amp; freedom. Become a PHPF member for just $1/month and gain exclusive access to our member directory, content library, and Liberate Democracy voting.</p>
+          <p class="community-note">Membership unlocks the full PHPF experience.</p>
+        </div>
+        <div class="community-right-col">
+          <img src="images/animation/mother-earth-v2-clean.png" alt="Mother Earth" class="community-earth">
+          <a href="https://members.projecthpf.org/auth/register" class="member-cta-btn">Join Now — $1/mo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p class="footer-disclaimer">Disclaimer: Project Healing Prosperity &amp; Freedom, Inc is pleased to provide diverse ideas from across the world that we hope will spark listeners' curiosity and broaden their worldview. Project Healing Prosperity &amp; Freedom, Inc does not endorse all of the perspectives, ideas and information put forward in any of the external content presented and invites listeners to have an open mind but question everything as they draw their own conclusions.</p>
+    <p class="footer-org">Project Healing<br>Prosperity &amp; Freedom, Inc</p>
+    <a href="mailto:info@projecthpf.org" class="footer-email">info@projecthpf.org</a>
+    <div class="footer-social">
+      <a href="https://twitter.com/ProjectHPF" title="Twitter"><img src="images/11062b_07090bba1daa42c880682389a46508db_mv2.png" alt="Twitter" style="width:24px;height:24px;"></a>
+      <a href="https://www.instagram.com/projecthpf" title="Instagram"><img src="images/11062b_55e4be1e75564866b6c28290f9a9d271_mv2.png" alt="Instagram" style="width:24px;height:24px;"></a>
+      <a href="https://www.facebook.com/ProjectHPF21" title="Facebook"><img src="images/11062b_a84995cc8b024f4ea398f5744a56bc27_mv2.png" alt="Facebook" style="width:24px;height:24px;"></a>
+      <a href="https://www.tiktok.com/@projecthpf" title="TikTok"><img src="images/11062b_8e8bb1bfaeb54186ace77d5ab14933ff_mv2.png" alt="TikTok" style="width:24px;height:24px;"></a>
+    </div>
+    <div class="footer-links">
+      <a href="privacy">Privacy Policy</a>
+      <a href="terms">Terms and Conditions</a>
+    </div>
+    <p style="font-size:0.78rem;color:var(--gray-light);">&copy; 2024 Project Healing Prosperity &amp; Freedom, Inc. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+  (function(){
+    function fmt(t){var m=Math.floor(t/60),s=Math.floor(t%60);return m+":"+(s<10?"0":"")+s;}
+    var tracks=[
+      {play:'play-ef-intro',   audio:'audio-ef-intro',   player:'player-ef-intro',   bar:'bar-ef-intro',   fill:'fill-ef-intro',   time:'time-ef-intro'},
+      {play:'play-ef-pillars', audio:'audio-ef-pillars', player:'player-ef-pillars', bar:'bar-ef-pillars', fill:'fill-ef-pillars', time:'time-ef-pillars'},
+      {play:'play-ef-matters', audio:'audio-ef-matters', player:'player-ef-matters', bar:'bar-ef-matters', fill:'fill-ef-matters', time:'time-ef-matters'},
+      {play:'play-ef-action',  audio:'audio-ef-action',  player:'player-ef-action',  bar:'bar-ef-action',  fill:'fill-ef-action',  time:'time-ef-action'}
+    ];
+    tracks.forEach(function(t){
+      var playBtn=document.getElementById(t.play),audio=document.getElementById(t.audio),player=document.getElementById(t.player),bar=document.getElementById(t.bar),fill=document.getElementById(t.fill),timeEl=document.getElementById(t.time);
+      if(!playBtn||!audio) return;
+      playBtn.addEventListener('click',function(){
+        if(audio.paused){
+          tracks.forEach(function(o){var a=document.getElementById(o.audio),b=document.getElementById(o.play),p=document.getElementById(o.player);if(a&&!a.paused){a.pause();if(b)b.textContent='\u25BA';if(p)p.classList.remove('playing');}});
+          audio.play();playBtn.textContent='\u23F8';player.classList.add('playing');
+        } else { audio.pause();playBtn.textContent='\u25BA'; }
+      });
+      audio.addEventListener('timeupdate',function(){if(!audio.duration)return;fill.style.width=(audio.currentTime/audio.duration*100)+'%';timeEl.textContent=fmt(audio.currentTime)+' / '+fmt(audio.duration);});
+      bar.addEventListener('click',function(e){var rect=bar.getBoundingClientRect(),pct=Math.max(0,Math.min(1,(e.clientX-rect.left)/rect.width));if(audio.duration)audio.currentTime=pct*audio.duration;});
+      audio.addEventListener('ended',function(){playBtn.textContent='\u25BA';player.classList.remove('playing');fill.style.width='0%';timeEl.textContent='0:00';audio.currentTime=0;});
+      var speedEl=player.querySelector('.val-speed');
+      if(speedEl){speedEl.querySelectorAll('.speed-btn').forEach(function(btn){btn.addEventListener('click',function(){audio.playbackRate=parseFloat(btn.getAttribute('data-speed'));speedEl.querySelectorAll('.speed-btn').forEach(function(b){b.classList.remove('active');});btn.classList.add('active');});});}
+    });
+  })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 Panhandle Gubernatorial Debate — Project HPF</title>
+  <meta name="description" content="Join the Libertarian Party of Escambia County for a real grassroots debate. Hear from candidates Scott Jewett (L), Moliere 'Moe' Dimanche (NPA), and more. Hosted by Mission Obvious at The Freedom Barn, Pensacola, FL.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Forum&family=Fahkwang:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Boogaloo&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css?v=17">
+  <link rel="icon" href="../images/5f7ee9_eef98a3952f34f5fb211625143e3e8ea_mv2.png">
+  <style>
+
+    /* ── HERO (flyer-style) ── */
+    .debate-hero-section {
+      background: linear-gradient(160deg, #0d5c3a 0%, #083d28 60%, #052618 100%);
+      padding: 90px 0 0;
+      position: relative;
+      overflow: hidden;
+    }
+    /* dark swoop shape bottom-right, like the flyer — behind the right column */
+    .debate-hero-section::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      right: -40px;
+      width: 480px;
+      height: 360px;
+      background: rgba(4,28,16,0.55);
+      border-radius: 60% 0 0 40%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .debate-hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 48px 60px;
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 24px;
+      align-items: start;
+      position: relative;
+      z-index: 1;
+    }
+    .debate-hero-text .eyebrow {
+      font-family: 'Fahkwang', sans-serif;
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: #fff;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      opacity: 0.85;
+    }
+    .debate-hero-text h1 {
+      font-family: 'Fahkwang', sans-serif;
+      font-weight: 700;
+      font-size: 4rem;
+      color: #f0c419;
+      line-height: 1.0;
+      margin: 0 0 16px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .debate-hero-text .grassroots-tag {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 28px;
+      font-style: italic;
+    }
+    .candidates-lineup {
+      margin: 0 0 24px;
+    }
+    .candidates-lineup .cand {
+      font-family: 'Fahkwang', sans-serif;
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: #c8f06a;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      line-height: 1.3;
+    }
+    .candidates-lineup .cand-other {
+      font-family: 'Fahkwang', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.65);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-top: 4px;
+    }
+    /* date/venue pill */
+    .hero-date-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 30px;
+      padding: 10px 20px;
+      margin-top: 8px;
+    }
+    .hero-date-pill span {
+      font-family: 'Fahkwang', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+    .hero-date-pill .sep { color: rgba(255,255,255,0.35); }
+
+    /* right column */
+    .debate-hero-right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      padding-top: 10px;
+      position: relative;
+      z-index: 2;
+    }
+    /* oval "Hear from grassroots candidates" bubble */
+    .grassroots-bubble {
+      background: linear-gradient(135deg, #5bc8a0 0%, #3aad82 100%);
+      border-radius: 50%;
+      width: 200px;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 28px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+      margin-bottom: -20px;
+      position: relative;
+      z-index: 3;
+    }
+    .grassroots-bubble p {
+      font-family: 'Fahkwang', sans-serif;
+      font-style: italic;
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: #fff;
+      line-height: 1.35;
+      margin: 0;
+    }
+    /* Earth mascot with circular text */
+    .earth-wrap {
+      position: relative;
+      width: 260px;
+      height: 260px;
+      flex-shrink: 0;
+    }
+    .earth-img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 170px;
+      height: auto;
+      filter: drop-shadow(0 6px 16px rgba(0,0,0,0.35));
+      animation: float 4s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translate(-50%, -50%) translateY(0); }
+      50%       { transform: translate(-50%, -50%) translateY(-8px); }
+    }
+    .earth-circle-text {
+      position: absolute;
+      inset: 0;
+      animation: spin-slow 18s linear infinite;
+    }
+    @keyframes spin-slow { to { transform: rotate(360deg); } }
+
+    /* hosted by strip */
+    .hero-hosted {
+      text-align: center;
+      margin-top: 16px;
+    }
+    .hero-hosted .hosted-label {
+      font-family: 'Fahkwang', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 2px;
+    }
+    .hero-hosted .hosted-name {
+      font-family: 'Fahkwang', sans-serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+    .hero-hosted a {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* ── PRESENTED BY STRIP ── */
+    .presented-strip {
+      background: url('../images/nsplsh_335036453279326c797573_mv2_d_5760_3840_s_4_2.jpg') center/cover;
+      padding: 40px 24px;
+      margin: 60px 0 0;
+      text-align: center;
+      position: relative;
+    }
+    .presented-strip::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(4, 50, 24, 0.78);
+    }
+    .presented-strip-inner {
+      position: relative;
+      z-index: 1;
+    }
+    .presented-strip .label {
+      font-family: 'Fahkwang', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 6px;
+    }
+    .presented-strip h2 {
+      font-family: 'Boogaloo', cursive;
+      font-size: 2.4rem;
+      color: #f0c419;
+      margin: 0;
+      letter-spacing: 2px;
+    }
+    .presented-strip .hosted {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.75);
+      margin-top: 8px;
+    }
+    .presented-strip .hosted a {
+      color: #f0c419;
+      font-weight: 600;
+    }
+
+    /* ── HEAR FROM CANDIDATES ── */
+    .candidates-section {
+      padding: 80px 24px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      align-items: center;
+      position: relative;
+    }
+    .candidates-bubbles {
+      position: relative;
+      height: 480px;
+    }
+    .candidate-bubble {
+      position: absolute;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 30px;
+    }
+    .candidate-bubble.big {
+      width: 300px;
+      height: 300px;
+      background: rgba(4, 137, 70, 0.15);
+      border: 3px solid rgba(4, 137, 70, 0.3);
+      top: 0;
+      left: 0;
+    }
+    .candidate-bubble.medium {
+      width: 240px;
+      height: 240px;
+      background: rgba(4, 137, 199, 0.12);
+      border: 3px solid rgba(4, 137, 199, 0.25);
+      bottom: 40px;
+      right: 30px;
+    }
+    .candidate-bubble.small {
+      width: 160px;
+      height: 160px;
+      background: rgba(232, 149, 30, 0.12);
+      border: 2px dashed rgba(232, 149, 30, 0.4);
+      top: 200px;
+      left: 130px;
+      z-index: 2;
+    }
+    .candidate-bubble .name {
+      font-family: 'Fahkwang', sans-serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--green-dark);
+      line-height: 1.2;
+      margin-bottom: 4px;
+    }
+    .candidate-bubble.medium .name {
+      color: #0489C7;
+    }
+    .candidate-bubble .party {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--gray-mid);
+    }
+    .candidate-bubble.small .name {
+      font-size: 0.95rem;
+      color: #e8951e;
+      font-family: 'Boogaloo', cursive;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+    .candidates-text h2 {
+      font-family: 'Fahkwang', sans-serif;
+      font-weight: 700;
+      font-size: 2.8rem;
+      color: var(--green-dark);
+      line-height: 1.15;
+      margin-bottom: 16px;
+      text-shadow: 1px 2px 4px rgba(0,0,0,0.12);
+    }
+    .candidates-text h2 span {
+      color: #0489C7;
+    }
+    .candidates-text p {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--gray-dark);
+      line-height: 1.65;
+      max-width: 440px;
+    }
+
+    /* ── WAYS TO GET INVOLVED ── */
+    .involved-section {
+      background: url('../images/nsplsh_335036453279326c797573_mv2_d_5760_3840_s_4_2.jpg') center/cover;
+      padding: 80px 24px;
+      position: relative;
+      margin: 60px 0;
+    }
+    .involved-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(8, 56, 43, 0.82);
+    }
+    .involved-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .involved-inner h2 {
+      font-family: 'Boogaloo', cursive;
+      font-size: 2.8rem;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 50px;
+      letter-spacing: 2px;
+    }
+    .involved-inner h2 span {
+      color: #f0c419;
+    }
+    .involved-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .involved-item {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(240, 196, 25, 0.25);
+      border-radius: 20px;
+      padding: 28px 32px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      transition: background 0.2s;
+    }
+    .involved-item:hover {
+      background: rgba(255,255,255,0.12);
+    }
+    .involved-num {
+      font-family: 'Boogaloo', cursive;
+      font-size: 2.2rem;
+      color: #f0c419;
+      line-height: 1;
+      flex-shrink: 0;
+      width: 36px;
+      text-align: center;
+    }
+    .involved-item-text strong {
+      font-family: 'Fahkwang', sans-serif;
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: #fff;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .involved-item-text p {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.72);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* ── VENUE SECTION ── */
+    .venue-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px 24px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .venue-left h2 {
+      font-family: 'Boogaloo', cursive;
+      font-size: 3rem;
+      color: #0489C7;
+      margin-bottom: 30px;
+      text-shadow: 2px 3px 5px rgba(0,0,0,0.15);
+      letter-spacing: 1px;
+    }
+    .venue-detail {
+      margin-bottom: 22px;
+    }
+    .venue-detail .vd-label {
+      font-family: 'Fahkwang', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #e8951e;
+      margin-bottom: 4px;
+    }
+    .venue-detail .vd-value {
+      font-family: var(--font-body);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--green-dark);
+      line-height: 1.4;
+    }
+    .venue-detail .vd-value a {
+      color: var(--green-dark);
+      text-decoration: underline;
+      text-decoration-color: #0b9e42;
+    }
+
+    .venue-cta {
+      margin-top: 32px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .btn-debate-primary {
+      display: inline-block;
+      background: #0b9e42;
+      color: #fff;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 14px 32px;
+      border-radius: 30px;
+      text-decoration: none;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: background 0.2s;
+    }
+    .btn-debate-primary:hover {
+      background: var(--green-dark);
+      color: #fff;
+      text-decoration: none;
+    }
+    .btn-debate-outline {
+      display: inline-block;
+      background: transparent;
+      color: #0b9e42;
+      border: 2px solid #0b9e42;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 13px 32px;
+      border-radius: 30px;
+      text-decoration: none;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-debate-outline:hover {
+      background: #0b9e42;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .venue-quote-box {
+      background: rgba(180, 230, 200, 0.3);
+      border-radius: 50%;
+      width: 380px;
+      height: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 50px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+    }
+    .venue-quote-box blockquote {
+      font-family: 'Fahkwang', sans-serif;
+      font-weight: 500;
+      font-size: 1.05rem;
+      color: var(--green-dark);
+      line-height: 1.55;
+      margin: 0;
+      font-style: italic;
+    }
+    .venue-quote-box .back-link {
+      position: absolute;
+      bottom: 60px;
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      color: var(--gray-mid);
+      text-decoration: none;
+    }
+    .venue-quote-box .back-link:hover {
+      color: #0b9e42;
+    }
+
+    /* ── REGISTRATION MODALS ── */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(2,1,8,0.82);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+    }
+    .modal-backdrop.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .modal {
+      background: #0a1428;
+      border: 1px solid rgba(125,211,252,0.25);
+      border-radius: 24px;
+      padding: 36px;
+      width: 100%;
+      max-width: 480px;
+      max-height: 90vh;
+      overflow-y: auto;
+      transform: translateY(20px);
+      transition: transform 0.2s;
+      box-shadow: 0 25px 70px rgba(0,0,0,0.6);
+    }
+    .modal-backdrop.open .modal {
+      transform: translateY(0);
+    }
+    .modal h3 {
+      font-family: 'Fahkwang', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .modal .modal-sub {
+      font-size: 0.88rem;
+      color: rgba(220,236,255,0.55);
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+    .form-field {
+      margin-bottom: 16px;
+    }
+    .form-field label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: rgba(220,236,255,0.7);
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+    }
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      width: 100%;
+      padding: 12px 16px;
+      background: rgba(10,20,40,0.7);
+      border: 1px solid rgba(125,211,252,0.25);
+      border-radius: 12px;
+      color: #fff;
+      font-size: 0.95rem;
+      font-family: 'DM Sans', sans-serif;
+      outline: none;
+      transition: border-color 0.15s;
+      box-sizing: border-box;
+    }
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+      border-color: rgba(125,211,252,0.6);
+    }
+    .form-field textarea { resize: vertical; min-height: 80px; }
+    .form-field select option { background: #0a1428; }
+    .modal-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 24px;
+    }
+    .btn-modal-submit {
+      flex: 1;
+      padding: 13px;
+      border: none;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #7dd3fc, #a78bfa);
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .btn-modal-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+    .btn-modal-cancel {
+      padding: 13px 20px;
+      border: 1px solid rgba(125,211,252,0.25);
+      border-radius: 30px;
+      background: transparent;
+      color: rgba(220,236,255,0.6);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+    .modal-success {
+      text-align: center;
+      padding: 20px 0;
+    }
+    .modal-success .check {
+      font-size: 3rem;
+      margin-bottom: 12px;
+    }
+    .modal-success h4 {
+      font-family: 'Fahkwang', sans-serif;
+      font-size: 1.3rem;
+      color: #34d399;
+      margin-bottom: 8px;
+    }
+    .modal-success p {
+      font-size: 0.9rem;
+      color: rgba(220,236,255,0.6);
+      line-height: 1.5;
+    }
+    .modal-error {
+      background: rgba(248,113,113,0.1);
+      border: 1px solid rgba(248,113,113,0.3);
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 0.85rem;
+      color: #fca5a5;
+      margin-bottom: 16px;
+    }
+
+    /* ── REGISTRATION CTA ── */
+    .rsvp-section {
+      background: linear-gradient(135deg, rgba(11,158,66,0.12) 0%, rgba(4,137,199,0.1) 100%);
+      border-top: 1px solid rgba(11,158,66,0.2);
+      border-bottom: 1px solid rgba(11,158,66,0.2);
+      padding: 60px 24px;
+      text-align: center;
+      margin: 0 0 60px;
+    }
+    .rsvp-section h2 {
+      font-family: 'Boogaloo', cursive;
+      font-size: 2.6rem;
+      color: #0489C7;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+      text-shadow: 2px 3px 5px rgba(0,0,0,0.15);
+    }
+    .rsvp-section p {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--gray-dark);
+      max-width: 560px;
+      margin: 0 auto 32px;
+      line-height: 1.6;
+    }
+    .rsvp-btn-row {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-rsvp {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 36px;
+      border-radius: 30px;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      border: none;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .btn-rsvp:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+    .btn-rsvp-attend {
+      background: #0b9e42;
+      color: #fff;
+    }
+    .btn-rsvp-truck {
+      background: #f0c419;
+      color: #08382b;
+    }
+    .btn-rsvp-nonprofit {
+      background: transparent;
+      color: #0b9e42;
+      border: 2px solid #0b9e42 !important;
+    }
+
+    /* ── COMMUNITY SECTION ── */
+    .home-community { background: transparent; padding: 0 24px 100px; display: flex; justify-content: center; width: 100%; }
+    .community-bg { background: url('../images/nsplsh_335036453279326c797573_mv2_d_5760_3840_s_4_2.jpg') center/cover no-repeat; border-radius: 16px; padding: 50px 48px; position: relative; min-height: 520px; display: flex; align-items: center; justify-content: center; width: 100%; max-width: 1100px; }
+    .community-inner { display: grid; grid-template-columns: 1fr auto; gap: 30px; align-items: center; width: 100%; }
+    .community-text { text-align: left; background: rgba(80, 20, 120, 0.55); padding: 24px; border-radius: 12px; align-self: stretch; display: flex; flex-direction: column; justify-content: center; }
+    .community-right-col { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; }
+    .community-earth { width: 240px; height: auto; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3)); }
+    .community-text h2 { font-family: var(--font-body); font-weight: 700; font-size: 1.5rem; color: var(--white); margin-bottom: 10px; text-shadow: 1px 2px 4px rgba(0,0,0,0.4); max-width: 260px; }
+    .community-text p { font-family: var(--font-body); font-size: 0.84rem; color: var(--white); line-height: 1.7; margin-bottom: 14px; text-shadow: 1px 1px 3px rgba(0,0,0,0.3); max-width: 230px; }
+    .community-note { font-size: 0.78rem; opacity: 0.9; margin-bottom: 0 !important; white-space: nowrap; }
+    .member-cta-btn { display: inline-block; padding: 12px 36px; background: var(--white); color: var(--green-primary); border: 2px solid var(--white); border-radius: 4px; font-family: var(--font-body); font-weight: 700; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; text-decoration: none; margin-bottom: 8px; transition: background 0.3s, color 0.3s; }
+    .member-cta-btn:hover { background: transparent; color: var(--white); text-decoration: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .debate-hero { grid-template-columns: 1fr; padding: 0 24px 40px; }
+      .debate-hero-text h1 { font-size: 2.6rem; }
+      .debate-hero-right { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 16px; margin-top: 32px; }
+      .grassroots-bubble { width: 160px; height: 160px; margin-bottom: 0; }
+      .grassroots-bubble p { font-size: 0.9rem; }
+      .earth-wrap { width: 200px; height: 200px; }
+      .earth-img { width: 130px; }
+      .debate-hero-section::after { display: none; }
+      .candidates-section { grid-template-columns: 1fr; }
+      .candidates-bubbles { height: 340px; margin-bottom: 40px; }
+      .candidate-bubble.big { width: 220px; height: 220px; }
+      .candidate-bubble.medium { width: 180px; height: 180px; }
+      .candidate-bubble.small { width: 130px; height: 130px; top: 140px; left: 80px; }
+      .involved-grid { grid-template-columns: 1fr; }
+      .venue-section { grid-template-columns: 1fr; gap: 40px; }
+      .venue-quote-box { width: 300px; height: 300px; padding: 36px; }
+      .venue-quote-box blockquote { font-size: 0.9rem; }
+      .community-inner { grid-template-columns: 1fr; text-align: center; }
+      .community-text { text-align: center; }
+      .community-right-col { align-items: center; }
+      .community-earth { width: 180px; }
+      .community-bg { padding: 28px 20px; margin: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-shapes">
+    <span class="shape1"></span><span class="shape2"></span><span class="shape3"></span>
+    <span class="shape4"></span><span class="shape5"></span><span class="shape6"></span>
+    <span class="shape7"></span><span class="shape8"></span><span class="shape9"></span>
+    <span class="shape10"></span><span class="shape11"></span><span class="shape12"></span>
+  </div>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="../index" class="nav-logo"><img src="../images/phpf-logo-icon-hd.png" alt="Project HPF"></a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <div class="nav-links">
+        <div class="dropdown"><a href="../themission">THE MISSION</a><div class="dropdown-menu"><a href="../themission#healing">Healing</a><a href="../themission#prosperity">Prosperity</a><a href="../themission#freedom">Freedom</a></div></div>
+        <div class="dropdown"><a href="../participate">PARTICIPATE</a><div class="dropdown-menu"><a href="../liberatedemocracy">Liberate Democracy</a><a href="../buylocal">Buy Local</a><a href="../enrich-community">Enrich Community</a></div></div>
+        <a href="../didyouknow">DID YOU KNOW</a>
+        <div class="dropdown"><a href="../resources">RESOURCES</a><div class="dropdown-menu"><a href="../resources#documentaries">Enlightening Documentaries</a><a href="../resources#books">Good Reads</a><a href="../resources#discover">Podcast</a><a href="../resources#news-orgs">News</a><a href="../resources#foundations">Other Organizations</a><a href="https://www.liberationofeducation.org" target="_blank">Liberation of Education</a></div></div>
+        <a href="../events" class="active">EVENTS</a>
+        <div class="dropdown"><a href="../donate">DONATE</a><div class="dropdown-menu"><a href="../sponsor">Be A Sponsor</a></div></div>
+        <a href="../shop">SHOP</a>
+        <a href="../blog">BLOG</a>
+      </div>
+      <div class="nav-right">
+        <a href="https://members.projecthpf.org/auth/login" class="btn-member">MEMBERS</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══════════ HERO ══════════ -->
+  <section class="debate-hero-section reveal">
+    <div class="debate-hero">
+
+      <!-- Left: text -->
+      <div class="debate-hero-text">
+        <p class="eyebrow">The Libertarian Party of Escambia County Presents</p>
+        <h1>2026<br>Panhandle<br>Gubernatorial<br>Debate</h1>
+        <p class="grassroots-tag">Join us for a real grassroots debate.</p>
+
+        <div class="candidates-lineup">
+          <p class="cand">Scott Jewett (L)</p>
+          <p class="cand">Moliere "Moe" Dimanche (NPA)</p>
+          <p class="cand-other">and other candidates</p>
+        </div>
+
+        <div class="hero-date-pill">
+          <svg width="16" height="16" fill="none" stroke="#f0c419" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          <span>July 11th</span>
+          <span class="sep">|</span>
+          <span>6:00 PM</span>
+          <span class="sep">|</span>
+          <span>The Freedom Barn</span>
+        </div>
+      </div>
+
+      <!-- Right: bubble + earth -->
+      <div class="debate-hero-right">
+        <div class="grassroots-bubble">
+          <p>Hear from<br>grassroots<br>candidates</p>
+        </div>
+
+        <div class="earth-wrap">
+          <img src="../images/animation/mother-earth-v2-clean.png" alt="Mother Earth" class="earth-img">
+          <!-- circular "Earth is the School · Love is the Lesson" text -->
+          <svg class="earth-circle-text" viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <!-- full circle, text flows all the way around -->
+              <path id="circle-full" d="M 130,30 A 100,100 0 1,1 129.99,30"/>
+            </defs>
+            <text font-family="Fahkwang,sans-serif" font-weight="600" font-size="12.5" fill="#f0c419" letter-spacing="4">
+              <textPath href="#circle-full" startOffset="0%">EARTH IS THE SCHOOL • LOVE IS THE LESSON •</textPath>
+            </text>
+          </svg>
+        </div>
+
+        <div class="hero-hosted">
+          <p class="hosted-label">Hosted by</p>
+          <p class="hosted-name">Mission Obvious</p>
+          <a href="https://missionobvious.com" target="_blank">missionobvious.com</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════ PRESENTED BY ══════════ -->
+  <div class="presented-strip reveal">
+    <div class="presented-strip-inner">
+      <p class="label">Presented by the Libertarian Party of Escambia County</p>
+      <h2>Hosted by Mission Obvious</h2>
+      <p class="hosted"><a href="https://missionobvious.com" target="_blank">missionobvious.com</a></p>
+    </div>
+  </div>
+
+  <!-- ══════════ HEAR FROM CANDIDATES ══════════ -->
+  <section class="candidates-section reveal">
+    <div class="candidates-bubbles">
+      <div class="candidate-bubble big">
+        <span class="name">Scott Jewett</span>
+        <span class="party">Libertarian (L)</span>
+      </div>
+      <div class="candidate-bubble medium">
+        <span class="name">Moliere "Moe"<br>Dimanche</span>
+        <span class="party">No Party Affiliation (NPA)</span>
+      </div>
+      <div class="candidate-bubble small">
+        <span class="name">…and other candidates</span>
+      </div>
+    </div>
+    <div class="candidates-text">
+      <h2>Hear From<br><span>Grassroots</span><br>Candidates</h2>
+      <p>Real change begins at the local level. This debate gives citizens a chance to hear directly from the candidates who are fighting for better systems of governance — outside the two-party machine.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ WAYS TO GET INVOLVED ══════════ -->
+  <section class="involved-section reveal">
+    <div class="involved-inner">
+      <h2>Ways to <span>Get Involved</span></h2>
+      <div class="involved-grid">
+        <div class="involved-item">
+          <span class="involved-num">1</span>
+          <div class="involved-item-text">
+            <strong>Running for Governor?</strong>
+            <p>Join the debate! All grassroots candidates are welcome on the stage.</p>
+          </div>
+        </div>
+        <div class="involved-item">
+          <span class="involved-num">2</span>
+          <div class="involved-item-text">
+            <strong>Have a Food Truck?</strong>
+            <p>Pull up! Feed the community while we build it.</p>
+          </div>
+        </div>
+        <div class="involved-item">
+          <span class="involved-num">3</span>
+          <div class="involved-item-text">
+            <strong>Have a Non-Profit?</strong>
+            <p>Come set up a table and connect with engaged citizens who care.</p>
+          </div>
+        </div>
+        <div class="involved-item">
+          <span class="involved-num">4</span>
+          <div class="involved-item-text">
+            <strong>Want to Make a Difference?</strong>
+            <p>Come hear what the candidates have to say — then go do something about it.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ VENUE & CONTACT ══════════ -->
+  <section class="venue-section reveal">
+    <div class="venue-left">
+      <h2>When &amp; Where</h2>
+      <div class="venue-detail">
+        <p class="vd-label">Date &amp; Time</p>
+        <p class="vd-value">July 11th &bull; 6:00 PM</p>
+      </div>
+      <div class="venue-detail">
+        <p class="vd-label">Venue</p>
+        <p class="vd-value">The Freedom Barn</p>
+      </div>
+      <div class="venue-detail">
+        <p class="vd-label">Address</p>
+        <p class="vd-value">6300 12156 Havburg Drive<br>Pensacola, FL (off Bauer Road)</p>
+      </div>
+      <div class="venue-detail">
+        <p class="vd-label">Contact</p>
+        <p class="vd-value">
+          <a href="mailto:region1@lpf.org">region1@lpf.org</a><br>
+          <a href="tel:8134333861">813-433-3861</a>
+        </p>
+      </div>
+      <div class="venue-cta">
+        <a href="mailto:region1@lpf.org?subject=2026%20Panhandle%20Gubernatorial%20Debate" class="btn-debate-primary">Email to Get Involved</a>
+        <a href="tel:8134333861" class="btn-debate-outline">Call Us</a>
+      </div>
+    </div>
+    <div>
+      <div class="venue-quote-box">
+        <blockquote>"Real change begins at the local level — where communities come together to discuss ideas that shape better systems of governance for everyone."</blockquote>
+        <a href="../events" class="back-link">&larr; All Events</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ RSVP / REGISTRATION CTAs ══════════ -->
+  <section class="rsvp-section reveal">
+    <h2>Reserve Your Spot</h2>
+    <p>This is a free, open community event. Let us know you're coming — or bring your food truck or organization.</p>
+    <div class="rsvp-btn-row">
+      <button class="btn-rsvp btn-rsvp-attend" onclick="openModal('attendee')">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        RSVP — I'm Attending
+      </button>
+      <button class="btn-rsvp btn-rsvp-truck" onclick="openModal('food_truck')">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        Register a Food Truck
+      </button>
+      <button class="btn-rsvp btn-rsvp-nonprofit" onclick="openModal('nonprofit')">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Set Up a Non-Profit Table
+      </button>
+    </div>
+  </section>
+
+  <!-- ══════════ ATTENDEE MODAL ══════════ -->
+  <div class="modal-backdrop" id="modal-attendee" onclick="closeOnBackdrop(event, 'attendee')">
+    <div class="modal">
+      <div id="form-attendee">
+        <h3>RSVP — I'm Attending</h3>
+        <p class="modal-sub">Free event, no ticket needed. This just helps us plan for the right number of chairs.</p>
+        <div id="error-attendee" class="modal-error" style="display:none"></div>
+        <div class="form-field"><label>Full Name *</label><input type="text" id="att-name" placeholder="Jane Smith" required></div>
+        <div class="form-field"><label>Email *</label><input type="email" id="att-email" placeholder="you@email.com" required></div>
+        <div class="form-field"><label>Phone (optional)</label><input type="tel" id="att-phone" placeholder="555-555-5555"></div>
+        <div class="form-field"><label>Anything you'd like us to know? (optional)</label><textarea id="att-notes" placeholder="e.g. bringing 3 friends, need accessible seating…"></textarea></div>
+        <div class="modal-actions">
+          <button class="btn-modal-cancel" onclick="closeModal('attendee')">Cancel</button>
+          <button class="btn-modal-submit" onclick="submitForm('attendee')" id="btn-attendee">
+            <span id="btn-attendee-label">Confirm RSVP</span>
+          </button>
+        </div>
+      </div>
+      <div class="modal-success" id="success-attendee" style="display:none">
+        <div class="check">✅</div>
+        <h4>You're on the list!</h4>
+        <p>See you at The Freedom Barn. Spread the word — bring a friend.</p>
+        <button class="btn-modal-cancel" style="margin-top:16px" onclick="closeModal('attendee')">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════ FOOD TRUCK MODAL ══════════ -->
+  <div class="modal-backdrop" id="modal-food_truck" onclick="closeOnBackdrop(event, 'food_truck')">
+    <div class="modal">
+      <div id="form-food_truck">
+        <h3>🚚 Food Truck Registration</h3>
+        <p class="modal-sub">Pull up and feed the community. Contact region1@lpf.org or 813-433-3861 with any questions.</p>
+        <div id="error-food_truck" class="modal-error" style="display:none"></div>
+        <div class="form-field"><label>Your Name *</label><input type="text" id="ft-name" placeholder="Jane Smith" required></div>
+        <div class="form-field"><label>Email *</label><input type="email" id="ft-email" placeholder="you@email.com" required></div>
+        <div class="form-field"><label>Phone (optional)</label><input type="tel" id="ft-phone" placeholder="555-555-5555"></div>
+        <div class="form-field"><label>Truck / Business Name *</label><input type="text" id="ft-org" placeholder="Tacos on Wheels" required></div>
+        <div class="form-field"><label>What do you serve? (optional)</label><textarea id="ft-notes" placeholder="e.g. tacos, BBQ, shaved ice…"></textarea></div>
+        <div class="modal-actions">
+          <button class="btn-modal-cancel" onclick="closeModal('food_truck')">Cancel</button>
+          <button class="btn-modal-submit" onclick="submitForm('food_truck')" id="btn-food_truck">
+            <span id="btn-food_truck-label">Register My Truck</span>
+          </button>
+        </div>
+      </div>
+      <div class="modal-success" id="success-food_truck" style="display:none">
+        <div class="check">🚚</div>
+        <h4>You're registered!</h4>
+        <p>We'll be in touch with setup details. Thank you for feeding the revolution!</p>
+        <button class="btn-modal-cancel" style="margin-top:16px" onclick="closeModal('food_truck')">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════ NON-PROFIT MODAL ══════════ -->
+  <div class="modal-backdrop" id="modal-nonprofit" onclick="closeOnBackdrop(event, 'nonprofit')">
+    <div class="modal">
+      <div id="form-nonprofit">
+        <h3>🏠 Non-Profit Table</h3>
+        <p class="modal-sub">Set up a table and connect with engaged citizens who care about the community.</p>
+        <div id="error-nonprofit" class="modal-error" style="display:none"></div>
+        <div class="form-field"><label>Your Name *</label><input type="text" id="np-name" placeholder="Jane Smith" required></div>
+        <div class="form-field"><label>Email *</label><input type="email" id="np-email" placeholder="you@email.com" required></div>
+        <div class="form-field"><label>Phone (optional)</label><input type="tel" id="np-phone" placeholder="555-555-5555"></div>
+        <div class="form-field"><label>Organization Name *</label><input type="text" id="np-org" placeholder="Your Non-Profit Name" required></div>
+        <div class="form-field"><label>What does your organization do? (optional)</label><textarea id="np-notes" placeholder="Brief description of your mission…"></textarea></div>
+        <div class="modal-actions">
+          <button class="btn-modal-cancel" onclick="closeModal('nonprofit')">Cancel</button>
+          <button class="btn-modal-submit" onclick="submitForm('nonprofit')" id="btn-nonprofit">
+            <span id="btn-nonprofit-label">Reserve My Table</span>
+          </button>
+        </div>
+      </div>
+      <div class="modal-success" id="success-nonprofit" style="display:none">
+        <div class="check">✅</div>
+        <h4>Table reserved!</h4>
+        <p>We'll reach out with setup details. Thank you for getting involved.</p>
+        <button class="btn-modal-cancel" style="margin-top:16px" onclick="closeModal('nonprofit')">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════ COMMUNITY & MEMBERSHIP ══════════ -->
+  <section class="home-community reveal">
+    <div class="community-bg">
+      <div class="community-inner">
+        <div class="community-text">
+          <h2>Join Our Revolutionist Community</h2>
+          <p>Communicate, collaborate, and connect with citizens committed to healing, prosperity &amp; freedom. Become a PHPF member for just $1/month and gain exclusive access to our member directory, content library, and Liberate Democracy voting.</p>
+          <p class="community-note">Membership unlocks the full PHPF experience.</p>
+        </div>
+        <div class="community-right-col">
+          <img src="../images/animation/mother-earth-v2-clean.png" alt="Mother Earth" class="community-earth">
+          <a href="https://members.projecthpf.org/auth/register" class="member-cta-btn">Join Now — $1/mo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ FOOTER ══════════ -->
+  <footer class="site-footer">
+    <p class="footer-disclaimer">Disclaimer: Project Healing Prosperity &amp; Freedom, Inc is pleased to provide diverse ideas from across the world that we hope will spark listeners' curiosity and broaden their worldview. Project Healing Prosperity &amp; Freedom, Inc does not endorse all of the perspectives, ideas and information put forward in any of the external content presented and invites listeners to have an open mind but question everything as they draw their own conclusions.</p>
+    <p class="footer-org">Project Healing<br>Prosperity &amp; Freedom, Inc</p>
+    <a href="mailto:info@projecthpf.org" class="footer-email">info@projecthpf.org</a>
+    <div class="footer-social">
+      <a href="https://twitter.com/ProjectHPF" title="Twitter"><img src="../images/11062b_07090bba1daa42c880682389a46508db_mv2.png" alt="Twitter" style="width:24px;height:24px;"></a>
+      <a href="https://www.instagram.com/projecthpf" title="Instagram"><img src="../images/11062b_55e4be1e75564866b6c28290f9a9d271_mv2.png" alt="Instagram" style="width:24px;height:24px;"></a>
+      <a href="https://www.facebook.com/ProjectHPF21" title="Facebook"><img src="../images/11062b_a84995cc8b024f4ea398f5744a56bc27_mv2.png" alt="Facebook" style="width:24px;height:24px;"></a>
+      <a href="https://www.tiktok.com/@tiktok" title="TikTok"><img src="../images/11062b_8e8bb1bfaeb54186ace77d5ab14933ff_mv2.png" alt="TikTok" style="width:24px;height:24px;"></a>
+    </div>
+    <div class="footer-links">
+      <a href="../privacy">Privacy Policy</a>
+      <a href="../terms">Terms and Conditions</a>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    setTimeout(() => {
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('revealed'));
+    }, 300);
+
+    const API = 'https://admin.projecthpf.org/api/events/register'
+    const EVENT_ID = '26lpfescambiadebate'
+
+    const FIELDS = {
+      attendee:   { name: 'att-name', email: 'att-email', phone: 'att-phone', org: null,    notes: 'att-notes' },
+      food_truck: { name: 'ft-name',  email: 'ft-email',  phone: 'ft-phone',  org: 'ft-org', notes: 'ft-notes' },
+      nonprofit:  { name: 'np-name',  email: 'np-email',  phone: 'np-phone',  org: 'np-org', notes: 'np-notes' },
+    }
+
+    function openModal(type) {
+      document.getElementById('modal-' + type).classList.add('open')
+      document.body.style.overflow = 'hidden'
+    }
+
+    function closeModal(type) {
+      document.getElementById('modal-' + type).classList.remove('open')
+      document.body.style.overflow = ''
+    }
+
+    function closeOnBackdrop(e, type) {
+      if (e.target === document.getElementById('modal-' + type)) closeModal(type)
+    }
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        ['attendee','food_truck','nonprofit'].forEach(t => closeModal(t))
+      }
+    })
+
+    async function submitForm(type) {
+      const f = FIELDS[type]
+      const name  = document.getElementById(f.name)?.value.trim()
+      const email = document.getElementById(f.email)?.value.trim()
+      const phone = document.getElementById(f.phone)?.value.trim() || null
+      const org   = f.org ? document.getElementById(f.org)?.value.trim() || null : null
+      const notes = document.getElementById(f.notes)?.value.trim() || null
+      const errEl = document.getElementById('error-' + type)
+      const btn   = document.getElementById('btn-' + type)
+      const lbl   = document.getElementById('btn-' + type + '-label')
+
+      errEl.style.display = 'none'
+
+      if (!name) { errEl.textContent = 'Please enter your name.'; errEl.style.display = 'block'; return }
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { errEl.textContent = 'Please enter a valid email.'; errEl.style.display = 'block'; return }
+      if (type !== 'attendee' && !org) { errEl.textContent = 'Please enter your ' + (type === 'food_truck' ? 'truck/business name.' : 'organization name.'); errEl.style.display = 'block'; return }
+
+      btn.disabled = true
+      lbl.textContent = 'Submitting…'
+
+      try {
+        const res = await fetch(API, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ event_id: EVENT_ID, type, name, email, phone, organization: org, notes }),
+        })
+        const json = await res.json()
+        if (!res.ok && !json.duplicate) throw new Error(json.error || 'Something went wrong.')
+        document.getElementById('form-' + type).style.display = 'none'
+        document.getElementById('success-' + type).style.display = 'block'
+      } catch (err) {
+        errEl.textContent = err.message || 'Something went wrong. Please try again.'
+        errEl.style.display = 'block'
+        btn.disabled = false
+        lbl.textContent = type === 'attendee' ? 'Confirm RSVP' : type === 'food_truck' ? 'Register My Truck' : 'Reserve My Table'
+      }
+    }
+  </script>
+</body>
+</html>

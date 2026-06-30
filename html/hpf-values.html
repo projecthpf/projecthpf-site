@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Values — Project HPF</title>
+  <meta name="description" content="Project Healing Prosperity & Freedom core values — Healing, Prosperity, Freedom, Respect, Unity, and our Agreement to Values." />
+  <link rel="icon" type="image/png" href="images/5f7ee9_eef98a3952f34f5fb211625143e3e8ea_mv2.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Forum&family=Fahkwang:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Boogaloo&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=17">
+  <style>
+    /* ── Page Title ── */
+    .hv-page-title {
+      text-align: center;
+      padding: 100px 24px 40px;
+      background: transparent;
+    }
+    .hv-page-title h1 {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 3.5rem;
+      color: #0489C7;
+      margin-bottom: 14px;
+      text-shadow: 2px 3px 5px rgba(0,0,0,0.25);
+    }
+    .hv-page-title .tagline {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 1.05rem;
+      color: var(--gray-dark);
+      font-style: normal;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    /* ── Intro ── */
+    .hv-intro {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px 40px;
+      text-align: center;
+    }
+    .hv-intro p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #333;
+    }
+    .hv-intro strong {
+      color: #1a1a2e;
+    }
+
+    /* ── Values Grid ── */
+    .hv-values {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    .hv-value-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 32px 36px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      border-left: 6px solid #7b4fbd;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .hv-value-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    }
+    .hv-value-card.healing { border-left-color: #7b4fbd; }
+    .hv-value-card.prosperity { border-left-color: #7bc47a; }
+    .hv-value-card.freedom { border-left-color: #0489C7; }
+    .hv-value-card.respect { border-left-color: #e74c3c; }
+    .hv-value-card.unity { border-left-color: #7b4fbd; }
+    .hv-value-card h2 {
+      font-family: 'Boogaloo', cursive;
+      font-size: 1.8rem;
+      color: #1a1a2e;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .hv-value-card .emoji {
+      font-size: 1.6rem;
+      margin-right: 8px;
+    }
+    .hv-value-card ul {
+      list-style: disc;
+      padding-left: 24px;
+      margin: 0;
+    }
+    .hv-value-card li {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #333;
+      margin-bottom: 8px;
+    }
+
+    /* ── Agreement Section ── */
+    .hv-agreement {
+      background: linear-gradient(160deg, #0489C7 0%, #065a8c 100%);
+      padding: 60px 24px;
+      color: #fff;
+    }
+    .hv-agreement-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .hv-agreement h2 {
+      font-family: 'Boogaloo', cursive;
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .hv-agreement p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      text-align: center;
+      margin-bottom: 16px;
+      opacity: 0.95;
+    }
+    .hv-agreement .closing {
+      font-style: italic;
+      font-size: 1.15rem;
+      margin-top: 24px;
+      text-align: center;
+    }
+
+    /* ── Sign / Agree Section ── */
+    .hv-sign {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 60px 24px;
+      text-align: center;
+    }
+    .hv-sign h2 {
+      font-family: 'Boogaloo', cursive;
+      font-size: 2rem;
+      color: #0489C7;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .hv-sign p {
+      font-size: 1.05rem;
+      color: #555;
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+    .hv-sign-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      max-width: 460px;
+      margin: 0 auto;
+    }
+    .hv-sign-form input {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      padding: 14px 18px;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+    .hv-sign-form input:focus {
+      border-color: #0489C7;
+    }
+    .hv-sign-form .checkbox-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      text-align: left;
+      margin: 8px 0;
+    }
+    .hv-sign-form .checkbox-row input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      margin-top: 3px;
+      flex-shrink: 0;
+      accent-color: #0489C7;
+    }
+    .hv-sign-form .checkbox-row label {
+      font-size: 0.95rem;
+      color: #333;
+      line-height: 1.5;
+    }
+    .hv-sign-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #7bc47a 0%, #4a9e49 100%);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: 1.15rem;
+      font-weight: 700;
+      padding: 16px 40px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s;
+      box-shadow: 0 4px 16px rgba(76,175,80,0.35);
+      margin-top: 8px;
+    }
+    .hv-sign-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(76,175,80,0.5);
+    }
+    .hv-sign-success {
+      display: none;
+      background: #e8f5e9;
+      color: #2e7d32;
+      padding: 20px 24px;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      margin-top: 20px;
+      line-height: 1.5;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .hv-page-title h1 { font-size: 2.2rem; }
+      .hv-value-card { padding: 24px 20px; }
+      .hv-value-card h2 { font-size: 1.5rem; }
+      .hv-sign-form { padding: 0 12px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-shapes">
+    <span class="shape1"></span>
+    <span class="shape2"></span>
+    <span class="shape3"></span>
+    <span class="shape4"></span>
+    <span class="shape5"></span>
+    <span class="shape6"></span>
+    <span class="shape7"></span>
+    <span class="shape8"></span>
+    <span class="shape9"></span>
+    <span class="shape10"></span>
+    <span class="shape11"></span>
+    <span class="shape12"></span>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index" class="nav-logo nav-logo--wide">
+        <img src="images/phpf-logo-wide-hd.png" alt="ProjectHPF.org">
+      </a>
+      <button class="nav-toggle">&#9776;</button>
+      <div class="nav-links">
+        <div class="dropdown"><a href="themission">THE MISSION</a><div class="dropdown-menu"><a href="themission#healing">Healing</a><a href="themission#prosperity">Prosperity</a><a href="themission#freedom">Freedom</a></div></div>
+        <div class="dropdown"><a href="participate">PARTICIPATE</a><div class="dropdown-menu"><a href="liberatedemocracy">Liberate Democracy</a><a href="buylocal">Buy Local</a><a href="enrich-community">Enrich Community</a></div></div>
+        <a href="didyouknow">DID YOU KNOW</a>
+        <div class="dropdown"><a href="resources">RESOURCES</a><div class="dropdown-menu"><a href="resources#documentaries">Enlightening Documentaries</a><a href="resources#books">Good Reads</a><a href="resources#discover">Podcast</a><a href="resources#news-orgs">News</a><a href="resources#foundations">Other Organizations</a><a href="https://www.liberationofeducation.org" target="_blank">Liberation of Education</a></div></div>
+        <a href="events">EVENTS</a>
+        <div class="dropdown"><a href="donate">DONATE</a><div class="dropdown-menu"><a href="sponsor">Be A Sponsor</a></div></div>
+        <a href="shop">SHOP</a>
+        <a href="blog">BLOG</a>
+      </div>
+      <div class="nav-right">
+        <a href="https://members.projecthpf.org/auth/login" class="btn-member">MEMBERS</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══════════ PAGE TITLE ══════════ -->
+  <section class="hv-page-title reveal">
+    <h1>🌿 Project Healing Prosperity &amp; Freedom Values</h1>
+    <p class="tagline">The foundation for everything we create and every space we hold.</p>
+  </section>
+
+  <!-- ══════════ INTRO ══════════ -->
+  <section class="hv-intro reveal">
+    <p>Project HPF (Healing, Prosperity &amp; Freedom) is built on the belief that a better world begins with <strong>truth, love, personal sovereignty, and conscious community</strong>. Everything we create — including Our Music Fests — is rooted in these core values:</p>
+  </section>
+
+  <!-- ══════════ VALUES ══════════ -->
+  <div class="hv-values">
+
+    <div class="hv-value-card healing reveal">
+      <h2><span class="emoji">💜</span> Healing</h2>
+      <ul>
+        <li>We honor the individual and collective journey toward emotional, physical, and spiritual wholeness.</li>
+        <li>We believe music, art, and storytelling are powerful tools for transformation and reconnection.</li>
+        <li>We create safe, welcoming spaces where all people can feel seen, heard, and valued.</li>
+      </ul>
+    </div>
+
+    <div class="hv-value-card prosperity reveal">
+      <h2><span class="emoji">💰</span> Prosperity</h2>
+      <ul>
+        <li>We believe prosperity is more than material wealth — it includes peace, purpose, connection, and well-being.</li>
+        <li>We support systems, communities, and conversations that empower people to live free, creative, and abundant lives.</li>
+        <li>We elevate voices and ideas that encourage collaboration over competition.</li>
+      </ul>
+    </div>
+
+    <div class="hv-value-card freedom reveal">
+      <h2><span class="emoji">🌾</span> Freedom</h2>
+      <ul>
+        <li>We believe every individual has the right to live in alignment with their truth, to question systems, and to choose their path.</li>
+        <li>We stand for freedom of thought, speech, creativity, education, and expression.</li>
+        <li>We oppose coercion, censorship, and the abuse of power in all forms.</li>
+      </ul>
+    </div>
+
+    <div class="hv-value-card respect reveal">
+      <h2><span class="emoji">🤝</span> Respect &amp; Integrity</h2>
+      <ul>
+        <li>We treat others with respect, <strong>regardless of background, beliefs, or life choices.</strong></li>
+        <li>We communicate with <strong>honesty and compassion, and hold space for differing perspectives.</strong></li>
+        <li>We take <strong>full responsibility for our words, actions, and impact.</strong></li>
+      </ul>
+    </div>
+
+    <div class="hv-value-card unity reveal">
+      <h2><span class="emoji">🌍</span> Unity in Diversity</h2>
+      <ul>
+        <li>We celebrate diversity of culture, sound, expression, and lived experience.</li>
+        <li>We believe the future is co-created — not dictated — by all people, from the ground up.</li>
+        <li>We aim to build bridges, not walls.</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- ══════════ AGREEMENT ══════════ -->
+  <section class="hv-agreement reveal">
+    <div class="hv-agreement-inner">
+      <h2>🫶 Agreement to Values</h2>
+      <p>By participating in <strong>Project HPF Music Fests</strong>, each attendee, artist, speaker, vendor and contributor agrees to uphold these values in spirit and in practice, on the grounds, on stage, behind the scenes, and in all engagements related to Project HPF Music Fests.</p>
+      <p class="closing">We don't expect perfection — we honor the journey. But we do hold this as sacred space.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ SIGN / AGREE ══════════ -->
+  <section class="hv-sign reveal">
+    <h2>Sign Our Values Agreement</h2>
+    <p>By signing below, you agree to uphold these values at all Project HPF events and engagements.</p>
+    <form class="hv-sign-form" id="valuesForm">
+      <input type="text" name="name" placeholder="Your Full Name" required>
+      <input type="email" name="email" placeholder="Your Email Address" required>
+      <div class="checkbox-row">
+        <input type="checkbox" id="agreeCheck" required>
+        <label for="agreeCheck">I have read and agree to uphold the Project Healing Prosperity &amp; Freedom values in spirit and in practice at all events and engagements.</label>
+      </div>
+      <button type="submit" class="hv-sign-btn">I Agree &amp; Sign ✓</button>
+    </form>
+    <div class="hv-sign-success" id="signSuccess">
+      🎉 Thank you for signing! You are now part of the movement. Together we honor healing, prosperity, and freedom for all.
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p class="footer-disclaimer">Disclaimer: Project Healing Prosperity &amp; Freedom, Inc is pleased to provide diverse ideas from across the world that we hope will spark listeners' curiosity and broaden their worldview. Project Healing Prosperity &amp; Freedom, Inc does not endorse all of the perspectives, ideas and information put forward in any of the external content presented and invites listeners to have an open mind but question everything as they draw their own conclusions.</p>
+    <p class="footer-org">Project Healing<br>Prosperity &amp; Freedom, Inc</p>
+    <a href="mailto:info@projecthpf.org" class="footer-email">info@projecthpf.org</a>
+    <div class="footer-social">
+      <a href="https://twitter.com/ProjectHPF" title="Twitter"><img src="images/11062b_07090bba1daa42c880682389a46508db_mv2.png" alt="Twitter" style="width:24px;height:24px;"></a>
+      <a href="https://www.instagram.com/projecthpf" title="Instagram"><img src="images/11062b_55e4be1e75564866b6c28290f9a9d271_mv2.png" alt="Instagram" style="width:24px;height:24px;"></a>
+      <a href="https://www.facebook.com/ProjectHPF21" title="Facebook"><img src="images/11062b_a84995cc8b024f4ea398f5744a56bc27_mv2.png" alt="Facebook" style="width:24px;height:24px;"></a>
+      <a href="https://www.tiktok.com/@projecthpf" title="TikTok"><img src="images/11062b_8e8bb1bfaeb54186ace77d5ab14933ff_mv2.png" alt="TikTok" style="width:24px;height:24px;"></a>
+    </div>
+    <div class="footer-links">
+      <a href="privacy">Privacy Policy</a>
+      <a href="terms">Terms and Conditions</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById('valuesForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = this.querySelector('[name="name"]').value;
+      const email = this.querySelector('[name="email"]').value;
+
+      // Store locally (can be connected to a backend later)
+      const signatures = JSON.parse(localStorage.getItem('hpf-values-signatures') || '[]');
+      signatures.push({ name, email, date: new Date().toISOString() });
+      localStorage.setItem('hpf-values-signatures', JSON.stringify(signatures));
+
+      // Show success
+      this.style.display = 'none';
+      document.getElementById('signSuccess').style.display = 'block';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Food &amp; Water — Project HPF</title>
+  <meta name="description" content="Food &amp; Water — the truth about the Standard American Diet, corporate influence, and what it's doing to our health." />
+  <link rel="icon" type="image/png" href="images/5f7ee9_eef98a3952f34f5fb211625143e3e8ea_mv2.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Forum&family=Fahkwang:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Boogaloo&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=17">
+  <style>
+    /* ── Page Title ── */
+    .fw-page-title {
+      text-align: center;
+      padding: 100px 24px 40px;
+    }
+    .fw-page-title h1 {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 3.5rem;
+      color: #0489C7;
+      margin-bottom: 14px;
+      text-shadow: 2px 3px 5px rgba(0,0,0,0.25);
+    }
+    .fw-page-title .tagline {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 1.05rem;
+      color: var(--gray-dark);
+      max-width: 620px;
+      margin: 0 auto;
+      line-height: 1.5;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Shared Section Wrapper ── */
+    .fw-section {
+      max-width: 1100px;
+      margin: 0 auto 60px;
+      padding: 0 24px;
+    }
+
+    /* ── Blue Box (intro + SAD + nonprofits) ── */
+    .fw-blue-box {
+      background: #8faec5;
+      border-radius: 12px;
+      padding: 32px 40px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.22), 0 2px 8px rgba(0,0,0,0.12);
+    }
+    .fw-blue-box h2 {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 2rem;
+      color: #fff;
+      margin-bottom: 20px;
+      line-height: 1.3;
+      text-decoration: underline;
+      text-underline-offset: 6px;
+    }
+    .fw-blue-box p {
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: #1a2a3e;
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+    .fw-blue-box p em { color: #0f1e2e; font-style: italic; }
+    .fw-blue-box p strong { color: #0f1e2e; }
+    .fw-blue-box h3 {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 1rem;
+      color: #1a2a3e;
+      margin: 18px 0 6px;
+    }
+    .fw-blue-box ul {
+      list-style: disc;
+      padding-left: 24px;
+      margin-bottom: 14px;
+    }
+    .fw-blue-box ul li {
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: #1a2a3e;
+      line-height: 1.75;
+      margin-bottom: 8px;
+    }
+    .fw-blue-box ol {
+      padding-left: 22px;
+      margin-bottom: 14px;
+    }
+    .fw-blue-box ol li {
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: #1a2a3e;
+      line-height: 1.75;
+      margin-bottom: 10px;
+    }
+
+    /* ── Cream/White Box (farm to table) ── */
+    .fw-cream-box {
+      background: #f5f0ea;
+      border-radius: 12px;
+      padding: 40px 48px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.08);
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+    .fw-cream-box h2 {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 2rem;
+      color: #5a3e2b;
+      margin-bottom: 20px;
+      line-height: 1.3;
+    }
+    .fw-cream-box p {
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: #5a3e2b;
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+    .fw-cream-box h3 {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 1rem;
+      color: #5a3e2b;
+      margin: 16px 0 6px;
+    }
+    .fw-cream-box ul {
+      list-style: disc;
+      padding-left: 24px;
+      margin-bottom: 14px;
+    }
+    .fw-cream-box ul li {
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: #5a3e2b;
+      line-height: 1.75;
+      margin-bottom: 8px;
+    }
+
+    /* ── Lavender Box (government regulation) ── */
+    .fw-lavender-box {
+      background: #c8d0e0;
+      border-radius: 12px;
+      padding: 40px 48px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .fw-lavender-box h2 {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 2rem;
+      color: #1a2040;
+      margin-bottom: 20px;
+      line-height: 1.3;
+    }
+    .fw-lavender-box p {
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: #1a2040;
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+    .fw-lavender-box h3 {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 1rem;
+      color: #1a2040;
+      margin: 16px 0 6px;
+    }
+    .fw-lavender-box ul {
+      list-style: disc;
+      padding-left: 24px;
+      margin-bottom: 14px;
+    }
+    .fw-lavender-box ul li {
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: #1a2040;
+      line-height: 1.75;
+      margin-bottom: 8px;
+    }
+
+    /* ── Sage Green Box (access) ── */
+    .fw-sage-box {
+      background: #8fa8a0;
+      border-radius: 12px;
+      padding: 40px 48px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.22), 0 2px 8px rgba(0,0,0,0.12);
+    }
+    .fw-sage-box h2 {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 2rem;
+      color: #fff;
+      margin-bottom: 20px;
+      line-height: 1.3;
+    }
+    .fw-sage-box p {
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: #1a2e28;
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+    .fw-sage-box ol {
+      padding-left: 22px;
+      margin-bottom: 14px;
+    }
+    .fw-sage-box ol li {
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: #1a2e28;
+      line-height: 1.75;
+      margin-bottom: 10px;
+    }
+    .fw-sage-box ul {
+      list-style: disc;
+      padding-left: 24px;
+      margin-bottom: 6px;
+    }
+    .fw-sage-box ul li {
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: #1a2e28;
+      line-height: 1.75;
+      margin-bottom: 6px;
+    }
+
+    /* ── Split layout (text + image/video side) ── */
+    .fw-split {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+    }
+    .fw-split-content { flex: 1; }
+    .fw-split-media {
+      width: 340px;
+      flex-shrink: 0;
+      align-self: flex-start;
+      position: sticky;
+      top: 100px;
+    }
+    .fw-split-media img, .fw-split-media video {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+      display: block;
+    }
+    .fw-split-media .media-caption {
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      margin-top: 6px;
+    }
+    .fw-split-media .media-caption.dark { color: rgba(0,0,0,0.45); }
+
+    /* ── SAD photo stack ── */
+    .fw-photo-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 300px;
+      flex-shrink: 0;
+      align-self: flex-start;
+      position: sticky;
+      top: 100px;
+    }
+    .fw-photo-stack img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      display: block;
+    }
+    .fw-photo-stack-label {
+      font-family: var(--font-body);
+      font-size: 0.68rem;
+      color: rgba(255,255,255,0.55);
+      text-align: center;
+      margin-top: 2px;
+      margin-bottom: 4px;
+    }
+
+    /* ── Hero: intro box + videos ── */
+    .fw-hero-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 60px;
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+    }
+    .fw-hero-wrap .fw-blue-box { flex: 0 1 620px; }
+    .fw-video-col {
+      width: 400px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      align-self: flex-start;
+      margin-top: 60px;
+    }
+    .fw-video-col iframe {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 10px;
+      border: none;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+
+    /* ── Locate Farmers Market ── */
+    .fw-locate {
+      background: #b8c8e8;
+      padding: 60px 24px;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 0;
+    }
+    .fw-locate-inner {
+      max-width: 1000px;
+      width: 100%;
+      display: flex;
+      gap: 60px;
+      align-items: center;
+      justify-content: center;
+    }
+    .fw-locate-img {
+      width: 360px;
+      flex-shrink: 0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+    .fw-locate-img img {
+      width: 100%;
+      display: block;
+    }
+    .fw-locate-text { text-align: left; }
+    .fw-locate-text h2 {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 2.4rem;
+      color: #1a2040;
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+    .fw-locate-btn {
+      display: inline-block;
+      padding: 14px 40px;
+      background: #4a6080;
+      color: #fff;
+      border-radius: 4px;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .fw-locate-btn:hover { background: #2a4060; text-decoration: none; color: #fff; }
+
+    /* Community & Membership */
+    .home-community { background: transparent; padding: 100px 24px 20px; display: flex; justify-content: center; width: 100%; }
+    .community-bg { background: url('images/nsplsh_335036453279326c797573_mv2_d_5760_3840_s_4_2.jpg') center/cover no-repeat; border-radius: 16px; padding: 50px 48px; position: relative; min-height: 520px; display: flex; align-items: center; justify-content: center; }
+    .community-inner { display: grid; grid-template-columns: auto auto; gap: 60px; align-items: center; }
+    .community-text { text-align: left; background: rgba(80, 20, 120, 0.55); padding: 24px; border-radius: 12px; align-self: stretch; display: flex; flex-direction: column; justify-content: center; max-width: 340px; }
+    .community-right-col { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; }
+    .community-earth { width: 240px; height: auto; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3)); }
+    .community-text h2 { font-family: var(--font-body); font-weight: 700; font-size: 1.5rem; color: var(--white); margin-bottom: 10px; text-shadow: 1px 2px 4px rgba(0,0,0,0.4); max-width: 260px; }
+    .community-text p { font-family: var(--font-body); font-size: 0.84rem; color: var(--white); line-height: 1.7; margin-bottom: 14px; text-shadow: 1px 1px 3px rgba(0,0,0,0.3); max-width: 230px; }
+    .community-text p.community-note { font-size: 0.78rem; opacity: 0.9; margin-bottom: 0; white-space: nowrap; }
+    .member-cta-btn { display: inline-block; padding: 12px 36px; background: var(--white); color: var(--green-primary); border: 2px solid var(--white); border-radius: 4px; font-family: var(--font-body); font-weight: 700; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; transition: background 0.3s, color 0.3s; text-decoration: none; margin-bottom: 8px; }
+    .member-cta-btn:hover { background: transparent; color: var(--white); text-decoration: none; }
+
+    /* ── Per-Section Narration Players ── */
+    .val-section-head { display:flex; align-items:center; gap:14px; margin-bottom:24px; }
+    .val-section-head h2 { flex:1; margin-bottom:0; text-align:left; }
+    .val-play-icon { width:42px;height:42px;flex-shrink:0;background:rgba(255,255,255,0.22);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;color:#fff;cursor:pointer;transition:background 0.2s,transform 0.15s;user-select:none;border:2px solid rgba(255,255,255,0.35); }
+    .val-play-icon:hover { background:rgba(255,255,255,0.4);transform:scale(1.1); }
+    .val-play-icon.on-light { background:rgba(4,137,199,0.13);border:2px solid rgba(4,137,199,0.28);color:#0489C7; }
+    .val-play-icon.on-light:hover { background:rgba(4,137,199,0.24); }
+    .val-play-icon.on-dark-blue { background:rgba(26,32,64,0.15);border:2px solid rgba(26,32,64,0.3);color:#1a2040; }
+    .val-play-icon.on-dark-blue:hover { background:rgba(26,32,64,0.28); }
+    .val-play-icon.on-sage { background:rgba(26,46,40,0.15);border:2px solid rgba(26,46,40,0.3);color:#1a2e28; }
+    .val-play-icon.on-sage:hover { background:rgba(26,46,40,0.28); }
+    .val-narration-player { display:flex;align-items:center;gap:10px;max-height:0;opacity:0;overflow:hidden;transition:max-height 0.35s ease,opacity 0.35s ease;margin-bottom:0; }
+    .val-narration-player.playing { max-height:36px;opacity:1;margin-bottom:16px; }
+    .val-narration-bar { flex:1;height:6px;background:rgba(0,0,0,0.12);border-radius:3px;cursor:pointer;position:relative;overflow:hidden;min-width:120px; }
+    .val-narration-bar:hover { background:rgba(0,0,0,0.22); }
+    .val-narration-bar-fill { height:100%;background:rgba(255,255,255,0.7);border-radius:3px;width:0%;pointer-events:none; }
+    .val-narration-bar-fill.on-light { background:#0489C7; }
+    .val-narration-bar-fill.on-dark-blue { background:rgba(26,32,64,0.6); }
+    .val-narration-bar-fill.on-sage { background:rgba(26,46,40,0.6); }
+    .val-narration-time { font-size:0.7rem;font-family:var(--font-body,sans-serif);color:rgba(255,255,255,0.75);min-width:72px;text-align:right;white-space:nowrap; }
+    .val-narration-time.on-light { color:rgba(0,0,0,0.45); }
+    .val-narration-time.on-dark-blue { color:rgba(26,32,64,0.65); }
+    .val-narration-time.on-sage { color:rgba(26,46,40,0.65); }
+    .val-speed { display:flex;align-items:center;gap:3px;flex-shrink:0; }
+    .val-speed .speed-btn { background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);border-radius:4px;color:rgba(255,255,255,0.8);font-size:0.65rem;font-weight:600;padding:2px 6px;cursor:pointer;transition:background 0.15s;line-height:1.4;font-family:inherit; }
+    .val-speed .speed-btn:hover { background:rgba(255,255,255,0.28); }
+    .val-speed .speed-btn.active { background:rgba(255,255,255,0.88);color:#1a1a2e;border-color:transparent; }
+    .val-speed.on-light .speed-btn { background:rgba(0,0,0,0.06);border-color:rgba(0,0,0,0.14);color:rgba(0,0,0,0.55); }
+    .val-speed.on-light .speed-btn:hover { background:rgba(0,0,0,0.12); }
+    .val-speed.on-light .speed-btn.active { background:#0489C7;color:#fff;border-color:transparent; }
+    .val-speed.on-dark-blue .speed-btn { background:rgba(26,32,64,0.08);border-color:rgba(26,32,64,0.2);color:rgba(26,32,64,0.65); }
+    .val-speed.on-dark-blue .speed-btn.active { background:rgba(26,32,64,0.7);color:#fff;border-color:transparent; }
+    .val-speed.on-sage .speed-btn { background:rgba(26,46,40,0.1);border-color:rgba(26,46,40,0.25);color:rgba(26,46,40,0.7); }
+    .val-speed.on-sage .speed-btn.active { background:rgba(26,46,40,0.7);color:#fff;border-color:transparent; }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .fw-page-title h1 { font-size: 2.4rem; }
+      .fw-hero-wrap { flex-direction: column; }
+      .fw-video-col { width: 100%; margin-top: 0; }
+      .fw-split { flex-direction: column; }
+      .fw-split-media { width: 100%; position: static; }
+      .fw-photo-stack { width: 100%; position: static; }
+      .fw-blue-box, .fw-cream-box, .fw-lavender-box, .fw-sage-box { padding: 28px 22px; }
+      .fw-locate-inner { flex-direction: column; text-align: center; }
+      .fw-locate-img { width: 100%; max-width: 360px; }
+      .fw-locate-text h2 { font-size: 1.8rem; }
+      .community-bg { padding: 28px 20px; margin: 0 12px; }
+      .community-inner { grid-template-columns: 1fr; text-align: center; }
+      .community-text { text-align: center; }
+      .community-earth { width: 180px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index" class="nav-logo nav-logo--wide">
+        <img src="images/phpf-logo-wide-hd.png" alt="ProjectHPF.org">
+      </a>
+      <button class="nav-toggle">&#9776;</button>
+      <div class="nav-links">
+        <div class="dropdown"><a href="themission">THE MISSION</a><div class="dropdown-menu"><a href="themission#healing">Healing</a><a href="themission#prosperity">Prosperity</a><a href="themission#freedom">Freedom</a></div></div>
+        <div class="dropdown"><a href="participate">PARTICIPATE</a><div class="dropdown-menu"><a href="liberatedemocracy">Liberate Democracy</a><a href="buylocal">Buy Local</a><a href="enrich-community">Enrich Community</a></div></div>
+        <a href="didyouknow">DID YOU KNOW</a>
+        <div class="dropdown"><a href="resources">RESOURCES</a><div class="dropdown-menu"><a href="resources#documentaries">Enlightening Documentaries</a><a href="resources#books">Good Reads</a><a href="resources#discover">Podcast</a><a href="resources#news-orgs">News</a><a href="resources#foundations">Other Organizations</a><a href="https://www.liberationofeducation.org" target="_blank">Liberation of Education</a></div></div>
+        <a href="events">EVENTS</a>
+        <div class="dropdown"><a href="donate">DONATE</a><div class="dropdown-menu"><a href="sponsor">Be A Sponsor</a></div></div>
+        <a href="shop">SHOP</a>
+        <a href="blog">BLOG</a>
+      </div>
+      <div class="nav-right">
+        <a href="https://members.projecthpf.org/auth/login" class="btn-member">MEMBERS</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══════════ PAGE TITLE ══════════ -->
+  <section class="fw-page-title reveal">
+    <h1>FOOD &amp; WATER</h1>
+    <p class="tagline">THAT'S NOT WHAT THEY'RE FEEDING US...</p>
+  </section>
+
+  <!-- ══════════ 1. INTRO: Blue Box + 2 Videos ══════════ -->
+  <section class="fw-hero-wrap reveal">
+    <div class="fw-blue-box">
+      <div style="display:flex;justify-content:flex-end;margin-bottom:12px;">
+        <span class="val-play-icon" id="play-fw-intro" title="Listen to narration">&#9654;</span>
+      </div>
+      <div class="val-narration-player" id="player-fw-intro">
+        <div class="val-narration-bar" id="bar-fw-intro"><div class="val-narration-bar-fill" id="fill-fw-intro"></div></div>
+        <span class="val-narration-time" id="time-fw-intro">0:00</span>
+        <div class="val-speed">
+          <button class="speed-btn" data-speed="0.75">0.75×</button>
+          <button class="speed-btn active" data-speed="1">1×</button>
+          <button class="speed-btn" data-speed="1.25">1.25×</button>
+          <button class="speed-btn" data-speed="1.5">1.5×</button>
+          <button class="speed-btn" data-speed="2">2×</button>
+        </div>
+      </div>
+      <audio id="audio-fw-intro" src="audio/fw-intro.mp3" preload="none"></audio>
+
+      <p>Anyone with eyes can see that Americans — and Western cultures as a whole — are not healthy, physically, mentally, or emotionally. The reason for this is multifaceted, but the Standard American Diet (SAD), also known as the Western Diet, plays a huge role in our unhealthiness. One can't be sure this problem was created on purpose, but it has definitely developed into a system that is used to make us addicted and sick.</p>
+
+      <p>Corporations, particularly in the food and pharmaceutical industries, leverage the FDA, regulations, and the Standard American Diet to maintain consumer dependence on unhealthy food and medication. The SAD — high in processed foods, sugars, and unhealthy fats — is marketed aggressively, creating addictions and leading to chronic health issues like obesity, diabetes, and heart disease.</p>
+
+      <p>The FDA, influenced by corporate lobbying, often approves and regulates food additives and ingredients that contribute to these health problems. Meanwhile, the healthcare system, which is deeply intertwined with pharmaceutical companies, focuses on treating symptoms with medications rather than addressing the root causes, such as poor diet and lifestyle choices. This approach keeps people reliant on prescription drugs rather than promoting long-term healing through dietary and lifestyle changes.</p>
+
+      <p>By keeping the public addicted to unhealthy food and dependent on medications, corporations ensure a steady stream of profit from both the food and pharmaceutical industries. This cycle not only perpetuates chronic illness but also prevents many individuals from achieving true health and well-being.</p>
+
+      <p>Water is no different. Municipal water supplies are treated with chlorine and fluoride — chemicals that, while intended to prevent disease, have raised significant health concerns with long-term exposure. Fluoride has been linked to thyroid disruption and neurological effects. Industrial agriculture and pharmaceutical runoff contaminate groundwater with pesticides, heavy metals, and synthetic hormones. The systems controlling our food and water supply were not designed with our health as the priority. Understanding this is the first step toward making choices that truly serve your body and your mind.</p>
+    </div>
+
+    <div class="fw-video-col">
+      <iframe src="https://www.youtube.com/embed/LQZ9BPSS1_I" title="How Ultra-Processed Food is Slowly Killing Us" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/44kgWye2cFg" title="The Standard American Diet Was Well Designed To Kill Us" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- ══════════ 2. THE STANDARD AMERICAN DIET (SAD) ══════════ -->
+  <section class="fw-section reveal">
+    <div class="fw-blue-box">
+      <div class="fw-split">
+        <div class="fw-split-content">
+          <div class="val-section-head">
+            <h2>The Standard American Diet (SAD)</h2>
+            <span class="val-play-icon" id="play-fw-sad" title="Listen to narration">&#9654;</span>
+          </div>
+          <div class="val-narration-player" id="player-fw-sad">
+            <div class="val-narration-bar" id="bar-fw-sad"><div class="val-narration-bar-fill" id="fill-fw-sad"></div></div>
+            <span class="val-narration-time" id="time-fw-sad">0:00</span>
+            <div class="val-speed">
+              <button class="speed-btn" data-speed="0.75">0.75×</button>
+              <button class="speed-btn active" data-speed="1">1×</button>
+              <button class="speed-btn" data-speed="1.25">1.25×</button>
+              <button class="speed-btn" data-speed="1.5">1.5×</button>
+              <button class="speed-btn" data-speed="2">2×</button>
+            </div>
+          </div>
+          <audio id="audio-fw-sad" src="audio/fw-sad.mp3" preload="none"></audio>
+
+          <p>The Standard American Diet is characterized by a high intake of processed and convenience foods, refined sugars, unhealthy fats, and sodium, while being low in fruits, vegetables, whole grains, and healthy fats. This diet is also high in calorie-dense, nutrient-poor foods that contribute to various health problems.</p>
+
+          <h3>Key Features of the Standard American Diet:</h3>
+
+          <h3>Nutrient Deficiency:</h3>
+          <ul>
+            <li><strong>Lack of Nutrients:</strong> Processed foods are often stripped of essential nutrients like vitamins, minerals, and fiber during manufacturing. These nutrients are either removed or significantly reduced.</li>
+            <li><strong>Synthetic Additions:</strong> Many processed foods are fortified with synthetic vitamins and minerals to replace what was lost, but these aren't always absorbed by the body as effectively as those found in whole foods.</li>
+          </ul>
+
+          <h3>High in Unhealthy Ingredients:</h3>
+          <ul>
+            <li><strong>Added Sugars:</strong> Many processed foods contain high levels of added sugars, which can lead to weight gain, insulin resistance, and an increased risk of chronic diseases like diabetes and heart disease.</li>
+            <li><strong>Unhealthy Fats:</strong> Processed foods often contain trans fats and unhealthy saturated fats, which can raise bad cholesterol (LDL) and lower good cholesterol (HDL), leading to heart disease.</li>
+            <li><strong>Excessive Sodium:</strong> High levels of sodium are common in processed foods to enhance flavor and extend shelf life. Excessive sodium intake is linked to high blood pressure and cardiovascular problems.</li>
+          </ul>
+
+          <h3>Preservatives and Additives:</h3>
+          <ul>
+            <li><strong>Chemical Preservatives:</strong> Many processed foods contain preservatives to prolong shelf life. Some of these chemicals, like nitrates and nitrites in processed meats, have been linked to cancer.</li>
+            <li><strong>Artificial Flavors and Colors:</strong> These additives can cause allergic reactions or other adverse health effects, especially in children.</li>
+          </ul>
+
+          <h3>Caloric Density and Low Satiety:</h3>
+          <ul>
+            <li><strong>High in Calories, Low in Satiety:</strong> Processed foods are often calorie-dense but not very filling, leading to overeating and weight gain.</li>
+            <li><strong>Lack of Fiber:</strong> The lack of fiber in processed foods means they don't satisfy hunger as well as whole foods, leading to higher calorie intake.</li>
+          </ul>
+
+          <h3>Impact on Metabolism and Gut Health:</h3>
+          <ul>
+            <li><strong>Disrupted Gut Microbiome:</strong> Processed foods often lack the fiber and nutrients necessary for a healthy gut microbiome. An unhealthy gut can lead to inflammation, immune system issues, and even mental health problems.</li>
+            <li><strong>Metabolic Syndrome:</strong> Regular consumption of processed foods is linked to metabolic syndrome, a cluster of conditions that increase the risk of heart disease, stroke, and diabetes.</li>
+          </ul>
+
+          <h3>Link to Chronic Diseases:</h3>
+          <ul>
+            <li><strong>Obesity:</strong> The high calorie, sugar, and fat content in processed foods contribute to obesity, which is a risk factor for many other chronic diseases.</li>
+            <li><strong>Type 2 Diabetes:</strong> High sugar and refined carbohydrates in processed foods can cause spikes in blood sugar, increasing the risk of insulin resistance and type 2 diabetes.</li>
+            <li><strong>Cardiovascular Disease:</strong> The unhealthy fats, sugars, and salt in processed foods contribute to heart disease by raising cholesterol and blood pressure.</li>
+          </ul>
+
+          <h3>Environmental and Ethical Concerns:</h3>
+          <ul>
+            <li><strong>Environmental Impact:</strong> The production and packaging of processed foods often involve practices that are harmful to the environment, such as excessive use of water, energy, and resources, and the generation of plastic waste.</li>
+            <li><strong>Animal Welfare:</strong> Processed meats and other animal-based products often come from factory farms, where animals are raised in poor conditions.</li>
+          </ul>
+
+          <p>While processed foods offer convenience and longer shelf life, their consumption is associated with various health risks. The SAD is associated with obesity, type 2 diabetes, heart disease, hypertension, certain cancers, and mental health disorders. Its focus on convenience and taste over nutrition has led to widespread chronic health issues across the population.</p>
+          <p><strong>Prioritizing whole, minimally processed foods can lead to better overall health and well-being.</strong></p>
+
+        </div>
+
+        <!-- Stacked photos -->
+        <div class="fw-photo-stack">
+          <div>
+            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=480&q=80&fit=crop" alt="Fast food burger">
+            <p class="fw-photo-stack-label">Fast Food</p>
+          </div>
+          <div>
+            <img src="https://images.unsplash.com/photo-1518013431117-eb1465fa5463?w=480&q=80&fit=crop" alt="French fries">
+            <p class="fw-photo-stack-label">Processed Fats &amp; Sodium</p>
+          </div>
+          <div>
+            <img src="https://images.unsplash.com/photo-1561758033-d89a9ad46330?w=480&q=80&fit=crop" alt="Fried chicken fast food">
+            <p class="fw-photo-stack-label">Ultra-Processed Meat</p>
+          </div>
+          <div>
+            <img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=480&q=80&fit=crop" alt="Industrial monoculture farming">
+            <p class="fw-photo-stack-label">Monoculture Farming</p>
+          </div>
+          <div>
+            <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?w=480&q=80&fit=crop" alt="Industrial agriculture">
+            <p class="fw-photo-stack-label">Industrial Agriculture</p>
+          </div>
+          <div>
+            <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=480&q=80&fit=crop" alt="Processed food supermarket aisle">
+            <p class="fw-photo-stack-label">Processed Food Supply</p>
+          </div>
+          <p style="font-size:0.68rem;color:rgba(255,255,255,0.35);text-align:center;margin:4px 0 0;">Photos: Unsplash (open license)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 3. FARM TO TABLE IS BETTER ══════════ -->
+  <section class="fw-section reveal">
+    <div class="fw-cream-box">
+      <div class="fw-split">
+        <div class="fw-split-content">
+          <div class="val-section-head">
+            <h2>Farm to Table is Better</h2>
+            <span class="val-play-icon on-light" id="play-fw-farmtotable" title="Listen to narration">&#9654;</span>
+          </div>
+          <div class="val-narration-player" id="player-fw-farmtotable">
+            <div class="val-narration-bar" id="bar-fw-farmtotable"><div class="val-narration-bar-fill on-light" id="fill-fw-farmtotable"></div></div>
+            <span class="val-narration-time on-light" id="time-fw-farmtotable">0:00</span>
+            <div class="val-speed on-light">
+              <button class="speed-btn" data-speed="0.75">0.75×</button>
+              <button class="speed-btn active" data-speed="1">1×</button>
+              <button class="speed-btn" data-speed="1.25">1.25×</button>
+              <button class="speed-btn" data-speed="1.5">1.5×</button>
+              <button class="speed-btn" data-speed="2">2×</button>
+            </div>
+          </div>
+          <audio id="audio-fw-farmtotable" src="audio/fw-farmtotable.mp3" preload="none"></audio>
+
+          <p>Farm-to-table food offers a healthier and more sustainable option by emphasizing freshness, nutritional quality, and reduced reliance on processed ingredients. Economically, it supports local farmers, reduces transportation costs, and fosters a stronger, more resilient community. Overall, it represents a holistic approach to food that benefits both personal health and the broader economy.</p>
+
+          <h3>Freshness and Nutrient Density:</h3>
+          <ul>
+            <li><strong>Minimal Time from Harvest to Consumption:</strong> Farm-to-table food is usually consumed shortly after being harvested, which means it retains more of its natural nutrients. Vitamins and minerals can degrade over time, so fresher foods are often more nutrient-dense.</li>
+            <li><strong>Seasonal Eating:</strong> Farm-to-table practices encourage eating foods that are in season, which are typically at their peak in terms of flavor and nutritional content.</li>
+          </ul>
+
+          <h3>Fewer Preservatives and Additives:</h3>
+          <ul>
+            <li><strong>Less Processing:</strong> Farm-to-table foods are less likely to contain artificial preservatives, additives, and chemicals used to extend shelf life or enhance flavor, color, and texture in processed foods. This means fewer potential toxins and unhealthy ingredients in your diet.</li>
+          </ul>
+
+          <h3>Higher Quality Ingredients:</h3>
+          <ul>
+            <li><strong>Whole, Unprocessed Foods:</strong> These foods are more likely to be whole and unprocessed, which means they contain more fiber, vitamins, and minerals, and less sugar, unhealthy fats, and sodium.</li>
+            <li><strong>Sustainable Farming Practices:</strong> Many farm-to-table providers use sustainable, organic, or regenerative farming methods, which can result in higher-quality, nutrient-rich soil and produce.</li>
+          </ul>
+
+          <h3>Reduced Exposure to Harmful Chemicals:</h3>
+          <ul>
+            <li><strong>Lower Pesticide Use:</strong> Farm-to-table foods, especially those from organic farms, are less likely to be exposed to synthetic pesticides and fertilizers, reducing your intake of potentially harmful chemicals.</li>
+          </ul>
+
+          <h3>Better Flavor and Satisfaction:</h3>
+          <ul>
+            <li><strong>Richer Taste:</strong> Fresher, locally sourced foods often have better flavor, which can lead to greater satisfaction and potentially lower the tendency to overeat or rely on less nutritious food.</li>
+          </ul>
+
+          <h3>Support for Local Economies and Ecosystems:</h3>
+          <ul>
+            <li><strong>Community Impact:</strong> Supporting local farms helps sustain small farming operations, which often use practices that are more environmentally friendly and better for the local ecosystem. Eating locally also reduces the environmental impact associated with transporting food over long distances.</li>
+          </ul>
+
+          <p>Farm-to-table food is healthier because it is fresher, less processed, and often produced using more natural and sustainable methods. This results in better nutrient retention, fewer harmful additives, and a generally higher-quality diet that supports overall health and well-being.</p>
+        </div>
+
+        <div class="fw-split-media">
+          <img src="images/buy-local-food.gif" alt="Buy Local — Healthy Food">
+          <p class="media-caption dark">Buy Local, Eat Fresh</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 4. GOVERNMENT REGULATION ══════════ -->
+  <section class="fw-section reveal">
+    <div class="fw-lavender-box">
+      <div class="val-section-head">
+        <h2>Government Regulation Makes it Hard to Access Farm to Table Foods</h2>
+        <span class="val-play-icon on-dark-blue" id="play-fw-regulation" title="Listen to narration">&#9654;</span>
+      </div>
+      <div class="val-narration-player" id="player-fw-regulation">
+        <div class="val-narration-bar" id="bar-fw-regulation"><div class="val-narration-bar-fill on-dark-blue" id="fill-fw-regulation"></div></div>
+        <span class="val-narration-time on-dark-blue" id="time-fw-regulation">0:00</span>
+        <div class="val-speed on-dark-blue">
+          <button class="speed-btn" data-speed="0.75">0.75×</button>
+          <button class="speed-btn active" data-speed="1">1×</button>
+          <button class="speed-btn" data-speed="1.25">1.25×</button>
+          <button class="speed-btn" data-speed="1.5">1.5×</button>
+          <button class="speed-btn" data-speed="2">2×</button>
+        </div>
+      </div>
+      <audio id="audio-fw-regulation" src="audio/fw-regulation.mp3" preload="none"></audio>
+
+      <p>Through various policies and regulations that often favor large-scale industrial agriculture over small, local farms. Here are some of the ways this happens:</p>
+
+      <h3>Regulatory Burden on Small Farms:</h3>
+      <ul>
+        <li><strong>Complex Compliance Requirements:</strong> Small farms often face the same regulatory requirements as large-scale industrial operations, which can be overwhelming. Compliance with food safety regulations, labeling requirements, and environmental standards can be costly and time-consuming.</li>
+        <li><strong>Inspection and Certification Costs:</strong> Obtaining organic certification or other labels that indicate sustainable practices can be expensive and complicated, deterring small farmers from pursuing these certifications. These costs can make it difficult for small farms to compete with larger operations.</li>
+      </ul>
+
+      <h3>Subsidies and Support for Industrial Agriculture:</h3>
+      <ul>
+        <li><strong>Unequal Subsidies:</strong> Government subsidies often favor large-scale monoculture crops like corn, soy, and wheat, which are the building blocks of processed foods. This makes processed foods cheaper and more widely available than farm-to-table options, which typically receive less government support.</li>
+        <li><strong>Crop Insurance Programs:</strong> Programs designed to protect farmers from losses often benefit large-scale operations, making it harder for small, diverse farms to thrive without similar protections.</li>
+      </ul>
+
+      <h3>Barriers to Local Food Distribution:</h3>
+      <ul>
+        <li><strong>Strict Distribution Regulations:</strong> Local farms may face challenges in getting their products to market due to strict regulations around food distribution, such as those concerning transportation, storage, and direct sales to consumers or restaurants.</li>
+        <li><strong>Farmers Market Restrictions:</strong> In some areas, local regulations may limit where and how farmers can sell their products directly to consumers, such as at farmers markets or through Community Supported Agriculture (CSA) programs.</li>
+      </ul>
+
+      <h3>Centralization of the Food System:</h3>
+      <ul>
+        <li><strong>Consolidation of Supply Chains:</strong> The food supply chain in many countries is dominated by large corporations that control processing, distribution, and retail. This centralization makes it difficult for small farmers to get their products into mainstream markets, limiting consumer access to farm-to-table foods.</li>
+        <li><strong>Influence of Agribusiness:</strong> Large agribusinesses have significant lobbying power, influencing policies that benefit them, often at the expense of smaller, local producers. This can skew the market and regulatory environment against farm-to-table operations.</li>
+      </ul>
+
+      <h3>Land and Zoning Policies:</h3>
+      <ul>
+        <li><strong>Land Use Restrictions:</strong> Zoning laws and land use regulations can make it difficult for small farms to operate near urban areas, where the demand for farm-to-table foods is often higher. This forces farms to operate farther from consumers, increasing transportation costs and logistical challenges.</li>
+        <li><strong>High Land Costs:</strong> High land prices and property taxes in many regions make it difficult for local farms to acquire or maintain farmland, limiting the number of local farms and their ability to supply farm-to-table foods.</li>
+      </ul>
+
+      <h3>Food Safety Modernization Act (FSMA) Challenges:</h3>
+      <ul>
+        <li><strong>One-Size-Fits-All Regulations:</strong> The FSMA, while designed to improve food safety, imposes stringent requirements on all food producers, regardless of size. Small farms and food producers often struggle to meet these standards due to limited resources, which can make it harder for them to get their products to market.</li>
+      </ul>
+
+      <h3>Lack of Support for Local Food Infrastructure:</h3>
+      <ul>
+        <li><strong>Inadequate Investment:</strong> Government investment in infrastructure, such as local food hubs, processing facilities, and distribution networks, is often insufficient. This limits the ability of small farms to process and distribute their products efficiently, making farm-to-table foods less accessible.</li>
+        <li><strong>Limited Research and Extension Services:</strong> Government-funded agricultural research and extension services often focus on large-scale industrial farming techniques, providing little support for the unique challenges faced by small, diversified farms that focus on farm-to-table models.</li>
+      </ul>
+
+      <p>Government policies and regulations often create obstacles for small farms and local food systems, making it harder to access farm-to-table foods. By favoring industrial agriculture through subsidies, regulatory burdens, and centralized supply chains, the system disadvantages small, local farms that are critical to the farm-to-table movement. Addressing these barriers requires policy reforms that support sustainable, local food systems and reduce the regulatory and economic pressures on small farmers.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ 5. ACCESSING FARM TO TABLE ══════════ -->
+  <section class="fw-section reveal">
+    <div class="fw-sage-box">
+      <div class="fw-split">
+        <div class="fw-split-content">
+          <div class="val-section-head">
+            <h2>But Accessing Farm to Table May Be Easier Than You Think</h2>
+            <span class="val-play-icon on-sage" id="play-fw-access" title="Listen to narration">&#9654;</span>
+          </div>
+          <div class="val-narration-player" id="player-fw-access">
+            <div class="val-narration-bar" id="bar-fw-access"><div class="val-narration-bar-fill on-sage" id="fill-fw-access"></div></div>
+            <span class="val-narration-time on-sage" id="time-fw-access">0:00</span>
+            <div class="val-speed on-sage">
+              <button class="speed-btn" data-speed="0.75">0.75×</button>
+              <button class="speed-btn active" data-speed="1">1×</button>
+              <button class="speed-btn" data-speed="1.25">1.25×</button>
+              <button class="speed-btn" data-speed="1.5">1.5×</button>
+              <button class="speed-btn" data-speed="2">2×</button>
+            </div>
+          </div>
+          <audio id="audio-fw-access" src="audio/fw-access.mp3" preload="none"></audio>
+
+          <ol>
+            <li><strong>Shop at Farmers Markets:</strong>
+              <ul>
+                <li><strong>Direct Access:</strong> Farmers markets offer fresh, locally grown produce, meats, dairy, and other products directly from local farmers.</li>
+                <li><strong>Seasonal Variety:</strong> You'll find seasonal fruits and vegetables, which are typically fresher and more nutrient-dense.</li>
+              </ul>
+            </li>
+            <li><strong>Join a Community Supported Agriculture (CSA) Program:</strong>
+              <ul>
+                <li><strong>Subscription Model:</strong> CSA programs allow you to subscribe to receive regular boxes of fresh produce from local farms.</li>
+                <li><strong>Variety and Freshness:</strong> CSAs provide a rotating selection of seasonal produce, often delivered weekly or bi-weekly.</li>
+              </ul>
+            </li>
+            <li><strong>Support Local Farms and Farm Stands:</strong>
+              <ul>
+                <li><strong>Visit Farms:</strong> Many local farms have farm stands where you can purchase fresh produce and other products directly.</li>
+                <li><strong>Pick-Your-Own:</strong> Some farms offer pick-your-own options for fruits and vegetables, giving you direct access to fresh food.</li>
+              </ul>
+            </li>
+            <li><strong>Grow Your Own Food:</strong>
+              <ul>
+                <li><strong>Home Garden:</strong> Start a small garden at home to grow your own herbs, vegetables, or fruits. Even a small plot or container garden can provide fresh, healthy produce.</li>
+                <li><strong>Community Gardens:</strong> If you don't have space at home, look for a community garden where you can rent a plot and grow your own food.</li>
+              </ul>
+            </li>
+            <li><strong>Eat at Farm-to-Table Restaurants:</strong>
+              <ul>
+                <li><strong>Support Local Eateries:</strong> Look for restaurants that prioritize sourcing ingredients from local farms and producers. Many farm-to-table restaurants highlight seasonal menus based on what's available locally.</li>
+              </ul>
+            </li>
+            <li><strong>Participate in Local Food Cooperatives:</strong>
+              <ul>
+                <li><strong>Co-ops:</strong> Food cooperatives often stock locally sourced products, including fresh produce, dairy, and meats. Members may have a say in the products offered and can benefit from discounts.</li>
+              </ul>
+            </li>
+            <li><strong>Order from Local Food Delivery Services:</strong>
+              <ul>
+                <li><strong>Online Options:</strong> Some areas have local food delivery services that partner with farms to bring fresh, locally sourced products directly to your door.</li>
+              </ul>
+            </li>
+            <li><strong>Advocate for and Support Local Food Initiatives:</strong>
+              <ul>
+                <li><strong>Community Support:</strong> Advocate for more local food initiatives in your area, such as farm-to-school programs, urban farming projects, or local food hubs.</li>
+                <li><strong>Educate and Engage:</strong> Get involved in local food advocacy groups or community discussions about food systems and sustainable agriculture.</li>
+              </ul>
+            </li>
+            <li><strong>Preserve Seasonal Foods:</strong>
+              <ul>
+                <li><strong>Canning and Freezing:</strong> Learn how to preserve fruits, vegetables, and herbs when they are in season to enjoy farm-to-table quality year-round.</li>
+              </ul>
+            </li>
+          </ol>
+
+          <p>Accessing farm-to-table food involves connecting with local sources, whether through direct purchases at farmers markets, joining a CSA, or growing your own food. Supporting local food systems and engaging with community initiatives can also help make farm-to-table food more accessible.</p>
+        </div>
+
+        <div class="fw-split-media">
+          <img src="images/buylocal-hero.png" alt="Farmers Market">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 6. SUPPORT NON-PROFITS ══════════ -->
+  <section class="fw-section reveal">
+    <div class="fw-blue-box">
+      <div class="val-section-head">
+        <h2>Support Non-Profits Promoting Healthy Food Supply</h2>
+        <span class="val-play-icon" id="play-fw-nonprofits" title="Listen to narration">&#9654;</span>
+      </div>
+      <div class="val-narration-player" id="player-fw-nonprofits">
+        <div class="val-narration-bar" id="bar-fw-nonprofits"><div class="val-narration-bar-fill" id="fill-fw-nonprofits"></div></div>
+        <span class="val-narration-time" id="time-fw-nonprofits">0:00</span>
+        <div class="val-speed">
+          <button class="speed-btn" data-speed="0.75">0.75×</button>
+          <button class="speed-btn active" data-speed="1">1×</button>
+          <button class="speed-btn" data-speed="1.25">1.25×</button>
+          <button class="speed-btn" data-speed="1.5">1.5×</button>
+          <button class="speed-btn" data-speed="2">2×</button>
+        </div>
+      </div>
+      <audio id="audio-fw-nonprofits" src="audio/fw-nonprofits.mp3" preload="none"></audio>
+
+      <p>Several non-profit organizations work to make farm-to-table food more accessible by promoting local food systems, supporting sustainable agriculture, and increasing access to fresh, healthy food in communities. Here are some notable ones:</p>
+
+      <ol>
+        <li><strong>FoodCorps</strong>
+          <ul>
+            <li><strong>Mission:</strong> FoodCorps connects kids to healthy food in schools, with a focus on hands-on learning, fostering a connection to local farms, and improving access to fresh food.</li>
+            <li><strong>Programs:</strong> They partner with schools to teach children about nutrition, help build school gardens, and incorporate farm-to-table principles into school meals.</li>
+          </ul>
+        </li>
+        <li><strong>Farm to School Network</strong>
+          <ul>
+            <li><strong>Mission:</strong> This national network works to bring locally sourced food into schools, promote food education, and support local farmers.</li>
+            <li><strong>Programs:</strong> They help schools implement farm-to-school programs, which connect students with fresh, local food and educate them about healthy eating.</li>
+          </ul>
+        </li>
+        <li><strong>National Farm to School Network</strong>
+          <ul>
+            <li><strong>Mission:</strong> To increase access to local food and nutrition education to improve children's health, strengthen family farms, and cultivate vibrant communities.</li>
+            <li><strong>Programs:</strong> The organization provides resources, advocacy, and technical assistance to schools and communities across the country.</li>
+          </ul>
+        </li>
+        <li><strong>Slow Food USA</strong>
+          <ul>
+            <li><strong>Mission:</strong> Slow Food USA promotes good, clean, and fair food for all by supporting local food systems and sustainable farming practices.</li>
+            <li><strong>Programs:</strong> They organize community events, educational programs, and campaigns to support local farmers and raise awareness about the benefits of farm-to-table food.</li>
+          </ul>
+        </li>
+        <li><strong>The Food Trust</strong>
+          <ul>
+            <li><strong>Mission:</strong> The Food Trust works to ensure that everyone has access to affordable, nutritious food and information to make healthy decisions.</li>
+            <li><strong>Programs:</strong> They run farmers markets in underserved areas, promote healthy food access in schools, and work to improve local food systems.</li>
+          </ul>
+        </li>
+        <li><strong>Wholesome Wave</strong>
+          <ul>
+            <li><strong>Mission:</strong> Wholesome Wave focuses on making fresh, local food affordable and accessible, particularly for low-income families.</li>
+            <li><strong>Programs:</strong> They provide financial incentives for purchasing fresh produce at farmers markets and partner with healthcare providers to offer "prescriptions" for fruits and vegetables.</li>
+          </ul>
+        </li>
+        <li><strong>Farm Aid</strong>
+          <ul>
+            <li><strong>Mission:</strong> Farm Aid supports family farmers in the United States, advocating for fair policies and providing resources to keep farmers on their land.</li>
+            <li><strong>Programs:</strong> They promote direct farmer-to-consumer relationships, helping to make farm-fresh food more accessible.</li>
+          </ul>
+        </li>
+        <li><strong>Food Policy Action</strong>
+          <ul>
+            <li><strong>Mission:</strong> Food Policy Action advocates for policies that support sustainable food systems, including increased access to local and healthy food.</li>
+            <li><strong>Programs:</strong> They engage in advocacy and education efforts to influence public policy around food systems.</li>
+          </ul>
+        </li>
+        <li><strong>Edible Schoolyard Project</strong>
+          <ul>
+            <li><strong>Mission:</strong> Founded by Alice Waters, the Edible Schoolyard Project aims to build and share an edible education curriculum for schools to integrate gardening, cooking, and nutrition into everyday learning.</li>
+            <li><strong>Programs:</strong> They provide resources and support for schools to develop gardens and kitchens that connect students with fresh, local food.</li>
+          </ul>
+        </li>
+        <li><strong>Local Food Hub</strong>
+          <ul>
+            <li><strong>Mission:</strong> Local Food Hub partners with farmers to increase community access to local food, particularly for underserved populations.</li>
+            <li><strong>Programs:</strong> They help small farms distribute their products and work to make fresh, local food more accessible to institutions and families.</li>
+          </ul>
+        </li>
+      </ol>
+
+      <p>These organizations play a vital role in promoting farm-to-table initiatives, educating communities about healthy eating, and supporting local farmers to create more sustainable food systems.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ 7. LOCATE A FARMERS MARKET ══════════ -->
+  <div class="fw-locate reveal">
+    <div class="fw-locate-inner">
+      <div class="fw-locate-img">
+        <img src="images/buylocal-hero.png" alt="Build A Better Humanity — Buy Local">
+      </div>
+      <div class="fw-locate-text">
+        <h2>LOCATE A FARMERS MARKET NEAR YOU</h2>
+        <a href="buylocal" class="fw-locate-btn">CLICK HERE</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════ COMMUNITY & MEMBERSHIP ══════════ -->
+  <section class="home-community reveal">
+    <div class="community-bg">
+      <div class="community-inner">
+        <div class="community-text">
+          <h2>Join Our Revolutionist Community</h2>
+          <p>Communicate, collaborate, and connect with citizens committed to healing, prosperity &amp; freedom. Become a PHPF member for just $1/month and gain exclusive access to our member directory, content library, and Liberate Democracy voting.</p>
+          <p class="community-note">Membership unlocks the full PHPF experience.</p>
+        </div>
+        <div class="community-right-col">
+          <img src="images/animation/mother-earth-v2-clean.png" alt="Mother Earth" class="community-earth">
+          <a href="https://members.projecthpf.org/auth/register" class="member-cta-btn">Join Now — $1/mo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p class="footer-disclaimer">Disclaimer: Project Healing Prosperity &amp; Freedom, Inc is pleased to provide diverse ideas from across the world that we hope will spark listeners' curiosity and broaden their worldview. Project Healing Prosperity &amp; Freedom, Inc does not endorse all of the perspectives, ideas and information put forward in any of the external content presented and invites listeners to have an open mind but question everything as they draw their own conclusions.</p>
+    <p class="footer-org">Project Healing<br>Prosperity &amp; Freedom, Inc</p>
+    <a href="mailto:info@projecthpf.org" class="footer-email">info@projecthpf.org</a>
+    <div class="footer-social">
+      <a href="https://twitter.com/ProjectHPF" title="Twitter"><img src="images/11062b_07090bba1daa42c880682389a46508db_mv2.png" alt="Twitter" style="width:24px;height:24px;"></a>
+      <a href="https://www.instagram.com/projecthpf" title="Instagram"><img src="images/11062b_55e4be1e75564866b6c28290f9a9d271_mv2.png" alt="Instagram" style="width:24px;height:24px;"></a>
+      <a href="https://www.facebook.com/ProjectHPF21" title="Facebook"><img src="images/11062b_a84995cc8b024f4ea398f5744a56bc27_mv2.png" alt="Facebook" style="width:24px;height:24px;"></a>
+      <a href="https://www.tiktok.com/@projecthpf" title="TikTok"><img src="images/11062b_8e8bb1bfaeb54186ace77d5ab14933ff_mv2.png" alt="TikTok" style="width:24px;height:24px;"></a>
+    </div>
+    <div class="footer-links">
+      <a href="privacy">Privacy Policy</a>
+      <a href="terms">Terms and Conditions</a>
+    </div>
+    <p style="font-size:0.78rem; color:var(--gray-light);">&copy; 2024 Project Healing Prosperity &amp; Freedom, Inc. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+  (function(){
+    function fmt(t){var m=Math.floor(t/60),s=Math.floor(t%60);return m+":"+(s<10?"0":"")+s;}
+    var tracks=[
+      {play:'play-fw-intro',       audio:'audio-fw-intro',       player:'player-fw-intro',       bar:'bar-fw-intro',       fill:'fill-fw-intro',       time:'time-fw-intro'},
+      {play:'play-fw-sad',         audio:'audio-fw-sad',         player:'player-fw-sad',         bar:'bar-fw-sad',         fill:'fill-fw-sad',         time:'time-fw-sad'},
+      {play:'play-fw-farmtotable', audio:'audio-fw-farmtotable', player:'player-fw-farmtotable', bar:'bar-fw-farmtotable', fill:'fill-fw-farmtotable', time:'time-fw-farmtotable'},
+      {play:'play-fw-regulation',  audio:'audio-fw-regulation',  player:'player-fw-regulation',  bar:'bar-fw-regulation',  fill:'fill-fw-regulation',  time:'time-fw-regulation'},
+      {play:'play-fw-access',      audio:'audio-fw-access',      player:'player-fw-access',      bar:'bar-fw-access',      fill:'fill-fw-access',      time:'time-fw-access'},
+      {play:'play-fw-nonprofits',  audio:'audio-fw-nonprofits',  player:'player-fw-nonprofits',  bar:'bar-fw-nonprofits',  fill:'fill-fw-nonprofits',  time:'time-fw-nonprofits'}
+    ];
+    tracks.forEach(function(t){
+      var playBtn=document.getElementById(t.play);
+      var audio=document.getElementById(t.audio);
+      var player=document.getElementById(t.player);
+      var bar=document.getElementById(t.bar);
+      var fill=document.getElementById(t.fill);
+      var timeEl=document.getElementById(t.time);
+      if(!playBtn||!audio) return;
+      playBtn.addEventListener('click',function(){
+        if(audio.paused){
+          tracks.forEach(function(o){
+            var a=document.getElementById(o.audio);
+            var b=document.getElementById(o.play);
+            var p=document.getElementById(o.player);
+            if(a&&!a.paused){a.pause();if(b)b.textContent='\u25BA';if(p)p.classList.remove('playing');}
+          });
+          audio.play();playBtn.textContent='\u23F8';player.classList.add('playing');
+        } else {
+          audio.pause();playBtn.textContent='\u25BA';
+        }
+      });
+      audio.addEventListener('timeupdate',function(){
+        if(!audio.duration) return;
+        fill.style.width=(audio.currentTime/audio.duration*100)+'%';
+        timeEl.textContent=fmt(audio.currentTime)+' / '+fmt(audio.duration);
+      });
+      bar.addEventListener('click',function(e){
+        var rect=bar.getBoundingClientRect();
+        var pct=Math.max(0,Math.min(1,(e.clientX-rect.left)/rect.width));
+        if(audio.duration) audio.currentTime=pct*audio.duration;
+      });
+      audio.addEventListener('ended',function(){
+        playBtn.textContent='\u25BA';player.classList.remove('playing');
+        fill.style.width='0%';timeEl.textContent='0:00';audio.currentTime=0;
+      });
+      var speedEl=player.querySelector('.val-speed');
+      if(speedEl){
+        speedEl.querySelectorAll('.speed-btn').forEach(function(btn){
+          btn.addEventListener('click',function(){
+            audio.playbackRate=parseFloat(btn.getAttribute('data-speed'));
+            speedEl.querySelectorAll('.speed-btn').forEach(function(b){b.classList.remove('active');});
+            btn.classList.add('active');
+          });
+        });
+      }
+    });
+  })();
+  </script>
+</body>
+</html>

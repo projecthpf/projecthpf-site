@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LiFE — Project HPF</title>
+  <meta name="description" content="Life is incredibly complicated and complex — and understanding it more deeply is one of the greatest gifts you can give yourself." />
+  <link rel="icon" type="image/png" href="images/5f7ee9_eef98a3952f34f5fb211625143e3e8ea_mv2.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Forum&family=Fahkwang:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=17">
+  <style>
+    /* ── Page Title ── */
+    .lf-page-title { text-align:center; padding:100px 24px 40px; }
+    .lf-page-title h1 { font-family:var(--font-body); font-weight:700; font-size:3.5rem; color:#0489C7; margin-bottom:14px; text-shadow:2px 3px 5px rgba(0,0,0,0.25); }
+    .lf-page-title .tagline { font-family:var(--font-body); font-weight:500; font-size:1.05rem; color:var(--gray-dark); max-width:560px; margin:0 auto; line-height:1.5; }
+
+    /* ── Shared section wrapper ── */
+    .lf-section { max-width:1100px; margin:0 auto 60px; padding:0 24px; }
+
+    /* ── Text box ── */
+    .lf-box { border-radius:12px; padding:32px 40px; box-shadow:0 8px 32px rgba(0,0,0,0.22),0 2px 8px rgba(0,0,0,0.12); }
+    .lf-box h2 { font-family:var(--font-body); font-weight:700; font-size:2rem; margin-bottom:12px; line-height:1.3; text-decoration:underline; text-underline-offset:6px; }
+    .lf-box p { font-family:var(--font-body); font-size:0.92rem; line-height:1.75; margin-bottom:14px; }
+    .lf-box a { color:inherit; text-decoration:underline; text-underline-offset:3px; }
+
+    /* Blue box */
+    .lf-blue { background:#8faec5; color:#1a2a3e; }
+    .lf-blue h2 { color:#fff; }
+    .lf-blue p { color:#1a2a3e; }
+
+    /* Dusty rose / mauve box */
+    .lf-rose { background:#b09090; color:#1e1010; }
+    .lf-rose h2 { color:#fff; }
+    .lf-rose p { color:#1e1010; }
+
+    /* ── Split layout ── */
+    .lf-split { display:flex; gap:40px; align-items:flex-start; }
+    .lf-split-box { flex:1; min-width:0; }
+    .lf-vid-col { width:420px; flex-shrink:0; align-self:flex-start; position:sticky; top:100px; }
+    .lf-vid-col iframe { width:100%; aspect-ratio:16/9; border-radius:10px; border:none; box-shadow:0 4px 16px rgba(0,0,0,0.2); display:block; }
+
+    /* ── Narration Players ── */
+    .val-section-head { display:flex; align-items:center; gap:14px; margin-bottom:24px; }
+    .val-section-head h2 { flex:1; margin-bottom:0; }
+    .val-play-icon { width:42px;height:42px;flex-shrink:0;background:rgba(255,255,255,0.22);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;color:#fff;cursor:pointer;transition:background 0.2s,transform 0.15s;user-select:none;border:2px solid rgba(255,255,255,0.35); }
+    .val-play-icon:hover { background:rgba(255,255,255,0.4);transform:scale(1.1); }
+    .val-play-icon.on-rose { background:rgba(30,16,16,0.15);border:2px solid rgba(30,16,16,0.28);color:#1e1010; }
+    .val-play-icon.on-rose:hover { background:rgba(30,16,16,0.28); }
+    .val-narration-player { display:flex;align-items:center;gap:10px;max-height:0;opacity:0;overflow:hidden;transition:max-height 0.35s ease,opacity 0.35s ease;margin-bottom:0; }
+    .val-narration-player.playing { max-height:36px;opacity:1;margin-bottom:16px; }
+    .val-narration-bar { flex:1;height:6px;background:rgba(0,0,0,0.12);border-radius:3px;cursor:pointer;position:relative;overflow:hidden;min-width:120px; }
+    .val-narration-bar:hover { background:rgba(0,0,0,0.22); }
+    .val-narration-bar-fill { height:100%;background:rgba(255,255,255,0.7);border-radius:3px;width:0%;pointer-events:none; }
+    .val-narration-bar-fill.on-rose { background:rgba(30,16,16,0.5); }
+    .val-narration-time { font-size:0.7rem;font-family:var(--font-body,sans-serif);color:rgba(255,255,255,0.75);min-width:72px;text-align:right;white-space:nowrap; }
+    .val-narration-time.on-rose { color:rgba(30,16,16,0.6); }
+    .val-speed { display:flex;align-items:center;gap:3px;flex-shrink:0; }
+    .val-speed .speed-btn { background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);border-radius:4px;color:rgba(255,255,255,0.8);font-size:0.65rem;font-weight:600;padding:2px 6px;cursor:pointer;transition:background 0.15s;line-height:1.4;font-family:inherit; }
+    .val-speed .speed-btn:hover { background:rgba(255,255,255,0.28); }
+    .val-speed .speed-btn.active { background:rgba(255,255,255,0.88);color:#1a1a2e;border-color:transparent; }
+    .val-speed.on-rose .speed-btn { background:rgba(30,16,16,0.1);border-color:rgba(30,16,16,0.25);color:rgba(30,16,16,0.65); }
+    .val-speed.on-rose .speed-btn.active { background:rgba(30,16,16,0.65);color:#fff;border-color:transparent; }
+
+    /* Community & Membership */
+    .home-community { background:transparent; padding:100px 24px 20px; display:flex; justify-content:center; width:100%; }
+    .community-bg { background:url('images/nsplsh_335036453279326c797573_mv2_d_5760_3840_s_4_2.jpg') center/cover no-repeat; border-radius:16px; padding:50px 48px; position:relative; min-height:520px; display:flex; align-items:center; justify-content:center; }
+    .community-inner { display:grid; grid-template-columns:auto auto; gap:60px; align-items:center; }
+    .community-text { text-align:left; background:rgba(80,20,120,0.55); padding:24px; border-radius:12px; align-self:stretch; display:flex; flex-direction:column; justify-content:center; max-width:340px; }
+    .community-right-col { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; }
+    .community-earth { width:240px; height:auto; filter:drop-shadow(0 4px 12px rgba(0,0,0,0.3)); }
+    .community-text h2 { font-family:var(--font-body); font-weight:700; font-size:1.5rem; color:var(--white); margin-bottom:10px; text-shadow:1px 2px 4px rgba(0,0,0,0.4); max-width:260px; }
+    .community-text p { font-family:var(--font-body); font-size:0.84rem; color:var(--white); line-height:1.7; margin-bottom:14px; text-shadow:1px 1px 3px rgba(0,0,0,0.3); max-width:230px; }
+    .community-text p.community-note { font-size:0.78rem; opacity:0.9; margin-bottom:0; white-space:nowrap; }
+    .member-cta-btn { display:inline-block; padding:12px 36px; background:var(--white); color:var(--green-primary); border:2px solid var(--white); border-radius:4px; font-family:var(--font-body); font-weight:700; font-size:1rem; text-transform:uppercase; letter-spacing:1px; cursor:pointer; transition:background 0.3s,color 0.3s; text-decoration:none; margin-bottom:8px; }
+    .member-cta-btn:hover { background:transparent; color:var(--white); text-decoration:none; }
+
+    /* ── Responsive ── */
+    @media (max-width:768px) {
+      .lf-page-title h1 { font-size:2.8rem; }
+      .lf-split { flex-direction:column; }
+      .lf-vid-col { width:100%; position:static; }
+      .lf-box { padding:28px 22px; }
+      .community-bg { padding:28px 20px; margin:0 12px; }
+      .community-inner { grid-template-columns:1fr; text-align:center; }
+      .community-text { text-align:center; }
+      .community-earth { width:180px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index" class="nav-logo nav-logo--wide"><img src="images/phpf-logo-wide-hd.png" alt="ProjectHPF.org"></a>
+      <button class="nav-toggle">&#9776;</button>
+      <div class="nav-links">
+        <div class="dropdown"><a href="themission">THE MISSION</a><div class="dropdown-menu"><a href="themission#healing">Healing</a><a href="themission#prosperity">Prosperity</a><a href="themission#freedom">Freedom</a></div></div>
+        <div class="dropdown"><a href="participate">PARTICIPATE</a><div class="dropdown-menu"><a href="liberatedemocracy">Liberate Democracy</a><a href="buylocal">Buy Local</a><a href="enrich-community">Enrich Community</a></div></div>
+        <a href="didyouknow">DID YOU KNOW</a>
+        <div class="dropdown"><a href="resources">RESOURCES</a><div class="dropdown-menu"><a href="resources#documentaries">Enlightening Documentaries</a><a href="resources#books">Good Reads</a><a href="resources#discover">Podcast</a><a href="resources#news-orgs">News</a><a href="resources#foundations">Other Organizations</a><a href="https://www.liberationofeducation.org" target="_blank">Liberation of Education</a></div></div>
+        <a href="events">EVENTS</a>
+        <div class="dropdown"><a href="donate">DONATE</a><div class="dropdown-menu"><a href="sponsor">Be A Sponsor</a></div></div>
+        <a href="shop">SHOP</a>
+        <a href="blog">BLOG</a>
+      </div>
+      <div class="nav-right"><a href="https://members.projecthpf.org/auth/login" class="btn-member">MEMBERS</a></div>
+    </div>
+  </nav>
+
+  <!-- ══════════ PAGE TITLE ══════════ -->
+  <section class="lf-page-title reveal">
+    <h1>LIFE</h1>
+    <p class="tagline">Life is incredibly complicated and complex — and understanding it more deeply is one of the greatest gifts you can give yourself.</p>
+  </section>
+
+  <!-- ══════════ 1. LIFE ══════════ -->
+  <section class="lf-section reveal">
+    <div class="lf-split">
+      <div class="lf-split-box lf-box lf-blue">
+        <div style="display:flex;justify-content:flex-end;margin-bottom:12px;">
+          <span class="val-play-icon" id="play-lf-intro" title="Listen to narration">&#9654;</span>
+        </div>
+        <div class="val-narration-player" id="player-lf-intro">
+          <div class="val-narration-bar" id="bar-lf-intro"><div class="val-narration-bar-fill" id="fill-lf-intro"></div></div>
+          <span class="val-narration-time" id="time-lf-intro">0:00</span>
+          <div class="val-speed">
+            <button class="speed-btn" data-speed="0.75">0.75×</button>
+            <button class="speed-btn active" data-speed="1">1×</button>
+            <button class="speed-btn" data-speed="1.25">1.25×</button>
+            <button class="speed-btn" data-speed="1.5">1.5×</button>
+            <button class="speed-btn" data-speed="2">2×</button>
+          </div>
+        </div>
+        <audio id="audio-lf-intro" src="audio/life-intro.mp3" preload="none"></audio>
+
+        <p>Life is incredibly complicated and complex. It is this and it is that. It appears that life may be infinite; going on forever. New forms of life come and old ones go but life marches on.</p>
+
+        <p>Humanity is making new discoveries and learning new things about how interconnected all life is at rapid speeds right now. However, new information, no matter how concrete, does not necessarily equal fact to most of society.</p>
+
+        <p>For society as a whole, there are only two guarantees in life: <a href="#">change</a> and physical death. Everything else is subject to new information and interpretation.</p>
+
+        <p>Virtually all of us are automatically conditioned to live life the way others around us do. It's part of how we were designed to learn and grow.</p>
+
+        <p>How then do we determine if we are doing life the way we were designed, both as individuals and as a humanity?</p>
+
+        <p>Some of us will question our conditioning and will look for answers in <a href="#">religion</a>, social groups, or other ideologies. Fewer of us will also look within for answers. However, to truly serve our purpose as we were designed, we must look within.</p>
+
+        <p>Although all human beings are 99.9% identical in their genetic makeup we are all individually, incredibly unique. And not just in our outward appearances but also inward; our personalities and how we experience life is unique to each individual. Our inward experience is our clue to discovering our purpose in life so we have to examine our thoughts and explore our curiosities.</p>
+
+        <p>Life is dangerous and death is almost always a split second away. No one can protect you from life better than you; so we have to be willing to take <a href="#">responsibility</a> for all aspects of our own lives; anything that affects our life is our responsibility.</p>
+
+        <p>If life is in fact infinite, then this human experience of life is incredibly short even if we live to be 100. Why waste it living a life that you're not happy with?</p>
+      </div>
+
+      <div class="lf-vid-col" style="margin-top:60px;">
+        <iframe src="https://www.youtube.com/embed/4RGizqsLumo" title="Is There Life After Death? moderated by John Cleese" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 2. AN INTERESTING FILM ══════════ -->
+  <section class="lf-section reveal">
+    <div class="lf-split">
+      <div class="lf-split-box lf-box lf-rose">
+        <div class="val-section-head">
+          <h2>An Interesting Film to Broaden Your Perspective of Life</h2>
+          <span class="val-play-icon on-rose" id="play-lf-film" title="Listen to narration">&#9654;</span>
+        </div>
+        <div class="val-narration-player" id="player-lf-film">
+          <div class="val-narration-bar" id="bar-lf-film"><div class="val-narration-bar-fill on-rose" id="fill-lf-film"></div></div>
+          <span class="val-narration-time on-rose" id="time-lf-film">0:00</span>
+          <div class="val-speed on-rose">
+            <button class="speed-btn" data-speed="0.75">0.75×</button>
+            <button class="speed-btn active" data-speed="1">1×</button>
+            <button class="speed-btn" data-speed="1.25">1.25×</button>
+            <button class="speed-btn" data-speed="1.5">1.5×</button>
+            <button class="speed-btn" data-speed="2">2×</button>
+          </div>
+        </div>
+        <audio id="audio-lf-film" src="audio/life-film.mp3" preload="none"></audio>
+
+        <p>"The Reality of Truth" is a captivating documentary film that embarks on an extraordinary exploration of consciousness, spirituality, and the powerful potential within each of us to transform our lives. In this thought-provoking journey, viewers are taken on a mesmerizing expedition across the globe, as renowned author and visionary filmmaker, Mike Zapolin, alongside actress and activist Michelle Rodriguez, delve into ancient wisdom traditions, psychedelic experiences, and innovative therapies to unlock the secrets of human consciousness.</p>
+
+        <p>Drawing upon the insights of luminaries like Deepak Chopra, Ram Dass, and Sri Sri Ravi Shankar, this documentary challenges conventional thinking and invites us to expand our understanding of reality. Through personal stories, expert interviews, and breathtaking visuals, "The Reality of Truth" reveals the interconnectedness of all things and the potential for personal transformation through self-discovery and spiritual awakening.</p>
+
+        <p>From the remote jungles of Peru, where ancient shamanic practices are revived, to the cutting-edge therapies that utilize plant medicines, this film bridges the gap between ancient wisdom and modern science. It explores the transformative power of meditation, the healing potential of psychedelic substances, and the integration of these experiences into our everyday lives.</p>
+
+        <p>As the journey unfolds, viewers are invited to question their own perceptions of reality and to consider the profound impact of consciousness on our physical and mental well-being. With each step, "The Reality of Truth" encourages us to embark on a personal quest for truth, authenticity, and self-realization.</p>
+
+        <p>By shining a light on the depths of human consciousness, this documentary film challenges us to reevaluate our own beliefs, fears, and limitations. It reminds us that there is a reality beyond the surface, waiting to be discovered and embraced. Join us on this awe-inspiring expedition as we transcend the boundaries of our minds and dive headfirst into "The Reality of Truth."</p>
+      </div>
+
+      <div class="lf-vid-col" style="margin-top:60px;">
+        <iframe src="https://www.youtube.com/embed/glNJHVJgI2Y" title="The Reality of Truth — Full Film" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 3. RESOURCES ══════════ -->
+  <section class="lf-section reveal">
+    <div class="lf-box" style="background:#8fa8a0;color:#1a2e28;">
+      <h2 style="color:#fff;font-family:var(--font-body);font-weight:700;font-size:2rem;text-decoration:underline;text-underline-offset:6px;text-align:center;margin-bottom:32px;">Resources to Broaden Your Perspective of Life</h2>
+
+      <div style="margin-bottom:32px;">
+        <p style="font-family:var(--font-body);font-size:0.78rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(26,46,40,0.6);margin-bottom:10px;">After Skool</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;">
+          <iframe src="https://www.youtube.com/embed/dYSQ1NF1hvw" title="After Skool" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:16/9;border-radius:8px;border:none;box-shadow:0 3px 12px rgba(0,0,0,0.2);"></iframe>
+          <div style="display:flex;flex-direction:column;gap:10px;justify-content:center;">
+            <p style="font-family:var(--font-body);font-size:0.88rem;line-height:1.65;color:#1a2e28;margin:0;">After Skool creates illustrated animations on psychology, philosophy, science, and human nature — distilling complex ideas into accessible, thought-provoking short films. Their content consistently challenges conditioned thinking and opens new ways of seeing the world.</p>
+            <a href="https://www.youtube.com/@afterskool" target="_blank" rel="noopener" style="display:inline-block;font-family:var(--font-body);font-size:0.8rem;font-weight:700;color:#fff;background:rgba(26,46,40,0.5);padding:8px 16px;border-radius:6px;text-decoration:none;align-self:flex-start;">Visit Channel →</a>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <p style="font-family:var(--font-body);font-size:0.78rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(26,46,40,0.6);margin-bottom:10px;">The School of Life</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;">
+          <iframe src="https://www.youtube.com/embed/Y-Unq3R--M0" title="The School of Life" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:16/9;border-radius:8px;border:none;box-shadow:0 3px 12px rgba(0,0,0,0.2);"></iframe>
+          <div style="display:flex;flex-direction:column;gap:10px;justify-content:center;">
+            <p style="font-family:var(--font-body);font-size:0.88rem;line-height:1.65;color:#1a2e28;margin:0;">The School of Life is dedicated to emotional intelligence. Their videos explore relationships, self-knowledge, work, and the search for meaning — drawing on philosophy, psychology, and the arts to help us live and work more wisely.</p>
+            <a href="https://www.youtube.com/@theschooloflifetv" target="_blank" rel="noopener" style="display:inline-block;font-family:var(--font-body);font-size:0.8rem;font-weight:700;color:#fff;background:rgba(26,46,40,0.5);padding:8px 16px;border-radius:6px;text-decoration:none;align-self:flex-start;">Visit Channel →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 4. PEOPLE WHO CAN HELP ══════════ -->
+  <section class="lf-section reveal">
+    <div class="lf-box" style="background:#8a8078;color:#f5f0ea;">
+      <h2 style="color:#fff;font-family:var(--font-body);font-weight:700;font-size:2rem;text-align:center;text-decoration:underline;text-underline-offset:6px;margin-bottom:32px;">A Few People Who Can Help You Learn More About Life</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:28px;">
+
+        <div style="background:rgba(255,255,255,0.12);border-radius:10px;overflow:hidden;box-shadow:0 3px 12px rgba(0,0,0,0.2);">
+          <iframe src="https://www.youtube.com/embed/qJUC9TpMaGw" title="Eckhart Tolle" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:16/9;border:none;display:block;"></iframe>
+          <div style="padding:16px 20px;">
+            <p style="font-family:var(--font-body);font-weight:700;font-size:1rem;color:#fff;margin-bottom:6px;">Eckhart Tolle</p>
+            <p style="font-family:var(--font-body);font-size:0.84rem;line-height:1.6;color:rgba(245,240,234,0.85);margin-bottom:12px;">One of the world's most widely read spiritual authors, Eckhart Tolle explores the nature of consciousness, the present moment, and the end of human suffering through awakened awareness.</p>
+            <a href="https://www.youtube.com/@EckhartTolle" target="_blank" rel="noopener" style="font-family:var(--font-body);font-size:0.78rem;font-weight:700;color:#fff;text-decoration:underline;">Visit Channel →</a>
+          </div>
+        </div>
+
+        <div style="background:rgba(255,255,255,0.12);border-radius:10px;overflow:hidden;box-shadow:0 3px 12px rgba(0,0,0,0.2);">
+          <iframe src="https://www.youtube.com/embed/IEElY1QxDH8" title="The Chopra Well" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:16/9;border:none;display:block;"></iframe>
+          <div style="padding:16px 20px;">
+            <p style="font-family:var(--font-body);font-weight:700;font-size:1rem;color:#fff;margin-bottom:6px;">The Chopra Well</p>
+            <p style="font-family:var(--font-body);font-size:0.84rem;line-height:1.6;color:rgba(245,240,234,0.85);margin-bottom:12px;">Deepak Chopra's channel brings together wisdom on consciousness, healing, meditation, and the intersection of science and spirituality — offering tools for well-being and a deeper understanding of life.</p>
+            <a href="https://www.youtube.com/@TheChopraWell" target="_blank" rel="noopener" style="font-family:var(--font-body);font-size:0.78rem;font-weight:700;color:#fff;text-decoration:underline;">Visit Channel →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ COMMUNITY & MEMBERSHIP ══════════ -->
+  <section class="home-community reveal">
+    <div class="community-bg">
+      <div class="community-inner">
+        <div class="community-text">
+          <h2>Join Our Revolutionist Community</h2>
+          <p>Communicate, collaborate, and connect with citizens committed to healing, prosperity &amp; freedom. Become a PHPF member for just $1/month and gain exclusive access to our member directory, content library, and Liberate Democracy voting.</p>
+          <p class="community-note">Membership unlocks the full PHPF experience.</p>
+        </div>
+        <div class="community-right-col">
+          <img src="images/animation/mother-earth-v2-clean.png" alt="Mother Earth" class="community-earth">
+          <a href="https://members.projecthpf.org/auth/register" class="member-cta-btn">Join Now — $1/mo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p class="footer-disclaimer">Disclaimer: Project Healing Prosperity &amp; Freedom, Inc is pleased to provide diverse ideas from across the world that we hope will spark listeners' curiosity and broaden their worldview. Project Healing Prosperity &amp; Freedom, Inc does not endorse all of the perspectives, ideas and information put forward in any of the external content presented and invites listeners to have an open mind but question everything as they draw their own conclusions.</p>
+    <p class="footer-org">Project Healing<br>Prosperity &amp; Freedom, Inc</p>
+    <a href="mailto:info@projecthpf.org" class="footer-email">info@projecthpf.org</a>
+    <div class="footer-social">
+      <a href="https://twitter.com/ProjectHPF" title="Twitter"><img src="images/11062b_07090bba1daa42c880682389a46508db_mv2.png" alt="Twitter" style="width:24px;height:24px;"></a>
+      <a href="https://www.instagram.com/projecthpf" title="Instagram"><img src="images/11062b_55e4be1e75564866b6c28290f9a9d271_mv2.png" alt="Instagram" style="width:24px;height:24px;"></a>
+      <a href="https://www.facebook.com/ProjectHPF21" title="Facebook"><img src="images/11062b_a84995cc8b024f4ea398f5744a56bc27_mv2.png" alt="Facebook" style="width:24px;height:24px;"></a>
+      <a href="https://www.tiktok.com/@projecthpf" title="TikTok"><img src="images/11062b_8e8bb1bfaeb54186ace77d5ab14933ff_mv2.png" alt="TikTok" style="width:24px;height:24px;"></a>
+    </div>
+    <div class="footer-links">
+      <a href="privacy">Privacy Policy</a>
+      <a href="terms">Terms and Conditions</a>
+    </div>
+    <p style="font-size:0.78rem;color:var(--gray-light);">&copy; 2024 Project Healing Prosperity &amp; Freedom, Inc. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+  (function(){
+    function fmt(t){var m=Math.floor(t/60),s=Math.floor(t%60);return m+":"+(s<10?"0":"")+s;}
+    var tracks=[
+      {play:'play-lf-intro', audio:'audio-lf-intro', player:'player-lf-intro', bar:'bar-lf-intro', fill:'fill-lf-intro', time:'time-lf-intro'},
+      {play:'play-lf-film',  audio:'audio-lf-film',  player:'player-lf-film',  bar:'bar-lf-film',  fill:'fill-lf-film',  time:'time-lf-film'}
+    ];
+    tracks.forEach(function(t){
+      var playBtn=document.getElementById(t.play),audio=document.getElementById(t.audio),player=document.getElementById(t.player),bar=document.getElementById(t.bar),fill=document.getElementById(t.fill),timeEl=document.getElementById(t.time);
+      if(!playBtn||!audio) return;
+      playBtn.addEventListener('click',function(){
+        if(audio.paused){
+          tracks.forEach(function(o){var a=document.getElementById(o.audio),b=document.getElementById(o.play),p=document.getElementById(o.player);if(a&&!a.paused){a.pause();if(b)b.textContent='\u25BA';if(p)p.classList.remove('playing');}});
+          audio.play();playBtn.textContent='\u23F8';player.classList.add('playing');
+        } else { audio.pause();playBtn.textContent='\u25BA'; }
+      });
+      audio.addEventListener('timeupdate',function(){if(!audio.duration)return;fill.style.width=(audio.currentTime/audio.duration*100)+'%';timeEl.textContent=fmt(audio.currentTime)+' / '+fmt(audio.duration);});
+      bar.addEventListener('click',function(e){var rect=bar.getBoundingClientRect(),pct=Math.max(0,Math.min(1,(e.clientX-rect.left)/rect.width));if(audio.duration)audio.currentTime=pct*audio.duration;});
+      audio.addEventListener('ended',function(){playBtn.textContent='\u25BA';player.classList.remove('playing');fill.style.width='0%';timeEl.textContent='0:00';audio.currentTime=0;});
+      var speedEl=player.querySelector('.val-speed');
+      if(speedEl){speedEl.querySelectorAll('.speed-btn').forEach(function(btn){btn.addEventListener('click',function(){audio.playbackRate=parseFloat(btn.getAttribute('data-speed'));speedEl.querySelectorAll('.speed-btn').forEach(function(b){b.classList.remove('active');});btn.classList.add('active');});});}
+    });
+  })();
+  </script>
+</body>
+</html>

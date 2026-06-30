@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop — Project HPF</title>
+  <meta name="description" content="Official Project HPF merch. Wear the movement. Every purchase fuels healing, prosperity & freedom.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Forum&family=Fahkwang:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=17">
+  <link rel="icon" href="images/5f7ee9_eef98a3952f34f5fb211625143e3e8ea_mv2.png">
+  <style>
+    .shop-hero {
+      text-align: center;
+      padding: 80px 24px 30px;
+    }
+    .shop-hero h1 {
+      font-family: var(--font-accent);
+      font-size: 2.6rem;
+      color: var(--blue-dark);
+      text-transform: uppercase;
+      text-shadow: 2px 3px 5px rgba(0,0,0,0.2);
+      margin-bottom: 12px;
+    }
+    .shop-hero .tagline {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 1.05rem;
+      color: var(--gray-dark);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* ── Filters Bar ── */
+    .shop-filters {
+      max-width: 1200px;
+      margin: 20px auto 10px;
+      padding: 16px 24px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 80px;
+      z-index: 50;
+    }
+    .shop-filter-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+    .shop-filter-label {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--gray-dark);
+      margin-right: 4px;
+    }
+    .shop-chip {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 2px solid #e0e0e0;
+      background: #fff;
+      color: #444;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .shop-chip:hover { border-color: #0489C7; color: #0489C7; }
+    .shop-chip.active {
+      background: #0489C7;
+      color: #fff;
+      border-color: #0489C7;
+    }
+    .shop-sort select {
+      padding: 8px 14px;
+      border: 2px solid #e0e0e0;
+      border-radius: 20px;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #444;
+      background: #fff;
+      cursor: pointer;
+    }
+    .shop-search input {
+      padding: 8px 14px;
+      border: 2px solid #e0e0e0;
+      border-radius: 20px;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      min-width: 200px;
+    }
+
+    /* ── Category Section ── */
+    .shop-category {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 24px;
+    }
+    .shop-category-heading {
+      font-family: 'Boogaloo', cursive;
+      font-size: 2rem;
+      color: var(--blue-dark);
+      text-transform: uppercase;
+      text-shadow: 2px 3px 5px rgba(0,0,0,0.15);
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+
+    /* ── Product Grid ── */
+    .shop-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 24px;
+    }
+    .shop-product {
+      background: #fff;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      transition: transform 0.25s, box-shadow 0.25s;
+      display: flex;
+      flex-direction: column;
+    }
+    .shop-product:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
+    .shop-product.hidden { display: none; }
+    .shop-product-img {
+      width: 100%;
+      aspect-ratio: 1;
+      background: #f5f0ea;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .shop-product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .shop-product-placeholder {
+      font-family: 'Boogaloo', cursive;
+      font-size: 3rem;
+      color: #0489C7;
+      opacity: 0.6;
+    }
+    .shop-product-info {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .shop-product-category {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #0489C7;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+    .shop-product-title {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #1a1a2e;
+      margin-bottom: 6px;
+    }
+    .shop-product-price {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: #0489C7;
+      margin-bottom: 12px;
+    }
+    .shop-product-btn {
+      display: inline-block;
+      margin-top: auto;
+      background: var(--green-primary);
+      color: #fff;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: background 0.2s;
+    }
+    .shop-product-btn:hover {
+      background: #0489C7;
+      text-decoration: none;
+    }
+    .shop-empty {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--gray-dark);
+      font-family: var(--font-body);
+      font-size: 1.1rem;
+      grid-column: 1 / -1;
+    }
+
+    @media (max-width: 768px) {
+      .shop-hero h1 { font-size: 1.8rem; }
+      .shop-filters { flex-direction: column; align-items: stretch; top: 70px; }
+      .shop-filter-group { justify-content: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-shapes">
+    <span class="shape1"></span>
+    <span class="shape2"></span>
+    <span class="shape3"></span>
+    <span class="shape4"></span>
+    <span class="shape5"></span>
+    <span class="shape6"></span>
+    <span class="shape7"></span>
+    <span class="shape8"></span>
+    <span class="shape9"></span>
+    <span class="shape10"></span>
+    <span class="shape11"></span>
+    <span class="shape12"></span>
+  </div>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index" class="nav-logo"><img src="images/phpf-logo-icon-hd.png" alt="Project HPF"></a>
+      <button class="nav-toggle">&#9776;</button>
+      <div class="nav-links">
+        <div class="dropdown"><a href="themission">THE MISSION</a><div class="dropdown-menu"><a href="themission#healing">Healing</a><a href="themission#prosperity">Prosperity</a><a href="themission#freedom">Freedom</a></div></div>
+        <div class="dropdown"><a href="participate">PARTICIPATE</a><div class="dropdown-menu"><a href="liberatedemocracy">Liberate Democracy</a><a href="buylocal">Buy Local</a><a href="enrich-community">Enrich Community</a></div></div>
+        <a href="didyouknow">DID YOU KNOW</a>
+        <div class="dropdown"><a href="resources">RESOURCES</a><div class="dropdown-menu"><a href="resources#documentaries">Enlightening Documentaries</a><a href="resources#books">Good Reads</a><a href="resources#discover">Podcast</a><a href="resources#news-orgs">News</a><a href="resources#foundations">Other Organizations</a><a href="https://www.liberationofeducation.org" target="_blank">Liberation of Education</a></div></div>
+        <a href="events">EVENTS</a>
+        <div class="dropdown"><a href="donate">DONATE</a><div class="dropdown-menu"><a href="sponsor">Be A Sponsor</a></div></div>
+        <a href="shop">SHOP</a>
+        <a href="blog">BLOG</a>
+      </div>
+      <div class="nav-right">
+        <a href="https://members.projecthpf.org/auth/login" class="btn-member">MEMBERS</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Shop Hero -->
+  <section class="shop-hero">
+    <h1 class="reveal">Wear The Movement</h1>
+    <p class="tagline reveal">Official Project HPF merch — every purchase fuels healing, prosperity, and freedom. Printed on demand and shipped worldwide.</p>
+  </section>
+
+  <!-- Filters & Sort -->
+  <div class="shop-filters reveal">
+    <div class="shop-filter-group">
+      <span class="shop-filter-label">Filter:</span>
+      <button class="shop-chip active" data-filter="all">All</button>
+      <button class="shop-chip" data-filter="apparel">Apparel</button>
+      <button class="shop-chip" data-filter="accessories">Accessories</button>
+      <button class="shop-chip" data-filter="home">Home & Decor</button>
+      <button class="shop-chip" data-filter="stickers">Stickers</button>
+    </div>
+    <div class="shop-filter-group">
+      <div class="shop-search">
+        <input type="text" id="shopSearch" placeholder="Search products…">
+      </div>
+      <div class="shop-sort">
+        <select id="shopSort">
+          <option value="featured">Featured</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="name-asc">Name: A–Z</option>
+          <option value="name-desc">Name: Z–A</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Merch Section -->
+  <section class="shop-category reveal">
+    <h2 class="shop-category-heading">Merch</h2>
+    <div class="shop-grid" id="shopGrid">
+
+      <!-- Product cards — swap the "Add to Cart" buttons with Shopify Buy Button embeds once products exist in Shopify admin -->
+
+      <div class="shop-product" data-category="apparel" data-price="32" data-name="HPF Logo Tee">
+        <div class="shop-product-img"><span class="shop-product-placeholder">HPF</span></div>
+        <div class="shop-product-info">
+          <div class="shop-product-category">Apparel</div>
+          <div class="shop-product-title">HPF Logo Tee</div>
+          <div class="shop-product-price">$32.00</div>
+          <!-- SHOPIFY_BUY_BUTTON: hpf-logo-tee -->
+          <button class="shop-product-btn">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="shop-product" data-category="apparel" data-price="48" data-name="Revolution Hoodie">
+        <div class="shop-product-img"><span class="shop-product-placeholder">✊</span></div>
+        <div class="shop-product-info">
+          <div class="shop-product-category">Apparel</div>
+          <div class="shop-product-title">Revolution Hoodie</div>
+          <div class="shop-product-price">$48.00</div>
+          <!-- SHOPIFY_BUY_BUTTON: revolution-hoodie -->
+          <button class="shop-product-btn">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="shop-product" data-category="apparel" data-price="28" data-name="Healing Tank Top">
+        <div class="shop-product-img"><span class="shop-product-placeholder">🌱</span></div>
+        <div class="shop-product-info">
+          <div class="shop-product-category">Apparel</div>
+          <div class="shop-product-title">Healing Tank Top</div>
+          <div class="shop-product-price">$28.00</div>
+          <!-- SHOPIFY_BUY_BUTTON: healing-tank -->
+          <button class="shop-product-btn">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="shop-product" data-category="apparel" data-price="35" data-name="Freedom Long Sleeve">
+        <div class="shop-product-img"><span class="shop-product-placeholder">🕊️</span></div>
+        <div class="shop-product-info">
+          <div class="shop-product-category">Apparel</div>
+          <div class="shop-product-title">Freedom Long Sleeve</div>
+          <div class="shop-product-price">$35.00</div>
+          <!-- SHOPIFY_BUY_BUTTON: freedom-longsleeve -->
+          <button class="shop-product-btn">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="shop-product" data-category="accessories" data-price="24" data-name="HPF Snapback Hat">
+        <div class="shop-product-img"><span class="shop-product-placeholder">🧢</span></div>
+        <div class="shop-product-info">
+          <div class="shop-product-category">Accessories</div>
+          <div class="shop-product-title">HPF Snapback Hat</div>
+          <div class="shop-product-price">$24.00</div>
+          <!-- SHOPIFY_BUY_BUTTON: hpf-snapback -->
+          <button class="shop-product-btn">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="shop-product" data-category="accessories" data-price="18" data-name="Movement Tote Bag">
+        <div class="shop-product-img"><span class="shop-product-placeholder">👜</span></div>
+        <div class="shop-product-info">
+          <div class="shop-product-category">Accessories</div>
+          <div class="shop-product-title">Movement Tote Bag</div>
+          <div class="shop-product-price">$18.00</div>
+          <!-- SHOPIFY_BUY_BUTTON: movement-tote -->
+          <button class="shop-product-btn">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="shop-product" data-category="home" data-price="16" data-name="HPF Coffee Mug">
+        <div class="shop-product-img"><span class="shop-product-placeholder">☕</span></div>
+        <div class="shop-product-info">
+          <div class="shop-product-category">Home & Decor</div>
+          <div class="shop-product-title">HPF Coffee Mug</div>
+          <div class="shop-product-price">$16.00</div>
+          <!-- SHOPIFY_BUY_BUTTON: hpf-mug -->
+          <button class="shop-product-btn">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="shop-product" data-category="home" data-price="26" data-name="Mother Earth Poster">
+        <div class="shop-product-img"><span class="shop-product-placeholder">🌍</span></div>
+        <div class="shop-product-info">
+          <div class="shop-product-category">Home & Decor</div>
+          <div class="shop-product-title">Mother Earth Poster (18x24)</div>
+          <div class="shop-product-price">$26.00</div>
+          <!-- SHOPIFY_BUY_BUTTON: mother-earth-poster -->
+          <button class="shop-product-btn">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="shop-product" data-category="stickers" data-price="5" data-name="HPF Logo Sticker Pack">
+        <div class="shop-product-img"><span class="shop-product-placeholder">⭐</span></div>
+        <div class="shop-product-info">
+          <div class="shop-product-category">Stickers</div>
+          <div class="shop-product-title">HPF Logo Sticker Pack (5)</div>
+          <div class="shop-product-price">$5.00</div>
+          <!-- SHOPIFY_BUY_BUTTON: logo-sticker-pack -->
+          <button class="shop-product-btn">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="shop-product" data-category="stickers" data-price="3" data-name="Peace Sticker">
+        <div class="shop-product-img"><span class="shop-product-placeholder">☮️</span></div>
+        <div class="shop-product-info">
+          <div class="shop-product-category">Stickers</div>
+          <div class="shop-product-title">Peace Sticker</div>
+          <div class="shop-product-price">$3.00</div>
+          <!-- SHOPIFY_BUY_BUTTON: peace-sticker -->
+          <button class="shop-product-btn">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="shop-empty" id="shopEmpty" style="display:none;">No products match your filters.</div>
+    </div>
+  </section>
+
+  <!-- Shopify Buy Button SDK (uncomment & configure once Shopify products exist) -->
+  <!--
+  <script type="text/javascript">
+    (function () {
+      var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+      if (window.ShopifyBuy) { if (window.ShopifyBuy.UI) { ShopifyBuyInit(); } else { loadScript(); } } else { loadScript(); }
+      function loadScript() {
+        var script = document.createElement('script');
+        script.async = true; script.src = scriptURL;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+        script.onload = ShopifyBuyInit;
+      }
+      function ShopifyBuyInit() {
+        var client = ShopifyBuy.buildClient({
+          domain: 'YOUR-STORE.myshopify.com',
+          storefrontAccessToken: 'YOUR_STOREFRONT_ACCESS_TOKEN',
+        });
+        ShopifyBuy.UI.onReady(client).then(function (ui) {
+          // For each product, replace <button> with:
+          // ui.createComponent('product', { id: 'SHOPIFY_PRODUCT_ID', node: document.getElementById('buy-button-X'), ... });
+        });
+      }
+    })();
+  </script>
+  -->
+
+  <script>
+    // Filter / search / sort logic
+    (function(){
+      var chips = document.querySelectorAll('.shop-chip');
+      var searchInput = document.getElementById('shopSearch');
+      var sortSelect = document.getElementById('shopSort');
+      var grid = document.getElementById('shopGrid');
+      var empty = document.getElementById('shopEmpty');
+      var activeFilter = 'all';
+
+      function apply() {
+        var q = searchInput.value.trim().toLowerCase();
+        var products = Array.from(grid.querySelectorAll('.shop-product'));
+        var visible = 0;
+        products.forEach(function(p){
+          var cat = p.dataset.category;
+          var name = p.dataset.name.toLowerCase();
+          var matchCat = (activeFilter === 'all' || cat === activeFilter);
+          var matchQ = (!q || name.indexOf(q) !== -1);
+          if (matchCat && matchQ) { p.classList.remove('hidden'); visible++; }
+          else { p.classList.add('hidden'); }
+        });
+        empty.style.display = visible === 0 ? 'block' : 'none';
+
+        // Sort
+        var sort = sortSelect.value;
+        products.sort(function(a,b){
+          if (sort === 'price-asc') return parseFloat(a.dataset.price) - parseFloat(b.dataset.price);
+          if (sort === 'price-desc') return parseFloat(b.dataset.price) - parseFloat(a.dataset.price);
+          if (sort === 'name-asc') return a.dataset.name.localeCompare(b.dataset.name);
+          if (sort === 'name-desc') return b.dataset.name.localeCompare(a.dataset.name);
+          return 0;
+        });
+        products.forEach(function(p){ grid.appendChild(p); });
+        grid.appendChild(empty);
+      }
+
+      chips.forEach(function(chip){
+        chip.addEventListener('click', function(){
+          chips.forEach(function(c){ c.classList.remove('active'); });
+          chip.classList.add('active');
+          activeFilter = chip.dataset.filter;
+          apply();
+        });
+      });
+      searchInput.addEventListener('input', apply);
+      sortSelect.addEventListener('change', apply);
+    })();
+  </script>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p class="footer-disclaimer">Disclaimer: Project Healing Prosperity &amp; Freedom, Inc is pleased to provide diverse ideas from across the world that we hope will spark listeners' curiosity and broaden their worldview. Project Healing Prosperity &amp; Freedom, Inc does not endorse all of the perspectives, ideas and information put forward in any of the external content presented and invites listeners to have an open mind but question everything as they draw their own conclusions.</p>
+    <p class="footer-org">Project Healing<br>Prosperity &amp; Freedom, Inc</p>
+    <a href="mailto:info@projecthpf.org" class="footer-email">info@projecthpf.org</a>
+    <div class="footer-social">
+      <a href="https://twitter.com/ProjectHPF" title="Twitter"><img src="images/11062b_07090bba1daa42c880682389a46508db_mv2.png" alt="Twitter" style="width:24px;height:24px;"></a>
+      <a href="https://www.instagram.com/projecthpf" title="Instagram"><img src="images/11062b_55e4be1e75564866b6c28290f9a9d271_mv2.png" alt="Instagram" style="width:24px;height:24px;"></a>
+      <a href="https://www.facebook.com/ProjectHPF21" title="Facebook"><img src="images/11062b_a84995cc8b024f4ea398f5744a56bc27_mv2.png" alt="Facebook" style="width:24px;height:24px;"></a>
+      <a href="https://www.tiktok.com/@projecthpf" title="TikTok"><img src="images/11062b_8e8bb1bfaeb54186ace77d5ab14933ff_mv2.png" alt="TikTok" style="width:24px;height:24px;"></a>
+    </div>
+    <div class="footer-links">
+      <a href="privacy">Privacy Policy</a>
+      <a href="terms">Terms and Conditions</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

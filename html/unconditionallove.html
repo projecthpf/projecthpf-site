@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unconditional Love — Project HPF</title>
+  <meta name="description" content="Unconditional love is the doorway to our own internal peace and eventually world peace." />
+  <link rel="icon" type="image/png" href="images/5f7ee9_eef98a3952f34f5fb211625143e3e8ea_mv2.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Forum&family=Fahkwang:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=17">
+  <style>
+    .ul-page-title { text-align:center; padding:100px 24px 40px; }
+    .ul-page-title h1 { font-family:var(--font-body); font-weight:700; font-size:3.5rem; color:#0489C7; margin-bottom:14px; text-shadow:2px 3px 5px rgba(0,0,0,0.25); }
+    .ul-page-title .tagline { font-family:var(--font-body); font-weight:500; font-size:1.05rem; color:var(--gray-dark); max-width:560px; margin:0 auto; line-height:1.5; }
+
+    .ul-section { max-width:1100px; margin:0 auto 60px; padding:0 24px; }
+
+    .ul-box { border-radius:12px; padding:32px 40px; box-shadow:0 8px 32px rgba(0,0,0,0.22),0 2px 8px rgba(0,0,0,0.12); }
+    .ul-box h2 { font-family:var(--font-body); font-weight:700; font-size:2.2rem; margin-bottom:8px; line-height:1.3; text-decoration:underline; text-underline-offset:6px; }
+    .ul-box .dotted-divider { border:none; border-top:2px dotted rgba(255,255,255,0.4); margin:12px 0 24px; }
+    .ul-box p { font-family:var(--font-body); font-size:0.92rem; line-height:1.75; margin-bottom:14px; }
+
+    .ul-box h2 { font-family:var(--font-body); font-weight:700; font-size:2.2rem; margin-bottom:20px; line-height:1.3; text-decoration:underline; text-underline-offset:6px; }
+    .ul-box ol, .ul-box ul { padding-left:24px; margin-bottom:14px; }
+    .ul-box ol { list-style:decimal; }
+    .ul-box ul { list-style:disc; }
+    .ul-box ol li, .ul-box ul li { font-family:var(--font-body); font-size:0.92rem; line-height:1.75; margin-bottom:8px; }
+
+    .ul-blue { background:#8faec5; color:#1a2a3e; }
+    .ul-blue h2 { color:#fff; }
+    .ul-blue p, .ul-blue li { color:#1a2a3e; }
+
+    .ul-sage { background:#8fa8a0; color:#1a2e28; }
+    .ul-sage h2 { color:#fff; }
+    .ul-sage p, .ul-sage li { color:#1a2e28; }
+
+    .ul-rose { background:#b09090; color:#1e1010; }
+    .ul-rose h2 { color:#fff; }
+    .ul-rose p, .ul-rose li { color:#1e1010; }
+
+    .ul-grad { background:linear-gradient(135deg,#4a5a7a 0%,#6a7fa0 50%,#8a9ab0 100%); }
+    .ul-grad h2 { color:#fff; }
+    .ul-grad p, .ul-grad li { color:#fff; }
+
+    .ul-split { display:flex; gap:40px; align-items:flex-start; }
+    .ul-split-box { flex:1; min-width:0; }
+    .ul-vid-col { width:420px; flex-shrink:0; align-self:flex-start; position:sticky; top:100px; }
+    .ul-vid-col iframe { width:100%; aspect-ratio:16/9; border-radius:10px; border:none; box-shadow:0 4px 16px rgba(0,0,0,0.2); display:block; }
+
+    /* Narration */
+    .val-play-icon { width:42px;height:42px;flex-shrink:0;background:rgba(255,255,255,0.22);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;color:#fff;cursor:pointer;transition:background 0.2s,transform 0.15s;user-select:none;border:2px solid rgba(255,255,255,0.35); }
+    .val-play-icon:hover { background:rgba(255,255,255,0.4);transform:scale(1.1); }
+    .val-narration-player { display:flex;align-items:center;gap:10px;max-height:0;opacity:0;overflow:hidden;transition:max-height 0.35s ease,opacity 0.35s ease;margin-bottom:0; }
+    .val-narration-player.playing { max-height:36px;opacity:1;margin-bottom:16px; }
+    .val-narration-bar { flex:1;height:6px;background:rgba(0,0,0,0.12);border-radius:3px;cursor:pointer;position:relative;overflow:hidden;min-width:120px; }
+    .val-narration-bar:hover { background:rgba(0,0,0,0.22); }
+    .val-narration-bar-fill { height:100%;background:rgba(255,255,255,0.7);border-radius:3px;width:0%;pointer-events:none; }
+    .val-narration-time { font-size:0.7rem;font-family:var(--font-body,sans-serif);color:rgba(255,255,255,0.75);min-width:72px;text-align:right;white-space:nowrap; }
+    .val-speed { display:flex;align-items:center;gap:3px;flex-shrink:0; }
+    .val-speed .speed-btn { background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);border-radius:4px;color:rgba(255,255,255,0.8);font-size:0.65rem;font-weight:600;padding:2px 6px;cursor:pointer;transition:background 0.15s;line-height:1.4;font-family:inherit; }
+    .val-speed .speed-btn:hover { background:rgba(255,255,255,0.28); }
+    .val-speed .speed-btn.active { background:rgba(255,255,255,0.88);color:#1a1a2e;border-color:transparent; }
+    .val-play-icon.on-sage { background:rgba(26,46,40,0.15);border:2px solid rgba(26,46,40,0.3);color:#1a2e28; }
+    .val-play-icon.on-sage:hover { background:rgba(26,46,40,0.28); }
+    .val-narration-bar-fill.on-sage { background:rgba(26,46,40,0.6); }
+    .val-narration-time.on-sage { color:rgba(26,46,40,0.65); }
+    .val-speed.on-sage .speed-btn { background:rgba(26,46,40,0.1);border-color:rgba(26,46,40,0.25);color:rgba(26,46,40,0.7); }
+    .val-speed.on-sage .speed-btn.active { background:rgba(26,46,40,0.7);color:#fff;border-color:transparent; }
+    .val-play-icon.on-rose { background:rgba(30,16,16,0.15);border:2px solid rgba(30,16,16,0.28);color:#1e1010; }
+    .val-play-icon.on-rose:hover { background:rgba(30,16,16,0.28); }
+    .val-narration-bar-fill.on-rose { background:rgba(30,16,16,0.5); }
+    .val-narration-time.on-rose { color:rgba(30,16,16,0.6); }
+    .val-speed.on-rose .speed-btn { background:rgba(30,16,16,0.1);border-color:rgba(30,16,16,0.25);color:rgba(30,16,16,0.65); }
+    .val-speed.on-rose .speed-btn.active { background:rgba(30,16,16,0.65);color:#fff;border-color:transparent; }
+
+    /* Community */
+    .home-community { background:transparent; padding:100px 24px 20px; display:flex; justify-content:center; width:100%; }
+    .community-bg { background:url('images/nsplsh_335036453279326c797573_mv2_d_5760_3840_s_4_2.jpg') center/cover no-repeat; border-radius:16px; padding:50px 48px; position:relative; min-height:520px; display:flex; align-items:center; justify-content:center; }
+    .community-inner { display:grid; grid-template-columns:auto auto; gap:60px; align-items:center; }
+    .community-text { text-align:left; background:rgba(80,20,120,0.55); padding:24px; border-radius:12px; align-self:stretch; display:flex; flex-direction:column; justify-content:center; max-width:340px; }
+    .community-right-col { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; }
+    .community-earth { width:240px; height:auto; filter:drop-shadow(0 4px 12px rgba(0,0,0,0.3)); }
+    .community-text h2 { font-family:var(--font-body); font-weight:700; font-size:1.5rem; color:var(--white); margin-bottom:10px; text-shadow:1px 2px 4px rgba(0,0,0,0.4); max-width:260px; }
+    .community-text p { font-family:var(--font-body); font-size:0.84rem; color:var(--white); line-height:1.7; margin-bottom:14px; text-shadow:1px 1px 3px rgba(0,0,0,0.3); max-width:230px; }
+    .community-text p.community-note { font-size:0.78rem; opacity:0.9; margin-bottom:0; white-space:nowrap; }
+    .member-cta-btn { display:inline-block; padding:12px 36px; background:var(--white); color:var(--green-primary); border:2px solid var(--white); border-radius:4px; font-family:var(--font-body); font-weight:700; font-size:1rem; text-transform:uppercase; letter-spacing:1px; cursor:pointer; transition:background 0.3s,color 0.3s; text-decoration:none; margin-bottom:8px; }
+    .member-cta-btn:hover { background:transparent; color:var(--white); text-decoration:none; }
+
+    @media (max-width:768px) {
+      .ul-page-title h1 { font-size:2.4rem; }
+      .ul-split { flex-direction:column; }
+      .ul-vid-col { width:100%; position:static; }
+      .ul-box { padding:28px 22px; }
+      .community-bg { padding:28px 20px; margin:0 12px; }
+      .community-inner { grid-template-columns:1fr; text-align:center; }
+      .community-text { text-align:center; }
+      .community-earth { width:180px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index" class="nav-logo nav-logo--wide"><img src="images/phpf-logo-wide-hd.png" alt="ProjectHPF.org"></a>
+      <button class="nav-toggle">&#9776;</button>
+      <div class="nav-links">
+        <div class="dropdown"><a href="themission">THE MISSION</a><div class="dropdown-menu"><a href="themission#healing">Healing</a><a href="themission#prosperity">Prosperity</a><a href="themission#freedom">Freedom</a></div></div>
+        <div class="dropdown"><a href="participate">PARTICIPATE</a><div class="dropdown-menu"><a href="liberatedemocracy">Liberate Democracy</a><a href="buylocal">Buy Local</a><a href="enrich-community">Enrich Community</a></div></div>
+        <a href="didyouknow">DID YOU KNOW</a>
+        <div class="dropdown"><a href="resources">RESOURCES</a><div class="dropdown-menu"><a href="resources#documentaries">Enlightening Documentaries</a><a href="resources#books">Good Reads</a><a href="resources#discover">Podcast</a><a href="resources#news-orgs">News</a><a href="resources#foundations">Other Organizations</a><a href="https://www.liberationofeducation.org" target="_blank">Liberation of Education</a></div></div>
+        <a href="events">EVENTS</a>
+        <div class="dropdown"><a href="donate">DONATE</a><div class="dropdown-menu"><a href="sponsor">Be A Sponsor</a></div></div>
+        <a href="shop">SHOP</a>
+        <a href="blog">BLOG</a>
+      </div>
+      <div class="nav-right"><a href="https://members.projecthpf.org/auth/login" class="btn-member">MEMBERS</a></div>
+    </div>
+  </nav>
+
+  <!-- ══════════ PAGE TITLE ══════════ -->
+  <section class="ul-page-title reveal">
+    <h1>UNCONDITIONAL LOVE</h1>
+    <p class="tagline">The doorway to our own internal peace — and eventually, world peace.</p>
+  </section>
+
+  <!-- ══════════ 1. UNCONDITIONAL LOVE ══════════ -->
+  <section class="ul-section reveal">
+    <div class="ul-split">
+      <div class="ul-split-box ul-box ul-blue">
+        <div style="display:flex;justify-content:flex-end;margin-bottom:12px;">
+          <span class="val-play-icon" id="play-ul-intro" title="Listen to narration">&#9654;</span>
+        </div>
+        <div class="val-narration-player" id="player-ul-intro">
+          <div class="val-narration-bar" id="bar-ul-intro"><div class="val-narration-bar-fill" id="fill-ul-intro"></div></div>
+          <span class="val-narration-time" id="time-ul-intro">0:00</span>
+          <div class="val-speed">
+            <button class="speed-btn" data-speed="0.75">0.75×</button>
+            <button class="speed-btn active" data-speed="1">1×</button>
+            <button class="speed-btn" data-speed="1.25">1.25×</button>
+            <button class="speed-btn" data-speed="1.5">1.5×</button>
+            <button class="speed-btn" data-speed="2">2×</button>
+          </div>
+        </div>
+        <audio id="audio-ul-intro" src="audio/unconditionallove-intro.mp3" preload="none"></audio>
+
+        <p>Unconditional love is the doorway to our own internal peace and eventually world peace.</p>
+        <p>Unconditional love is the opponent of judgement. Practicing unconditional love allows us to put down our harsh judgements of ourselves and others.</p>
+        <p>Everyone is capable of loving every human unconditionally but not everyone knows how because unconditional love is a choice and it is taught.</p>
+        <p>Choosing unconditional love will bring you strong lasting relationships, lasting happiness and peace.</p>
+      </div>
+
+      <div class="ul-vid-col" style="margin-top:60px;">
+        <iframe src="https://www.youtube.com/embed/vMeEKBaiPbg" title="How to love and be loved | Billy Ward | TEDxFoggyBottom" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 2. CONDITIONAL VS UNCONDITIONAL ══════════ -->
+  <section class="ul-section reveal">
+    <div class="ul-box ul-sage">
+      <div class="val-section-head" style="display:flex;align-items:center;gap:14px;margin-bottom:24px;">
+        <h2 style="flex:1;margin-bottom:0;">Conditional vs. Unconditional Love</h2>
+        <span class="val-play-icon on-sage" id="play-ul-conditional" title="Listen to narration">&#9654;</span>
+      </div>
+      <div class="val-narration-player" id="player-ul-conditional">
+        <div class="val-narration-bar" id="bar-ul-conditional"><div class="val-narration-bar-fill on-sage" id="fill-ul-conditional"></div></div>
+        <span class="val-narration-time on-sage" id="time-ul-conditional">0:00</span>
+        <div class="val-speed on-sage">
+          <button class="speed-btn" data-speed="0.75">0.75×</button>
+          <button class="speed-btn active" data-speed="1">1×</button>
+          <button class="speed-btn" data-speed="1.25">1.25×</button>
+          <button class="speed-btn" data-speed="1.5">1.5×</button>
+          <button class="speed-btn" data-speed="2">2×</button>
+        </div>
+      </div>
+      <audio id="audio-ul-conditional" src="audio/unconditionallove-conditional.mp3" preload="none"></audio>
+
+      <p>Most of the love we are taught to give and receive is conditional. It comes with invisible terms: I will love you if you behave the way I expect. I will love you as long as you agree with me. I will love you when you succeed. This kind of love is really approval — and it withdraws itself whenever its conditions are not met.</p>
+
+      <p>Conditional love feels like love. But it creates anxiety, people-pleasing, fear of rejection, and a constant need to perform for others. Relationships built on conditional love are fragile. The moment someone fails to meet the unspoken terms, the love contracts or disappears entirely.</p>
+
+      <p>Unconditional love operates differently. It does not mean tolerating harmful behavior or abandoning healthy boundaries. It means that your care for another human being does not depend on whether they live up to your expectations. You can set a firm boundary with someone and still love them. You can disagree with someone deeply and still wish them well. You can walk away from a relationship and still hold no hatred in your heart.</p>
+
+      <p>The distinction matters because:</p>
+      <ul>
+        <li>Conditional love creates dependency and fear — unconditional love creates security and freedom</li>
+        <li>Conditional love is transactional — unconditional love is generous</li>
+        <li>Conditional love feeds the ego — unconditional love dissolves it</li>
+        <li>Conditional love divides — unconditional love unites</li>
+      </ul>
+
+      <p>The shift from conditional to unconditional love is not a single moment. It is a practice — a daily choice to see the humanity in others even when it is difficult, and to extend the same grace to yourself that you would give to someone you deeply cherish.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ 3. SELF-LOVE ══════════ -->
+  <section class="ul-section reveal">
+    <div class="ul-box ul-rose">
+      <div class="val-section-head" style="display:flex;align-items:center;gap:14px;margin-bottom:24px;">
+        <h2 style="flex:1;margin-bottom:0;">Self-Love: Where It Begins</h2>
+        <span class="val-play-icon on-rose" id="play-ul-self" title="Listen to narration">&#9654;</span>
+      </div>
+      <div class="val-narration-player" id="player-ul-self">
+        <div class="val-narration-bar" id="bar-ul-self"><div class="val-narration-bar-fill on-rose" id="fill-ul-self"></div></div>
+        <span class="val-narration-time on-rose" id="time-ul-self">0:00</span>
+        <div class="val-speed on-rose">
+          <button class="speed-btn" data-speed="0.75">0.75×</button>
+          <button class="speed-btn active" data-speed="1">1×</button>
+          <button class="speed-btn" data-speed="1.25">1.25×</button>
+          <button class="speed-btn" data-speed="1.5">1.5×</button>
+          <button class="speed-btn" data-speed="2">2×</button>
+        </div>
+      </div>
+      <audio id="audio-ul-self" src="audio/unconditionallove-self.mp3" preload="none"></audio>
+
+      <p>You cannot give what you do not have. This is the most overlooked truth about love.</p>
+
+      <p>Many of us were never taught to love ourselves. We were taught to be humble — which too often got translated into self-criticism. We were taught to put others first — which too often meant abandoning our own needs entirely. We were taught that self-love was selfish — when in reality, the absence of self-love is one of the primary sources of human suffering and dysfunction.</p>
+
+      <p>When we do not love ourselves unconditionally, we look to others to fill that void. We seek validation, approval, and reassurance from relationships, achievements, and possessions. And when those external sources inevitably fall short, we feel empty, resentful, or unworthy. The cycle repeats.</p>
+
+      <p>Unconditional self-love is not arrogance. It is not self-indulgence. It is the radical acceptance of yourself as a human being — flawed, growing, worthy of care — regardless of your productivity, your past, your failures, or what others think of you.</p>
+
+      <p>When you genuinely love yourself, several things shift:</p>
+      <ul>
+        <li>You stop needing others to validate your worth — and your relationships become freer and more authentic</li>
+        <li>You stop punishing yourself for mistakes — and you learn from them faster</li>
+        <li>You stop tolerating treatment that diminishes you — because you know what you deserve</li>
+        <li>You have more to give — because you are no longer running on empty</li>
+        <li>You extend more compassion to others — because you have learned to extend it to yourself</li>
+      </ul>
+
+      <p>Self-love begins with a simple, daily practice: speak to yourself the way you would speak to someone you love. Notice the inner critic. Question its assumptions. Replace harsh judgment with honest compassion. It does not happen overnight — but it is one of the most transformative journeys a human being can take.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ 4. HOW TO CULTIVATE IT ══════════ -->
+  <section class="ul-section reveal">
+    <div class="ul-box ul-grad">
+      <div class="val-section-head" style="display:flex;align-items:center;gap:14px;margin-bottom:24px;">
+        <h2 style="flex:1;margin-bottom:0;">How to Cultivate Unconditional Love</h2>
+        <span class="val-play-icon" id="play-ul-cultivate" title="Listen to narration">&#9654;</span>
+      </div>
+      <div class="val-narration-player" id="player-ul-cultivate">
+        <div class="val-narration-bar" id="bar-ul-cultivate"><div class="val-narration-bar-fill" id="fill-ul-cultivate"></div></div>
+        <span class="val-narration-time" id="time-ul-cultivate">0:00</span>
+        <div class="val-speed">
+          <button class="speed-btn" data-speed="0.75">0.75×</button>
+          <button class="speed-btn active" data-speed="1">1×</button>
+          <button class="speed-btn" data-speed="1.25">1.25×</button>
+          <button class="speed-btn" data-speed="1.5">1.5×</button>
+          <button class="speed-btn" data-speed="2">2×</button>
+        </div>
+      </div>
+      <audio id="audio-ul-cultivate" src="audio/unconditionallove-cultivate.mp3" preload="none"></audio>
+
+      <p>Unconditional love is a skill. Like any skill, it deepens with practice, patience, and intention. Here are some of the most powerful ways to cultivate it in your daily life:</p>
+
+      <ul>
+        <li><strong>Practice forgiveness — starting with yourself.</strong> Forgiveness is not condoning harm. It is the decision to stop carrying the weight of it. Every grudge you hold costs you energy. Every act of forgiveness frees you. Begin with the hardest person to forgive: yourself.</li>
+        <li><strong>Catch your judgements.</strong> Notice when you judge others — their choices, their appearance, their beliefs. Ask yourself: what does this judgment say about what I fear or reject in myself? Judgment is almost always a mirror. Unconditional love begins when we look in it honestly.</li>
+        <li><strong>Extend compassion to people you disagree with.</strong> You do not have to agree with someone to recognize their humanity. Every person on earth is navigating their own wounds, fears, and conditioned beliefs. This does not excuse harmful behavior — but understanding it is the beginning of compassion.</li>
+        <li><strong>Listen without an agenda.</strong> One of the most profound acts of love is to truly listen — without preparing your response, without waiting to be right, without judging. Being truly heard is one of the deepest human needs. Give that gift generously.</li>
+        <li><strong>Love as a daily choice.</strong> Unconditional love is not a feeling that arrives and stays. It is a choice, renewed moment by moment. Some moments will be easy. Others will require everything you have. Choose it anyway — especially in those moments.</li>
+        <li><strong>Study those who embody it.</strong> Eckhart Tolle, Deepak Chopra, Thich Nhat Hanh, Ram Dass, and many others have spent their lives teaching the art of unconditional love and presence. Read their work. Listen to their teachings. Let their wisdom inform your practice.</li>
+        <li><strong>Meditate on loving-kindness.</strong> The Buddhist practice of metta — loving-kindness meditation — is one of the most scientifically validated tools for expanding compassion. Begin with yourself, then extend outward to loved ones, strangers, and eventually those you find most difficult.</li>
+      </ul>
+
+      <p>The world changes one heart at a time. Yours is the one you have direct access to. When you commit to loving unconditionally — yourself, the people around you, the stranger you pass on the street — you become a force for healing in a world that desperately needs it.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ COMMUNITY & MEMBERSHIP ══════════ -->
+  <section class="home-community reveal">
+    <div class="community-bg">
+      <div class="community-inner">
+        <div class="community-text">
+          <h2>Join Our Revolutionist Community</h2>
+          <p>Communicate, collaborate, and connect with citizens committed to healing, prosperity &amp; freedom. Become a PHPF member for just $1/month and gain exclusive access to our member directory, content library, and Liberate Democracy voting.</p>
+          <p class="community-note">Membership unlocks the full PHPF experience.</p>
+        </div>
+        <div class="community-right-col">
+          <img src="images/animation/mother-earth-v2-clean.png" alt="Mother Earth" class="community-earth">
+          <a href="https://members.projecthpf.org/auth/register" class="member-cta-btn">Join Now — $1/mo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p class="footer-disclaimer">Disclaimer: Project Healing Prosperity &amp; Freedom, Inc is pleased to provide diverse ideas from across the world that we hope will spark listeners' curiosity and broaden their worldview. Project Healing Prosperity &amp; Freedom, Inc does not endorse all of the perspectives, ideas and information put forward in any of the external content presented and invites listeners to have an open mind but question everything as they draw their own conclusions.</p>
+    <p class="footer-org">Project Healing<br>Prosperity &amp; Freedom, Inc</p>
+    <a href="mailto:info@projecthpf.org" class="footer-email">info@projecthpf.org</a>
+    <div class="footer-social">
+      <a href="https://twitter.com/ProjectHPF" title="Twitter"><img src="images/11062b_07090bba1daa42c880682389a46508db_mv2.png" alt="Twitter" style="width:24px;height:24px;"></a>
+      <a href="https://www.instagram.com/projecthpf" title="Instagram"><img src="images/11062b_55e4be1e75564866b6c28290f9a9d271_mv2.png" alt="Instagram" style="width:24px;height:24px;"></a>
+      <a href="https://www.facebook.com/ProjectHPF21" title="Facebook"><img src="images/11062b_a84995cc8b024f4ea398f5744a56bc27_mv2.png" alt="Facebook" style="width:24px;height:24px;"></a>
+      <a href="https://www.tiktok.com/@projecthpf" title="TikTok"><img src="images/11062b_8e8bb1bfaeb54186ace77d5ab14933ff_mv2.png" alt="TikTok" style="width:24px;height:24px;"></a>
+    </div>
+    <div class="footer-links">
+      <a href="privacy">Privacy Policy</a>
+      <a href="terms">Terms and Conditions</a>
+    </div>
+    <p style="font-size:0.78rem;color:var(--gray-light);">&copy; 2024 Project Healing Prosperity &amp; Freedom, Inc. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+  (function(){
+    function fmt(t){var m=Math.floor(t/60),s=Math.floor(t%60);return m+":"+(s<10?"0":"")+s;}
+    var tracks=[
+      {play:'play-ul-intro',       audio:'audio-ul-intro',       player:'player-ul-intro',       bar:'bar-ul-intro',       fill:'fill-ul-intro',       time:'time-ul-intro'},
+      {play:'play-ul-conditional', audio:'audio-ul-conditional', player:'player-ul-conditional', bar:'bar-ul-conditional', fill:'fill-ul-conditional', time:'time-ul-conditional'},
+      {play:'play-ul-self',        audio:'audio-ul-self',        player:'player-ul-self',        bar:'bar-ul-self',        fill:'fill-ul-self',        time:'time-ul-self'},
+      {play:'play-ul-cultivate',   audio:'audio-ul-cultivate',   player:'player-ul-cultivate',   bar:'bar-ul-cultivate',   fill:'fill-ul-cultivate',   time:'time-ul-cultivate'}
+    ];
+    tracks.forEach(function(t){
+      var playBtn=document.getElementById(t.play),audio=document.getElementById(t.audio),player=document.getElementById(t.player),bar=document.getElementById(t.bar),fill=document.getElementById(t.fill),timeEl=document.getElementById(t.time);
+      if(!playBtn||!audio) return;
+      playBtn.addEventListener('click',function(){
+        if(audio.paused){
+          tracks.forEach(function(o){var a=document.getElementById(o.audio),b=document.getElementById(o.play),p=document.getElementById(o.player);if(a&&!a.paused){a.pause();if(b)b.textContent='\u25BA';if(p)p.classList.remove('playing');}});
+          audio.play();playBtn.textContent='\u23F8';player.classList.add('playing');
+        } else { audio.pause();playBtn.textContent='\u25BA'; }
+      });
+      audio.addEventListener('timeupdate',function(){if(!audio.duration)return;fill.style.width=(audio.currentTime/audio.duration*100)+'%';timeEl.textContent=fmt(audio.currentTime)+' / '+fmt(audio.duration);});
+      bar.addEventListener('click',function(e){var rect=bar.getBoundingClientRect(),pct=Math.max(0,Math.min(1,(e.clientX-rect.left)/rect.width));if(audio.duration)audio.currentTime=pct*audio.duration;});
+      audio.addEventListener('ended',function(){playBtn.textContent='\u25BA';player.classList.remove('playing');fill.style.width='0%';timeEl.textContent='0:00';audio.currentTime=0;});
+      var speedEl=player.querySelector('.val-speed');
+      if(speedEl){speedEl.querySelectorAll('.speed-btn').forEach(function(btn){btn.addEventListener('click',function(){audio.playbackRate=parseFloat(btn.getAttribute('data-speed'));speedEl.querySelectorAll('.speed-btn').forEach(function(b){b.classList.remove('active');});btn.classList.add('active');});});}
+    });
+  })();
+  </script>
+</body>
+</html>

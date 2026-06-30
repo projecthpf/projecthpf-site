@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>It's A Revolution — Project HPF</title>
+  <meta name="description" content="It's A Revolution — the growing number of unknown people going against society's arbitrary norms and doing what they know is right." />
+  <link rel="icon" type="image/png" href="images/5f7ee9_eef98a3952f34f5fb211625143e3e8ea_mv2.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Forum&family=Fahkwang:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Boogaloo&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=17">
+  <style>
+    /* ── Page Title ── */
+    .rev-page-title {
+      text-align: center;
+      padding: 100px 24px 40px;
+      background: transparent;
+    }
+    .rev-page-title h1 {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 3.5rem;
+      color: #0489C7;
+      margin-bottom: 14px;
+      text-shadow: 2px 3px 5px rgba(0,0,0,0.25);
+    }
+    .rev-page-title .tagline {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 1.05rem;
+      color: var(--gray-dark);
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    /* ── Hero Section ── */
+    .rev-hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 60px;
+      display: flex;
+      gap: 40px;
+      align-items: stretch;
+    }
+    .rev-text-box {
+      flex: 0 1 580px;
+      background: #8faec5;
+      border-radius: 12px;
+      padding: 18px 32px;
+      color: #1a1a2e;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.22), 0 2px 8px rgba(0,0,0,0.12);
+    }
+    .rev-text-box p {
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: #2a2a3e;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .rev-video-col {
+      width: 380px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      align-items: center;
+      align-self: flex-end;
+      margin-bottom: 20px;
+    }
+    .rev-video-col iframe {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 10px;
+      border: none;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+
+    /* ── What Does It Represent ── */
+    /* ── Revolution Image (under text box) ── */
+    .rev-image-under {
+      max-width: 1100px;
+      margin: -80px auto 0;
+      padding: 0 24px;
+      display: flex;
+      justify-content: flex-start;
+      padding-left: 200px;
+      position: relative;
+      z-index: 2;
+    }
+    .rev-image-under img {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      object-fit: cover;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+    }
+
+    /* ── What Does It Represent ── */
+    .rev-represent {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: -210px;
+      padding: 0 24px 80px;
+      min-height: 400px;
+      z-index: 0;
+    }
+    .rev-green-bubble {
+      width: 380px;
+      height: 380px;
+      background: rgba(180, 230, 200, 0.35);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 100px;
+    }
+    .rev-green-bubble h2 {
+      font-family: 'Boogaloo', cursive;
+      font-size: 2.8rem;
+      color: #0489C7;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      line-height: 1.2;
+      max-width: 280px;
+      -webkit-text-stroke: 1.5px #065a85;
+      paint-order: stroke fill;
+    }
+
+    /* ── Explanation Text ── */
+    .rev-explanation {
+      max-width: 1000px;
+      margin: -60px auto 0;
+      padding: 0 24px 60px;
+    }
+    .rev-explanation p {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--gray-dark);
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+
+    /* ── Fighting for Humanity ── */
+    .rev-fighting {
+      max-width: 900px;
+      margin: 40px auto 0;
+      padding: 0 24px 60px;
+      position: relative;
+    }
+    .rev-fighting .survey-cta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      justify-content: center;
+      margin: -20px 0 20px 0;
+    }
+    .rev-fighting .survey-label {
+      font-family: 'Boogaloo', cursive;
+      font-size: 1.9rem;
+      letter-spacing: 2px;
+      border: 3px solid #e8951e;
+      padding: 12px 24px;
+      border-radius: 12px;
+      display: inline-block;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      text-decoration: none;
+      color: #0489C7;
+    }
+    .rev-fighting .survey-label:hover {
+      background: rgba(108, 61, 142, 0.15);
+    }
+    .rev-fighting .values-btn {
+      display: inline-block;
+      text-align: center;
+      line-height: 1.4;
+      white-space: nowrap;
+      background: #0489C7;
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: background 0.3s;
+    }
+    .rev-fighting .values-btn:hover {
+      background: #e91e8c;
+    }
+
+    /* ── Independent Thinker (Purple Box) ── */
+    .rev-thinker {
+      max-width: 1000px;
+      margin: 0 auto 60px;
+      padding: 0 24px;
+    }
+    .rev-thinker-box {
+      background: linear-gradient(135deg, #6c3d8e 0%, #4a7fb5 100%);
+      border-radius: 12px;
+      padding: 40px 48px;
+      color: #fff;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.22), 0 2px 8px rgba(0,0,0,0.12);
+    }
+    .rev-thinker-box h2 {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 2.2rem;
+      color: #fff;
+      margin-bottom: 24px;
+      line-height: 1.3;
+      text-shadow: 2px 3px 5px rgba(0,0,0,0.2);
+    }
+    .rev-thinker-box > p {
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: #fff;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .rev-thinker-box ol {
+      list-style: decimal;
+      padding-left: 24px;
+      margin-bottom: 24px;
+    }
+    .rev-thinker-box ol li {
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: #fff;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+    .rev-thinker-box ol li strong {
+      color: #fff;
+    }
+
+    /* ── Critical Thinking Video ── */
+    .rev-ct-video {
+      max-width: 700px;
+      margin: 0 auto 60px;
+      padding: 0 24px;
+    }
+    .rev-ct-video iframe {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 10px;
+      border: none;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+
+    /* ── Become The Revolution ── */
+    .rev-become {
+      background: #6c3d8e;
+      padding: 60px 24px;
+      text-align: center;
+    }
+    .rev-become h2 {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 2.4rem;
+      color: #fff;
+      text-shadow: 2px 3px 5px rgba(0,0,0,0.25);
+      margin-bottom: 12px;
+    }
+    .rev-become .subtitle {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 40px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .rev-topics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .rev-topic-tile {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      padding: 28px 16px;
+      text-decoration: none;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 1.15rem;
+      color: #fff;
+      min-height: 100px;
+      overflow: hidden;
+      position: relative;
+      text-align: center;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .rev-topic-tile:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      text-decoration: none;
+      color: #fff;
+    }
+    .rev-topic-tile.dark-grey { background: #4a4a4a; }
+    .rev-topic-tile.purple { background: #7c6dab; }
+    .rev-topic-tile.light-blue { background: #7bb8d4; }
+    .rev-topic-tile.gold { background: #d4a843; }
+    .rev-topic-tile.consciousness { background: #8e6fad; }
+    .rev-topic-tile.green { background: #5da97a; }
+    .rev-topic-tile.teal { background: #4dbfa5; }
+    .rev-topic-tile.grey { background: #8a8a8a; }
+    .rev-topic-tile.img-tile {
+      padding: 0;
+      background: transparent;
+    }
+    .rev-topic-tile.img-tile {
+      border: 3px solid #fff;
+    }
+    .rev-topic-tile.img-tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 9px;
+    }
+    .rev-topic-tile.vid-tile {
+      padding: 0;
+      border: 3px solid #fff;
+    }
+    .rev-topic-tile.vid-tile video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 9px;
+    }
+    .rev-topic-tile.earth-tile {
+      background: #6c3d8e;
+      padding: 12px;
+      border: 3px solid #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .rev-topic-tile.earth-tile img {
+      width: 100%;
+      max-width: 160px;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
+    }
+
+    /* Community & Membership Unified Section */
+    .home-community { background: transparent; padding: 100px 24px 20px; display: flex; justify-content: center; width: 100%; }
+    .community-bg { background: url('images/nsplsh_335036453279326c797573_mv2_d_5760_3840_s_4_2.jpg') center/cover no-repeat; border-radius: 16px; padding: 50px 48px; position: relative; min-height: 520px; display: flex; align-items: center; justify-content: center; }
+    .community-inner { display: grid; grid-template-columns: auto auto; gap: 60px; align-items: center; }
+    .community-text { text-align: left; background: rgba(80, 20, 120, 0.55); padding: 24px; border-radius: 12px; align-self: stretch; display: flex; flex-direction: column; justify-content: center; max-width: 340px; }
+    .community-right-col { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; }
+    .community-earth { width: 240px; height: auto; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3)); }
+    .community-text h2 { font-family: var(--font-body); font-weight: 700; font-size: 1.5rem; color: var(--white); margin-bottom: 10px; text-shadow: 1px 2px 4px rgba(0,0,0,0.4); }
+    .community-text p { font-family: var(--font-body); font-size: 0.84rem; color: var(--white); line-height: 1.7; margin-bottom: 14px; text-shadow: 1px 1px 3px rgba(0,0,0,0.3); }
+    .community-text p.community-note { font-size: 0.78rem; opacity: 0.9; margin-bottom: 0; white-space: nowrap; }
+    .member-cta-btn { display: inline-block; padding: 12px 36px; background: var(--white); color: var(--green-primary); border: 2px solid var(--white); border-radius: 4px; font-family: var(--font-body); font-weight: 700; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; transition: background 0.3s, color 0.3s; text-decoration: none; margin-bottom: 8px; }
+    .member-cta-btn:hover { background: transparent; color: var(--white); text-decoration: none; }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .rev-page-title h1 { font-size: 2.4rem; }
+      .rev-hero { flex-direction: column; }
+      .rev-video-col { width: 100%; padding-top: 0; }
+      .rev-green-bubble { width: 280px; height: 280px; }
+      .rev-green-bubble h2 { font-size: 1.3rem; max-width: 160px; }
+      .rev-circle-img { width: 200px; height: 200px; right: -60px; }
+      .rev-fighting { flex-direction: column; }
+      .rev-thinker-box { padding: 30px 20px; }
+      .rev-topics-grid { grid-template-columns: repeat(2, 1fr); }
+      .rev-become h2 { font-size: 1.8rem; }
+      .community-bg { padding: 28px 20px; margin: 0 12px; }
+      .community-inner { grid-template-columns: 1fr; text-align: center; }
+      .community-text { max-width: 100%; text-align: center; }
+      .community-right-col { align-items: center; }
+      .community-earth { width: 180px; }
+    }
+    /* ── Per-Section Narration Players ── */
+    .val-section-head { display:flex; align-items:center; gap:14px; margin-bottom:24px; }
+    .val-section-head h2 { flex:1; margin-bottom:0; }
+    .val-play-icon { width:42px;height:42px;flex-shrink:0;background:rgba(255,255,255,0.22);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;color:#fff;cursor:pointer;transition:background 0.2s,transform 0.15s;user-select:none; }
+    .val-play-icon:hover { background:rgba(255,255,255,0.4);transform:scale(1.1); }
+    .val-play-icon.on-light { background:rgba(4,137,199,0.13);border:2px solid rgba(4,137,199,0.28);color:#0489C7; }
+    .val-play-icon.on-light:hover { background:rgba(4,137,199,0.24); }
+    .val-narration-player { display:flex;align-items:center;gap:10px;max-height:0;opacity:0;overflow:hidden;transition:max-height 0.35s ease,opacity 0.35s ease;margin-bottom:0; }
+    .val-narration-player.playing { max-height:36px;opacity:1;margin-bottom:16px; }
+    .val-narration-bar { flex:1;height:6px;background:rgba(0,0,0,0.12);border-radius:3px;cursor:pointer;position:relative;overflow:hidden;min-width:120px; }
+    .val-narration-bar:hover { background:rgba(0,0,0,0.22); }
+    .val-narration-bar-fill { height:100%;background:rgba(255,255,255,0.7);border-radius:3px;width:0%;pointer-events:none; }
+    .val-narration-bar-fill.on-light { background:#0489C7; }
+    .val-narration-time { font-size:0.7rem;font-family:var(--font-body,sans-serif);color:rgba(255,255,255,0.75);min-width:72px;text-align:right;white-space:nowrap; }
+    .val-narration-time.on-light { color:rgba(0,0,0,0.45); }
+    .val-speed { display:flex;align-items:center;gap:3px;flex-shrink:0; }
+    .val-speed .speed-btn { background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);border-radius:4px;color:rgba(255,255,255,0.8);font-size:0.65rem;font-weight:600;padding:2px 6px;cursor:pointer;transition:background 0.15s;line-height:1.4;font-family:inherit; }
+    .val-speed .speed-btn:hover { background:rgba(255,255,255,0.28); }
+    .val-speed .speed-btn.active { background:rgba(255,255,255,0.88);color:#1a1a2e;border-color:transparent; }
+    .val-speed.on-light .speed-btn { background:rgba(0,0,0,0.06);border-color:rgba(0,0,0,0.14);color:rgba(0,0,0,0.55); }
+    .val-speed.on-light .speed-btn:hover { background:rgba(0,0,0,0.12); }
+    .val-speed.on-light .speed-btn.active { background:#0489C7;color:#fff;border-color:transparent; }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index" class="nav-logo nav-logo--wide">
+        <img src="images/phpf-logo-wide-hd.png" alt="ProjectHPF.org">
+      </a>
+      <button class="nav-toggle">&#9776;</button>
+      <div class="nav-links">
+        <div class="dropdown"><a href="themission">THE MISSION</a><div class="dropdown-menu"><a href="themission#healing">Healing</a><a href="themission#prosperity">Prosperity</a><a href="themission#freedom">Freedom</a></div></div>
+        <div class="dropdown"><a href="participate">PARTICIPATE</a><div class="dropdown-menu"><a href="liberatedemocracy">Liberate Democracy</a><a href="buylocal">Buy Local</a><a href="enrich-community">Enrich Community</a></div></div>
+        <a href="didyouknow">DID YOU KNOW</a>
+        <div class="dropdown"><a href="resources">RESOURCES</a><div class="dropdown-menu"><a href="resources#documentaries">Enlightening Documentaries</a><a href="resources#books">Good Reads</a><a href="resources#discover">Podcast</a><a href="resources#news-orgs">News</a><a href="resources#foundations">Other Organizations</a><a href="https://www.liberationofeducation.org" target="_blank">Liberation of Education</a></div></div>
+        <a href="events">EVENTS</a>
+        <div class="dropdown"><a href="donate">DONATE</a><div class="dropdown-menu"><a href="sponsor">Be A Sponsor</a></div></div>
+        <a href="shop">SHOP</a>
+        <a href="blog">BLOG</a>
+      </div>
+      <div class="nav-right">
+        <a href="https://members.projecthpf.org/auth/login" class="btn-member">MEMBERS</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══════════ PAGE TITLE ══════════ -->
+  <section class="rev-page-title reveal">
+    <h1>IT'S A REVOLUTION</h1>
+    <p class="tagline">The growing number of unknown people going against society's arbitrary norms and doing what they know is right.</p>
+  </section>
+
+  <!-- ══════════ 1. HERO: A REVOLUTION ══════════ -->
+  <section class="rev-hero reveal">
+    <div class="rev-text-box">
+      <div style="display:flex;justify-content:flex-end;margin-bottom:12px;">
+        <span class="val-play-icon" id="play-rev-intro" title="Listen to narration">&#9654;</span>
+      </div>
+      <div class="val-narration-player" id="player-rev-intro">
+        <div class="val-narration-bar" id="bar-rev-intro"><div class="val-narration-bar-fill" id="fill-rev-intro"></div></div>
+        <span class="val-narration-time" id="time-rev-intro">0:00</span>
+        <div class="val-speed">
+          <button class="speed-btn" data-speed="0.75">0.75×</button>
+          <button class="speed-btn active" data-speed="1">1×</button>
+          <button class="speed-btn" data-speed="1.25">1.25×</button>
+          <button class="speed-btn" data-speed="1.5">1.5×</button>
+          <button class="speed-btn" data-speed="2">2×</button>
+        </div>
+      </div>
+      <audio id="audio-rev-intro" src="audio/arevolution-intro.mp3" preload="none"></audio>
+      <p>What is done, is done, and can not be undone but how we grow as individuals and as communities determines where humanity is going.</p>
+
+      <p>It's never been a better time to be alive for mankind. Individuals all around the globe have access to information that can set them free, and more and more people are gaining access everyday. With this information individuals are learning how to do all sorts of things, from healing themselves, to thinking for themselves, leading to community's learning how to support themselves and feed themselves. (The Indians knew how to do this and were doing this before the colonist invaded.)</p>
+
+      <p>With this new found information comes courage and outrage, leading to individuals and organizations all over the country (and the world) standing up for what they know is right regardless of the consequence or outcome.</p>
+
+      <p>Change is coming! It has been in the process for centuries thanks to many, many, many courageous men and women, some well known like, Jesus and Martin Luther King Jr., a lot more less known, and countless unknown, like the people who took in Jews or African Americans at great risks to their own life and their families lives.</p>
+
+      <p>And that is the Revolution! It's the growing number of unknown people who are going against societies arbitrary norms and doing what they know is right for them, their families and strangers, regardless of the punishment, consequences or outcome.</p>
+    </div>
+
+    <div class="rev-video-col">
+      <img src="images/animation/mother-earth-v2-clean.png" alt="Mother Earth" style="width: 280px; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.2));">
+      <iframe src="https://www.youtube.com/embed/dItUGF8GdTw" title="It's A Revolution" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- ══════════ REVOLUTION IMAGE (under text box) ══════════ -->
+  <section class="rev-image-under reveal">
+    <img src="images/fuck-it-be-brave.png" alt="Fuck It. Be Brave — Revolution image">
+  </section>
+
+  <!-- ══════════ 2. WHAT DOES IT REPRESENT? ══════════ -->
+  <section class="rev-represent reveal">
+    <div class="rev-green-bubble">
+      <h2>What Does It Represent?</h2>
+    </div>
+  </section>
+
+  <!-- ══════════ 3. EXPLANATION TEXT ══════════ -->
+  <section class="rev-explanation reveal">
+    <div style="display:flex;justify-content:flex-end;margin-bottom:12px;position:relative;z-index:10;">
+      <span class="val-play-icon on-light" id="play-rev-represent" title="Listen to narration">&#9654;</span>
+    </div>
+    <div class="val-narration-player" id="player-rev-represent">
+      <div class="val-narration-bar" id="bar-rev-represent"><div class="val-narration-bar-fill on-light" id="fill-rev-represent"></div></div>
+      <span class="val-narration-time on-light" id="time-rev-represent">0:00</span>
+      <div class="val-speed on-light">
+        <button class="speed-btn" data-speed="0.75">0.75×</button>
+        <button class="speed-btn active" data-speed="1">1×</button>
+        <button class="speed-btn" data-speed="1.25">1.25×</button>
+        <button class="speed-btn" data-speed="1.5">1.5×</button>
+        <button class="speed-btn" data-speed="2">2×</button>
+      </div>
+    </div>
+    <audio id="audio-rev-represent" src="audio/arevolution-represent.mp3" preload="none"></audio>
+    <p>The language and imagery we use here are deliberately provocative, and for good reason. We aren't trying to make everyone comfortable — we're trying to wake people up.</p>
+
+    <p>The image of the woman with the mask across her face, hands raised in peace, and the hoodie that reads 'Fuck it. Be Brave', standing boldly under the words 'It's a Revolution!', was chosen with deep intention.</p>
+
+    <p>The mask represents the silencing, conformity, and dehumanization we've experienced under manipulated systems — from food and healthcare control to pandemic control, to social pressure to political fear — it's about the broader culture of silence and obedience.</p>
+
+    <p>Her hands raised in peace remind us: this is not a violent revolution! It's a conscious uprising. One rooted in love, unity, and the courage to live in truth and stand up for our neighbors.</p>
+
+    <p>The phrase 'It's a Revolution,' between her arms is about more than systems change — it's about the internal conscious shift that must happen in each of us.</p>
+
+    <p>A revolution of values. Of awareness. Of spirit.</p>
+
+    <p>And her hoodie — 'Fuck it. Be Brave' — is the call to action. It's the moment we stop waiting for permission, stop fearing rejection, and start walking in our truth — even if it shakes the ground we've been standing on.</p>
+
+    <p>This is not marketing. It's medicine. For those who feel disillusioned, silenced, or stuck — we're offering a mirror, a spark, and a path forward. Some will turn away. But those who are ready will lean in. And they are who we are here for. The others will jump on the bandwagon in due time, when their suffering forces them to face reality, just as it has so many of us.</p>
+  </section>
+
+  <!-- ══════════ 4. FIGHTING FOR HUMANITY ══════════ -->
+  <section class="rev-fighting reveal">
+
+    <!-- Music Fest Flyer -->
+    <div style="display: flex; justify-content: flex-end; margin: -200px 380px 10px 0;">
+      <img src="images/music-fest-flyer.png" alt="Project Music Fest Flyer" style="width: 550px; position: relative; top: -25px; left: -5px;">
+    </div>
+
+    <!-- Values Image -->
+    <div style="margin-top: -285px; margin-left: -50px; position: relative; z-index: 10;">
+      <a href="values"><img src="images/values-sticky-notes.png" alt="Character, Values, Morals, Principles" style="width: 220px; border: 4px solid #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"></a>
+    </div>
+
+    <!-- Learn More Button -->
+    <div style="margin-top: -105px; margin-left: 205px; position: relative; z-index: 10;">
+      <a href="hpf-values" class="values-btn">LEARN MORE ABOUT<br>OUR VALUES &nbsp;&#10148;</a>
+    </div>
+
+    <!-- Take the Survey -->
+    <div style="margin-top: 65px; display: flex; justify-content: center; transform: translateX(-60px); position: relative; z-index: 10;">
+      <div style="display: flex; flex-direction: column; align-items: center; position: relative;">
+        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: absolute; top: -60px; left: -60px; transform: rotate(-30deg);">
+          <path d="M10 5 C25 0, 35 15, 30 25 C25 35, 15 30, 20 22 C25 14, 38 14, 45 20 C52 26, 55 40, 50 55" stroke="#6c3d8e" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <path d="M44 50 L50 58 L56 48" stroke="#6c3d8e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+        <a href="survey" class="survey-label">TAKE THE<br>SURVEY!</a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- People in Park Image (right side) -->
+  <div style="display: flex; justify-content: flex-end; max-width: 1200px; margin: -620px auto 40px; padding: 0 0 0 40px;">
+    <div style="position: relative; display: inline-block;">
+      <img src="images/people-in-park.png" alt="People in Park" style="width: 550px;">
+      <img src="images/animation/mother-earth-v2-clean.png" alt="Mother Earth" style="position: absolute; top: 230px; left: 50%; transform: translateX(calc(-50% + 100px)); width: 170px; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.2));">
+    </div>
+  </div>
+
+  <!-- ══════════ 5. YOU CAN BE PART OF THE REVOLUTION ══════════ -->
+  <section class="rev-thinker reveal">
+    <div class="rev-thinker-box">
+      <div class="val-section-head">
+        <h2>You Can Be Part of The Revolution</h2>
+        <span class="val-play-icon" id="play-rev-thinker" title="Listen to narration">&#9654;</span>
+      </div>
+      <div class="val-narration-player" id="player-rev-thinker">
+        <div class="val-narration-bar" id="bar-rev-thinker"><div class="val-narration-bar-fill" id="fill-rev-thinker"></div></div>
+        <span class="val-narration-time" id="time-rev-thinker">0:00</span>
+        <div class="val-speed">
+          <button class="speed-btn" data-speed="0.75">0.75×</button>
+          <button class="speed-btn active" data-speed="1">1×</button>
+          <button class="speed-btn" data-speed="1.25">1.25×</button>
+          <button class="speed-btn" data-speed="1.5">1.5×</button>
+          <button class="speed-btn" data-speed="2">2×</button>
+        </div>
+      </div>
+      <audio id="audio-rev-thinker" src="audio/arevolution-thinker.mp3" preload="none"></audio>
+
+      <p>To be part of this revolution you have to be an independent thinker!</p>
+
+      <p>Being an independent thinker means that you have the ability and willingness to form your own opinions, make decisions, and analyze information without relying solely on external influences, such as societal norms, peer pressure, or authority figures. Independent thinkers are characterized by several key traits and behaviors:</p>
+
+      <ol>
+        <li><strong>Critical Thinking:</strong> Independent thinkers engage in critical thinking, which involves evaluating information, arguments, and evidence in a logical and rational manner. They question assumptions and avoid accepting information at face value.</li>
+        <li><strong>Open-Mindedness:</strong> While independent thinkers are not swayed by external pressures, they are open to considering different perspectives and viewpoints. They are willing to explore new ideas and are not rigid or dogmatic in their thinking.</li>
+        <li><strong>Self-Reliance:</strong> Independent thinkers trust their own judgment and are comfortable making decisions based on their own analysis and values. They don't rely excessively on others to make choices for them.</li>
+        <li><strong>Curiosity:</strong> Independent thinkers have a natural curiosity and a thirst for knowledge. They actively seek out information and are eager to learn, which helps them form well-informed opinions.</li>
+        <li><strong>Individuality:</strong> Independent thinkers embrace their uniqueness and do not conform to societal expectations or groupthink. They are comfortable expressing their individuality and may hold unconventional views if they believe them to be valid.</li>
+        <li><strong>Confidence:</strong> Independent thinkers have confidence in their abilities to think critically and make informed decisions. They are not easily swayed by peer pressure or the fear of dissenting from popular opinion.</li>
+        <li><strong>Problem-Solving:</strong> They excel at problem-solving because they can approach issues from multiple angles and consider a variety of solutions before making a decision.</li>
+        <li><strong>Resilience:</strong> Independent thinkers are often more resilient in the face of adversity or criticism because they are secure in their ability to think for themselves and stand by their convictions.</li>
+        <li><strong>Empathy:</strong> While independent thinkers have their own opinions, they also understand and empathize with the perspectives and experiences of others. They can engage in constructive dialogue and consider alternative viewpoints.</li>
+        <li><strong>Intellectual Integrity:</strong> They value intellectual honesty and are willing to revise their opinions if presented with compelling evidence or arguments that challenge their beliefs.</li>
+      </ol>
+
+      <p>Being an independent thinker doesn't mean rejecting all external input or disregarding expertise. It means striking a balance between listening to others, seeking information, and ultimately making decisions and forming opinions based on your own judgment and analysis. Independent thinking is a valuable skill that can lead to personal growth, innovation, and a deeper understanding of the world.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ 6. CRITICAL THINKING VIDEO ══════════ -->
+  <section class="rev-ct-video reveal">
+    <iframe src="https://www.youtube.com/embed/dItUGF8GdTw" title="Critical Thinking" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </section>
+
+  <!-- ══════════ 7. BECOME THE REVOLUTION ══════════ -->
+  <section class="rev-become reveal">
+    <h2>Become The Revolution</h2>
+    <p class="subtitle">Spend time learning about all the topics on our Did You Know Page starting with these...</p>
+
+    <div class="rev-topics-grid">
+      <a href="governance" class="rev-topic-tile img-tile">
+        <img src="images/dyk/governance.png" alt="Governance">
+      </a>
+      <a href="arevolution" class="rev-topic-tile img-tile">
+        <img src="images/dyk/It's a revolution.png" alt="It's a Revolution">
+      </a>
+      <a href="didyouknow" class="rev-topic-tile img-tile">
+        <img src="images/dyk/Americas Foundation.png" alt="Americas Foundation">
+      </a>
+      <a href="didyouknow" class="rev-topic-tile vid-tile">
+        <video autoplay muted loop playsinline><source src="images/dyk/Food and Water LOGO.mp4" type="video/mp4"></video>
+      </a>
+      <a href="didyouknow" class="rev-topic-tile earth-tile">
+        <img src="images/animation/mother-earth-v2-clean.png" alt="Mother Earth">
+      </a>
+      <a href="didyouknow" class="rev-topic-tile vid-tile">
+        <video autoplay muted loop playsinline><source src="images/dyk/Money.mp4" type="video/mp4"></video>
+      </a>
+      <a href="didyouknow" class="rev-topic-tile img-tile">
+        <img src="images/dyk/Economic.png" alt="Economic Freedom">
+      </a>
+      <a href="didyouknow" class="rev-topic-tile vid-tile">
+        <video autoplay muted loop playsinline><source src="images/dyk/UNCONDITIONAL LOVE.mp4" type="video/mp4"></video>
+      </a>
+      <a href="didyouknow" class="rev-topic-tile img-tile">
+        <img src="images/dyk/FREEWIll.png" alt="Free Will">
+      </a>
+    </div>
+  </section>
+
+  <!-- ══════════ COMMUNITY & MEMBERSHIP ══════════ -->
+  <section class="home-community reveal">
+    <div class="community-bg">
+      <div class="community-inner">
+        <div class="community-text">
+          <h2>Join Our Revolutionist Community</h2>
+          <p>Communicate, collaborate, and connect with citizens committed to healing, prosperity &amp; freedom. Become a PHPF member for just $1/month and gain exclusive access to our member directory, content library, and Liberate Democracy voting.</p>
+          <p class="community-note">Membership unlocks the full PHPF experience.</p>
+        </div>
+        <div class="community-right-col">
+          <img src="images/animation/mother-earth-v2-clean.png" alt="Mother Earth" class="community-earth">
+          <a href="https://members.projecthpf.org/auth/register" class="member-cta-btn">Join Now — $1/mo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p class="footer-disclaimer">Disclaimer: Project Healing Prosperity &amp; Freedom, Inc is pleased to provide diverse ideas from across the world that we hope will spark listeners' curiosity and broaden their worldview. Project Healing Prosperity &amp; Freedom, Inc does not endorse all of the perspectives, ideas and information put forward in any of the external content presented and invites listeners to have an open mind but question everything as they draw their own conclusions.</p>
+    <p class="footer-org">Project Healing<br>Prosperity &amp; Freedom, Inc</p>
+    <a href="mailto:info@projecthpf.org" class="footer-email">info@projecthpf.org</a>
+    <div class="footer-social">
+      <a href="https://twitter.com/ProjectHPF" title="Twitter"><img src="images/11062b_07090bba1daa42c880682389a46508db_mv2.png" alt="Twitter" style="width:24px;height:24px;"></a>
+      <a href="https://www.instagram.com/projecthpf" title="Instagram"><img src="images/11062b_55e4be1e75564866b6c28290f9a9d271_mv2.png" alt="Instagram" style="width:24px;height:24px;"></a>
+      <a href="https://www.facebook.com/ProjectHPF21" title="Facebook"><img src="images/11062b_a84995cc8b024f4ea398f5744a56bc27_mv2.png" alt="Facebook" style="width:24px;height:24px;"></a>
+      <a href="https://www.tiktok.com/@projecthpf" title="TikTok"><img src="images/11062b_8e8bb1bfaeb54186ace77d5ab14933ff_mv2.png" alt="TikTok" style="width:24px;height:24px;"></a>
+    </div>
+    <div class="footer-links">
+      <a href="privacy">Privacy Policy</a>
+      <a href="terms">Terms and Conditions</a>
+    </div>
+    <p style="font-size:0.78rem; color:var(--gray-light);">&copy; 2024 Project Healing Prosperity &amp; Freedom, Inc. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+  (function(){
+    function fmt(t){var m=Math.floor(t/60),s=Math.floor(t%60);return m+":"+(s<10?"0":"")+s;}
+    var tracks=[
+      {play:'play-rev-intro',     audio:'audio-rev-intro',     player:'player-rev-intro',     bar:'bar-rev-intro',     fill:'fill-rev-intro',     time:'time-rev-intro'},
+      {play:'play-rev-represent', audio:'audio-rev-represent', player:'player-rev-represent', bar:'bar-rev-represent', fill:'fill-rev-represent', time:'time-rev-represent'},
+      {play:'play-rev-thinker',   audio:'audio-rev-thinker',   player:'player-rev-thinker',   bar:'bar-rev-thinker',   fill:'fill-rev-thinker',   time:'time-rev-thinker'}
+    ];
+    tracks.forEach(function(t){
+      var playBtn=document.getElementById(t.play);
+      var audio=document.getElementById(t.audio);
+      var player=document.getElementById(t.player);
+      var bar=document.getElementById(t.bar);
+      var fill=document.getElementById(t.fill);
+      var timeEl=document.getElementById(t.time);
+      if(!playBtn||!audio) return;
+      playBtn.addEventListener('click',function(){
+        if(audio.paused){
+          tracks.forEach(function(o){
+            var a=document.getElementById(o.audio);
+            var b=document.getElementById(o.play);
+            var p=document.getElementById(o.player);
+            if(a&&!a.paused){a.pause();if(b)b.textContent='\u25BA';if(p)p.classList.remove('playing');}
+          });
+          audio.play();playBtn.textContent='\u23F8';player.classList.add('playing');
+        } else {
+          audio.pause();playBtn.textContent='\u25BA';
+        }
+      });
+      audio.addEventListener('timeupdate',function(){
+        if(!audio.duration) return;
+        fill.style.width=(audio.currentTime/audio.duration*100)+'%';
+        timeEl.textContent=fmt(audio.currentTime)+' / '+fmt(audio.duration);
+      });
+      bar.addEventListener('click',function(e){
+        var rect=bar.getBoundingClientRect();
+        var pct=Math.max(0,Math.min(1,(e.clientX-rect.left)/rect.width));
+        if(audio.duration) audio.currentTime=pct*audio.duration;
+      });
+      audio.addEventListener('ended',function(){
+        playBtn.textContent='\u25BA';player.classList.remove('playing');
+        fill.style.width='0%';timeEl.textContent='0:00';audio.currentTime=0;
+      });
+      var speedEl=player.querySelector('.val-speed');
+      if(speedEl){
+        speedEl.querySelectorAll('.speed-btn').forEach(function(btn){
+          btn.addEventListener('click',function(){
+            audio.playbackRate=parseFloat(btn.getAttribute('data-speed'));
+            speedEl.querySelectorAll('.speed-btn').forEach(function(b){b.classList.remove('active');});
+            btn.classList.add('active');
+          });
+        });
+      }
+    });
+  })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+{"version":"0.0.1","configurations":[{"name":"phpf-site","runtimeExecutable":"npx","runtimeArgs":["http-server",".","--port","8090","-c-1"],"port":8090}]}

@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Money — Project HPF</title>
+  <meta name="description" content="Money — what it is, how it's created, taxation, government waste, and what economic freedom really looks like." />
+  <link rel="icon" type="image/png" href="images/5f7ee9_eef98a3952f34f5fb211625143e3e8ea_mv2.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Forum&family=Fahkwang:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Boogaloo&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=17">
+  <style>
+    /* ── Page Title ── */
+    .mon-page-title { text-align:center; padding:100px 24px 40px; }
+    .mon-page-title h1 { font-family:var(--font-body); font-weight:700; font-size:3.5rem; color:#0489C7; margin-bottom:14px; text-shadow:2px 3px 5px rgba(0,0,0,0.25); }
+    .mon-page-title .tagline { font-family:var(--font-body); font-weight:500; font-size:1.05rem; color:var(--gray-dark); max-width:620px; margin:0 auto; line-height:1.5; }
+
+    /* ── Shared section wrapper ── */
+    .mon-section { max-width:1100px; margin:0 auto 60px; padding:0 24px; }
+
+    /* ── Shared text box styles ── */
+    .mon-box { border-radius:12px; padding:32px 40px; box-shadow:0 8px 32px rgba(0,0,0,0.22),0 2px 8px rgba(0,0,0,0.12); }
+    .mon-box h2 { font-family:var(--font-body); font-weight:700; font-size:2.2rem; margin-bottom:20px; line-height:1.3; text-decoration:underline; text-underline-offset:6px; }
+    .mon-box p { font-family:var(--font-body); font-size:0.92rem; line-height:1.75; margin-bottom:14px; }
+    .mon-box ol, .mon-box ul { padding-left:24px; margin-bottom:14px; }
+    .mon-box ol { list-style:decimal; }
+    .mon-box ul { list-style:disc; }
+    .mon-box ol li, .mon-box ul li { font-family:var(--font-body); font-size:0.92rem; line-height:1.75; margin-bottom:8px; }
+    .mon-box ul ul { list-style:circle; margin-top:6px; margin-bottom:6px; }
+
+    /* Blue box */
+    .mon-blue { background:#8faec5; color:#1a2a3e; }
+    .mon-blue h2 { color:#fff; }
+    .mon-blue p, .mon-blue li { color:#1a2a3e; }
+
+    /* Sage green box */
+    .mon-sage { background:#8fa8a0; color:#1a2e28; }
+    .mon-sage h2 { color:#fff; }
+    .mon-sage p, .mon-sage li { color:#1a2e28; }
+
+    /* Mauve/rosewood box (Taxation) */
+    .mon-mauve { background:#a89080; color:#1a1010; }
+    .mon-mauve h2 { color:#fff; }
+    .mon-mauve p, .mon-mauve li { color:#1e1212; }
+
+    /* Gradient blue (Freedom) */
+    .mon-grad { background:linear-gradient(135deg,#4a5a7a 0%,#6a7fa0 50%,#8a9ab0 100%); }
+    .mon-grad h2 { color:#fff; }
+    .mon-grad p, .mon-grad li { color:#fff; }
+
+    /* ── Split layout ── */
+    .mon-split { display:flex; gap:40px; align-items:flex-start; }
+    .mon-split-box { flex:0 1 620px; }
+    .mon-split-box-right { flex:0 1 620px; order:2; }
+    .mon-vid-col { width:400px; flex-shrink:0; display:flex; flex-direction:column; gap:16px; align-self:flex-start; margin-top:60px; }
+    .mon-vid-col-left { order:1; }
+    .mon-vid-col iframe { width:100%; aspect-ratio:16/9; border-radius:10px; border:none; box-shadow:0 4px 16px rgba(0,0,0,0.15); }
+
+    /* ── Book Carousel ── */
+    .mon-book { max-width:960px; margin:0 auto 60px; padding:0 24px; }
+    .mon-book-title { font-family:var(--font-body); font-weight:700; font-size:1.5rem; color:var(--gray-dark); text-align:center; margin-bottom:20px; letter-spacing:0.05em; }
+    .mon-book-wrap { position:relative; }
+    .mon-book-track { overflow:hidden; border-radius:0; background:transparent; }
+    .mon-book-slides { display:flex; transition:transform 0.45s ease; }
+    .mon-book-slides img { min-width:100%; width:100%; display:block; mix-blend-mode:multiply; background:transparent; }
+    .mon-book-btn { position:absolute; top:50%; transform:translateY(-50%); background:rgba(90,62,43,0.55); color:#fff; border:none; border-radius:50%; width:40px; height:40px; font-size:1.4rem; cursor:pointer; display:flex; align-items:center; justify-content:center; z-index:2; transition:background 0.2s; user-select:none; }
+    .mon-book-btn:hover { background:rgba(90,62,43,0.88); }
+    .mon-book-btn.prev { left:-20px; }
+    .mon-book-btn.next { right:-20px; }
+    .mon-book-dots { display:flex; justify-content:center; gap:8px; margin-top:14px; }
+    .mon-book-dots span { width:10px; height:10px; border-radius:50%; background:rgba(90,62,43,0.2); cursor:pointer; transition:background 0.2s; }
+    .mon-book-dots span.active { background:rgba(90,62,43,0.7); }
+
+    /* Community & Membership */
+    .home-community { background:transparent; padding:100px 24px 20px; display:flex; justify-content:center; width:100%; }
+    .community-bg { background:url('images/nsplsh_335036453279326c797573_mv2_d_5760_3840_s_4_2.jpg') center/cover no-repeat; border-radius:16px; padding:50px 48px; position:relative; min-height:520px; display:flex; align-items:center; justify-content:center; }
+    .community-inner { display:grid; grid-template-columns:auto auto; gap:60px; align-items:center; }
+    .community-text { text-align:left; background:rgba(80,20,120,0.55); padding:24px; border-radius:12px; align-self:stretch; display:flex; flex-direction:column; justify-content:center; max-width:340px; }
+    .community-right-col { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; }
+    .community-earth { width:240px; height:auto; filter:drop-shadow(0 4px 12px rgba(0,0,0,0.3)); }
+    .community-text h2 { font-family:var(--font-body); font-weight:700; font-size:1.5rem; color:var(--white); margin-bottom:10px; text-shadow:1px 2px 4px rgba(0,0,0,0.4); max-width:260px; }
+    .community-text p { font-family:var(--font-body); font-size:0.84rem; color:var(--white); line-height:1.7; margin-bottom:14px; text-shadow:1px 1px 3px rgba(0,0,0,0.3); max-width:230px; }
+    .community-text p.community-note { font-size:0.78rem; opacity:0.9; margin-bottom:0; white-space:nowrap; }
+    .member-cta-btn { display:inline-block; padding:12px 36px; background:var(--white); color:var(--green-primary); border:2px solid var(--white); border-radius:4px; font-family:var(--font-body); font-weight:700; font-size:1rem; text-transform:uppercase; letter-spacing:1px; cursor:pointer; transition:background 0.3s,color 0.3s; text-decoration:none; margin-bottom:8px; }
+    .member-cta-btn:hover { background:transparent; color:var(--white); text-decoration:none; }
+
+    /* ── Narration Players ── */
+    .val-section-head { display:flex; align-items:center; gap:14px; margin-bottom:24px; }
+    .val-section-head h2 { flex:1; margin-bottom:0; text-align:left; }
+    .val-play-icon { width:42px;height:42px;flex-shrink:0;background:rgba(255,255,255,0.22);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;color:#fff;cursor:pointer;transition:background 0.2s,transform 0.15s;user-select:none;border:2px solid rgba(255,255,255,0.35); }
+    .val-play-icon:hover { background:rgba(255,255,255,0.4);transform:scale(1.1); }
+    .val-play-icon.on-sage { background:rgba(26,46,40,0.15);border:2px solid rgba(26,46,40,0.3);color:#1a2e28; }
+    .val-play-icon.on-sage:hover { background:rgba(26,46,40,0.28); }
+    .val-play-icon.on-mauve { background:rgba(26,16,16,0.15);border:2px solid rgba(26,16,16,0.3);color:#1e1212; }
+    .val-play-icon.on-mauve:hover { background:rgba(26,16,16,0.28); }
+    .val-narration-player { display:flex;align-items:center;gap:10px;max-height:0;opacity:0;overflow:hidden;transition:max-height 0.35s ease,opacity 0.35s ease;margin-bottom:0; }
+    .val-narration-player.playing { max-height:36px;opacity:1;margin-bottom:16px; }
+    .val-narration-bar { flex:1;height:6px;background:rgba(0,0,0,0.12);border-radius:3px;cursor:pointer;position:relative;overflow:hidden;min-width:120px; }
+    .val-narration-bar:hover { background:rgba(0,0,0,0.22); }
+    .val-narration-bar-fill { height:100%;background:rgba(255,255,255,0.7);border-radius:3px;width:0%;pointer-events:none; }
+    .val-narration-bar-fill.on-sage { background:rgba(26,46,40,0.6); }
+    .val-narration-bar-fill.on-mauve { background:rgba(26,16,16,0.5); }
+    .val-narration-time { font-size:0.7rem;font-family:var(--font-body,sans-serif);color:rgba(255,255,255,0.75);min-width:72px;text-align:right;white-space:nowrap; }
+    .val-narration-time.on-sage { color:rgba(26,46,40,0.65); }
+    .val-narration-time.on-mauve { color:rgba(26,16,16,0.6); }
+    .val-speed { display:flex;align-items:center;gap:3px;flex-shrink:0; }
+    .val-speed .speed-btn { background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);border-radius:4px;color:rgba(255,255,255,0.8);font-size:0.65rem;font-weight:600;padding:2px 6px;cursor:pointer;transition:background 0.15s;line-height:1.4;font-family:inherit; }
+    .val-speed .speed-btn:hover { background:rgba(255,255,255,0.28); }
+    .val-speed .speed-btn.active { background:rgba(255,255,255,0.88);color:#1a1a2e;border-color:transparent; }
+    .val-speed.on-sage .speed-btn { background:rgba(26,46,40,0.1);border-color:rgba(26,46,40,0.25);color:rgba(26,46,40,0.7); }
+    .val-speed.on-sage .speed-btn.active { background:rgba(26,46,40,0.7);color:#fff;border-color:transparent; }
+    .val-speed.on-mauve .speed-btn { background:rgba(26,16,16,0.1);border-color:rgba(26,16,16,0.25);color:rgba(26,16,16,0.65); }
+    .val-speed.on-mauve .speed-btn.active { background:rgba(26,16,16,0.65);color:#fff;border-color:transparent; }
+    .val-play-icon.on-book { background:rgba(90,62,43,0.12);border:2px solid rgba(90,62,43,0.3);color:#5a3e2b; }
+    .val-play-icon.on-book:hover { background:rgba(90,62,43,0.25); }
+    .val-narration-bar-fill.on-book { background:rgba(90,62,43,0.55); }
+    .val-narration-time.on-book { color:rgba(90,62,43,0.7); }
+    .val-speed.on-book .speed-btn { background:rgba(90,62,43,0.08);border-color:rgba(90,62,43,0.25);color:rgba(90,62,43,0.7); }
+    .val-speed.on-book .speed-btn.active { background:rgba(90,62,43,0.65);color:#fff;border-color:transparent; }
+
+    /* ── Responsive ── */
+    @media (max-width:768px) {
+      .mon-page-title h1 { font-size:2.4rem; }
+      .mon-split { flex-direction:column; }
+      .mon-split-box, .mon-split-box-right { flex:none; width:100%; }
+      .mon-vid-col, .mon-vid-col-left { width:100%; margin-top:0; order:unset; }
+      .mon-box { padding:28px 22px; }
+      .mon-book-btn.prev { left:4px; }
+      .mon-book-btn.next { right:4px; }
+      .community-bg { padding:28px 20px; margin:0 12px; }
+      .community-inner { grid-template-columns:1fr; text-align:center; }
+      .community-text { text-align:center; }
+      .community-earth { width:180px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index" class="nav-logo nav-logo--wide"><img src="images/phpf-logo-wide-hd.png" alt="ProjectHPF.org"></a>
+      <button class="nav-toggle">&#9776;</button>
+      <div class="nav-links">
+        <div class="dropdown"><a href="themission">THE MISSION</a><div class="dropdown-menu"><a href="themission#healing">Healing</a><a href="themission#prosperity">Prosperity</a><a href="themission#freedom">Freedom</a></div></div>
+        <div class="dropdown"><a href="participate">PARTICIPATE</a><div class="dropdown-menu"><a href="liberatedemocracy">Liberate Democracy</a><a href="buylocal">Buy Local</a><a href="enrich-community">Enrich Community</a></div></div>
+        <a href="didyouknow">DID YOU KNOW</a>
+        <div class="dropdown"><a href="resources">RESOURCES</a><div class="dropdown-menu"><a href="resources#documentaries">Enlightening Documentaries</a><a href="resources#books">Good Reads</a><a href="resources#discover">Podcast</a><a href="resources#news-orgs">News</a><a href="resources#foundations">Other Organizations</a><a href="https://www.liberationofeducation.org" target="_blank">Liberation of Education</a></div></div>
+        <a href="events">EVENTS</a>
+        <div class="dropdown"><a href="donate">DONATE</a><div class="dropdown-menu"><a href="sponsor">Be A Sponsor</a></div></div>
+        <a href="shop">SHOP</a>
+        <a href="blog">BLOG</a>
+      </div>
+      <div class="nav-right"><a href="https://members.projecthpf.org/auth/login" class="btn-member">MEMBERS</a></div>
+    </div>
+  </nav>
+
+  <!-- ══════════ PAGE TITLE ══════════ -->
+  <section class="mon-page-title reveal">
+    <h1>MONEY</h1>
+    <p class="tagline">Understanding what money really is — and who controls it.</p>
+  </section>
+
+  <!-- ══════════ 1. WHAT IS MONEY: Blue Box + Video ══════════ -->
+  <section class="mon-section reveal">
+    <div class="mon-split">
+      <div class="mon-split-box mon-box mon-blue">
+        <div style="display:flex;justify-content:flex-end;margin-bottom:12px;">
+          <span class="val-play-icon" id="play-mon-intro" title="Listen to narration">&#9654;</span>
+        </div>
+        <div class="val-narration-player" id="player-mon-intro">
+          <div class="val-narration-bar" id="bar-mon-intro"><div class="val-narration-bar-fill" id="fill-mon-intro"></div></div>
+          <span class="val-narration-time" id="time-mon-intro">0:00</span>
+          <div class="val-speed">
+            <button class="speed-btn" data-speed="0.75">0.75×</button>
+            <button class="speed-btn active" data-speed="1">1×</button>
+            <button class="speed-btn" data-speed="1.25">1.25×</button>
+            <button class="speed-btn" data-speed="1.5">1.5×</button>
+            <button class="speed-btn" data-speed="2">2×</button>
+          </div>
+        </div>
+        <audio id="audio-mon-intro" src="audio/money-intro.mp3" preload="none"></audio>
+
+        <p>Money does in fact grow on trees — almost literally and certainly figuratively. Trees are a resource that provides value; all a person has to do is mine it for its resource, meaning convert it to money. In fact, anything that provides value is a form of money. And thank God for that, because governments all around the globe are and have been burning money at least as fast as they can create it to distribute it to us and then tax it from us. Humanity has to get a handle on how very many governments spend and deliberately waste taxpayers' hard-earned money — or we have to create systems outside of government that are more responsible and reliable. To do that, a lot more individuals need to understand what money is, how to earn it, and the ways in which governments create, tax, and spend money.</p>
+
+        <p>Money is a medium of exchange and a store of value accepted in transactions for goods, services, or the settlement of debts. It serves as a unit of account, allowing people to measure the value of different goods and services in a common and easily understandable way. Money has taken various forms throughout history, including physical objects like coins and banknotes, as well as digital and electronic representations in modern economies. Money has evolved over time into different types and forms, including:</p>
+
+        <ol>
+          <li><strong>Commodity Money:</strong> In the past, money often had intrinsic value, such as gold, silver, or other valuable commodities. These items were used as both money and valuable resources. Sweden (currently ranked the freest nation) is still on the gold standard.</li>
+          <li><strong>Fiat Money:</strong> In modern economies, most money is fiat money. It has no intrinsic value and is not backed by a physical commodity. Instead, its value is derived from the trust and confidence of the people who use it. Governments typically issue fiat money and regulate its supply.</li>
+          <li><strong>Digital Money:</strong> In the digital age, a significant portion of money exists in electronic or digital form. Bank deposits, credit card balances, and digital wallets are all examples of digital money.</li>
+          <li><strong>Cryptocurrencies:</strong> A relatively new form of digital money, cryptocurrencies like Bitcoin and Ethereum are decentralized digital currencies that use cryptography for security and operate on blockchain technology.</li>
+        </ol>
+
+        <p>The specific forms of money used in an economy can vary, and different societies and time periods have used various forms to meet their economic needs. The key is that money serves as a means of exchange, a unit of account, and a store of value, facilitating economic transactions and trade.</p>
+      </div>
+
+      <div class="mon-vid-col" style="margin-top:20px; align-items:center;">
+        <img src="images/animation/mother-earth-v2-clean.png" alt="Mother Earth" style="width:450px; max-width:100%; filter:drop-shadow(0 6px 18px rgba(0,0,0,0.25));">
+        <iframe src="https://www.youtube.com/embed/YCN2aTlocOw" title="Finance: The History of Money" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 2. HISTORY OF MONEY BOOK CAROUSEL ══════════ -->
+  <div class="mon-book reveal">
+    <div style="display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:20px;">
+      <p class="mon-book-title" style="margin-bottom:0;">THE HISTORY OF MONEY</p>
+      <span class="val-play-icon on-book" id="play-mon-history" title="Listen to narration">&#9654;</span>
+    </div>
+    <div class="val-narration-player" id="player-mon-history" style="max-width:700px;margin:0 auto 18px;">
+      <div class="val-narration-bar" id="bar-mon-history"><div class="val-narration-bar-fill on-book" id="fill-mon-history"></div></div>
+      <span class="val-narration-time on-book" id="time-mon-history">0:00</span>
+      <div class="val-speed on-book">
+        <button class="speed-btn" data-speed="0.75">0.75×</button>
+        <button class="speed-btn active" data-speed="1">1×</button>
+        <button class="speed-btn" data-speed="1.25">1.25×</button>
+        <button class="speed-btn" data-speed="1.5">1.5×</button>
+        <button class="speed-btn" data-speed="2">2×</button>
+      </div>
+    </div>
+    <audio id="audio-mon-history" src="audio/money-history.mp3" preload="none"></audio>
+    <div class="mon-book-wrap">
+      <div class="mon-book-track">
+        <div class="mon-book-slides" id="mon-book-slides">
+          <img src="images/money-history-7.png" alt="The History of Money — Cover">
+          <img src="images/money-history-6.png" alt="The History of Money — Page 2">
+          <img src="images/money-history-5.png" alt="The History of Money — Page 4">
+          <img src="images/money-history-4.png" alt="The History of Money — Page 6">
+          <img src="images/money-history-3.png" alt="The History of Money — Page 8">
+          <img src="images/money-history-2.png" alt="The History of Money — Page 10">
+          <img src="images/money-history-1.png" alt="The History of Money — Page 12">
+        </div>
+      </div>
+      <button class="mon-book-btn prev" id="mon-book-prev" aria-label="Previous">&#8249;</button>
+      <button class="mon-book-btn next" id="mon-book-next" aria-label="Next">&#8250;</button>
+    </div>
+    <div class="mon-book-dots" id="mon-book-dots">
+      <span class="active" data-index="0"></span>
+      <span data-index="1"></span>
+      <span data-index="2"></span>
+      <span data-index="3"></span>
+      <span data-index="4"></span>
+      <span data-index="5"></span>
+      <span data-index="6"></span>
+    </div>
+  </div>
+
+  <!-- ══════════ 3. HOW MONEY IS CREATED ══════════ -->
+  <section class="mon-section reveal">
+      <div class="mon-box mon-sage">
+        <div class="val-section-head">
+          <h2>How Money Is Created</h2>
+          <span class="val-play-icon on-sage" id="play-mon-created" title="Listen to narration">&#9654;</span>
+        </div>
+        <div class="val-narration-player" id="player-mon-created">
+          <div class="val-narration-bar" id="bar-mon-created"><div class="val-narration-bar-fill on-sage" id="fill-mon-created"></div></div>
+          <span class="val-narration-time on-sage" id="time-mon-created">0:00</span>
+          <div class="val-speed on-sage">
+            <button class="speed-btn" data-speed="0.75">0.75×</button>
+            <button class="speed-btn active" data-speed="1">1×</button>
+            <button class="speed-btn" data-speed="1.25">1.25×</button>
+            <button class="speed-btn" data-speed="1.5">1.5×</button>
+            <button class="speed-btn" data-speed="2">2×</button>
+          </div>
+        </div>
+        <audio id="audio-mon-created" src="audio/money-created.mp3" preload="none"></audio>
+
+        <p>Money is created through various processes, depending on the type of money and the financial system in place. Here are the primary ways in which money is created:</p>
+
+        <ol>
+          <li><strong>Central Bank Money Creation (High-Powered Money):</strong> Central banks, like the Federal Reserve in the United States or the European Central Bank in the Eurozone, have the authority to create money at the highest level of the monetary system. This is often referred to as "high-powered money" or "base money." Central banks typically create money in two main ways:
+            <ul>
+              <li><strong>Open Market Operations:</strong> Central banks buy or sell government securities (usually bonds) in the open market to influence the money supply. When a central bank buys government securities, it injects money into the economy, increasing the money supply. When it sells securities, it withdraws money from the economy, decreasing the money supply.</li>
+              <li><strong>Reserve Requirements:</strong> Central banks can also influence the money supply by changing reserve requirements for commercial banks. Lowering reserve requirements allows banks to lend more money, increasing the money supply, while raising reserve requirements restricts lending and reduces the money supply.</li>
+            </ul>
+          </li>
+          <li><strong>Commercial Bank Money Creation (Fractional Reserve Banking):</strong> The majority of the money supply in modern economies is created by commercial banks through a process called fractional reserve banking. Here's how it works:
+            <ul>
+              <li>When you deposit money in a bank, the bank is required to hold a fraction of that deposit (a reserve) in cash or as deposits with the central bank. The rest can be lent out to borrowers.</li>
+              <li>Banks make loans to individuals, businesses, and other entities using the deposits they hold. When a bank issues a loan, it creates a new deposit in the borrower's account. This is essentially the creation of new money because it's a promise to pay the borrower, and that promise can be used as money.</li>
+              <li>This process can continue as borrowers spend the loaned money, and the recipients of that spending deposit it in their own bank accounts. Banks can then lend out a portion of these new deposits, creating more money.</li>
+              <li>The total money supply increases as this process continues, with the amount of money created being influenced by the reserve requirements set by the central bank.</li>
+            </ul>
+          </li>
+          <li><strong>Government Money Creation (Seigniorage):</strong> Governments can also create money by directly printing physical currency (e.g., coins and banknotes). The difference between the face value of the currency and the cost of producing it represents seigniorage revenue, which effectively creates money. However, in modern economies, physical currency constitutes a relatively small portion of the overall money supply, and most money is in digital or electronic form.</li>
+          <li><strong>Digital and Electronic Money Creation:</strong> In today's digital age, money creation often involves electronic or digital forms of money. When banks make digital transfers, such as when you make a payment using your debit card, it involves the creation of digital money within the banking system.</li>
+        </ol>
+
+        <p>It's important to note that money creation is subject to various regulations and controls by central banks and governments. They aim to manage the money supply to control inflation, stabilize the economy, and ensure the stability of the financial system. The process of money creation can vary from one country to another based on their monetary and banking systems.</p>
+      </div>
+      <div style="max-width:700px;margin:28px auto 0;">
+        <iframe src="https://www.youtube.com/embed/3zAvyTKj5-0" title="Money Creation — How Does It Work?" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:16/9;border-radius:10px;border:none;box-shadow:0 4px 16px rgba(0,0,0,0.15);display:block;"></iframe>
+      </div>
+  </section>
+
+  <!-- ══════════ 4. TAXATION ══════════ -->
+  <section class="mon-section reveal">
+    <div class="mon-box mon-mauve">
+      <div class="val-section-head">
+        <h2>Taxation</h2>
+        <span class="val-play-icon on-mauve" id="play-mon-tax" title="Listen to narration">&#9654;</span>
+      </div>
+      <div class="val-narration-player" id="player-mon-tax">
+        <div class="val-narration-bar" id="bar-mon-tax"><div class="val-narration-bar-fill on-mauve" id="fill-mon-tax"></div></div>
+        <span class="val-narration-time on-mauve" id="time-mon-tax">0:00</span>
+        <div class="val-speed on-mauve">
+          <button class="speed-btn" data-speed="0.75">0.75×</button>
+          <button class="speed-btn active" data-speed="1">1×</button>
+          <button class="speed-btn" data-speed="1.25">1.25×</button>
+          <button class="speed-btn" data-speed="1.5">1.5×</button>
+          <button class="speed-btn" data-speed="2">2×</button>
+        </div>
+      </div>
+      <audio id="audio-mon-tax" src="audio/money-tax.mp3" preload="none"></audio>
+
+      <p>The specific ways in which citizens are taxed can vary significantly from one country to another and even within different regions or states of a single country. There are also various types of taxes at different levels of government (federal, state, and local). Governments have made taxation a complex and complicated subject. But one thing that is widely understood: individuals are heavily taxed on both the money they earn and the money they spend.</p>
+
+      <p>Here are some common ways in which citizens are taxed:</p>
+
+      <ol>
+        <li><strong>Income Tax:</strong> This is one of the most common forms of taxation. Individuals pay a percentage of their income to the government. Income tax rates can vary based on the level of income and other factors.</li>
+        <li><strong>Payroll Tax:</strong> These taxes are typically withheld from an employee's paycheck and include Social Security and Medicare taxes in the United States.</li>
+        <li><strong>Sales Tax:</strong> This is a consumption tax applied to the sale of goods and services. The tax rate can vary by location and the type of item or service being purchased.</li>
+        <li><strong>Property Tax:</strong> Homeowners and property owners pay taxes on the assessed value of their properties. These taxes are typically used to fund local services such as schools and infrastructure.</li>
+        <li><strong>Capital Gains Tax:</strong> This tax is levied on the profit made from the sale of assets like stocks, real estate, or other investments.</li>
+        <li><strong>Corporate Tax:</strong> Corporations pay taxes on their profits. Shareholders may also be subject to taxes on dividends and capital gains.</li>
+        <li><strong>Estate Tax:</strong> Also known as an inheritance tax, this is a tax on the transfer of wealth from a deceased person to their heirs or beneficiaries.</li>
+        <li><strong>Excise Tax:</strong> These are taxes imposed on specific goods or activities, such as gasoline, tobacco, alcohol, or gambling.</li>
+        <li><strong>Property Transfer Tax:</strong> This tax is applied when real property changes hands, such as during the sale of a house.</li>
+        <li><strong>Vehicle Registration and Fuel Tax:</strong> Taxes on vehicle registration, as well as taxes on gasoline and diesel fuel, help fund transportation infrastructure.</li>
+        <li><strong>Sin Taxes:</strong> These are taxes on products that are considered harmful, such as cigarettes and alcohol, to discourage their consumption.</li>
+        <li><strong>Import/Customs Duties:</strong> Taxes levied on imported goods, which are usually paid by the importer.</li>
+        <li><strong>Gift Tax:</strong> Some countries have a tax on large gifts given during a person's lifetime.</li>
+        <li><strong>Value-Added Tax (VAT) or Goods and Services Tax (GST):</strong> These are consumption taxes applied at each stage of production and distribution. Consumers ultimately bear the burden of these taxes.</li>
+        <li><strong>Local Taxes:</strong> Depending on the jurisdiction, there may be additional local taxes, such as municipal income taxes or special assessments.</li>
+        <li><strong>Wealth Tax:</strong> In some countries, there are taxes on the net wealth or assets of individuals.</li>
+        <li><strong>Environmental Taxes:</strong> Taxes aimed at discouraging activities harmful to the environment, such as carbon taxes.</li>
+        <li><strong>Tourist and Hotel Taxes:</strong> Taxes applied to services used by tourists, such as hotel stays or airline tickets.</li>
+        <li><strong>Digital Taxes:</strong> Some countries have introduced taxes on digital services and products.</li>
+      </ol>
+
+      <p>Many individuals around the world agree: governments are taking far more of citizens' hard-earned money than they are entitled to, and citizens are not reaping the benefits.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ 5. BURNING MONEY ══════════ -->
+  <section class="mon-section reveal">
+      <div class="mon-box mon-blue">
+        <div class="val-section-head">
+          <h2>Burning Money</h2>
+          <span class="val-play-icon" id="play-mon-burn" title="Listen to narration">&#9654;</span>
+        </div>
+        <div class="val-narration-player" id="player-mon-burn">
+          <div class="val-narration-bar" id="bar-mon-burn"><div class="val-narration-bar-fill" id="fill-mon-burn"></div></div>
+          <span class="val-narration-time" id="time-mon-burn">0:00</span>
+          <div class="val-speed">
+            <button class="speed-btn" data-speed="0.75">0.75×</button>
+            <button class="speed-btn active" data-speed="1">1×</button>
+            <button class="speed-btn" data-speed="1.25">1.25×</button>
+            <button class="speed-btn" data-speed="1.5">1.5×</button>
+            <button class="speed-btn" data-speed="2">2×</button>
+          </div>
+        </div>
+        <audio id="audio-mon-burn" src="audio/money-burn.mp3" preload="none"></audio>
+
+        <p>Government waste is a subject of concern and criticism in many countries, including the United States. Opinions about what constitutes "waste" can vary widely, and what one person considers wasteful spending, another may see as a necessary or valuable government program. However, governments around the world are burning through money faster than they can create it or tax it. Here are some common areas and examples where the U.S. government has and is wasting money:</p>
+
+        <ol>
+          <li><strong>Military Spending:</strong> Expensive weapon systems, overruns on defense contracts, maintaining a large number of military bases both domestically and abroad, and deliberated disposal of goods to keep draw from the budget.</li>
+          <li><strong>Government Contracts:</strong> There have been instances of government contracts that have run significantly over budget or failed to deliver promised results. This includes high-profile cases like the F-35 Joint Strike Fighter program.</li>
+          <li><strong>Bureaucratic Inefficiency:</strong> Government agencies can be inefficient and overly bureaucratic, leading to unnecessary costs and delays in delivering services.</li>
+          <li><strong>Subsidies and Corporate Welfare:</strong> Government subsidies, tax breaks, and incentives provided to corporations and industries often do not provide a sufficient return on investment or benefit the public.</li>
+          <li><strong>Healthcare Costs:</strong> Concerns about the high cost of healthcare in the U.S. often point to inefficiencies and administrative overhead in government healthcare programs like Medicare and Medicaid.</li>
+          <li><strong>Pork Barrel Spending:</strong> Earmarks and pet projects inserted into legislation by lawmakers for their constituencies or special interests have been criticized as wasteful.</li>
+          <li><strong>Redundant Programs:</strong> Critics argue that the government funds multiple programs that serve similar purposes, leading to duplication of efforts and inefficiency.</li>
+          <li><strong>Social Programs:</strong> Many argue that many social welfare programs, while well-intentioned, have inefficiencies and fail to deliver meaningful results in reducing poverty or improving outcomes.</li>
+        </ol>
+
+        <p>It's important to recognize that government spending is a complex issue, and policymakers often have different perspectives on what constitutes necessary expenditures based on their own biases or self-interest.</p>
+      </div>
+      <div style="max-width:700px;margin:28px auto 0;">
+        <iframe src="https://www.youtube.com/embed/SwnIiGzmH-I" title="Rand Paul Lists Ridiculous Stuff US Taxpayer Money Is Spent On" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:16/9;border-radius:10px;border:none;box-shadow:0 4px 16px rgba(0,0,0,0.15);display:block;"></iframe>
+      </div>
+  </section>
+
+  <!-- ══════════ 6. ECONOMIC FREEDOM ══════════ -->
+  <section class="mon-section reveal">
+    <div class="mon-box mon-grad">
+      <div class="val-section-head">
+        <h2>Economic Freedom &amp; What You Can Do</h2>
+        <span class="val-play-icon" id="play-mon-freedom" title="Listen to narration">&#9654;</span>
+      </div>
+      <div class="val-narration-player" id="player-mon-freedom">
+        <div class="val-narration-bar" id="bar-mon-freedom"><div class="val-narration-bar-fill" id="fill-mon-freedom"></div></div>
+        <span class="val-narration-time" id="time-mon-freedom">0:00</span>
+        <div class="val-speed">
+          <button class="speed-btn" data-speed="0.75">0.75×</button>
+          <button class="speed-btn active" data-speed="1">1×</button>
+          <button class="speed-btn" data-speed="1.25">1.25×</button>
+          <button class="speed-btn" data-speed="1.5">1.5×</button>
+          <button class="speed-btn" data-speed="2">2×</button>
+        </div>
+      </div>
+      <audio id="audio-mon-freedom" src="audio/money-freedom.mp3" preload="none"></audio>
+
+      <p>Economic freedom is the ability to produce, trade, and consume without coercion — to keep the fruits of your labor and make decisions about your own resources. It is one of the most powerful predictors of prosperity, health outcomes, and quality of life. Countries with higher economic freedom consistently outperform those with heavy state control on virtually every measure of human well-being.</p>
+
+      <p>Real economic freedom starts with financial literacy. Here are some of the most impactful things you can do:</p>
+
+      <ul>
+        <li><strong>Learn how money actually works.</strong> Most people go through life without ever understanding inflation, compound interest, or how central banks operate. This ignorance is costly — and it's not an accident that financial literacy is rarely taught in public schools.</li>
+        <li><strong>Spend locally.</strong> Every dollar spent at a locally owned business recirculates in your community far more than dollars spent at national chains. Buy local food, services, and products wherever you can. This is one of the most direct forms of economic activism.</li>
+        <li><strong>Reduce dependency on debt.</strong> Consumer debt is one of the primary mechanisms by which wealth transfers from working people to financial institutions. Live below your means, build an emergency fund, and pay off high-interest debt as aggressively as possible.</li>
+        <li><strong>Invest in real assets.</strong> Savings held purely in cash lose value to inflation over time. Educate yourself on index funds, real estate, commodities, and other vehicles that historically preserve and grow purchasing power.</li>
+        <li><strong>Explore decentralized alternatives.</strong> Cryptocurrencies and decentralized finance represent an attempt to build financial systems outside of centralized government and banking control. They are volatile and still maturing — but they point toward a future where individuals have more sovereignty over their own wealth.</li>
+        <li><strong>Support policy reform.</strong> Advocate for tax simplification, government spending accountability, Federal Reserve transparency, and policies that genuinely support small businesses and individual economic mobility.</li>
+        <li><strong>Build multiple income streams.</strong> A single employer and a single paycheck is a fragile position. Skills, side income, and entrepreneurship are among the most powerful tools for financial resilience and independence.</li>
+      </ul>
+
+      <p>The gap between the rich and the poor is not inevitable — it is a policy outcome. And policy outcomes can be changed. The more economically literate and engaged we are as individuals, the more power we collectively have to build a fairer system.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ COMMUNITY & MEMBERSHIP ══════════ -->
+  <section class="home-community reveal">
+    <div class="community-bg">
+      <div class="community-inner">
+        <div class="community-text">
+          <h2>Join Our Revolutionist Community</h2>
+          <p>Communicate, collaborate, and connect with citizens committed to healing, prosperity &amp; freedom. Become a PHPF member for just $1/month and gain exclusive access to our member directory, content library, and Liberate Democracy voting.</p>
+          <p class="community-note">Membership unlocks the full PHPF experience.</p>
+        </div>
+        <div class="community-right-col">
+          <img src="images/animation/mother-earth-v2-clean.png" alt="Mother Earth" class="community-earth">
+          <a href="https://members.projecthpf.org/auth/register" class="member-cta-btn">Join Now — $1/mo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p class="footer-disclaimer">Disclaimer: Project Healing Prosperity &amp; Freedom, Inc is pleased to provide diverse ideas from across the world that we hope will spark listeners' curiosity and broaden their worldview. Project Healing Prosperity &amp; Freedom, Inc does not endorse all of the perspectives, ideas and information put forward in any of the external content presented and invites listeners to have an open mind but question everything as they draw their own conclusions.</p>
+    <p class="footer-org">Project Healing<br>Prosperity &amp; Freedom, Inc</p>
+    <a href="mailto:info@projecthpf.org" class="footer-email">info@projecthpf.org</a>
+    <div class="footer-social">
+      <a href="https://twitter.com/ProjectHPF" title="Twitter"><img src="images/11062b_07090bba1daa42c880682389a46508db_mv2.png" alt="Twitter" style="width:24px;height:24px;"></a>
+      <a href="https://www.instagram.com/projecthpf" title="Instagram"><img src="images/11062b_55e4be1e75564866b6c28290f9a9d271_mv2.png" alt="Instagram" style="width:24px;height:24px;"></a>
+      <a href="https://www.facebook.com/ProjectHPF21" title="Facebook"><img src="images/11062b_a84995cc8b024f4ea398f5744a56bc27_mv2.png" alt="Facebook" style="width:24px;height:24px;"></a>
+      <a href="https://www.tiktok.com/@projecthpf" title="TikTok"><img src="images/11062b_8e8bb1bfaeb54186ace77d5ab14933ff_mv2.png" alt="TikTok" style="width:24px;height:24px;"></a>
+    </div>
+    <div class="footer-links">
+      <a href="privacy">Privacy Policy</a>
+      <a href="terms">Terms and Conditions</a>
+    </div>
+    <p style="font-size:0.78rem;color:var(--gray-light);">&copy; 2024 Project Healing Prosperity &amp; Freedom, Inc. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+  // ── Narration Players ──
+  (function(){
+    function fmt(t){var m=Math.floor(t/60),s=Math.floor(t%60);return m+":"+(s<10?"0":"")+s;}
+    var tracks=[
+      {play:'play-mon-intro',   audio:'audio-mon-intro',   player:'player-mon-intro',   bar:'bar-mon-intro',   fill:'fill-mon-intro',   time:'time-mon-intro'},
+      {play:'play-mon-history', audio:'audio-mon-history', player:'player-mon-history', bar:'bar-mon-history', fill:'fill-mon-history', time:'time-mon-history'},
+      {play:'play-mon-created', audio:'audio-mon-created', player:'player-mon-created', bar:'bar-mon-created', fill:'fill-mon-created', time:'time-mon-created'},
+      {play:'play-mon-tax',     audio:'audio-mon-tax',     player:'player-mon-tax',     bar:'bar-mon-tax',     fill:'fill-mon-tax',     time:'time-mon-tax'},
+      {play:'play-mon-burn',    audio:'audio-mon-burn',    player:'player-mon-burn',    bar:'bar-mon-burn',    fill:'fill-mon-burn',    time:'time-mon-burn'},
+      {play:'play-mon-freedom', audio:'audio-mon-freedom', player:'player-mon-freedom', bar:'bar-mon-freedom', fill:'fill-mon-freedom', time:'time-mon-freedom'}
+    ];
+    tracks.forEach(function(t){
+      var playBtn=document.getElementById(t.play),audio=document.getElementById(t.audio),player=document.getElementById(t.player),bar=document.getElementById(t.bar),fill=document.getElementById(t.fill),timeEl=document.getElementById(t.time);
+      if(!playBtn||!audio) return;
+      playBtn.addEventListener('click',function(){
+        if(audio.paused){
+          tracks.forEach(function(o){var a=document.getElementById(o.audio),b=document.getElementById(o.play),p=document.getElementById(o.player);if(a&&!a.paused){a.pause();if(b)b.textContent='\u25BA';if(p)p.classList.remove('playing');}});
+          audio.play();playBtn.textContent='\u23F8';player.classList.add('playing');
+        } else { audio.pause();playBtn.textContent='\u25BA'; }
+      });
+      audio.addEventListener('timeupdate',function(){if(!audio.duration)return;fill.style.width=(audio.currentTime/audio.duration*100)+'%';timeEl.textContent=fmt(audio.currentTime)+' / '+fmt(audio.duration);});
+      bar.addEventListener('click',function(e){var rect=bar.getBoundingClientRect(),pct=Math.max(0,Math.min(1,(e.clientX-rect.left)/rect.width));if(audio.duration)audio.currentTime=pct*audio.duration;});
+      audio.addEventListener('ended',function(){playBtn.textContent='\u25BA';player.classList.remove('playing');fill.style.width='0%';timeEl.textContent='0:00';audio.currentTime=0;});
+      var speedEl=player.querySelector('.val-speed');
+      if(speedEl){speedEl.querySelectorAll('.speed-btn').forEach(function(btn){btn.addEventListener('click',function(){audio.playbackRate=parseFloat(btn.getAttribute('data-speed'));speedEl.querySelectorAll('.speed-btn').forEach(function(b){b.classList.remove('active');});btn.classList.add('active');});});}
+    });
+  })();
+
+  // ── Book Carousel ──
+  (function(){
+    var slides=document.getElementById('mon-book-slides');
+    var dots=document.querySelectorAll('#mon-book-dots span');
+    var total=7, current=0;
+    function goTo(idx){
+      current=(idx+total)%total;
+      slides.style.transform='translateX(-'+(current*100)+'%)';
+      dots.forEach(function(d,i){d.classList.toggle('active',i===current);});
+    }
+    document.getElementById('mon-book-prev').addEventListener('click',function(){goTo(current-1);});
+    document.getElementById('mon-book-next').addEventListener('click',function(){goTo(current+1);});
+    dots.forEach(function(d){d.addEventListener('click',function(){goTo(parseInt(d.getAttribute('data-index')));});});
+  })();
+  </script>
+</body>
+</html>
