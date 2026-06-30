@@ -355,7 +355,7 @@
       background: url('../images/nsplsh_335036453279326c797573_mv2_d_5760_3840_s_4_2.jpg') center/cover;
       padding: 80px 24px;
       position: relative;
-      margin: 60px 0;
+      margin: 0;
     }
     .involved-section::before {
       content: '';
@@ -386,8 +386,8 @@
       gap: 24px;
     }
     .involved-item {
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(240, 196, 25, 0.25);
+      background: rgba(4, 38, 22, 0.92);
+      border: 1px solid rgba(240, 196, 25, 0.35);
       border-radius: 20px;
       padding: 28px 32px;
       display: flex;
@@ -396,8 +396,28 @@
       transition: background 0.2s;
     }
     .involved-item:hover {
-      background: rgba(255,255,255,0.12);
+      background: rgba(4, 50, 28, 0.98);
     }
+    .involved-item-btn {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 9px 22px;
+      border-radius: 30px;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+    .involved-item-btn:hover { opacity: 0.85; text-decoration: none; }
+    .btn-gold  { background: #f0c419; color: #08382b; }
+    .btn-green { background: #0b9e42; color: #fff; }
+    .btn-teal  { background: #3aad82; color: #fff; }
+    .btn-blue  { background: #0489C7; color: #fff; }
     .involved-num {
       font-family: 'Boogaloo', cursive;
       font-size: 2.2rem;
@@ -884,6 +904,7 @@
           <div class="involved-item-text">
             <strong>Running for Governor?</strong>
             <p>Join the debate! All grassroots candidates are welcome on the stage.</p>
+            <a href="mailto:region1@lpf.org?subject=I%20want%20to%20join%20the%202026%20Debate" class="involved-item-btn btn-gold">Contact to Join</a>
           </div>
         </div>
         <div class="involved-item">
@@ -891,6 +912,7 @@
           <div class="involved-item-text">
             <strong>Have a Food Truck?</strong>
             <p>Pull up! Feed the community while we build it.</p>
+            <button class="involved-item-btn btn-teal" onclick="openModal('food_truck')">Register Your Truck</button>
           </div>
         </div>
         <div class="involved-item">
@@ -898,6 +920,7 @@
           <div class="involved-item-text">
             <strong>Have a Non-Profit?</strong>
             <p>Come set up a table and connect with engaged citizens who care.</p>
+            <button class="involved-item-btn btn-green" onclick="openModal('nonprofit')">Reserve a Table</button>
           </div>
         </div>
         <div class="involved-item">
@@ -905,6 +928,7 @@
           <div class="involved-item-text">
             <strong>Want to Make a Difference?</strong>
             <p>Come hear what the candidates have to say — then go do something about it.</p>
+            <button class="involved-item-btn btn-blue" onclick="openModal('attendee')">RSVP Now</button>
           </div>
         </div>
       </div>
