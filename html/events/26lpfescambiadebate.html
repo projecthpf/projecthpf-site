@@ -36,10 +36,7 @@
       max-width: 1100px;
       margin: 0 auto;
       padding: 0 48px 60px;
-      display: grid;
-      grid-template-columns: 1fr 340px;
-      gap: 24px;
-      align-items: start;
+      display: block;
       position: relative;
       z-index: 1;
     }
@@ -112,31 +109,34 @@
     }
     .hero-date-pill .sep { color: rgba(255,255,255,0.35); }
 
-    /* right column — shifted left 250px */
+    /* right column — absolutely positioned over the dark green blob */
     .debate-hero-right {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0;
-      padding-top: 10px;
-      position: relative;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 480px;
       z-index: 2;
-      margin-left: -250px;
+      pointer-events: none;
     }
-    /* oval "Hear from grassroots candidates" bubble */
+    .debate-hero-right > * { pointer-events: all; }
+
+    /* grassroots bubble — top-right of the blob */
     .grassroots-bubble {
+      position: absolute;
+      top: 60px;
+      right: 80px;
       background: linear-gradient(135deg, #5bc8a0 0%, #3aad82 100%);
       border-radius: 50%;
-      width: 200px;
-      height: 200px;
+      width: 190px;
+      height: 190px;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       padding: 28px;
       box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-      position: relative;
-      z-index: 3;
+      z-index: 4;
     }
     .grassroots-bubble p {
       font-family: 'Fahkwang', sans-serif;
@@ -153,14 +153,15 @@
       display: block;
       letter-spacing: 1px;
     }
-    /* Earth mascot — anchored to bottom-right of bubble */
+
+    /* Earth — inside the dark blob, bottom-right */
     .earth-wrap {
-      position: relative;
+      position: absolute;
+      bottom: 10px;
+      right: 30px;
       width: 260px;
       height: 260px;
-      flex-shrink: 0;
-      margin-top: -60px;
-      margin-left: 80px;
+      z-index: 3;
     }
     .earth-img {
       position: absolute;
@@ -183,11 +184,12 @@
     }
     @keyframes spin-slow { to { transform: rotate(360deg); } }
 
-    /* hosted by — shifted left 50px, up 100px */
+    /* hosted by — left of earth, inside blob */
     .hero-hosted {
+      position: absolute;
+      bottom: 60px;
+      right: 300px;
       text-align: center;
-      margin-top: -84px;
-      margin-left: -50px;
     }
     .hero-hosted .hosted-label {
       font-family: 'Fahkwang', sans-serif;
