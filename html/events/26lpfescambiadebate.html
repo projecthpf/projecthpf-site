@@ -7,7 +7,7 @@
   <meta name="description" content="Join the Libertarian Party of Escambia County for a real grassroots debate. Hear from candidates Scott Jewett (L), Moliere 'Moe' Dimanche (NPA), and more. Hosted by Mission Obvious at The Freedom Barn, Pensacola, FL.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Forum&family=Fahkwang:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Boogaloo&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Forum&family=Fahkwang:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Boogaloo&family=Museo+Moderno:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/styles.css?v=17">
   <link rel="icon" href="../images/5f7ee9_eef98a3952f34f5fb211625143e3e8ea_mv2.png">
   <style>
@@ -121,11 +121,11 @@
     }
     .debate-hero-right > * { pointer-events: all; }
 
-    /* grassroots bubble — top-right of the blob, shifted right 125px */
+    /* grassroots bubble — swapped to lower position near earth */
     .grassroots-bubble {
       position: absolute;
-      top: 60px;
-      right: -45px;
+      bottom: 110px;
+      right: 300px;
       background: linear-gradient(135deg, #5bc8a0 0%, #3aad82 100%);
       border-radius: 50%;
       width: 190px;
@@ -184,15 +184,15 @@
     }
     @keyframes spin-slow { to { transform: rotate(360deg); } }
 
-    /* hosted by — left of earth, inside blob */
+    /* hosted by — swapped to top-right position */
     .hero-hosted {
       position: absolute;
-      bottom: 110px;
-      right: 300px;
+      top: 60px;
+      right: -45px;
       text-align: center;
     }
     .hero-hosted .hosted-label {
-      font-family: 'Fahkwang', sans-serif;
+      font-family: 'Museo Moderno', 'Fahkwang', sans-serif;
       font-size: 0.95rem;
       letter-spacing: 2px;
       text-transform: uppercase;
@@ -200,7 +200,7 @@
       margin-bottom: 4px;
     }
     .hero-hosted .hosted-name {
-      font-family: 'Fahkwang', sans-serif;
+      font-family: 'Museo Moderno', 'Fahkwang', sans-serif;
       font-weight: 700;
       font-size: 1.75rem;
       color: #fff;
@@ -208,6 +208,7 @@
       line-height: 1.1;
     }
     .hero-hosted a {
+      font-family: 'Museo Moderno', 'Fahkwang', sans-serif;
       font-size: 0.95rem;
       color: rgba(255,255,255,0.5);
     }
@@ -1029,6 +1030,7 @@
         <div class="form-field"><label>Email *</label><input type="email" id="ft-email" placeholder="you@email.com" required></div>
         <div class="form-field"><label>Phone (optional)</label><input type="tel" id="ft-phone" placeholder="555-555-5555"></div>
         <div class="form-field"><label>Truck / Business Name *</label><input type="text" id="ft-org" placeholder="Tacos on Wheels" required></div>
+        <div class="form-field"><label>Website (optional)</label><input type="url" id="ft-website" placeholder="https://yourtruck.com"></div>
         <div class="form-field"><label>What do you serve? (optional)</label><textarea id="ft-notes" placeholder="e.g. tacos, BBQ, shaved ice…"></textarea></div>
         <div class="modal-actions">
           <button class="btn-modal-cancel" onclick="closeModal('food_truck')">Cancel</button>
@@ -1057,6 +1059,7 @@
         <div class="form-field"><label>Email *</label><input type="email" id="np-email" placeholder="you@email.com" required></div>
         <div class="form-field"><label>Phone (optional)</label><input type="tel" id="np-phone" placeholder="555-555-5555"></div>
         <div class="form-field"><label>Organization Name *</label><input type="text" id="np-org" placeholder="Your Non-Profit Name" required></div>
+        <div class="form-field"><label>Website (optional)</label><input type="url" id="np-website" placeholder="https://yourorg.org"></div>
         <div class="form-field"><label>What does your organization do? (optional)</label><textarea id="np-notes" placeholder="Brief description of your mission…"></textarea></div>
         <div class="modal-actions">
           <button class="btn-modal-cancel" onclick="closeModal('nonprofit')">Cancel</button>
@@ -1118,9 +1121,9 @@
     const EVENT_ID = '26lpfescambiadebate'
 
     const FIELDS = {
-      attendee:   { name: 'att-name', email: 'att-email', phone: 'att-phone', org: null,    notes: 'att-notes' },
-      food_truck: { name: 'ft-name',  email: 'ft-email',  phone: 'ft-phone',  org: 'ft-org', notes: 'ft-notes' },
-      nonprofit:  { name: 'np-name',  email: 'np-email',  phone: 'np-phone',  org: 'np-org', notes: 'np-notes' },
+      attendee:   { name: 'att-name', email: 'att-email', phone: 'att-phone', org: null,    website: null,         notes: 'att-notes' },
+      food_truck: { name: 'ft-name',  email: 'ft-email',  phone: 'ft-phone',  org: 'ft-org', website: 'ft-website', notes: 'ft-notes' },
+      nonprofit:  { name: 'np-name',  email: 'np-email',  phone: 'np-phone',  org: 'np-org', website: 'np-website', notes: 'np-notes' },
     }
 
     function openModal(type) {
@@ -1145,11 +1148,13 @@
 
     async function submitForm(type) {
       const f = FIELDS[type]
-      const name  = document.getElementById(f.name)?.value.trim()
-      const email = document.getElementById(f.email)?.value.trim()
-      const phone = document.getElementById(f.phone)?.value.trim() || null
-      const org   = f.org ? document.getElementById(f.org)?.value.trim() || null : null
-      const notes = document.getElementById(f.notes)?.value.trim() || null
+      const name    = document.getElementById(f.name)?.value.trim()
+      const email   = document.getElementById(f.email)?.value.trim()
+      const phone   = document.getElementById(f.phone)?.value.trim() || null
+      const org     = f.org ? document.getElementById(f.org)?.value.trim() || null : null
+      const website = f.website ? document.getElementById(f.website)?.value.trim() || null : null
+      const rawNotes = document.getElementById(f.notes)?.value.trim() || null
+      const notes   = [website ? `Website: ${website}` : null, rawNotes].filter(Boolean).join('\n') || null
       const errEl = document.getElementById('error-' + type)
       const btn   = document.getElementById('btn-' + type)
       const lbl   = document.getElementById('btn-' + type + '-label')
